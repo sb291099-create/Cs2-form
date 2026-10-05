@@ -1,4 +1,5 @@
 """Метрики формы: Elo (общий и по картам), форма с затуханием, карт-пул, прогноз матча."""
+
 from __future__ import annotations
 
 import math
@@ -37,22 +38,36 @@ def run_elo(maps: pd.DataFrame) -> EloResult:
     for m in maps.sort_values(["date", "map_id"]).itertuples(index=False):
         a, b = m.team1_id, m.team2_id
         ra, rb = overall.get(a, BASE_ELO), overall.get(b, BASE_ELO)
-        ma, mb = by_map.get((a, m.map), BASE_ELO), by_map.get((b, m.map), BASE_ELO)
+        has_map = isinstance(m.map, str) and m.map != ""
+        ma = by_map.get((a, m.map), BASE_ELO) if has_map else BASE_ELO
+        mb = by_map.get((b, m.map), BASE_ELO) if has_map else BASE_ELO
         e_a = map_win_prob(ra, rb, ma, mb)
         s_a = 1.0 if m.score1 > m.score2 else 0.0
         delta = K * _margin_mult(m.score1 - m.score2) * (s_a - e_a)
         overall[a], overall[b] = ra + delta, rb - delta
-        map_delta = K * (s_a - expected(ma, mb))
-        by_map[(a, m.map)], by_map[(b, m.map)] = ma + map_delta, mb - map_delta
+        if has_map:
+            map_delta = K * (s_a - expected(ma, mb))
+            by_map[(a, m.map)], by_map[(b, m.map)] = ma + map_delta, mb - map_delta
         for tid, team, opp_id, opp, r_before, r_after, exp, won, rf, ra_ in (
             (a, m.team1, b, m.team2, ra, overall[a], e_a, s_a, m.score1, m.score2),
             (b, m.team2, a, m.team1, rb, overall[b], 1 - e_a, 1 - s_a, m.score2, m.score1),
         ):
             rows.append(
                 dict(
-                    map_id=m.map_id, date=m.date, team_id=tid, team=team, opp_id=opp_id, opp=opp,
-                    map=m.map, event=m.event, rounds_for=rf, rounds_against=ra_,
-                    won=won, expected=exp, elo_before=r_before, elo_after=r_after,
+                    map_id=m.map_id,
+                    date=m.date,
+                    team_id=tid,
+                    team=team,
+                    opp_id=opp_id,
+                    opp=opp,
+                    map=m.map,
+                    event=m.event,
+                    rounds_for=rf,
+                    rounds_against=ra_,
+                    won=won,
+                    expected=exp,
+                    elo_before=r_before,
+                    elo_after=r_after,
                 )
             )
     hist = pd.DataFrame(rows)
@@ -150,8 +165,10 @@ def matchup(elo: EloResult, a: int, b: int, maps: list[str]) -> tuple[pd.DataFra
     for m in maps:
         p = map_win_prob(ra, rb, elo.by_map.get((a, m), BASE_ELO), elo.by_map.get((b, m), BASE_ELO))
         weight = float(pool_a.get(m, 0)) + float(pool_b.get(m, 0))
-        rows.append(dict(map=m, prob_a=p * 100, maps_a=int(pool_a.get(m, 0)), maps_b=int(pool_b.get(m, 0)), weight=weight))
-    df = pd.DataFrame(rows)
+        rows.append(
+            dict(map=m, prob_a=p * 100, maps_a=int(pool_a.get(m, 0)), maps_b=int(pool_b.get(m, 0)), weight=weight)
+        )
+    df = pd.DataFrame(rows, columns=["map", "prob_a", "maps_a", "maps_b", "weight"])
     if df["weight"].sum() > 0:
         p_map = (df["prob_a"] * df["weight"]).sum() / df["weight"].sum() / 100
     else:

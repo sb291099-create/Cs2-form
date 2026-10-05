@@ -1,33 +1,24 @@
-"""Обновляет data/*.csv свежими данными с HLTV. Запуск: python -m cs2form.update"""
+"""Обновляет data/*.csv: результаты карт из PandaScore, рейтинг из HLTV.
+
+Запуск: PANDASCORE_TOKEN=... python -m cs2form.update
+"""
+
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import pandas as pd
 
-from .scraper import BlockedError, BrowserFetcher, Fetcher, as_dicts, fetch_map_results, fetch_ranking
+from .pandascore import PandaScore, PandaScoreError, games_to_rows
+from .scraper import Fetcher, as_dicts, fetch_ranking
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 MAPS_CSV = DATA / "maps.csv"
 RANKING_CSV = DATA / "ranking.csv"
-
-
-def pick_fetcher():
-    """Сначала лёгкий HTTP-клиент; если Cloudflare не пускает, запускаем браузер."""
-    fetcher = Fetcher(retries=2)
-    try:
-        fetcher.get("/ranking/teams")
-        print("::notice::HLTV отвечает обычному HTTP-клиенту", flush=True)
-        return fetcher
-    except BlockedError as e:
-        print(f"HTTP-клиент заблокирован ({e}), пробую браузер", flush=True)
-    browser = BrowserFetcher()
-    browser.get("/ranking/teams")
-    print("::notice::HLTV открылся через браузер", flush=True)
-    return browser
 
 
 def main() -> int:
@@ -38,32 +29,46 @@ def main() -> int:
 
     today = datetime.now(timezone.utc).date()
     old = pd.read_csv(MAPS_CSV) if MAPS_CSV.exists() else pd.DataFrame()
-    if old.empty:
+    if old.empty or "tier" not in old:
+        old = pd.DataFrame()
         start = today - timedelta(days=args.days)
     else:
         start = date.fromisoformat(old["date"].max()) - timedelta(days=args.overlap)
 
-    print(f"Карты с {start} по {today}", flush=True)
+    print(f"Матчи с {start} по {today}", flush=True)
+    # ::notice:: / ::error:: превращаются в аннотации на странице запуска в GitHub
     try:
-        fetcher = pick_fetcher()
-        new = pd.DataFrame(as_dicts(fetch_map_results(fetcher, start, today)))
-        ranking = pd.DataFrame(as_dicts(fetch_ranking(fetcher)))
-    except BlockedError as e:
-        # ::error:: превращается в аннотацию, которую видно на странице запуска в GitHub
-        print(f"::error::Cloudflare/HLTV блокирует запросы: {e}", flush=True)
+        matches = PandaScore(os.environ.get("PANDASCORE_TOKEN", "")).past_matches(start, today)
+    except PandaScoreError as e:
+        print(f"::error::PandaScore: {e}", flush=True)
         return 1
-    except Exception as e:
-        print(f"::error::Сбор упал: {type(e).__name__}: {e}", flush=True)
-        raise
+    new = pd.DataFrame(games_to_rows(matches))
+    games = [g for m in matches for g in (m.get("games") or [])]
+    if games:
+        print(f"::notice::Поля карты в PandaScore: {sorted(games[0].keys())}", flush=True)
+    if new.empty:
+        print(f"::error::PandaScore вернул {len(matches)} матчей, но ни одной сыгранной карты тиров S/A/B", flush=True)
+        return 1
+
+    try:
+        ranking = pd.DataFrame(as_dicts(fetch_ranking(Fetcher(retries=2))))
+    except Exception as e:  # рейтинг HLTV — приятное дополнение, без него тоже работаем
+        print(f"::warning::Рейтинг HLTV не скачался: {e}", flush=True)
+        ranking = pd.DataFrame()
 
     maps = pd.concat([old, new]).drop_duplicates("map_id", keep="last").sort_values(["date", "map_id"])
-    cutoff = (today - timedelta(days=args.days)).isoformat()
-    maps = maps[maps["date"] >= cutoff]
+    maps = maps[maps["date"] >= (today - timedelta(days=args.days)).isoformat()]
     DATA.mkdir(exist_ok=True)
     maps.to_csv(MAPS_CSV, index=False)
     if not ranking.empty:
         ranking.to_csv(RANKING_CSV, index=False)
-    print(f"::notice::Готово: {len(new)} карт скачано, всего {len(maps)}; рейтинг: {len(ranking)} команд")
+    with_rounds = (new[["score1", "score2"]].max(axis=1) > 1).mean() * 100
+    with_map = (new["map"].fillna("") != "").mean() * 100
+    print(
+        f"::notice::Готово: {len(matches)} матчей, {len(new)} карт (со счётом по раундам {with_rounds:.0f}%, "
+        f"с названием карты {with_map:.0f}%), всего в базе {len(maps)}; рейтинг HLTV: {len(ranking)} команд",
+        flush=True,
+    )
     return 0
 
 

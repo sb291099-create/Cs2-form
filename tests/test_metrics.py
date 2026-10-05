@@ -9,11 +9,23 @@ def make_maps():
     # A стабильно бьёт B и C, B бьёт C; в конце C резко прибавляет.
     for day in range(1, 61):
         d = f"2025-08-{day:02d}" if day <= 31 else f"2025-09-{day - 31:02d}"
-        for (t1, n1, t2, n2, s1, s2) in [(1, "A", 2, "B", 13, 8), (1, "A", 3, "C", 13, 5), (2, "B", 3, "C", 13, 10)]:
+        for t1, n1, t2, n2, s1, s2 in [(1, "A", 2, "B", 13, 8), (1, "A", 3, "C", 13, 5), (2, "B", 3, "C", 13, 10)]:
             if day > 50 and t2 == 3:
                 s1, s2 = s2, s1 + 3  # C выигрывает
-            rows.append(dict(map_id=mid, date=d, team1_id=t1, team1=n1, team2_id=t2, team2=n2,
-                             score1=s1, score2=s2, map="Mirage" if mid % 2 else "Nuke", event="Test"))
+            rows.append(
+                dict(
+                    map_id=mid,
+                    date=d,
+                    team1_id=t1,
+                    team1=n1,
+                    team2_id=t2,
+                    team2=n2,
+                    score1=s1,
+                    score2=s2,
+                    map="Mirage" if mid % 2 else "Nuke",
+                    event="Test",
+                )
+            )
             mid += 1
     return pd.DataFrame(rows)
 

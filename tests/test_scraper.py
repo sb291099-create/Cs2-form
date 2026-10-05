@@ -10,7 +10,14 @@ def test_parse_map_results():
     assert len(rows) == 2
     r = rows[0]
     assert (r.map_id, r.team1_id, r.team1, r.score1, r.team2_id, r.team2, r.score2) == (
-        201234, 9565, "Vitality", 13, 4494, "MOUZ", 7)
+        201234,
+        9565,
+        "Vitality",
+        13,
+        4494,
+        "MOUZ",
+        7,
+    )
     assert r.map == "Mirage" and r.event.startswith("BLAST") and r.date == "2025-10-04"
     assert rows[1].date == "2025-10-03" and rows[1].score2 == 16
 

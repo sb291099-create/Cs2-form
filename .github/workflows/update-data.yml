@@ -1,4 +1,4 @@
-name: Обновить данные HLTV
+name: Обновить данные
 
 on:
   schedule:
@@ -22,13 +22,15 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - run: pip install -r requirements.txt -r requirements-scraper.txt
+      - run: pip install -r requirements.txt
       - run: python -m cs2form.update
+        env:
+          PANDASCORE_TOKEN: ${{ secrets.PANDASCORE_TOKEN }}
       - name: Сохранить данные в репозиторий
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           git diff --cached --quiet && echo "Новых данных нет" && exit 0
-          git commit -m "Данные HLTV за $(date -u +%Y-%m-%d)"
+          git commit -m "Данные за $(date -u +%Y-%m-%d)"
           git push

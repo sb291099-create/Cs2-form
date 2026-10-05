@@ -3,6 +3,7 @@
 Источник результатов: https://www.hltv.org/stats/matches — каждая строка
 таблицы это одна сыгранная карта (две команды, счёт по раундам, карта, турнир).
 """
+
 from __future__ import annotations
 
 import random
@@ -185,35 +186,3 @@ def fetch_ranking(fetcher: Fetcher) -> list[RankedTeam]:
 
 def as_dicts(items) -> list[dict]:
     return [asdict(i) for i in items]
-
-
-class BrowserFetcher:
-    """Запасной вариант: настоящий Chrome (SeleniumBase UC), который проходит проверку Cloudflare."""
-
-    def __init__(self, delay: tuple[float, float] = (2.5, 5.0)):
-        from seleniumbase import SB
-
-        self.delay = delay
-        self._ctx = SB(uc=True, xvfb=True, locale="en")
-        self.sb = self._ctx.__enter__()
-
-    def get(self, path: str) -> str:
-        url = path if path.startswith("http") else BASE + path
-        time.sleep(random.uniform(*self.delay))
-        for attempt in range(1, 4):
-            self.sb.uc_open_with_reconnect(url, 4 + attempt * 2)
-            html = self.sb.get_page_source()
-            if _is_challenge(html):
-                try:
-                    self.sb.uc_gui_click_captcha()
-                    self.sb.sleep(3)
-                    html = self.sb.get_page_source()
-                except Exception as e:  # noqa: BLE001
-                    print(f"  клик по капче не удался: {e}", flush=True)
-            if not _is_challenge(html):
-                return html
-            print(f"  браузер: попытка {attempt}, «{_title(html)}»", flush=True)
-        raise BlockedError(f"браузер не прошёл Cloudflare на {url}: «{_title(html)}»")
-
-    def close(self):
-        self._ctx.__exit__(None, None, None)
