@@ -1,0 +1,7 @@
+curl_cffi>=0.7
+beautifulsoup4>=4.12
+lxml>=5.0
+pandas>=2.0
+matplotlib>=3.7
+streamlit>=1.35
+plotly>=5.20

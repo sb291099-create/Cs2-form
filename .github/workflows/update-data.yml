@@ -1,0 +1,34 @@
+name: Обновить данные HLTV
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # каждый день в 08:00 по Москве
+  workflow_dispatch:      # кнопка «Run workflow» для ручного запуска
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m cs2form.update
+      - name: Сохранить данные в репозиторий
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && echo "Новых данных нет" && exit 0
+          git commit -m "Данные HLTV за $(date -u +%Y-%m-%d)"
+          git push
