@@ -2,7 +2,7 @@ name: Обновить данные
 
 on:
   schedule:
-    - cron: "0 5 * * *"   # каждый день в 08:00 по Москве
+    - cron: "0 */6 * * *"   # каждые 6 часов: результаты, ближайшие матчи и новости
   workflow_dispatch:      # кнопка «Run workflow» для ручного запуска
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python -m cs2form.update
         env:
-          PANDASCORE_TOKEN: ${{ secrets.PANDASCORE_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Сохранить данные в репозиторий
         run: |
           git config user.name "github-actions[bot]"

@@ -1,75 +1,131 @@
-"""Обновляет data/*.csv: результаты карт из PandaScore, рейтинг из HLTV.
+"""Обновляет data/*.csv: карты, ближайшие матчи, составы и медиа из Liquipedia, рейтинг из HLTV.
 
-Запуск: PANDASCORE_TOKEN=... python -m cs2form.update
+Запуск: python -m cs2form.update [--full]
 """
 
 from __future__ import annotations
 
 import argparse
-import os
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import pandas as pd
 
-from .pandascore import PandaScore, PandaScoreError, games_to_rows
+from .liquipedia import Liquipedia, parse_page
+from .news import build_news
 from .scraper import Fetcher, as_dicts, fetch_ranking
 
 DATA = Path(__file__).resolve().parent.parent / "data"
-MAPS_CSV = DATA / "maps.csv"
-RANKING_CSV = DATA / "ranking.csv"
+TIER_NAMES = {1: "s", 2: "a", 3: "b"}
+
+
+def _merge(
+    path: Path, new: pd.DataFrame, key, refreshed_pages: set[str] | None = None, keep_old: bool = True
+) -> pd.DataFrame:
+    old = pd.read_csv(path, dtype=str) if path.exists() and keep_old else pd.DataFrame()
+    if not old.empty and refreshed_pages is not None and "page" in old:
+        old = old[~old["page"].isin(refreshed_pages)]  # перекачанные турниры заменяем целиком
+    df = pd.concat([old, new.astype(str)]) if not new.empty else old
+    return df.drop_duplicates(key, keep="last") if not df.empty else df
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--days", type=int, default=180, help="глубина истории при первом запуске")
-    ap.add_argument("--overlap", type=int, default=3, help="сколько последних дней перекачивать")
+    ap.add_argument("--days", type=int, default=180, help="глубина истории")
+    ap.add_argument("--full", action="store_true", help="перекачать всю историю")
     args = ap.parse_args()
 
     today = datetime.now(timezone.utc).date()
-    old = pd.read_csv(MAPS_CSV) if MAPS_CSV.exists() else pd.DataFrame()
-    if old.empty or "tier" not in old:
-        old = pd.DataFrame()
-        start = today - timedelta(days=args.days)
-    else:
-        start = date.fromisoformat(old["date"].max()) - timedelta(days=args.overlap)
+    full = args.full or not (DATA / "maps.csv").exists() or "page" not in pd.read_csv(DATA / "maps.csv", nrows=1)
+    # турниры могут длиться месяц, поэтому даже в ежедневном режиме смотрим 45 дней назад
+    start = today - timedelta(days=args.days if full else 45)
+    lp = Liquipedia()
+    print(f"Турниры с {start} по {today + timedelta(days=14)} ({'полный' if full else 'ежедневный'} режим)", flush=True)
+    tournaments = lp.tournaments(start, today + timedelta(days=14))
+    print(f"::notice::Турниров найдено: {len(tournaments)}", flush=True)
 
-    print(f"Матчи с {start} по {today}", flush=True)
-    # ::notice:: / ::error:: превращаются в аннотации на странице запуска в GitHub
-    try:
-        matches = PandaScore(os.environ.get("PANDASCORE_TOKEN", "")).past_matches(start, today)
-    except PandaScoreError as e:
-        print(f"::error::PandaScore: {e}", flush=True)
-        return 1
-    new = pd.DataFrame(games_to_rows(matches))
-    games = [g for m in matches for g in (m.get("games") or [])]
-    if games:
-        print(f"::notice::Поля карты в PandaScore: {sorted(games[0].keys())}", flush=True)
-    if new.empty:
-        print(f"::error::PandaScore вернул {len(matches)} матчей, но ни одной сыгранной карты тиров S/A/B", flush=True)
-        return 1
+    maps, upcoming, rosters, media = [], [], [], []
+    refreshed: set[str] = set()
+    for i, (title, tier) in enumerate(tournaments, 1):
+        try:
+            pages = [title] + lp.subpages(title)
+            texts = lp.wikitext(pages)
+        except Exception as e:  # noqa: BLE001
+            print(f"  пропуск {title}: {e}", flush=True)
+            continue
+        main_text = texts.get(title, "")
+        lan = "|type=offline" in main_text.lower().replace(" ", "")
+        event = title
+        for p, text in texts.items():
+            parsed = parse_page(p, text, tier, lan=lan)
+            if p == title:
+                event = parsed.maps[0]["event"] if parsed.maps else title
+            for rows, part in (
+                (maps, parsed.maps),
+                (upcoming, parsed.upcoming),
+                (rosters, parsed.rosters),
+                (media, parsed.media),
+            ):
+                for r in part:
+                    r["page"] = title
+                    r["event"] = event if p != title else r["event"]
+                    rows.append(r)
+        refreshed.add(title)
+        print(f"  [{i}/{len(tournaments)}] {title}: страниц {len(texts)}, карт всего {len(maps)}", flush=True)
+
+    ids = sorted({m["team1"] for m in maps + upcoming} | {m["team2"] for m in maps + upcoming})
+    names_path = DATA / "team_names.csv"
+    known = pd.read_csv(names_path, dtype=str).set_index("id")["name"].to_dict() if names_path.exists() else {}
+    missing = [x for x in ids if x not in known]
+    if missing:
+        known.update(lp.team_names(missing))
+    DATA.mkdir(exist_ok=True)
+    pd.DataFrame(sorted(known.items()), columns=["id", "name"]).to_csv(names_path, index=False)
+
+    def with_names(rows):
+        df = pd.DataFrame(rows)
+        if df.empty:
+            return df
+        df = df.rename(columns={"team1": "team1_id", "team2": "team2_id"})
+        df["team1"] = df["team1_id"].map(lambda x: known.get(x, x))
+        df["team2"] = df["team2_id"].map(lambda x: known.get(x, x))
+        df["tier"] = df["tier"].map(TIER_NAMES)
+        return df
+
+    cutoff = (today - timedelta(days=args.days)).isoformat()
+    all_maps = _merge(DATA / "maps.csv", with_names(maps), "map_id", refreshed, keep_old=not full)
+    all_maps = all_maps[all_maps["date"] >= cutoff].sort_values(["date", "map_id"])
+    all_maps.to_csv(DATA / "maps.csv", index=False)
+
+    up = with_names(upcoming)
+    if not up.empty:
+        up = up[up["date"] >= today.isoformat()].sort_values(["date", "time"])
+    up.to_csv(DATA / "upcoming.csv", index=False)
+
+    rost = _merge(DATA / "rosters.csv", pd.DataFrame(rosters), ["page", "team_name"])
+    rost.to_csv(DATA / "rosters.csv", index=False)
+    med = _merge(DATA / "media.csv", pd.DataFrame(media), "link")
+    med.to_csv(DATA / "media.csv", index=False)
 
     try:
         ranking = pd.DataFrame(as_dicts(fetch_ranking(Fetcher(retries=2))))
-    except Exception as e:  # рейтинг HLTV — приятное дополнение, без него тоже работаем
+        if not ranking.empty:
+            ranking.to_csv(DATA / "ranking.csv", index=False)
+    except Exception as e:  # noqa: BLE001
         print(f"::warning::Рейтинг HLTV не скачался: {e}", flush=True)
-        ranking = pd.DataFrame()
 
-    maps = pd.concat([old, new]).drop_duplicates("map_id", keep="last").sort_values(["date", "map_id"])
-    maps = maps[maps["date"] >= (today - timedelta(days=args.days)).isoformat()]
-    DATA.mkdir(exist_ok=True)
-    maps.to_csv(MAPS_CSV, index=False)
-    if not ranking.empty:
-        ranking.to_csv(RANKING_CSV, index=False)
-    with_rounds = (new[["score1", "score2"]].max(axis=1) > 1).mean() * 100
-    with_map = (new["map"].fillna("") != "").mean() * 100
+    try:
+        build_news(DATA)
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning::Новости не собрались: {e}", flush=True)
+
     print(
-        f"::notice::Готово: {len(matches)} матчей, {len(new)} карт (со счётом по раундам {with_rounds:.0f}%, "
-        f"с названием карты {with_map:.0f}%), всего в базе {len(maps)}; рейтинг HLTV: {len(ranking)} команд",
+        f"::notice::Готово: карт {len(all_maps)} (скачано {len(maps)}), ближайших матчей {len(up)}, "
+        f"составов {len(rost)}, медиа-ссылок {len(med)}, команд {len(known)}",
         flush=True,
     )
-    return 0
+    return 0 if len(all_maps) else 1
 
 
 if __name__ == "__main__":

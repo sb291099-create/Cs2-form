@@ -6,26 +6,49 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from cs2form import metrics
+import json
+
+
+from cs2form import metrics, model
 
 DATA = Path(__file__).parent / "data"
 
 st.set_page_config(page_title="Форма команд CS2", page_icon="🎯", layout="wide")
 
 
+def _read(name, **kw):
+    path = DATA / name
+    return pd.read_csv(path, **kw) if path.exists() else pd.DataFrame()
+
+
 @st.cache_data(ttl=3600)
 def load():
-    maps_path = DATA / "maps.csv"
-    if not maps_path.exists():
-        return None, None
-    maps = pd.read_csv(maps_path)
+    maps = _read("maps.csv", dtype={"team1_id": str, "team2_id": str})
+    if maps.empty:
+        return None, None, {}
     maps["map"] = maps["map"].fillna("")
-    ranking_path = DATA / "ranking.csv"
-    ranking = pd.read_csv(ranking_path) if ranking_path.exists() else None
-    return maps, ranking
+    ranking = _read("ranking.csv")
+    extra = {n: _read(f"{n}.csv", dtype=str) for n in ("upcoming", "news", "rosters", "team_names")}
+    return maps, (ranking if not ranking.empty else None), extra
 
 
-maps, ranking = load()
+@st.cache_resource(ttl=3600)
+def deep_model(maps: pd.DataFrame, rosters: pd.DataFrame, team_names: pd.DataFrame):
+    """Глубокая модель: Elo по картам, форма текущего состава, опыт на карте; обучение и проверка на истории."""
+    if "page" in maps:
+        event_dates = maps.groupby("page")["date"].min().to_dict()
+        name_to_id = dict(zip(team_names["name"], team_names["id"])) if not team_names.empty else {}
+        changes = model.roster_changes(rosters, event_dates, name_to_id)
+    else:
+        changes = {}
+    state, feat = model.build(maps, changes)
+    bt = model.backtest(feat)
+    warm = feat[feat["date"] >= feat["date"].min() + pd.Timedelta(days=45)]
+    mdl = model.MapModel().fit(warm[model.FEATURES].values, warm["y"].values)
+    return state, mdl, bt, model.active_pool(maps), changes
+
+
+maps, ranking, extra = load()
 st.title("🎯 Форма команд CS2")
 if maps is None or maps.empty:
     st.info("Данных пока нет: они появятся после первого запуска сбора (GitHub Actions → «Обновить данные»).")
@@ -43,14 +66,136 @@ if ranking is not None:
 has_rounds = bool((maps[["score1", "score2"]].max(axis=1) > 1).any())
 st.caption(
     f"Карт в базе: {len(maps)} · период {maps['date'].min()} — {maps['date'].max()} · "
-    "результаты: PandaScore, рейтинг: HLTV.org"
+    "карты и составы: Liquipedia, рейтинг и новости: HLTV.org"
 )
 
 names = table.set_index("team_id")["team"].to_dict()
 team_ids = list(table["team_id"])
 all_maps = sorted(m for m in maps["map"].value_counts().head(8).index if m)[:7]
 
-tab_rank, tab_team, tab_vs = st.tabs(["📊 Рейтинг формы", "🔎 Команда", "⚔️ Сравнение"])
+has_maps = bool((maps["map"] != "").mean() > 0.5)
+if has_maps:
+    state, mdl, bt, pool, roster_changes = deep_model(maps, extra.get("rosters"), extra.get("team_names"))
+today = pd.Timestamp.now(tz="UTC").tz_localize(None).normalize()
+
+
+def fair(p):
+    return 100 / p if p > 0 else float("inf")
+
+
+def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
+    fc = model.forecast(mdl, state, a, b, pool, today, bestof, seed)
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric(f"{name_a}: шанс на матч", f"{fc.p_series * 100:.0f}%")
+    c2.metric(f"{name_b}: шанс на матч", f"{(1 - fc.p_series) * 100:.0f}%")
+    c3.metric(f"Кф {name_a} без маржи", f"{fair(fc.p_series * 100):.2f}")
+    c4.metric(f"Кф {name_b} без маржи", f"{fair((1 - fc.p_series) * 100):.2f}")
+    left, right = st.columns([1, 1])
+    with left:
+        st.markdown("**Прогноз вето**")
+        who = {"A": name_a, "B": name_b, "-": "—"}
+        act = {"ban": "❌ убирает", "pick": "✅ выбирает", "decider": "🎲 десайдер"}
+        st.dataframe(
+            pd.DataFrame(
+                [
+                    {"Команда": who[t], "Действие": act[x], "Карта": m, f"Шанс {name_a} %": fc.map_p[m] * 100}
+                    for t, x, m in fc.veto
+                ]
+            ).style.format({f"Шанс {name_a} %": "{:.0f}"}),
+            hide_index=True,
+            width="stretch",
+        )
+    with right:
+        st.markdown("**Шанс на каждой карте**")
+        ca, cb = model.comfort(state, a, pool, today), model.comfort(state, b, pool, today)
+        st.dataframe(
+            pd.DataFrame(
+                [
+                    {
+                        "Карта": m,
+                        f"Шанс {name_a} %": p * 100,
+                        f"Сыграно {name_a}": ca[m],
+                        f"Сыграно {name_b}": cb[m],
+                        "Elo карты " + name_a: state.map_elo[(a, m)],
+                        "Elo карты " + name_b: state.map_elo[(b, m)],
+                    }
+                    for m, p in sorted(fc.map_p.items(), key=lambda x: -x[1])
+                ]
+            )
+            .style.format(
+                {f"Шанс {name_a} %": "{:.0f}", "Elo карты " + name_a: "{:.0f}", "Elo карты " + name_b: "{:.0f}"}
+            )
+            .background_gradient(subset=[f"Шанс {name_a} %"], cmap="RdYlGn", vmin=20, vmax=80),
+            hide_index=True,
+            width="stretch",
+        )
+        st.caption("«Сыграно» — карт за 90 дней. Карты, которые команда не играет, вето считает её пермабаном.")
+    for t, nm in ((a, name_a), (b, name_b)):
+        ch = state.last_change(t, today)
+        if ch is not None and (today - ch).days <= 60:
+            st.info(f"У {nm} менялся состав {ch:%d.%m.%Y}: форма считается только по матчам нового состава.")
+    return fc
+
+
+tabs = ["📅 Матчи дня"] if has_maps else []
+tabs += ["📊 Рейтинг формы", "🔎 Команда", "⚔️ Сравнение"] + (["🧪 Модель"] if has_maps else [])
+tab_objs = st.tabs(tabs)
+if has_maps:
+    tab_today, tab_rank, tab_team, tab_vs, tab_model = tab_objs
+else:
+    tab_rank, tab_team, tab_vs = tab_objs
+
+if has_maps:
+    with tab_today:
+        upcoming = extra.get("upcoming", pd.DataFrame())
+        news = extra.get("news", pd.DataFrame())
+        if upcoming.empty:
+            st.info("Ближайших матчей в данных нет.")
+        else:
+            days = st.slider("Дней вперёд", 0, 7, 2)
+            soon = upcoming[pd.to_datetime(upcoming["date"]) <= today + pd.Timedelta(days=days)]
+            soon = soon.assign(_t=soon["tier"].map({"s": 0, "a": 1, "b": 2}).fillna(3)).sort_values(["date", "_t"])
+            labels = [
+                f"{r.date[8:]}.{r.date[5:7]} · {r.team1} — {r.team2} · {str(r.event).replace('_', ' ')} ({str(r.tier).upper()})"
+                for r in soon.itertuples()
+            ]
+            if not labels:
+                st.info("В выбранном окне матчей нет.")
+            else:
+                pick = st.selectbox("Матч", range(len(labels)), format_func=lambda i: labels[i])
+                m = soon.iloc[pick]
+                bo = int(float(m.get("bestof") or 3))
+                st.subheader(f"{m['team1']} — {m['team2']}")
+                st.caption(
+                    f"{m['event']} · {str(m.get('time', '')).split('{')[0]} · bo{bo} · "
+                    f"{'LAN' if str(m.get('lan')) == 'True' else 'онлайн'}"
+                )
+                render_forecast(m["team1_id"], m["team2_id"], m["team1"], m["team2"], bo, seed=1.0)
+                st.caption(
+                    f"{m['team1']} записана в сетке первой: на истории такие команды выигрывают чаще, "
+                    "и модель это учитывает (около +5 п.п.)."
+                )
+                st.markdown("#### Новости и составы")
+                nrow = news[news["match_key"] == m["match_key"]] if not news.empty else pd.DataFrame()
+                if nrow.empty:
+                    st.caption("Новостей по этому матчу ещё не собрано (собираются на 3 дня вперёд).")
+                else:
+                    n = nrow.iloc[-1]
+                    if isinstance(n.get("summary"), str) and n["summary"]:
+                        st.success(f"**Сводка Claude:** {n['summary']}")
+                        for nm, fl in ((m["team1"], n.get("team1_flags")), (m["team2"], n.get("team2_flags"))):
+                            if isinstance(fl, str) and fl:
+                                st.warning(f"⚠️ {nm}: {fl}")
+                    else:
+                        st.caption("Сводка Claude появится после добавления ключа ANTHROPIC_API_KEY.")
+                    for nm, col, rcol in ((m["team1"], "news1", "roster1"), (m["team2"], "news2", "roster2")):
+                        items = json.loads(n[col]) if isinstance(n.get(col), str) else []
+                        roster = json.loads(n[rcol]) if isinstance(n.get(rcol), str) else {}
+                        with st.expander(f"{nm}: {len(items)} новостей · состав: {roster.get('players', '—')}"):
+                            if roster.get("notes"):
+                                st.caption(roster["notes"])
+                            for it in items:
+                                st.markdown(f"- {it['date']} [{it['title']}]({it['link']}) · {it['source']}")
 
 with tab_rank:
     st.markdown(
@@ -168,6 +313,9 @@ with tab_vs:
     b = c2.selectbox("Команда 2", team_ids, index=min(1, len(team_ids) - 1), format_func=names.get, key="b")
     if a == b:
         st.warning("Выбери две разные команды.")
+    elif has_maps:
+        bo = st.radio("Формат", [1, 3, 5], index=1, horizontal=True, format_func=lambda x: f"bo{x}")
+        render_forecast(a, b, names[a], names[b], bo)
     else:
         per_map, p_map, p_bo3 = metrics.matchup(elo, a, b, all_maps)
         c1, c2, c3 = st.columns(3)
@@ -195,6 +343,7 @@ with tab_vs:
                 hide_index=True,
                 width="stretch",
             )
+    if a != b:
         h2h = maps[((maps.team1_id == a) & (maps.team2_id == b)) | ((maps.team1_id == b) & (maps.team2_id == a))]
         st.subheader(f"Личные встречи: {len(h2h)} карт")
         if not h2h.empty:
@@ -205,3 +354,42 @@ with tab_vs:
                 hide_index=True,
                 width="stretch",
             )
+
+if has_maps:
+    with tab_model:
+        st.markdown(
+            "Модель учится на первых 60% карт по времени и проверяется на остальных, которых она не видела. "
+            "**Log loss** — чем меньше, тем точнее вероятности (подбрасывание монеты = 0.693). "
+            "Сравниваем с простым Elo без карт и состава."
+        )
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Log loss модели", f"{bt['logloss_model']:.3f}")
+        c2.metric("Log loss простого Elo", f"{bt['logloss_elo']:.3f}")
+        c3.metric("Угадано карт моделью", f"{bt['acc_model'] * 100:.1f}%")
+        c4.metric("Угадано простым Elo", f"{bt['acc_elo'] * 100:.1f}%")
+        st.caption(
+            f"Проверка на {bt['test_maps']} картах с {bt['test_from']:%d.%m} по {bt['test_to']:%d.%m}, "
+            f"обучение на {bt['train_maps']} картах."
+        )
+        st.markdown("**Калибровка:** когда модель говорит 60–70%, команда должна выигрывать примерно в 65% случаев.")
+        cal = pd.DataFrame(bt["calibration"])
+        st.dataframe(
+            cal.rename(
+                columns={"bin": "Прогноз", "n": "Карт", "pred": "Средний прогноз", "actual": "Реально выиграно"}
+            ).style.format({"Средний прогноз": "{:.0%}", "Реально выиграно": "{:.0%}"}),
+            hide_index=True,
+            width="stretch",
+        )
+        st.markdown("**Веса признаков** (чем больше, тем сильнее влияет):")
+        names_f = {
+            "elo": "Общий Elo",
+            "map_elo": "Elo на карте",
+            "form": "Форма текущего состава",
+            "map_exp": "Опыт на карте",
+            "new_roster": "Свежая смена состава",
+            "seed": "Первая в сетке (посев)",
+        }
+        st.dataframe(
+            pd.DataFrame([{"Признак": names_f[k], "Вес": float(v)} for k, v in bt["weights"].items()]), hide_index=True
+        )
+        st.caption(f"Активный пул карт: {', '.join(pool)}. Смен состава найдено: {len(roster_changes)} команд.")

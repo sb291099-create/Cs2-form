@@ -12,8 +12,13 @@ def match(tier="s", games=None):
         "games": games
         or [
             {"id": 101, "finished": True, "winner": {"id": 10}, "begin_at": "2026-10-01T15:05:00Z"},
-            {"id": 102, "finished": True, "winner": {"id": 20}, "map": {"name": "Nuke"},
-             "teams": [{"team": {"id": 10}, "score": 9}, {"team": {"id": 20}, "score": 13}]},
+            {
+                "id": 102,
+                "finished": True,
+                "winner": {"id": 20},
+                "map": {"name": "Nuke"},
+                "teams": [{"team": {"id": 10}, "score": 9}, {"team": {"id": 20}, "score": 13}],
+            },
             {"id": 103, "finished": False, "winner": {"id": None}},
         ],
     }
