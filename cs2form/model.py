@@ -266,6 +266,46 @@ def comfort(st: State, t, pool, day, days=90) -> dict[str, int]:
     return {mp: sum(1 for d in st.map_dates[(t, mp)] if d > lo) for mp in pool}
 
 
+def _side_rows(maps: pd.DataFrame) -> pd.DataFrame:
+    if "first1" not in maps:
+        return maps.iloc[0:0]
+    m = maps[maps["first1"].isin(["ct", "t"])].copy()
+    for c in ("ct1", "t1", "ct2", "t2"):
+        m[c] = pd.to_numeric(m[c], errors="coerce")
+    return m.dropna(subset=["ct1", "t1", "ct2", "t2"])
+
+
+def side_stats(maps: pd.DataFrame, team, day, days: int = 90) -> dict[str, tuple[float, float, int]]:
+    """Доля выигранных раундов команды за CT и за T на каждой карте (основное время) и число карт."""
+    m = _side_rows(maps)
+    m = m[pd.to_datetime(m["date"]) > pd.Timestamp(day) - pd.Timedelta(days=days)]
+    out = {}
+    for mp, g in m.groupby("map"):
+        a, b = g[g["team1_id"] == team], g[g["team2_id"] == team]
+        ct_w = a["ct1"].sum() + b["ct2"].sum()
+        ct_l = a["t2"].sum() + b["t1"].sum()  # раунды соперника за T, пока команда за CT
+        t_w = a["t1"].sum() + b["t2"].sum()
+        t_l = a["ct2"].sum() + b["ct1"].sum()
+        n = len(a) + len(b)
+        if n:
+            out[mp] = (ct_w / max(ct_w + ct_l, 1), t_w / max(t_w + t_l, 1), n)
+    return out
+
+
+def start_side_table(maps: pd.DataFrame) -> pd.DataFrame:
+    """Как часто выигрывает команда, начавшая за CT, на решающих картах bo3 (сторона — ножом, без перекоса пика)."""
+    m = _side_rows(maps)
+    m = m[(m["bestof"].astype(int) == 3) & (m["map_number"].astype(int) == 3)]
+    won = (m["score1"].astype(int) > m["score2"].astype(int)).astype(int)
+    m = m.assign(start_ct_won=won.where(m["first1"] == "ct", 1 - won), ct_rounds=m["ct1"] + m["ct2"])
+    g = m.groupby("map").agg(
+        maps=("start_ct_won", "size"), start_ct_won=("start_ct_won", "mean"), ct_rounds=("ct_rounds", "sum")
+    )
+    total = m.groupby("map").apply(lambda x: (x["ct1"] + x["t1"] + x["ct2"] + x["t2"]).sum(), include_groups=False)
+    g["ct_round_share"] = g["ct_rounds"] / total
+    return g.drop(columns="ct_rounds").sort_values("maps", ascending=False)
+
+
 def predict_veto(p: dict[str, float], comfort_a: dict, comfort_b: dict, bestof: int = 3) -> list[tuple[str, str, str]]:
     """Жадная симуляция вето. Команда сначала выбивает карты, которые не играет вовсе,
     потом самые невыгодные для себя; выбирает самые выгодные.

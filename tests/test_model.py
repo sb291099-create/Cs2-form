@@ -97,3 +97,20 @@ def test_forecast_uses_actual_veto():
     fc = model.forecast(mdl, st, "a", "b", pool, pd.Timestamp("2026-10-05"), 3, 0.0, ["Ancient", "Mirage", "Inferno"])
     assert fc.played == ["Ancient", "Mirage", "Inferno"]
     assert abs(fc.p_series - 0.5) < 1e-9
+
+
+def test_side_stats():
+    import pandas as pd
+
+    from cs2form import model
+
+    maps = pd.DataFrame(
+        [
+            dict(date="2026-10-01", team1_id="a", team2_id="b", map="Nuke", first1="ct", ct1=8, t1=5, ct2=7, t2=4),
+            dict(date="2026-10-02", team1_id="c", team2_id="a", map="Nuke", first1="t", ct1=6, t1=2, ct2=6, t2=7),
+        ]
+    )
+    ct, t, n = model.side_stats(maps, "a", "2026-10-05")["Nuke"]
+    assert n == 2
+    assert ct == pytest.approx((8 + 6) / (8 + 4 + 6 + 2))  # a за CT: 8 из 12 и 6 из 8
+    assert t == pytest.approx((5 + 7) / (5 + 7 + 7 + 6))

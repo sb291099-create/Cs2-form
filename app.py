@@ -106,18 +106,18 @@ def render_value(p_a, name_a, name_b, key):
 
 
 def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
-    maps = None
+    veto_maps = None
     if bestof > 1:
-        maps = st.multiselect(
+        veto_maps = st.multiselect(
             "Карты по факту вето (в порядке игры)",
             pool,
             max_selections=bestof,
             key=f"veto-{a}-{b}-{bestof}-{seed}",
             help=f"Выбери {bestof} карты, когда вето объявлено, и прогноз пересчитается под них.",
         )
-    fc = model.forecast(mdl, state, a, b, pool, today, bestof, seed, maps)
-    if maps and len(maps) == bestof:
-        st.caption("Прогноз посчитан по фактическому вето: " + ", ".join(maps) + ".")
+    fc = model.forecast(mdl, state, a, b, pool, today, bestof, seed, veto_maps)
+    if veto_maps and len(veto_maps) == bestof:
+        st.caption("Прогноз посчитан по фактическому вето: " + ", ".join(veto_maps) + ".")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric(f"{name_a}: шанс на матч", f"{fc.p_series * 100:.0f}%")
     c2.metric(f"{name_b}: шанс на матч", f"{(1 - fc.p_series) * 100:.0f}%")
@@ -147,7 +147,7 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
     with left:
         who = {"A": name_a, "B": name_b, "-": "—"}
         act = {"ban": "❌ убирает", "pick": "✅ выбирает", "decider": "🎲 десайдер"}
-        if maps and len(maps) == bestof:
+        if veto_maps and len(veto_maps) == bestof:
             st.markdown("**Карты матча**")
             rows = [{"Карта": m, f"Шанс {name_a} %": fc.map_p[m] * 100} for m in fc.played]
         else:
@@ -172,6 +172,11 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
             model.comfort(state, a, pool, today),
             model.comfort(state, b, pool, today),
         )
+        sa, sb = model.side_stats(maps, a, today), model.side_stats(maps, b, today)
+
+        def sides(s, m):
+            return f"{s[m][0] * 100:.0f} / {s[m][1] * 100:.0f}" if m in s else "—"
+
         st.dataframe(
             pd.DataFrame(
                 [
@@ -180,6 +185,8 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
                         f"Шанс {name_a} %": p * 100,
                         f"Сыграно {name_a}": ca[m],
                         f"Сыграно {name_b}": cb[m],
+                        f"CT / T {name_a} %": sides(sa, m),
+                        f"CT / T {name_b} %": sides(sb, m),
                         "Elo карты " + name_a: state.map_elo[(a, m)],
                         "Elo карты " + name_b: state.map_elo[(b, m)],
                     }
@@ -197,7 +204,10 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
             hide_index=True,
             width="stretch",
         )
-        st.caption("«Сыграно» — карт за 90 дней. Карты, которые команда не играет, вето считает её пермабаном.")
+        st.caption(
+            "«Сыграно» — карт за 90 дней. Карты, которые команда не играет, вето считает её пермабаном. "
+            "«CT / T» — доля раундов, выигранных за каждую сторону за 90 дней (основное время)."
+        )
     for t, nm in ((a, name_a), (b, name_b)):
         ch = state.last_change(t, today)
         if ch is not None and (today - ch).days <= 60:
@@ -497,3 +507,27 @@ if has_maps:
             hide_index=True,
         )
         st.caption(f"Активный пул карт: {', '.join(pool)}. Смен состава найдено: {len(roster_changes)} команд.")
+        side = model.start_side_table(maps)
+        if not side.empty:
+            st.markdown(
+                "**Стартовая сторона на решающих картах bo3** (сторону там решает нож, поэтому сравнение честное)"
+            )
+            st.dataframe(
+                side.reset_index()
+                .rename(
+                    columns={
+                        "map": "Карта",
+                        "maps": "Карт",
+                        "start_ct_won": "Начавшие за CT выиграли %",
+                        "ct_round_share": "Раундов за CT %",
+                    }
+                )
+                .assign(**{"Начавшие за CT выиграли %": lambda d: d["Начавшие за CT выиграли %"] * 100})
+                .assign(**{"Раундов за CT %": lambda d: d["Раундов за CT %"] * 100})
+                .style.format({"Начавшие за CT выиграли %": "{:.0f}", "Раундов за CT %": "{:.0f}"}),
+                hide_index=True,
+            )
+            st.caption(
+                "В среднем стартовая сторона карту не решает: начавшие за CT выигрывают около 51%. "
+                "Отклонения на отдельных картах пока в пределах случайности, поэтому в модель они не добавлены."
+            )
