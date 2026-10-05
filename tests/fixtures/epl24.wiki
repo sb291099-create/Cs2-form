@@ -1,0 +1,1291 @@
+{{DISPLAYTITLE:ESL Pro League Season 24}}
+{{ESL Grand Slam VII Navbox}}
+{{ESL Pro League Navbox}}<br>
+{{Infobox league|darkmodeforced=true
+|name=ESL Pro League Season 24
+|image=ESL Pro League Season 24 lightmode.png
+|imagedark=ESL Pro League Season 24 darkmode.png
+|icon=ESL Pro League 2019 new icon.png
+|organizer=ESL
+|series=ESL Pro League
+|shortname=Season 24
+|series2=ESL Grand Slam VII
+|abbreviation2=ESL Grand Slam
+|type=Offline
+|prizepoolusd=1,000,000
+|liquipediatier=S-Tier
+|publishertier=Wildcard
+|eslprotier=Masters
+|sdate=2026-10-03
+|edate=2026-10-11
+|country=Poland
+|city=Katowice
+|venue=[http://www.spodekkatowice.pl/en/ Spodek Arena]
+|venuedesc=Playoffs
+|web=https://pro.eslgaming.com/csgo/proleague/
+|sponsor=[https://www.intel.com/ Intel]<br>[https://www.acer.com/ Acer Predator]<br>[https://inmotion.dhl/en/esports DHL]<br>[https://qiddiya.com/qiddiya-city/gaming/ Qiddiya]<br>[https://www.monsterenergy.com/ Monster Energy]<br>[https://www.airforce.com/ U.S. Air Force]<br>[https://1xbet.com/ 1xBet]<br>[https://white.market/ White Market]<br>[https://www.logitechg.com/ Logitech G]
+|rulebook=https://drive.google.com/drive/folders/1u2SqqmHftSCaUwaftisXdf-sxiAT1HY5
+|twitter=ESLCS
+|facebook=ESLCS
+|instagram=eslcs
+|youtube=ESLCS
+|twitch=ESLCS
+|kick=ESLCS
+|game=cs2
+|map1=Ancient
+|map2=Anubis
+|map3=Cache
+|map4=Dust II
+|map5=Inferno
+|map6=Mirage
+|map7=Nuke
+|team_number=16
+}}
+
+==About==
+===Broadcast Talent===
+{{Tabs dynamic
+|name1=Primary Broadcasts
+|content1=
+{{box|start|padding=1em}}
+<!--{{BroadcasterCard
+|position=Stage Host
+|b1=
+}}
+{{BroadcasterCard
+|position=Desk Host
+|b1=
+|b2=
+}}
+{{box|break|padding=1em}}
+{{BroadcasterCard
+|position=Analyst
+|b1=
+|b2=
+|b3=
+}}
+{{BroadcasterCard
+|position=Interviewer
+|b1=
+}}
+{{box|break|padding=1em}}
+-->{{BroadcasterCard
+|position=Commentator/Analyst|lang=Primary
+|b1=Freya
+|b2=stunna
+|b3=YNk
+|b4=Dinko
+|b5=moses
+|b6=HenryG
+|b7=Hugo Byron
+|b8=JustHarry
+|b9=Machine
+|b10=SPUNJ
+}}
+{{box|break|padding=1em}}
+{{BroadcasterCard
+|position=Observer
+|b1=
+|b2=
+}}
+{{box|end}}
+|name2=Secondary Broadcast
+|content2=
+{{box|start|padding=1em}}
+{{BroadcasterCard|date=
+|position=Commentator|lang=Secondary
+|b1=AllInGaming
+|b2=Buckethead
+|b3=Ne0kai
+|b4=Skriv
+}}
+{{box|break|padding=1em}}
+{{BroadcasterCard|date=
+|position=Observer|lang=Secondary
+|b1=
+|b2=
+|b3=
+}}
+{{box|end}}
+}}
+
+===Format===
+* '''Group Stage:'''
+** 16 Team Swiss System Format
+*** All matches are {{Abbr/Bo3}}
+*** Top 8 teams proceed to Playoffs
+** {{Swiss Explained/ESL 2025}}
+
+* '''Playoffs:'''
+** Single-Elimination bracket
+** All matches ''(excl. Grand Final)'' are {{Abbr/Bo3}}
+** The Grand Final is {{Abbr/Bo5}}
+
+===Prize Pool===
+{{TeamPrizePool|prizesummary=true|playershare=true|clubshare=Team Share
+|{{Slot|usdprize=295,000|playershare=125,000}}
+|{{Slot|usdprize=175,000|playershare=50,000}}
+|{{Slot|usdprize=120,000|playershare=30,000}}
+|{{Slot|usdprize=85,000|playershare=20,000}}
+|{{Slot|usdprize=50,000|playershare=10,000|count=4}}
+|{{Slot|usdprize=26,000|playershare=6,000|count=3}}
+|{{Slot|usdprize=14,000|playershare=4,000|count=3}}
+|{{Slot|usdprize=2,500|playershare=2,500|count=2}}
+}}
+
+==Participants==
+{{TeamParticipants|showplayerinfo=true
+|{{Opponent|Team Spirit
+|players={{Persons
+|{{Person|magixx}}
+|{{Person|zont1x}}
+|{{Person|donk}}
+|{{Person|sh1ro}}
+|{{Person|tN1R}}
+|{{Person|role=coach|hally}}
+}}
+|qualification={{VRS|g|20260803}}
+}}
+|{{Opponent|Team Falcons
+|players={{Persons
+|{{Person|NiKo}}
+|{{Person|TeSeS}}
+|{{Person|m0NESY}}
+|{{Person|kyousuke}}
+|{{Person|karrigan}}
+|{{Person|role=coach|zonic}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|MOUZ
+|players={{Persons
+|{{Person|torzsi}}
+|{{Person|xertioN}}
+|{{Person|Spinx}}
+|{{Person|xelex}}
+|{{Person|PR}}
+|{{Person|role=coach|sycrone}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|9z Team
+|players={{Persons
+|{{Person|max}}
+|{{Person|HUASOPEEK}}
+|{{Person|luchov}}
+|{{Person|meyern}}
+|{{Person|dgt}}
+|{{Person|role=coach|BIT}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|Team Vitality
+|players={{Persons
+|{{Person|apEX}}
+|{{Person|ZywOo}}
+|{{Person|flameZ}}
+|{{Person|mezii}}
+|{{Person|ropz}}
+|{{Person|role=coach|XTQZZZ}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|Natus Vincere
+|players={{Persons
+|{{Person|b1t}}
+|{{Person|Aleksib}}
+|{{Person|iM}}
+|{{Person|w0nderful}}
+|{{Person|makazze}}
+|{{Person|role=coach|B1ad3}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|Legacy
+|players={{Persons
+|{{Person|latto}}
+|{{Person|dumau}}
+|{{Person|n1ssim}}
+|{{Person|try}}
+|{{Person|bobz}}
+|{{Person|role=coach|adr}}
+}}
+|qualification={{VRS|g}}
+|notes={{Notes
+|{{Notes|September 27th - {{player|bobz|flag=br}} stands in for {{player|arT|flag=br}} who misses the event due to health issues. <ref>{{cite web|url=https://x.com/legacyggbr/status/2104214052293476604|title=ATUALIZAÇÃO IMPORTANTE|trans_title=IMPORTANT UPDATE|language={{Flag|ptbr}} Portuguese|date=2026-09-27|author=[[Legacy]]}}</ref>}}
+}}
+}}
+|{{Opponent|FURIA
+|players={{Persons
+|{{Person|yuurih}}
+|{{Person|KSCERATO}}
+|{{Person|FalleN}}
+|{{Person|molodoy}}
+|{{Person|YEKINDAR}}
+|{{Person|role=coach|sidde}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|BetBoom Team
+|players={{Persons
+|{{Person|s1ren}}
+|{{Person|zorte}}
+|{{Person|Magnojez}}
+|{{Person|Boombl4}}
+|{{Person|d1Ledez}}
+|{{Person|role=coach|Fierce}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|Aurora Gaming
+|players={{Persons
+|{{Person|XANTARES}}
+|{{Person|Wicadia}}
+|{{Person|woxic}}
+|{{Person|Jimpphat}}
+|{{Person|kyxsan}}
+|{{Person|role=coach|ashhh}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|G2 Esports
+|players={{Persons
+|{{Person|huNter-}}
+|{{Person|HeavyGod}}
+|{{Person|matys}}
+|{{Person|NertZ}}
+|{{Person|r1nkle}}
+|{{Person|role=coach|sAw}}
+}}
+|qualification={{VRS|g}}
+}}
+|{{Opponent|PARIVISION
+|players={{Persons
+|{{Person|Jame}}
+|{{Person|xiELO}}
+|{{Person|zweih}}
+|{{Person|FL1T}}
+|{{Person|HObbit}}
+|{{Person|role=coach|dastan}}
+}}
+|qualification={{VRS|g}}
+|notes={{Notes
+|{{Notes|September 17th - '''[[PARIVISION]]''' bench {{player|slaxejezzz|flag=ru}} and sign {{player|HObbit|flag=kz}}. <ref>{{cite web|url=https://x.com/parivisiongg/status/2100555368153903362|title=Vyacheslav “slaxejezzz” Vinokurov has been benched|date=2026-09-17|author=[[PARIVISION]]}}</ref><ref>{{cite web|url=https://x.com/parivisiongg/status/2100555617832149185|title=Abay “HObbit” Khassenov joins PARIVISION’s main roster|date=2026-09-17|author=[[PARIVISION]]}}</ref>}}
+}}
+}}
+|{{Opponent|1w Team
+|players={{Persons
+|{{Person|nafany}}
+|{{Person|Ax1Le}}
+|{{Person|ArtFr0st}}
+|{{Person|fame}}
+|{{Person|BELCHONOKK}}
+|{{Person|role=coach|groove}}
+}}
+|qualification={{Qualification|method=qual|page=ESL/Challenger League/Season 51/Europe|text=ECL S51 Europe}}
+|notes={{Notes
+|{{Notes|July 15th - '''[[TDK]]''' part ways with {{player|sugaR|flag=az}} and {{player|Xant3r|flag=ru}}. <ref>{{Cite web|url=https://t.me/nafnya/467|title=Всем привет!|trans_title=Hello everyone!|language={{flag|ru}} Russian|date=2026-01-17|author=[[nafany]]}}</ref>}}
+|{{Notes|July 17th - '''[[TDK]]''' add {{player|fame|flag=ru}} and {{player|BELCHONOKK|flag=ru}}. <ref>{{Cite web|url=https://t.me/nafnya/468|title=Добрый вечер, леди и джентльмены|trans_title=Good evening, ladies and gentlemen|language={{flag|ru}} Russian|date=2026-07-17|author=[[nafany]]}}</ref>}}
+|{{Notes|August 1st - '''[[TDK]]''' are signed by '''[[1w Team]]'''. <ref>{{Cite web|url=https://x.com/1winesports/status/2083494320670400842|title=A new chapter begins for 1win in CS2|date=2026-08-01|author=[[1w Team]]}}</ref>}}
+}}
+}}
+|{{Opponent|M80
+|players={{Persons
+|{{Person|Swisher}}
+|{{Person|slaxz-}}
+|{{Person|s1n}}
+|{{Person|Lake}}
+|{{Person|JBa}}
+|{{Person|role=coach|dephh}}
+}}
+|qualification={{Qualification|method=qual|page=ESL/Challenger League/Season 51/North_America|text=ECL S51 North America}}
+}}
+|{{Opponent|ShindeN
+|players={{Persons
+|{{Person|abizz}}
+|{{Person|ivz}}
+|{{Person|naz}}
+|{{Person|tom1jed}}
+|{{Person|guty}}
+|{{Person|role=coach|ninro}}
+}}
+|qualification={{Qualification|method=qual|page=ESL/Challenger League/Season 51/South_America|text=ECL S51 South America}}
+}}
+|{{Opponent|TYLOO
+|players={{Persons
+|{{Person|JamYoung}}
+|{{Person|Moseyuh}}
+|{{Person|Mercury}}
+|{{Person|Jee}}
+|{{Person|Zero|link=Zero (Su Jingshen)}}
+|{{Person|role=coach|zhokiNg}}
+}}
+|qualification={{Qualification|method=qual|page=ESL/Challenger League/Season 51/Asia-Pacific|text=ECL S51 Asia-Pacific}}
+}}
+}}
+
+==Results==
+==={{Stage|Group Stage}}===
+====Overview====
+{{SwissTableLeague|rounds=5|tiebreaker1=series|edate=2026-10-08
+|pbg1=up|pbg2=up|pbg3=stayup|pbg4=stayup|pbg5=stayup|pbg6=stay|pbg7=stay|pbg8=stay|pbg9=down|pbg10=down|pbg11=down|pbg12=down|pbg13=down|pbg14=down|pbg15=down|pbg16=down
+|bg1=|team1=spirit
+|bg2=|team2=vit
+|bg3=|team3=falcons
+|bg4=|team4=mouz
+|bg5=|team5=legacy
+|bg6=|team6=furia
+|bg7=|team7=aurora
+|bg8=|team8=g2
+|bg9=|team9=navi
+|bg10=|team10=9z
+|bg11=|team11=betboom
+|bg12=|team12=parivision
+|bg13=|team13=m80
+|bg14=|team14=tyloo
+|bg15=|team15=1w
+|bg16=|team16=shinden
+}}
+
+====Detailed Results====
+{{Toggle group start|state=hide}}
+=====Round 1=====
+{{Matchlist|id=qBwcEqi5Fl|width=380px|collapsed=false|title=Round 1 Matches|matchsection=Round 1
+|M1header=October 3, 2026
+|{{Match
+	|opponent1={{TeamOpponent|falcons}}|opponent2={{TeamOpponent|tyloo}}
+	|date=October 3, 2026 - 11:00 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/reWC_jQ2FMY |kick=ESL CS
+	|map1={{Map|map=Mirage|finished=true
+		|t1firstside=ct|t1t=8|t1ct=5|t2t=7|t2ct=4
+		|stats=240555|vod=https://youtu.be/PBsT2Ju9eX4&t=106}}
+	|map2={{Map|map=Anubis|finished=true
+		|t1firstside=ct|t1t=5|t1ct=8|t2t=4|t2ct=3
+		|stats=240564|vod=https://youtu.be/PBsT2Ju9eX4&t=3317}}
+	|map3={{Map|map=Nuke|finished=skip}}
+	|hltv=2398717
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|legacy}}|opponent2={{TeamOpponent|parivision}}
+	|date=October 3, 2026 - 11:00 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/x9al9bqwFNI |kick=ESL CS B
+	|map1={{Map|map=Dust II|finished=true
+		|t1firstside=ct|t1t=6|t1ct=7|t2t=5|t2ct=0
+		|stats=240551|vod=https://youtu.be/P2f_fo3XR4Q&t=14}}
+	|map2={{Map|map=Inferno|finished=true
+		|t1firstside=t|t1t=2|t1ct=0|t2t=3|t2ct=10
+		|stats=240558|vod=https://youtu.be/P2f_fo3XR4Q&t=2452}}
+	|map3={{Map|map=Ancient|finished=true
+		|t1firstside=ct|t1t=7|t1ct=5|t2t=7|t2ct=5
+		|o1t1firstside=t|o1t1t=0|o1t1ct=0|o1t2t=1|o1t2ct=3
+		|stats=240569|vod=https://youtu.be/P2f_fo3XR4Q&t=4519}}
+	|hltv=2398718
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|spirit}}|opponent2={{TeamOpponent|shinden}}
+	|date=October 3, 2026 - 14:05 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/x9al9bqwFNI |kick=ESL CS B
+	|map1={{Map|map=Dust II|finished=true
+		|t1firstside=t|t1t=5|t1ct=6|t2t=6|t2ct=7
+		|stats=240587|vod=https://youtu.be/fNmUYlD8L9E&t=29}}
+	|map2={{Map|map=Nuke|finished=true
+		|t1firstside=ct|t1t=7|t1ct=6|t2t=6|t2ct=5
+		|stats=240596|vod=https://youtu.be/fNmUYlD8L9E&t=3538}}
+	|map3={{Map|map=Mirage|finished=true
+		|t1firstside=t|t1t=10|t1ct=3|t2t=2|t2ct=2
+		|stats=240604|vod=https://youtu.be/fNmUYlD8L9E&t=6671}}
+	|hltv=2398720
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|vit}}|opponent2={{TeamOpponent|1w}}
+	|date=October 3, 2026 - 13:30 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/reWC_jQ2FMY |kick=ESL CS
+	|map1={{Map|map=Dust II|finished=true
+		|t1firstside=ct|t1t=2|t1ct=11|t2t=1|t2ct=0
+		|stats=240578|vod=https://youtu.be/Ofdkv-Cxj18&t=40}}
+	|map2={{Map|map=Cache|finished=true
+		|t1firstside=t|t1t=8|t1ct=5|t2t=1|t2ct=4
+		|stats=240586|vod=https://youtu.be/Ofdkv-Cxj18&t=1846}}
+	|map3={{Map|map=Inferno|finished=skip}}
+	|hltv=2398719
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|mouz}}|opponent2={{TeamOpponent|m80}}
+	|date=October 3, 2026 - 17:25 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/x9al9bqwFNI |kick=ESL CS B
+	|map1={{Map|map=Cache|finished=true
+		|t1firstside=ct|t1t=5|t1ct=8|t2t=4|t2ct=5
+		|stats=240623|vod=https://youtu.be/Vzc56Oc1M2U&t=38}}
+	|map2={{Map|map=Mirage|finished=true
+		|t1firstside=t|t1t=6|t1ct=7|t2t=0|t2ct=6
+		|stats=240630|vod=https://youtu.be/Vzc56Oc1M2U&t=2997}}
+	|map3={{Map|map=Inferno|finished=skip}}
+	|hltv=2398722
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|aurora}}|opponent2={{TeamOpponent|9z}}
+	|date=October 3, 2026 - 16:00 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/reWC_jQ2FMY |kick=ESL CS
+	|map1={{Map|map=Dust II|finished=true
+		|t1firstside=ct|t1t=3|t1ct=10|t2t=2|t2ct=1
+		|stats=240602|vod=https://youtu.be/AAH05Lv60Ms&t=28}}
+	|map2={{Map|map=Mirage|finished=true
+		|t1firstside=t|t1t=5|t1ct=8|t2t=4|t2ct=7
+		|stats=240613|vod=https://youtu.be/AAH05Lv60Ms&t=2365}}
+	|map3={{Map|map=Nuke|finished=skip}}
+	|hltv=2398721
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|furia}}|opponent2={{TeamOpponent|betboom}}
+	|date=October 3, 2026 - 19:25 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/x9al9bqwFNI |kick=ESL CS B
+	|map1={{Map|map=Mirage|finished=true
+		|t1firstside=ct|t1t=5|t1ct=8|t2t=4|t2ct=1
+		|stats=240636|vod=https://youtu.be/C-fnJY34PAI&t=29}}
+	|map2={{Map|map=Cache|finished=true
+		|t1firstside=t|t1t=4|t1ct=8|t2t=4|t2ct=8
+		|o1t1firstside=ct|o1t1t=2|o1t1ct=2|o1t2t=1|o1t2ct=1
+		|stats=240646|vod=https://youtu.be/C-fnJY34PAI&t=2246}}
+	|map3={{Map|map=Nuke|finished=skip}}
+	|hltv=2398724
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|g2}}|opponent2={{TeamOpponent|navi}}
+	|date=October 3, 2026 - 18:30 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/reWC_jQ2FMY |kick=ESL CS
+	|map1={{Map|map=Cache|finished=true
+		|t1firstside=ct|t1t=2|t1ct=5|t2t=7|t2ct=6
+		|stats=240631|vod=https://youtu.be/bdb7usrBSkM&t=29}}
+	|map2={{Map|map=Inferno|finished=true
+		|t1firstside=t|t1t=4|t1ct=0|t2t=5|t2ct=8
+		|stats=240637|vod=https://youtu.be/bdb7usrBSkM&t=3121}}
+	|map3={{Map|map=Mirage|finished=skip}}
+	|hltv=2398723
+	}}
+}}
+
+=====Round 2=====
+{{Toggle group start|state=hide}}
+{{box|start|padding=2em}}
+======High======
+{{Matchlist|id=j2xtOTwDRU|width=380px|collapsed=false|title=Round 2 High Matches|matchsection=Round 2
+|M1header=October 4, 2026
+|{{Match
+	|opponent1={{TeamOpponent|spirit}}|opponent2={{TeamOpponent|parivision}}
+	|date=October 4, 2026 - 11:00 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/LcMDVOtgvdk |kick=ESL CS
+	|map1={{Map|map=Ancient|finished=true
+		|t1firstside=ct|t1t=5|t1ct=6|t2t=6|t2ct=7
+		|stats=240666|vod=https://youtu.be/AFZ90s4Z_Y0&t=33}}
+	|map2={{Map|map=Dust II|finished=true
+		|t1firstside=ct|t1t=6|t1ct=7|t2t=5|t2ct=1
+		|stats=240671|vod=https://youtu.be/AFZ90s4Z_Y0&t=3231}}
+	|map3={{Map|map=Anubis|finished=true
+		|t1firstside=ct|t1t=5|t1ct=8|t2t=4|t2ct=1
+		|stats=240666|vod=https://youtu.be/AFZ90s4Z_Y0&t=6070}}
+	|hltv=2398725
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|falcons}}|opponent2={{TeamOpponent|aurora}}
+	|date=October 4, 2026 - 14:20 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/LcMDVOtgvdk |kick=ESL CS
+	|map1={{Map|map=Mirage|finished=true
+		|t1firstside=ct|t1t=4|t1ct=9|t2t=3|t2ct=1
+		|stats=240686|vod=https://youtu.be/wLTADCtPtdU&t=29}}
+	|map2={{Map|map=Dust II|finished=true
+		|t1firstside=t|t1t=5|t1ct=8|t2t=3|t2ct=7
+		|stats=240691|vod=https://youtu.be/wLTADCtPtdU&t=2346}}
+	|map3={{Map|map=Anubis|finished=skip}}
+	|hltv=2398728
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|mouz}}|opponent2={{TeamOpponent|furia}}
+	|date=October 4, 2026 - 16:25 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/LcMDVOtgvdk |kick=ESL CS
+	|map1={{Map|map=Cache|finished=true
+		|t1firstside=ct|t1t=4|t1ct=9|t2t=3|t2ct=1
+		|stats=240695|vod=https://youtu.be/qw6LhQpUgfs&t=28}}
+	|map2={{Map|map=Mirage|finished=true
+		|t1firstside=t|t1t=7|t1ct=6|t2t=2|t2ct=5
+		|stats=240703|vod=https://youtu.be/qw6LhQpUgfs&t=2261}}
+	|map3={{Map|map=Dust II|finished=skip}}
+	|hltv=2398729
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|vit}}|opponent2={{TeamOpponent|navi}}
+	|date=October 4, 2026 - 18:30 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS |youtube=ESL Counter-Strike/LcMDVOtgvdk |kick=ESL CS
+	|map1={{Map|map=Anubis|finished=true
+		|t1firstside=ct|t1t=5|t1ct=8|t2t=4|t2ct=1
+		|stats=240712|vod=https://youtu.be/Ga7NKiQW1BY&t=29}}
+	|map2={{Map|map=Nuke|finished=true
+		|t1firstside=t|t1t=3|t1ct=2|t2t=4|t2ct=9
+		|stats=240721|vod=https://youtu.be/Ga7NKiQW1BY&t=2647}}
+	|map3={{Map|map=Mirage|finished=true
+		|t1firstside=t|t1t=8|t1ct=5|t2t=0|t2ct=4
+		|stats=240732|vod=https://youtu.be/Ga7NKiQW1BY&t=4993}}
+	|hltv=2398731
+	}}
+}}
+{{box|break|padding=2em}}
+
+======Low======
+{{Matchlist|id=VoGyJf16vC|width=380px|collapsed=false|title=Round 2 Low Matches|matchsection=Round 2
+|M1header=October 4, 2026
+|{{Match
+	|opponent1={{TeamOpponent|legacy}}|opponent2={{TeamOpponent|shinden}}
+	|date=October 4, 2026 - 11:00 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/9vCiC9i7cUs |kick=ESL CS B
+	|map1={{Map|map=Nuke|finished=true
+		|t1firstside=ct|t1t=6|t1ct=7|t2t=5|t2ct=3
+		|stats=240665|vod=https://youtu.be/0ufBhAqOoAw&t=32}}
+	|map2={{Map|map=Mirage|finished=true
+		|t1firstside=t|t1t=4|t1ct=9|t2t=3|t2ct=8
+		|stats=240669|vod=https://youtu.be/0ufBhAqOoAw&t=3130}}
+	|map3={{Map|map=Dust II|finished=skip}}
+	|hltv=2398726
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|9z}}|opponent2={{TeamOpponent|tyloo}}
+	|date=October 4, 2026 - 13:30 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/9vCiC9i7cUs |kick=ESL CS B
+	|map1={{Map|map=Nuke|finished=true
+		|t1firstside=t|t1t=6|t1ct=7|t2t=4|t2ct=6
+		|stats=240682|vod=https://youtu.be/DVI2wTsjnKo&t=34}}
+	|map2={{Map|map=Mirage|finished=true
+		|t1firstside=ct|t1t=3|t1ct=10|t2t=2|t2ct=0
+		|stats=240688|vod=https://youtu.be/DVI2wTsjnKo&t=3121}}
+	|map3={{Map|map=Inferno|finished=skip}}
+	|hltv=2398727
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|g2}}|opponent2={{TeamOpponent|1w}}
+	|date=October 4, 2026 - 16:00 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/9vCiC9i7cUs |kick=ESL CS B
+	|map1={{Map|map=Dust II|finished=true
+		|t1firstside=ct|t1t=7|t1ct=4|t2t=8|t2ct=5
+		|stats=240696|vod=https://youtu.be/qbPw-a0B_EQ&t=33}}
+	|map2={{Map|map=Ancient|finished=true
+		|t1firstside=t|t1t=11|t1ct=2|t2t=0|t2ct=1
+		|stats=240702|vod=https://youtu.be/qbPw-a0B_EQ&t=3582}}
+	|map3={{Map|map=Mirage|finished=true
+		|t1firstside=ct|t1t=3|t1ct=5|t2t=7|t2ct=6
+		|stats=240709|vod=https://youtu.be/qbPw-a0B_EQ&t=5685}}
+	|hltv=2398730
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|betboom}}|opponent2={{TeamOpponent|m80}}
+	|date=October 4, 2026 - 19:10 {{Abbr/CEST}} |finished=true
+	|twitch=ESL CS B |youtube=ESL Counter-Strike/9vCiC9i7cUs |kick=ESL CS B
+	|map1={{Map|map=Cache|finished=true
+		|t1firstside=ct|t1t=7|t1ct=5|t2t=7|t2ct=5
+		|o1t1firstside=t|o1t1t=1|o1t1ct=3|o1t2t=0|o1t2ct=2
+		|stats=240720|vod=https://youtu.be/srwV82pTkqs&t=27}}
+	|map2={{Map|map=Anubis|finished=true
+		|t1firstside=t|t1t=6|t1ct=7|t2t=5|t2ct=6
+		|stats=240739|vod=https://youtu.be/srwV82pTkqs&t=3979}}
+	|map3={{Map|map=Mirage|finished=skip}}
+	|hltv=2398732
+	}}
+}}
+{{box|end}}
+{{Toggle group end}}
+
+=====Round 3=====
+{{Toggle group start|state=hide}}
+{{box|start|padding=2em}}
+======High======
+{{Matchlist|id=bIPVDLOYS2|width=380px|collapsed=false|title=Round 3 High Matches|matchsection=Round 3
+|M1header=October 5, 2026
+|{{Match
+	|opponent1={{TeamOpponent|spirit}}|opponent2={{TeamOpponent|mouz}}
+	|date=October 5, 2026 - 16:00 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398737
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|vit}}|opponent2={{TeamOpponent|falcons}}
+	|date=October 5, 2026 - 18:30 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398739
+	}}
+}}
+{{box|break|padding=2em}}
+
+======Mid======
+{{Matchlist|id=mOfohf9Gf3|width=380px|collapsed=false|title=Round 3 Mid Matches|matchsection=Round 3
+|M1header=October 5, 2026
+|{{Match
+	|opponent1={{TeamOpponent|parivision}}|opponent2={{TeamOpponent|furia}}
+	|date=October 5, 2026 - 11:00 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398733
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|9z}}|opponent2={{TeamOpponent|navi}}
+	|date=October 5, 2026 - 13:30 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398735
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|legacy}}|opponent2={{TeamOpponent|1w}}
+	|date=October 5, 2026 - 13:30 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS B |youtube=ESL CS |kick=ESL CS B
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398736
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|aurora}}|opponent2={{TeamOpponent|betboom}}
+	|date=October 5, 2026 - 18:30 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS B |youtube=ESL CS |kick=ESL CS B
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398740
+	}}
+}}
+{{box|break|padding=2em}}
+
+======Low======
+{{Matchlist|id=uKfBWZw6xI|width=380px|collapsed=false|title=Round 3 Low Matches|matchsection=Round 3
+|M1header=October 5, 2026
+|{{Match
+	|opponent1={{TeamOpponent|shinden}}|opponent2={{TeamOpponent|g2}}
+	|date=October 5, 2026 - 11:00 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS B |youtube=ESL CS |kick=ESL CS B
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398734
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|m80}}|opponent2={{TeamOpponent|tyloo}}
+	|date=October 5, 2026 - 16:00 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS B |youtube=ESL CS |kick=ESL CS B
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398738
+	}}
+}}
+{{box|end}}
+{{Toggle group end}}
+
+=====Round 4=====
+{{Toggle group start|state=hide}}
+{{box|start|padding=2em}}
+======High======
+{{Matchlist|id=gRPR8oOHM5|width=380px|collapsed=false|title=Round 4 High Matches|matchsection=Round 4
+|M1header=October 6, 2026
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date= |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date= |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date= |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+}}
+{{box|break|padding=2em}}
+
+======Low======
+{{Matchlist|id=9GJ6WBVG25|width=380px|collapsed=false|title=Round 4 Low Matches|matchsection=Round 4
+|M1header=October 6, 2026
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date= |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date= |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date= |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+}}
+{{box|end}}
+{{Toggle group end}}
+
+=====Round 5=====
+{{Matchlist|id=rz8I9jdHBs|width=380px|collapsed=false|title=Round 5 Matches|matchsection=Round 5
+|M1header=October 7, 2026
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 7, 2026 - 14:00 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398747
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 7, 2026 - 16:30 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398748
+	}}
+|{{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 7, 2026 - 19:00 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398749
+	}}
+}}
+{{Toggle group end}}
+
+==={{Stage|Playoffs}}===
+{{Bracket|Bracket/8|id=njJzGnPTa8
+<!-- Quarterfinals -->
+|R1M1={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 9, 2026 |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|R1M2={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 9, 2026 |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|R1M3={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 9, 2026 |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|R1M4={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 9, 2026 |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+
+<!-- Semifinals -->
+|R2M1={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 10, 2026 |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+|R2M2={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 10, 2026 |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=
+	}}
+
+<!-- Grand Final -->
+|R3M1={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 11, 2026 - 17:00 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map4={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map5={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398757
+	}}
+
+<!-- Third Place Match -->
+|RxMTP={{Match
+	|opponent1={{TeamOpponent|}}|opponent2={{TeamOpponent|}}
+	|date=October 11, 2026 - 13:30 {{Abbr/CEST}} |finished=
+	|twitch=ESL CS |youtube=ESL CS |kick=ESL CS
+	|map1={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map2={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|map3={{Map|map=|finished=
+		|t1firstside=|t1t=|t1ct=|t2t=|t2ct=
+		|stats=|vod=}}
+	|hltv=2398756
+	}}
+}}
+
+==Additional Content==
+===Streams===
+{{box|start|padding=2em}}
+{{Streams|title=Primary
+|lang1=usuk |twitch1=ESLCS|youtube1=ESLCS|ytmultiple1=true|kick1=ESLCS
+|lang2=cn|douyu2=601514|bilibili2=35|huya2=eslcsgo2
+|lang3=ru|twitch3=cs2_paragon_ru
+|lang4=vn|twitch4=23fpstv
+}}
+{{box|break}}
+{{Streams|title=Secondary
+|lang1=usuk |twitch1=ESLCSb|youtube1=ESLCS|ytmultiple1=true|kick1=ESLCSb
+|lang2=cn|bilibili2=34|huya2=11718774|douyu2=9392697
+|lang3=ru|twitch3=cs2_paragon_ru2
+}}
+{{box|end}}
+<!--
+
+===Conclusions===
+* {{ExternalMediaLink
+|date=2026-10-XX
+|link=
+|title=
+|by=
+|of=HLTV
+|type=conclusion
+}}
+-->
+
+===Interviews===
+====HLTV====
+* {{TeamIcon|tyloo}} {{ExternalMediaLink
+|date=2026-10-02
+|link=https://www.hltv.org/n/45609
+|title=Mercury: "The purpose of practice should be so they can make their own judgment calls, not just be limited to what's written on the tactics sheet"
+|by=NER0
+|of=HLTV
+|player=Mercury
+|type=interview
+}}
+* {{TeamIcon|mouz}} {{ExternalMediaLink
+|date=2026-10-02
+|link=https://www.hltv.org/n/45610
+|title=xelex on developing his identity: "I don't really like to be passive"
+|by=NER0
+|of=HLTV
+|player=xelex
+|type=interview
+}}
+* {{TeamIcon|falcons}} {{ExternalMediaLink
+|date=2026-10-02
+|link=https://www.hltv.org/n/45612
+|title=kyousuke on improving his consistency: "It's just being a bit smarter, being a bit more disciplined"
+|by=NER0
+|of=HLTV
+|player=kyousuke
+|type=interview
+}}
+* {{TeamIcon|legacy}} {{ExternalMediaLink
+|date=2026-10-02
+|link=https://www.hltv.org/n/45614
+|title=dumau: "arT's getting much better, he's probably coming to Malta to play Thunderpick"
+|by=NER0
+|of=HLTV
+|player=dumau
+|type=interview
+}}
+* {{TeamIcon|furia}} {{ExternalMediaLink
+|date=2026-10-02
+|link=https://www.hltv.org/n/45611
+|title=molodoy: "I'll try to play aggressive again"
+|by=NER0
+|of=HLTV
+|player=molodoy
+|type=interview
+}}
+* {{TeamIcon|navi}} {{ExternalMediaLink
+|date=2026-10-02
+|link=https://www.hltv.org/n/45613
+|title=makazze: "If you think about [the Major], you cannot focus on the tournament, because you will have a lot of pressure"
+|by=NER0
+|of=HLTV
+|player=makazze
+|type=interview
+}}
+* {{TeamIcon|parivision}} {{ExternalMediaLink
+|date=2026-10-03
+|link=https://www.hltv.org/n/45622
+|title=dastan: "I try to play with HObbit to bring one more trophy for him"
+|by=NER0
+|of=HLTV
+|player=dastan
+|type=interview
+}}
+* {{TeamIcon|aurora}} {{ExternalMediaLink
+|date=2026-10-03
+|link=https://www.hltv.org/n/45624
+|title=ash on Wicadia: "He pays so much attention in prep now; I'm blown away, as a guy that wasn't throwing any grenades, he knows them all now"
+|by=NER0
+|of=HLTV
+|player=ashhh
+|type=interview
+}}
+* {{TeamIcon|9z}} {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.hltv.org/n/45630
+|title=luchov: "My playstyle really depends on confidence; I need to be useful also without it"
+|by=NER0
+|of=HLTV
+|player=luchov
+|type=interview
+}}
+* {{TeamIcon|1w}} {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.hltv.org/n/45632
+|title=BELCHONOKK: "I feel much more comfortable now; in PARIVISION we had high expectations"
+|by=NER0
+|of=HLTV
+|player=BELCHONOKK
+|type=interview
+}}
+* {{TeamIcon|betboom}} {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.hltv.org/n/45636
+|title=Boombl4 on veto mind games: "We were [16-4] on Dust2, and it's 0 maps played last 3 months"
+|by=NER0
+|of=HLTV
+|player=Boombl4
+|type=interview
+}}
+<!--
+* {{TeamIcon|}} {{ExternalMediaLink
+|date=2026-10-XX
+|link=
+|title=
+|by=
+|of=HLTV
+|player=
+|type=interview
+}}
+-->
+
+====Dust2.com.br====
+* {{TeamIcon|legacy}} {{ExternalMediaLink
+|date=2026-10-03
+|link=https://www.dust2.com.br/noticias/78493/bobz-explica-dinamica-da-legacy-sem-art-na-pro-league
+|title=bobz explica dinâmica da Legacy sem arT na Pro League
+|language=ptbr
+|trans_title=bobz explains Legacy's dynamics without arT at Pro League
+|by=hera
+|of=Dust2.com.br
+|player=bobz
+|type=interview
+}}
+* {{TeamIcon|shinden}} {{ExternalMediaLink
+|date=2026-10-03
+|link=https://www.dust2.com.br/noticias/78504/ivz-sobre-spirit-acharam-que-nao-ganhariamos-nem-10-rounds-e-tiramos-um-mapa
+|title=ivz sobre Spirit: "Acharam que não ganharíamos nem 10 rounds e tiramos um mapa"
+|language=ptbr
+|trans_title=ivz on Spirit: "They thought we wouldn't even win 10 rounds and we took a map off them"
+|by=hera
+|of=Dust2.com.br
+|player=ivz
+|type=interview
+}}
+* {{TeamIcon|furia}} {{ExternalMediaLink
+|date=2026-10-03
+|link=https://www.dust2.com.br/noticias/78518/a-78-dias-da-aposentadoria-fallen-descarta-permanencia-pode-apostar-que-nao
+|title=A 78 dias da aposentadoria, FalleN descarta permanência: "Pode apostar que não"
+|language=ptbr
+|trans_title=With 78 days left until retirement, FalleN rules out staying: "You can bet I won't"
+|by=hera
+|of=Dust2.com.br
+|player=FalleN
+|type=interview
+}}
+* {{TeamIcon|9z}} {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.dust2.com.br/noticias/78526/bit-temos-todo-o-potencial-para-voltar-aos-trilhos
+|title=BIT: "Temos todo o potencial para voltar aos trilhos"
+|language=ptbr
+|trans_title=BIT: "We have every potential to get back on track"
+|by=hera
+|of=Dust2.com.br
+|player=BIT
+|type=interview
+}}
+* {{TeamIcon|legacy}} {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.dust2.com.br/noticias/78535/latto-acredito-que-esse-ano-a-legacy-vai-conseguir-botar-2-ou-3-pessoas-no-top-20
+|title=latto: "Acredito que esse ano a Legacy vai conseguir botar 2 ou 3 pessoas no Top 20"
+|language=ptbr
+|trans_title=latto: "I believe that this year Legacy will manage to place 2 or 3 people in the Top 20"
+|by=hera
+|of=Dust2.com.br
+|player=latto
+|type=interview
+}}
+* {{TeamIcon|furia}} {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.dust2.com.br/noticias/78541/kscerato-explica-post-sobre-eleicoes-se-eu-nao-me-posicionasse-me-sentiria-mal
+|title=KSCERATO explica post sobre eleições: "Se eu não me posicionasse, me sentiria mal"
+|language=ptbr
+|trans_title=KSCERATO explains post about the election: "If I hadn't taken a stand, I would have felt bad"
+|by=hera
+|of=Dust2.com.br
+|player=KSCERATO
+|type=interview
+}}
+* {{TeamIcon|vit}} {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.dust2.com.br/noticias/78553/apex-meu-objetivo-e-conquistar-pelo-menos-50-trofeus-ate-o-fim-da-minha-carreira
+|title=apEX: "Meu objetivo é conquistar pelo menos 50 troféus até o fim da minha carreira"
+|trans_title=apEX: "My goal is to win at least 50 trophies by the end of my career."
+|by=hera
+|of=Dust2.com.br
+|player=apEX
+|type=interview
+}}
+
+===Videos and Photos===
+====Galleries====
+* {{ExternalMediaLink
+|date=2026-10-03
+|link=https://www.hltv.org/gallery/13173
+|title=ESL Pro League Season 24 - Day 1
+|of=HLTV
+|type=gallery
+}}
+* {{ExternalMediaLink
+|date=2026-10-04
+|link=https://www.hltv.org/gallery/13174
+|title=ESL Pro League Season 24 - Day 2
+|of=HLTV
+|type=gallery
+}}
+<!--
+* {{ExternalMediaLink
+|date=2026-10-XX
+|link=
+|title=
+|of=HLTV
+|type=gallery
+}}
+-->
+<!--
+
+====Highlights====
+* {{ExternalMediaLink
+|date=2026-10-XX
+|link=
+|title=
+|by=
+|of=HLTV
+|player=
+|type=highlight
+}}
+-->
+</div>
+
+==References==
+{{Reflist}}
