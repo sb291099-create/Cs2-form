@@ -61,3 +61,19 @@ def assess(p_a: float, odds_a: float, odds_b: float, name_a: str = "A", name_b: 
             "проверь составы и стендинов, рынок часто знает то, чего нет в статистике."
         )
     return Assessment(market_a, 1 - market_a, margin, edge_a, edge_b, p_used, pick, stake, verdict)
+
+
+def journal_summary(log) -> dict:
+    """Итоги журнала ставок: только сыгранные ставки с ненулевой суммой."""
+    bets = log[(log["stake"].astype(float) > 0) & log["status"].isin(["выигрыш", "проигрыш"])]
+    stake = bets["stake"].astype(float)
+    won = bets["status"] == "выигрыш"
+    profit = (stake * (bets["odds"].astype(float) - 1)).where(won, -stake)
+    return {
+        "bets": len(bets),
+        "wins": int(won.sum()),
+        "staked": float(stake.sum()),
+        "profit": float(profit.sum()),
+        "roi": float(profit.sum() / stake.sum()) if len(bets) else 0.0,
+        "pending": int(((log["stake"].astype(float) > 0) & ~log["status"].isin(["выигрыш", "проигрыш"])).sum()),
+    }

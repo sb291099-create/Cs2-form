@@ -1,6 +1,7 @@
-date,match,event,pick,odds_pick,odds_other,model_p_low,model_p_high,market_p_novig,stake_advice,result
-2026-10-05,PARIVISION vs FURIA,ESL Pro League Season 24,PARIVISION,2.80,,0.45,0.52,,1% (вето Ancient/Mirage/Inferno),проигрыш 1:2 (Ancient 13-7, Mirage 5-13, Inferno 10-13)
-2026-10-05,Legacy vs 1win,ESL Pro League Season 24,Legacy,1.68,2.15,0.68,0.74,0.56,1-2%,проигрыш 0:2 (Dust2 8-13, Ancient 8-13)
-2026-10-05,M80 vs TYLOO,ESL Pro League Season 24,M80,1.85,1.85,0.64,0.70,0.50,<=1%,
-2026-10-05,Spirit vs MOUZ,ESL Pro League Season 24,pass (Spirit marginal),1.50,2.40,0.64,0.71,0.615,0,
-2026-10-05,Vitality – Falcons,ESL Pro League S24,pass,1.50,2.40,0.576,0.644,0.615,нет перевеса,
+date,match,market,pick,odds,stake,model_p,market_p,status,score,note
+2026-10-05,PARIVISION – FURIA,Матч,PARIVISION,2.80,1,0.485,0.35,проигрыш,1:2,"вето Ancient/Mirage/Inferno; новый состав PV"
+2026-10-05,Legacy – 1win,Матч,Legacy,1.68,1.5,0.71,0.56,проигрыш,0:2,"стендин bobz вместо arT"
+2026-10-05,M80 – TYLOO,Матч,M80,1.85,0,0.64,0.50,пропуск,,"после вето перевес +2–8%: ставить только от 1.90"
+2026-10-05,Spirit – MOUZ,Матч,Spirit,1.50,0,0.68,0.615,пропуск,,"тотал 58.5Б по 2.1, 2:1 по 3.1, фора MOUZ +1.5 по 1.48 — тоже пропуск"
+2026-10-05,Spirit – MOUZ,Карта 2 (Mirage),MOUZ,2.10,0,0.45,0.45,пропуск,,"ставка от 2.35"
+2026-10-05,Vitality – Falcons,Матч,Vitality,1.50,0,0.61,0.615,пропуск,,

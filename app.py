@@ -218,12 +218,12 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
 
 
 tabs = ["📅 Матчи дня"] if has_maps else []
-tabs += ["📊 Рейтинг формы", "🔎 Команда", "⚔️ Сравнение"] + (["🧪 Модель"] if has_maps else [])
+tabs += ["📊 Рейтинг формы", "🔎 Команда", "⚔️ Сравнение"] + (["🧪 Модель"] if has_maps else []) + ["📒 Журнал"]
 tab_objs = st.tabs(tabs)
 if has_maps:
-    tab_today, tab_rank, tab_team, tab_vs, tab_model = tab_objs
+    tab_today, tab_rank, tab_team, tab_vs, tab_model, tab_log = tab_objs
 else:
-    tab_rank, tab_team, tab_vs = tab_objs
+    tab_rank, tab_team, tab_vs, tab_log = tab_objs
 
 if has_maps:
     with tab_today:
@@ -533,3 +533,39 @@ if has_maps:
                 "В среднем стартовая сторона карту не решает: начавшие за CT выигрывают около 51%. "
                 "Отклонения на отдельных картах пока в пределах случайности, поэтому в модель они не добавлены."
             )
+
+with tab_log:
+    log_path = Path(__file__).parent / "data" / "bets_log.csv"
+    if not log_path.exists():
+        st.info("Журнал ставок пока пуст.")
+    else:
+        log = pd.read_csv(log_path)
+        sm = value.journal_summary(log)
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Ставок сыграно", sm["bets"], help=f"Ждут результата: {sm['pending']}")
+        c2.metric("Выиграно", f"{sm['wins']} из {sm['bets']}")
+        c3.metric("Итог, % банка", f"{sm['profit']:+.2f}")
+        c4.metric("ROI", f"{sm['roi'] * 100:+.0f}%")
+        st.dataframe(
+            log.rename(
+                columns={
+                    "date": "Дата",
+                    "match": "Матч",
+                    "market": "Рынок",
+                    "pick": "Выбор",
+                    "odds": "Кэф",
+                    "stake": "Ставка, % банка",
+                    "model_p": "Модель",
+                    "market_p": "Рынок без маржи",
+                    "status": "Итог",
+                    "score": "Счёт",
+                    "note": "Заметки",
+                }
+            ),
+            hide_index=True,
+            width="stretch",
+        )
+        st.caption(
+            "Пропуски тоже записаны: по ним видно, не упускает ли модель выгодные ставки. "
+            "Делать выводы о модели можно после 30–50 ставок, по нескольким матчам это шум."
+        )

@@ -23,3 +23,20 @@ def test_blend_with_market_and_gap_warning():
     r = assess(0.73, 1.68, 2.15, "Legacy", "1win")  # модель 73%, рынок 56%
     assert abs(r.p_used - (0.73 + r.market_a) / 2) < 1e-9
     assert "расходится с рынком на 17" in r.verdict and r.stake <= 0.01
+
+
+def test_journal_summary():
+    import pandas as pd
+
+    from cs2form.value import journal_summary
+
+    log = pd.DataFrame(
+        dict(
+            odds=[2.8, 1.68, 2.0, 1.5],
+            stake=[1, 1.5, 1, 0],
+            status=["проигрыш", "выигрыш", "ждёт", "пропуск"],
+        )
+    )
+    s = journal_summary(log)
+    assert s["bets"] == 2 and s["wins"] == 1 and s["pending"] == 1
+    assert abs(s["profit"] - (-1 + 1.5 * 0.68)) < 1e-9
