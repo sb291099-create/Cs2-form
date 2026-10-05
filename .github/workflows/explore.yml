@@ -1,5 +1,7 @@
 name: explore
-on: workflow_dispatch
+on:
+  push:
+    branches: [explore]
 permissions:
   contents: write
 jobs:
