@@ -1,0 +1,4 @@
+date,match,event,pick,odds_pick,odds_other,model_p_low,model_p_high,market_p_novig,stake_advice,result
+2026-10-05,PARIVISION vs FURIA,ESL Pro League Season 24,PARIVISION if >=2.6,,,0.40,0.47,,small,
+2026-10-05,Legacy vs 1win,ESL Pro League Season 24,Legacy,1.68,2.15,0.68,0.74,0.56,1-2%,
+2026-10-05,M80 vs TYLOO,ESL Pro League Season 24,M80,1.85,1.85,0.64,0.70,0.50,<=1%,
