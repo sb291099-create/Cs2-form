@@ -90,6 +90,19 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
     c2.metric(f"{name_b}: шанс на матч", f"{(1 - fc.p_series) * 100:.0f}%")
     c3.metric(f"Кф {name_a} без маржи", f"{fair(fc.p_series * 100):.2f}")
     c4.metric(f"Кф {name_b} без маржи", f"{fair((1 - fc.p_series) * 100):.2f}")
+    if bestof > 1 and fc.scores:
+        full = fc.p_full_distance
+        cols = st.columns(len(fc.scores) + 2)
+        for col, (sc, pr) in zip(cols, sorted(fc.scores.items(), key=lambda x: (-x[0][0], x[0][1]))):
+            col.metric(f"Счёт {sc[0]}:{sc[1]}", f"{pr * 100:.0f}%")
+        cols[-2].metric(f"Тотал Б {bestof - 0.5}", f"{fair(full * 100):.2f}", help=f"Шанс {full * 100:.0f}%")
+        cols[-1].metric(
+            f"Тотал М {bestof - 0.5}", f"{fair((1 - full) * 100):.2f}", help=f"Шанс {(1 - full) * 100:.0f}%"
+        )
+        st.caption(
+            "Счёт и тоталы учитывают инерцию: победитель карты чаще берёт и следующую. "
+            "На истории до третьей карты доходят около 40% серий bo3."
+        )
     left, right = st.columns([1, 1])
     with left:
         st.markdown("**Прогноз вето**")

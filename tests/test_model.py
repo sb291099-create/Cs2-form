@@ -73,3 +73,13 @@ def test_roster_change_detection():
     )
     ch = model.roster_changes(rosters, {"E1": "2026-08-01", "E2": "2026-10-01"}, {"PARIVISION": "parivision"})
     assert ch["parivision"] == [pd.Timestamp("2026-10-01")] and ch["parivision"].counts == [1]
+
+
+def test_score_distribution_momentum():
+    d0 = model.score_distribution([0.5, 0.5, 0.5], 3, momentum=0.0)
+    assert d0[(2, 0)] == pytest.approx(0.25) and d0[(2, 1)] == pytest.approx(0.25)
+    d = model.score_distribution([0.5, 0.5, 0.5], 3)
+    assert sum(d.values()) == pytest.approx(1.0)
+    assert d[(2, 0)] > 0.25  # с учётом инерции серий 2:0 больше
+    fc = model.MatchForecast({}, [], [], 0.5, 0.5, d)
+    assert fc.p_full_distance == pytest.approx(d[(2, 1)] + d[(1, 2)])

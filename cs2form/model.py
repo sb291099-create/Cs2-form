@@ -295,6 +295,33 @@ def predict_veto(p: dict[str, float], comfort_a: dict, comfort_b: dict, bestof: 
     return steps
 
 
+MOMENTUM = 0.15  # сдвиг log-odds в пользу победителя предыдущей карты (оценён по 2700 сериям bo3)
+
+
+def _shift(p: float, d: float) -> float:
+    p = min(max(p, 1e-6), 1 - 1e-6)
+    return 1 / (1 + math.exp(-(math.log(p / (1 - p)) + d)))
+
+
+def score_distribution(map_p: list[float], bestof: int, momentum: float = MOMENTUM) -> dict[tuple[int, int], float]:
+    """Вероятности точного счёта серии с учётом того, что победитель карты чаще забирает и следующую."""
+    need = bestof // 2 + 1
+    out: dict[tuple[int, int], float] = {}
+
+    def go(i, a, b, prob, last):
+        if a == need or b == need:
+            out[(a, b)] = out.get((a, b), 0.0) + prob
+            return
+        p = map_p[min(i, len(map_p) - 1)]
+        if last is not None:
+            p = _shift(p, momentum if last else -momentum)
+        go(i + 1, a + 1, b, prob * p, True)
+        go(i + 1, a, b + 1, prob * (1 - p), False)
+
+    go(0, 0, 0, 1.0, None)
+    return out
+
+
 def series_prob(map_p: list[float], bestof: int) -> float:
     need = bestof // 2 + 1
     n = len(map_p)
@@ -316,6 +343,13 @@ class MatchForecast:
     played: list
     p_series: float
     p_map_avg: float
+    scores: dict = field(default_factory=dict)
+
+    @property
+    def p_full_distance(self) -> float:
+        """Шанс, что серия дойдёт до последней карты (для bo3 — до третьей)."""
+        n = max(a + b for a, b in self.scores) if self.scores else 0
+        return sum(v for (a, b), v in self.scores.items() if a + b == n)
 
 
 def forecast(model: MapModel, st: State, a, b, pool, day, bestof: int = 3, seed: float = 1.0) -> MatchForecast:
@@ -324,6 +358,8 @@ def forecast(model: MapModel, st: State, a, b, pool, day, bestof: int = 3, seed:
     veto = predict_veto(p, comfort(st, a, pool, day), comfort(st, b, pool, day), bestof)
     played = [mp for _, act, mp in veto if act in ("pick", "decider")][:bestof]
     probs = [p[mp] for mp in played] or [float(np.mean(list(p.values())))]
-    return MatchForecast(
-        p, veto, played, series_prob(probs, bestof if len(probs) == bestof else 1), float(np.mean(probs))
-    )
+    bo = bestof if len(probs) == bestof else 1
+    scores = score_distribution(probs, bo)
+    need = bo // 2 + 1
+    p_series = sum(v for (x, _), v in scores.items() if x == need)
+    return MatchForecast(p, veto, played, p_series, float(np.mean(probs)), scores)
