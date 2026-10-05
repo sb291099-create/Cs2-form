@@ -37,7 +37,8 @@ def main() -> int:
     args = ap.parse_args()
 
     today = datetime.now(timezone.utc).date()
-    full = args.full or not (DATA / "maps.csv").exists() or "page" not in pd.read_csv(DATA / "maps.csv", nrows=1)
+    cols = pd.read_csv(DATA / "maps.csv", nrows=1).columns if (DATA / "maps.csv").exists() else []
+    full = args.full or "page" not in cols or "first1" not in cols
     # турниры могут длиться месяц, поэтому даже в ежедневном режиме смотрим 45 дней назад
     start = today - timedelta(days=args.days if full else 45)
     lp = Liquipedia()

@@ -244,6 +244,7 @@ def parse_page(title: str, text: str, tier: int, lan: bool | None = None) -> Par
             sc = _map_score(m)
             if sc is None or sc[0] == sc[1]:
                 continue
+            first = _param(m, "t1firstside").lower()
             out.maps.append(
                 dict(
                     map_id=f"{key}#{n}",
@@ -260,6 +261,12 @@ def parse_page(title: str, text: str, tier: int, lan: bool | None = None) -> Par
                     tier=tier,
                     lan=lan,
                     hltv=hltv,
+                    # стартовая сторона первой команды и раунды основного времени по сторонам
+                    first1=first if first in ("ct", "t") else "",
+                    ct1=_param(m, "t1ct"),
+                    t1=_param(m, "t1t"),
+                    ct2=_param(m, "t2ct"),
+                    t2=_param(m, "t2t"),
                 )
             )
     for opp in _blocks(text, "Opponent"):

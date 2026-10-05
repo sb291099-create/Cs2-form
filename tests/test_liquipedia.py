@@ -14,6 +14,8 @@ def test_parse_epl_page():
         ("Ancient", 12, 16),
     ]  # с овертаймом на Ancient
     assert all(m["lan"] and m["bestof"] == 3 and m["date"] == "2026-10-03" for m in legacy_pv)
+    d2 = legacy_pv[0]
+    assert d2["first1"] == "ct" and (d2["ct1"], d2["t1"], d2["ct2"], d2["t2"]) == ("7", "6", "0", "5")
     up = [u for u in p.upcoming if {u["team1"], u["team2"]} == {"parivision", "furia"}]
     assert len(up) == 1 and up[0]["hltv"] == "2398733"
     pv = [r for r in p.rosters if r["team_name"] == "PARIVISION"][0]
