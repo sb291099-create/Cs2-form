@@ -8,11 +8,26 @@ from pathlib import Path
 
 import pandas as pd
 
-from .scraper import BlockedError, Fetcher, as_dicts, fetch_map_results, fetch_ranking
+from .scraper import BlockedError, BrowserFetcher, Fetcher, as_dicts, fetch_map_results, fetch_ranking
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 MAPS_CSV = DATA / "maps.csv"
 RANKING_CSV = DATA / "ranking.csv"
+
+
+def pick_fetcher():
+    """Сначала лёгкий HTTP-клиент; если Cloudflare не пускает, запускаем браузер."""
+    fetcher = Fetcher(retries=2)
+    try:
+        fetcher.get("/ranking/teams")
+        print("::notice::HLTV отвечает обычному HTTP-клиенту", flush=True)
+        return fetcher
+    except BlockedError as e:
+        print(f"HTTP-клиент заблокирован ({e}), пробую браузер", flush=True)
+    browser = BrowserFetcher()
+    browser.get("/ranking/teams")
+    print("::notice::HLTV открылся через браузер", flush=True)
+    return browser
 
 
 def main() -> int:
@@ -28,9 +43,9 @@ def main() -> int:
     else:
         start = date.fromisoformat(old["date"].max()) - timedelta(days=args.overlap)
 
-    fetcher = Fetcher()
     print(f"Карты с {start} по {today}", flush=True)
     try:
+        fetcher = pick_fetcher()
         new = pd.DataFrame(as_dicts(fetch_map_results(fetcher, start, today)))
         ranking = pd.DataFrame(as_dicts(fetch_ranking(fetcher)))
     except BlockedError as e:
@@ -48,7 +63,7 @@ def main() -> int:
     maps.to_csv(MAPS_CSV, index=False)
     if not ranking.empty:
         ranking.to_csv(RANKING_CSV, index=False)
-    print(f"Готово: {len(new)} карт скачано, всего {len(maps)}; рейтинг: {len(ranking)} команд")
+    print(f"::notice::Готово: {len(new)} карт скачано, всего {len(maps)}; рейтинг: {len(ranking)} команд")
     return 0
 
 

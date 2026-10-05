@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt -r requirements-scraper.txt
       - run: python -m cs2form.update
       - name: Сохранить данные в репозиторий
         run: |
