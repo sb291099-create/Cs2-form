@@ -45,13 +45,20 @@ class BlockedError(RuntimeError):
 class Fetcher:
     """HTTP-клиент, который выглядит как браузер и не торопится."""
 
-    def __init__(self, delay: tuple[float, float] = (2.5, 5.0), retries: int = 3):
-        from curl_cffi import requests
+    # Разные «отпечатки» браузера: если Cloudflare не пускает один, пробуем следующий.
+    PROFILES = ("chrome", "safari", "firefox", "chrome_android", "edge")
 
-        self.session = requests.Session(impersonate="chrome")
+    def __init__(self, delay: tuple[float, float] = (2.5, 5.0), retries: int = 5):
         self.delay = delay
         self.retries = retries
         self._last = 0.0
+        self._profile = 0
+        self._new_session()
+
+    def _new_session(self):
+        from curl_cffi import requests
+
+        self.session = requests.Session(impersonate=self.PROFILES[self._profile])
 
     def get(self, path: str) -> str:
         url = path if path.startswith("http") else BASE + path
@@ -65,8 +72,17 @@ class Fetcher:
                 return resp.text
             if resp.status_code == 404:
                 raise RuntimeError(f"404 для {url}")
-            time.sleep(10 * attempt)
-        raise BlockedError(f"HLTV не отдал {url} (последний статус {resp.status_code})")
+            print(f"  {self.PROFILES[self._profile]}: статус {resp.status_code}, «{_title(resp.text)}»", flush=True)
+            if self._profile + 1 < len(self.PROFILES):
+                self._profile += 1
+                self._new_session()
+            time.sleep(5 * attempt)
+        raise BlockedError(f"HLTV не отдал {url}: статус {resp.status_code}, страница «{_title(resp.text)}»")
+
+
+def _title(html: str) -> str:
+    m = re.search(r"<title[^>]*>(.*?)</title>", html or "", re.S | re.I)
+    return (m.group(1).strip() if m else (html or "")[:80].strip())[:100]
 
 
 def _is_challenge(html: str) -> bool:

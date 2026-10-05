@@ -34,8 +34,12 @@ def main() -> int:
         new = pd.DataFrame(as_dicts(fetch_map_results(fetcher, start, today)))
         ranking = pd.DataFrame(as_dicts(fetch_ranking(fetcher)))
     except BlockedError as e:
-        print(f"ОШИБКА: {e}. Похоже, Cloudflare блокирует запросы с этого сервера.", file=sys.stderr)
+        # ::error:: превращается в аннотацию, которую видно на странице запуска в GitHub
+        print(f"::error::Cloudflare/HLTV блокирует запросы: {e}", flush=True)
         return 1
+    except Exception as e:
+        print(f"::error::Сбор упал: {type(e).__name__}: {e}", flush=True)
+        raise
 
     maps = pd.concat([old, new]).drop_duplicates("map_id", keep="last").sort_values(["date", "map_id"])
     cutoff = (today - timedelta(days=args.days)).isoformat()
