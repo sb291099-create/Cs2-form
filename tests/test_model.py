@@ -83,3 +83,17 @@ def test_score_distribution_momentum():
     assert d[(2, 0)] > 0.25  # с учётом инерции серий 2:0 больше
     fc = model.MatchForecast({}, [], [], 0.5, 0.5, d)
     assert fc.p_full_distance == pytest.approx(d[(2, 1)] + d[(1, 2)])
+
+
+def test_forecast_uses_actual_veto():
+    import pandas as pd
+
+    from cs2form import model
+
+    st = model.State()
+    mdl = model.MapModel()
+    mdl.w = np.zeros(len(model.FEATURES))
+    pool = ["Ancient", "Mirage", "Inferno", "Nuke", "Dust2", "Anubis", "Cache"]
+    fc = model.forecast(mdl, st, "a", "b", pool, pd.Timestamp("2026-10-05"), 3, 0.0, ["Ancient", "Mirage", "Inferno"])
+    assert fc.played == ["Ancient", "Mirage", "Inferno"]
+    assert abs(fc.p_series - 0.5) < 1e-9

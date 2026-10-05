@@ -21,9 +21,7 @@ class Assessment:
     verdict: str
 
 
-def assess(
-    p_a: float, odds_a: float, odds_b: float, name_a: str = "A", name_b: str = "B"
-) -> Assessment:
+def assess(p_a: float, odds_a: float, odds_b: float, name_a: str = "A", name_b: str = "B") -> Assessment:
     inv_a, inv_b = 1 / odds_a, 1 / odds_b
     margin = inv_a + inv_b - 1
     market_a = inv_a / (inv_a + inv_b)
@@ -51,6 +49,4 @@ def assess(
         )
     else:
         verdict = "Пропуск: модель согласна с рынком, перевеса нет."
-    return Assessment(
-        market_a, 1 - market_a, margin, edge_a, edge_b, pick, stake, verdict
-    )
+    return Assessment(market_a, 1 - market_a, margin, edge_a, edge_b, pick, stake, verdict)

@@ -352,11 +352,16 @@ class MatchForecast:
         return sum(v for (a, b), v in self.scores.items() if a + b == n)
 
 
-def forecast(model: MapModel, st: State, a, b, pool, day, bestof: int = 3, seed: float = 1.0) -> MatchForecast:
-    """seed=1 — a записана в сетке первой (как в ближайших матчах Liquipedia), 0 — порядок неизвестен."""
+def forecast(
+    model: MapModel, st: State, a, b, pool, day, bestof: int = 3, seed: float = 1.0, maps: list[str] | None = None
+) -> MatchForecast:
+    """seed=1 — a записана в сетке первой (как в ближайших матчах Liquipedia), 0 — порядок неизвестен.
+    maps — карты по факту вето в порядке игры; без них вето прогнозируется."""
     p = map_probs(model, st, a, b, pool, day, seed)
     veto = predict_veto(p, comfort(st, a, pool, day), comfort(st, b, pool, day), bestof)
     played = [mp for _, act, mp in veto if act in ("pick", "decider")][:bestof]
+    if maps and len(maps) == bestof and all(mp in p for mp in maps):
+        played = list(maps)
     probs = [p[mp] for mp in played] or [float(np.mean(list(p.values())))]
     bo = bestof if len(probs) == bestof else 1
     scores = score_distribution(probs, bo)
