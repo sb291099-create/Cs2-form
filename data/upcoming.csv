@@ -1,18 +1,14 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/13/Play-In#3,2026-10-06,"October 6, 2026 - 13:00 {{Abbr/CEST",maybe.ua,noir verse,3,NODWIN Gaming/Clutch Series/13,b,False,2399139,NODWIN Gaming/Clutch Series/13,MAYBE,Noir Verse
-CCT/2026/Europe/Series 10#30,2026-10-06,"October 6, 2026 - 13:00 {{Abbr/CEST",masonic,ex-z10,3,CCT Europe 2026 Series #10,b,False,2398396,CCT/2026/Europe/Series 10,MASONIC,ex-Zero Tenacity
-ESL/Pro League/Season 24#24,2026-10-06,"October 6, 2026 - 14:00 {{Abbr/CEST",spirit,1w,3,ESL Pro League Season 24,s,True,2398742,ESL/Pro League/Season 24,Team Spirit,1w Team
-ESL/Pro League/Season 24#27,2026-10-06,"October 6, 2026 - 14:00 {{Abbr/CEST",g2,parivision,3,ESL Pro League Season 24,s,True,2398741,ESL/Pro League/Season 24,G2 Esports,PARIVISION
-NODWIN Gaming/Clutch Series/13/Play-In#8,2026-10-06,"October 6, 2026 - 16:00 {{Abbr/CEST",lph,mnxt,3,NODWIN Gaming/Clutch Series/13,b,False,2399140,NODWIN Gaming/Clutch Series/13,LPH Gaming,MOUZ NXT
-CCT/2026/Europe/Series 10#31,2026-10-06,"October 6, 2026 - 16:00 {{Abbr/CEST",butterfly,ex-rustec,3,CCT Europe 2026 Series #10,b,False,2398397,CCT/2026/Europe/Series 10,Butterfly,ex-RUSTEC
-ESL/Pro League/Season 24#25,2026-10-06,"October 6, 2026 - 16:30 {{Abbr/CEST",furia,aurora,3,ESL Pro League Season 24,s,True,2398743,ESL/Pro League/Season 24,FURIA,Aurora Gaming
-ESL/Pro League/Season 24#28,2026-10-06,"October 6, 2026 - 16:30 {{Abbr/CEST",9z,betboom,3,ESL Pro League Season 24,s,True,2398744,ESL/Pro League/Season 24,9z Team,BetBoom Team
-ESL/Pro League/Season 24#26,2026-10-06,"October 6, 2026 - 19:00 {{Abbr/CEST",falcons,navi,3,ESL Pro League Season 24,s,True,2398745,ESL/Pro League/Season 24,Team Falcons,Natus Vincere
+ESL/Pro League/Season 24#25,2026-10-06,"October 6, 2026 - 17:40 {{Abbr/CEST",furia,aurora,3,ESL Pro League Season 24,s,True,2398743,ESL/Pro League/Season 24,FURIA,Aurora Gaming
 ESL/Pro League/Season 24#29,2026-10-06,"October 6, 2026 - 19:00 {{Abbr/CEST",legacy,m80,3,ESL Pro League Season 24,s,True,2398746,ESL/Pro League/Season 24,Legacy,M80
 NODWIN Gaming/Clutch Series/13/Play-In#7,2026-10-06,"October 6, 2026 - 19:00 {{Abbr/CEST",mellren,gothic,3,NODWIN Gaming/Clutch Series/13,b,False,2399143,NODWIN Gaming/Clutch Series/13,mellren,Gothic
-CCT/2026/Europe/Series 10#32,2026-10-06,"October 6, 2026 - 19:00 {{Abbr/CEST",wraith pcific,lavked,3,CCT Europe 2026 Series #10,b,False,2398398,CCT/2026/Europe/Series 10,WRAITH PCIFIC,lavked
+CCT/2026/Europe/Series 10#32,2026-10-06,"October 6, 2026 - 19:25 {{Abbr/CEST",wraith pcific,lavked,3,CCT Europe 2026 Series #10,b,False,2398398,CCT/2026/Europe/Series 10,WRAITH PCIFIC,lavked
+ESL/Pro League/Season 24#26,2026-10-06,"October 6, 2026 - 20:45 {{Abbr/CEST",falcons,navi,3,ESL Pro League Season 24,s,True,2398745,ESL/Pro League/Season 24,Team Falcons,Natus Vincere
+CCT/2026/Europe/Series 11/Play-In#0,2026-10-07,"October 7, 2026 - 10:00 {{Abbr/CEST",morrow esports,los kogutos,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,Morrow Esports,los kogutos
 1win Private Club/2/Qualifier#0,2026-10-07,"October 7, 2026 - 11:00 {{Abbr/CEST",hotu,wopa,3,1win Private Club/2,a,True,,1win Private Club/2,HOTU,WOPA Esport
+CCT/2026/Europe/Series 11/Play-In#1,2026-10-07,"October 7, 2026 - 13:00 {{Abbr/CEST",enjoy,illyrians,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,Enjoy,ILLYRIANS
 1win Private Club/2/Qualifier#1,2026-10-07,"October 7, 2026 - 14:00 {{Abbr/CEST",sashi,acend,3,1win Private Club/2,a,True,,1win Private Club/2,Sashi Esport,Acend
+CCT/2026/Europe/Series 11/Play-In#5,2026-10-07,"October 7, 2026 - 16:00 {{Abbr/CEST",azuolas,megoshort,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,Azuolas,megoshort
 1win Private Club/2/Qualifier#3,2026-10-07,"October 7, 2026 - 17:00 {{Abbr/CEST",phantom,fnc,3,1win Private Club/2,a,True,,1win Private Club/2,Phantom Esports,Fnatic
 ESL/Challenger League/Season 52/South America/Cup 3#0,2026-10-07,"October 7, 2026 - 18:00 {{Abbr/BRT",galorys,gremio,3,ESL Challenger League Season 52: South America - Cup #3,b,False,,ESL/Challenger League/Season 52/South America/Cup 3,Galorys,Grêmio Esports
 ESL/Challenger League/Season 52/South America/Cup 3#1,2026-10-07,"October 7, 2026 - 18:00 {{Abbr/BRT",low cortisol,yawara,3,ESL Challenger League Season 52: South America - Cup #3,b,False,,ESL/Challenger League/Season 52/South America/Cup 3,Low Cortisol,Yawara E-Sports
@@ -22,6 +18,7 @@ ESL/Challenger League/Season 52/South America/Cup 3#4,2026-10-07,"October 7, 202
 ESL/Challenger League/Season 52/South America/Cup 3#5,2026-10-07,"October 7, 2026 - 18:00 {{Abbr/BRT",bestia,alka,3,ESL Challenger League Season 52: South America - Cup #3,b,False,,ESL/Challenger League/Season 52/South America/Cup 3,BESTIA,Alka Esports
 ESL/Challenger League/Season 52/South America/Cup 3#6,2026-10-07,"October 7, 2026 - 18:00 {{Abbr/BRT",turma do pagode,borracheiros,3,ESL Challenger League Season 52: South America - Cup #3,b,False,,ESL/Challenger League/Season 52/South America/Cup 3,Turma do Pagode,BORRACHEIROS
 ESL/Challenger League/Season 52/South America/Cup 3#7,2026-10-07,"October 7, 2026 - 18:00 {{Abbr/BRT",metanoia wolves,largadosypelados,3,ESL Challenger League Season 52: South America - Cup #3,b,False,,ESL/Challenger League/Season 52/South America/Cup 3,Metanoia Wolves,LargadosyPelados
+CCT/2026/Europe/Series 11/Play-In#6,2026-10-07,"October 7, 2026 - 19:00 {{Abbr/CEST",noir verse,fire flux,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,Noir Verse,Fire Flux Esports
 1win Private Club/2/Qualifier#2,2026-10-07,"October 7, 2026 - 20:00 {{Abbr/CEST",k27,metizport,3,1win Private Club/2,a,True,,1win Private Club/2,K27,Metizport
 ESL/Challenger League/Season 52/North America/Cup 3#0,2026-10-07,"October 7, 2026 - 21:00 {{Abbr/EDT",empire (american team),detonate,3,ESL Challenger League Season 52: North America - Cup #3,b,False,,ESL/Challenger League/Season 52/North America/Cup 3,EMPIRE,DETONATE
 ESL/Challenger League/Season 52/North America/Cup 3#1,2026-10-07,"October 7, 2026 - 21:00 {{Abbr/EDT",villainous,farmville,3,ESL Challenger League Season 52: North America - Cup #3,b,False,,ESL/Challenger League/Season 52/North America/Cup 3,Villainous,FarmVille
@@ -38,3 +35,7 @@ NODWIN Gaming/Clutch Series/13/Play-In#16,2026-10-08,"October 8, 2026 - 16:00 {{
 1win Private Club/2/Qualifier#4,2026-10-08,"October 8, 2026 - 17:00 {{Abbr/CEST",apogee,private,3,1win Private Club/2,a,True,,1win Private Club/2,Betclic Apogee Esports,PRIVATE
 NODWIN Gaming/Clutch Series/13/Play-In#11,2026-10-08,"October 8, 2026 - 19:00 {{Abbr/CEST",lilmix,fire flux,3,NODWIN Gaming/Clutch Series/13,b,False,2399074,NODWIN Gaming/Clutch Series/13,Lilmix,Fire Flux Esports
 1win Private Club/2/Qualifier#5,2026-10-08,"October 8, 2026 - 20:00 {{Abbr/CEST",color,nuclear tigeres,3,1win Private Club/2,a,True,,1win Private Club/2,Color,Nuclear TigeRES
+CCT/2026/Europe/Series 11/Play-In#10,2026-10-09,"October 9, 2026 - 10:00 {{Abbr/CEST",mellren,bebop,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,mellren,Bebop
+CCT/2026/Europe/Series 11/Play-In#11,2026-10-09,"October 9, 2026 - 13:00 {{Abbr/CEST",honved,6666,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,Honvéd Esport,6666 Esports
+CCT/2026/Europe/Series 11/Play-In#15,2026-10-09,"October 9, 2026 - 16:00 {{Abbr/CEST",wbt academy,saw youngsters,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,WhiteBIT Academy,SAW Youngsters
+CCT/2026/Europe/Series 11/Play-In#16,2026-10-09,"October 9, 2026 - 19:00 {{Abbr/CEST",saint sinners,antidaun,3,CCT/2026/Europe/Series 11,b,False,,CCT/2026/Europe/Series 11,Saint Sinners,antidaun
