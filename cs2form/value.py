@@ -53,8 +53,10 @@ def assess(p_a: float, odds_a: float, odds_b: float, name_a: str = "A", name_b: 
             f"Кэфы равные, модель выделяет {names[fav_model]} ({max(p_a, 1 - p_a) * 100:.0f}%), "
             "но перевеса не хватает для ставки."
         )
-    else:
+    elif abs(p_a - market_a) <= GAP_WARN / 2:
         verdict = "Пропуск: модель согласна с рынком, перевеса нет."
+    else:
+        verdict = f"Пропуск: перевес {max(edge_a, edge_b) * 100:+.0f}% меньше порога {MIN_EDGE * 100:.0f}%."
     if abs(p_a - market_a) > GAP_WARN:
         verdict += (
             f" Модель расходится с рынком на {abs(p_a - market_a) * 100:.0f} п.п.: "
