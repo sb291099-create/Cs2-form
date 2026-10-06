@@ -1,9 +1,10 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/13/Play-In#5,2026-10-05,"October 5, 2026 - 16:00 {{Abbr/CEST",mellren,lph,3,NODWIN Gaming/Clutch Series/13,b,False,2399070,NODWIN Gaming/Clutch Series/13,mellren,LPH Gaming
-ESL/Pro League/Season 24#17,2026-10-05,"October 5, 2026 - 18:30 {{Abbr/CEST",vit,falcons,3,ESL Pro League Season 24,s,True,2398739,ESL/Pro League/Season 24,Team Vitality,Team Falcons
-NODWIN Gaming/Clutch Series/13/Play-In#6,2026-10-05,"October 5, 2026 - 19:00 {{Abbr/CEST",gothic,mnxt,3,NODWIN Gaming/Clutch Series/13,b,False,2399069,NODWIN Gaming/Clutch Series/13,Gothic,MOUZ NXT
-CCT/2026/Europe/Series 10#26,2026-10-05,"October 5, 2026 - 19:00 {{Abbr/CEST",black phoenix,wraith pcific,3,CCT Europe 2026 Series #10,b,False,2398395,CCT/2026/Europe/Series 10,Black Phoenix,WRAITH PCIFIC
-ESL/Pro League/Season 24#21,2026-10-05,"October 5, 2026 - 19:20 {{Abbr/CEST",aurora,betboom,3,ESL Pro League Season 24,s,True,2398740,ESL/Pro League/Season 24,Aurora Gaming,BetBoom Team
+ESL/Pro League/Season 24#24,2026-10-06,"October 6, 2026 - 14:00 {{Abbr/CEST",spirit,1w,3,ESL Pro League Season 24,s,True,2398742,ESL/Pro League/Season 24,Team Spirit,1w Team
+ESL/Pro League/Season 24#27,2026-10-06,"October 6, 2026 - 14:00 {{Abbr/CEST",g2,parivision,3,ESL Pro League Season 24,s,True,2398741,ESL/Pro League/Season 24,G2 Esports,PARIVISION
+ESL/Pro League/Season 24#25,2026-10-06,"October 6, 2026 - 16:30 {{Abbr/CEST",furia,aurora,3,ESL Pro League Season 24,s,True,2398743,ESL/Pro League/Season 24,FURIA,Aurora Gaming
+ESL/Pro League/Season 24#28,2026-10-06,"October 6, 2026 - 16:30 {{Abbr/CEST",9z,betboom,3,ESL Pro League Season 24,s,True,2398744,ESL/Pro League/Season 24,9z Team,BetBoom Team
+ESL/Pro League/Season 24#26,2026-10-06,"October 6, 2026 - 19:00 {{Abbr/CEST",falcons,navi,3,ESL Pro League Season 24,s,True,2398745,ESL/Pro League/Season 24,Team Falcons,Natus Vincere
+ESL/Pro League/Season 24#29,2026-10-06,"October 6, 2026 - 19:00 {{Abbr/CEST",legacy,m80,3,ESL Pro League Season 24,s,True,2398746,ESL/Pro League/Season 24,Legacy,M80
 1win Private Club/2/Qualifier#0,2026-10-07,"October 7, 2026 - 11:00 {{Abbr/CEST",hotu,wopa,3,1win Private Club/2,a,True,,1win Private Club/2,HOTU,WOPA Esport
 1win Private Club/2/Qualifier#1,2026-10-07,"October 7, 2026 - 14:00 {{Abbr/CEST",sashi,acend,3,1win Private Club/2,a,True,,1win Private Club/2,Sashi Esport,Acend
 1win Private Club/2/Qualifier#3,2026-10-07,"October 7, 2026 - 17:00 {{Abbr/CEST",phantom,fnc,3,1win Private Club/2,a,True,,1win Private Club/2,Phantom Esports,Fnatic
