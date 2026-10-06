@@ -9,6 +9,7 @@ KELLY_FRACTION = 0.25
 MAX_STAKE = 0.02
 MODEL_WEIGHT = 0.5  # шанс для ставки — среднее модели и рынка: рынок знает о стендинах и заменах
 GAP_WARN = 0.12
+DEFAULT_MARGIN = 0.06  # обычная маржа букмекера, когда известен кэф только на один исход
 
 
 @dataclass
@@ -63,6 +64,36 @@ def assess(p_a: float, odds_a: float, odds_b: float, name_a: str = "A", name_b: 
             "проверь составы и стендинов, рынок часто знает то, чего нет в статистике."
         )
     return Assessment(market_a, 1 - market_a, margin, edge_a, edge_b, p_used, pick, stake, verdict)
+
+
+@dataclass
+class Single:
+    q: float  # шанс по рынку без маржи
+    p_used: float
+    edge: float
+    stake: float
+
+
+def _stake(p: float, q: float, odds: float, edge: float) -> float:
+    if edge < MIN_EDGE or odds <= 1:
+        return 0.0
+    stake = min(MAX_STAKE, KELLY_FRACTION * edge / (odds - 1))
+    return min(stake, MAX_STAKE / 2) if abs(p - q) > GAP_WARN else stake
+
+
+def single(p: float, odds: float, q_market: float | None = None, margin: float = DEFAULT_MARGIN) -> Single:
+    """Перевес для одного исхода (фора, тотал, счёт), когда известен только его кэф."""
+    q = q_market if q_market is not None else 1 / (odds * (1 + margin))
+    p_used = MODEL_WEIGHT * p + (1 - MODEL_WEIGHT) * q
+    edge = p_used * odds - 1
+    return Single(q, p_used, edge, _stake(p, q, odds, edge))
+
+
+def min_odds(p: float, margin: float = DEFAULT_MARGIN) -> float:
+    """С какого кэфа исход проходит порог перевеса, если шанс по модели p (рынок считается по самому кэфу)."""
+    if p <= 0:
+        return float("inf")
+    return (1 + MIN_EDGE - (1 - MODEL_WEIGHT) / (1 + margin)) / (MODEL_WEIGHT * p)
 
 
 def journal_summary(log) -> dict:

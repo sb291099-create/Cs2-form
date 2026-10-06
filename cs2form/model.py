@@ -335,7 +335,10 @@ def predict_veto(p: dict[str, float], comfort_a: dict, comfort_b: dict, bestof: 
     return steps
 
 
-MOMENTUM = 0.15  # сдвиг log-odds в пользу победителя предыдущей карты (оценён по 2700 сериям bo3)
+MOMENTUM = 0.0  # отдельной инерции после карты нет: связь карт внутри серии объясняет DAY_SIGMA
+DAY_SIGMA = 0.9  # разброс силы команды в день матча (log-odds), общий для всех карт серии; оценён по 1878 сериям bo3
+_GH_X, _GH_W = np.polynomial.hermite_e.hermegauss(24)
+_GH_W = _GH_W / _GH_W.sum()
 
 
 def _shift(p: float, d: float) -> float:
@@ -343,22 +346,41 @@ def _shift(p: float, d: float) -> float:
     return 1 / (1 + math.exp(-(math.log(p / (1 - p)) + d)))
 
 
-def score_distribution(map_p: list[float], bestof: int, momentum: float = MOMENTUM) -> dict[tuple[int, int], float]:
-    """Вероятности точного счёта серии с учётом того, что победитель карты чаще забирает и следующую."""
+def day_logit(p: float, sigma: float = DAY_SIGMA) -> float:
+    """Log-odds карты «в среднем по дням», при котором с учётом разброса формы шанс карты остаётся равным p."""
+    p = min(max(p, 1e-6), 1 - 1e-6)
+    lo, hi = -15.0, 15.0
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        if float((_GH_W / (1 + np.exp(-(mid + sigma * _GH_X)))).sum()) < p:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
+def score_distribution(
+    map_p: list[float], bestof: int, momentum: float = MOMENTUM, sigma: float = DAY_SIGMA
+) -> dict[tuple[int, int], float]:
+    """Вероятности точного счёта серии. Форма команды в день матча плавает одинаково для всех карт серии:
+    поэтому 2:0 бывает чаще, чем при независимых картах, а шанс каждой отдельной карты не меняется."""
     need = bestof // 2 + 1
     out: dict[tuple[int, int], float] = {}
+    nodes = list(zip(_GH_X * sigma, _GH_W)) if sigma > 0 else [(0.0, 1.0)]
+    base = [day_logit(p, sigma) if sigma > 0 else math.log(max(p, 1e-6) / max(1 - p, 1e-6)) for p in map_p]
 
-    def go(i, a, b, prob, last):
+    def go(i, a, b, prob, last, ps):
         if a == need or b == need:
             out[(a, b)] = out.get((a, b), 0.0) + prob
             return
-        p = map_p[min(i, len(map_p) - 1)]
-        if last is not None:
+        p = ps[min(i, len(ps) - 1)]
+        if last is not None and momentum:
             p = _shift(p, momentum if last else -momentum)
-        go(i + 1, a + 1, b, prob * p, True)
-        go(i + 1, a, b + 1, prob * (1 - p), False)
+        go(i + 1, a + 1, b, prob * p, True, ps)
+        go(i + 1, a, b + 1, prob * (1 - p), False, ps)
 
-    go(0, 0, 0, 1.0, None)
+    for z, w in nodes:
+        go(0, 0, 0, float(w), None, [1 / (1 + math.exp(-(x + z))) for x in base])
     return out
 
 

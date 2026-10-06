@@ -9,7 +9,7 @@ import streamlit as st
 import json
 
 
-from cs2form import metrics, model, value
+from cs2form import markets, metrics, model, value
 
 DATA = Path(__file__).parent / "data"
 
@@ -45,7 +45,7 @@ def deep_model(maps: pd.DataFrame, rosters: pd.DataFrame, team_names: pd.DataFra
     bt = model.backtest(feat)
     warm = feat[feat["date"] >= feat["date"].min() + pd.Timedelta(days=45)]
     mdl = model.MapModel().fit(warm[model.FEATURES].values, warm["y"].values)
-    return state, mdl, bt, model.active_pool(maps), changes
+    return state, mdl, bt, model.active_pool(maps), changes, markets.round_table(feat, maps, mdl)
 
 
 maps, ranking, extra = load()
@@ -75,7 +75,7 @@ all_maps = sorted(m for m in maps["map"].value_counts().head(8).index if m)[:7]
 
 has_maps = bool((maps["map"] != "").mean() > 0.5)
 if has_maps:
-    state, mdl, bt, pool, roster_changes = deep_model(maps, extra.get("rosters"), extra.get("team_names"))
+    state, mdl, bt, pool, roster_changes, round_tab = deep_model(maps, extra.get("rosters"), extra.get("team_names"))
 today = pd.Timestamp.now(tz="UTC").tz_localize(None).normalize()
 
 
@@ -104,6 +104,75 @@ def render_value(p_a, name_a, name_b, key):
         "Перевес считается по среднему модели и рынка: рынок знает о заменах и стендинах, которых нет в статистике. "
         "Ставка только при перевесе от 5%. "
         "Размер — четверть Келли, не больше 2% банка."
+    )
+
+
+@st.cache_data(ttl=3600, show_spinner="Считаю рынки…")
+def markets_table(map_p, map_names, bestof, name_a, name_b, oa, ob, lines):
+    return markets.ladder(list(map_p), round_tab, bestof, name_a, name_b, list(map_names), oa, ob, **dict(lines))
+
+
+def render_markets(fc, name_a, name_b, bestof, key):
+    """Лесенка рынков: если не победа, то фора, тоталы карт и раундов, ИТБ."""
+    st.markdown("**Все рынки: форы, тоталы карт и раундов, ИТБ**")
+    cols = st.columns(5)
+    lines = {
+        "rounds_line": cols[0].number_input(
+            "Тотал раундов в матче", value=57.5, step=1.0, format="%.1f", key=f"rl-{key}"
+        ),
+        "hc_line": cols[1].number_input("Фора раундов в матче", value=4.5, step=1.0, format="%.1f", key=f"hl-{key}"),
+        "map_total": cols[2].number_input(
+            "Тотал раундов на карте", value=21.5, step=1.0, format="%.1f", key=f"mt-{key}"
+        ),
+        "map_hc": cols[3].number_input("Фора раундов на карте", value=3.5, step=1.0, format="%.1f", key=f"mh-{key}"),
+        "team_total": cols[4].number_input("ИТБ раундов на карте", value=9.5, step=1.0, format="%.1f", key=f"tt-{key}"),
+    }
+    if bestof == 1:
+        lines = {k: v for k, v in lines.items() if k in ("map_total", "map_hc", "team_total")}
+    oa, ob = st.session_state.get(f"oa-{key}"), st.session_state.get(f"ob-{key}")
+    odds = (oa, ob) if oa and ob and oa > 1 and ob > 1 else (None, None)
+    names = [m for m in fc.played] if len(fc.played) == bestof else None
+    df = markets_table(
+        tuple(fc.map_p[m] for m in fc.played), tuple(names or []), bestof, name_a, name_b, *odds, tuple(lines.items())
+    )
+    df = df.assign(**{"Кэф букмекера": float("nan")})
+    if "Перевес при нём %" in df:
+        best = df[df["Перевес при нём %"] >= value.MIN_EDGE * 100].sort_values("Перевес при нём %", ascending=False)
+        if len(best):
+            st.success(
+                "Где, скорее всего, есть перевес при таких кэфах на победу: "
+                + "; ".join(
+                    f"{r['Группа']}: {r['Рынок']} (брать от {r['Брать от']:.2f})" for _, r in best.head(5).iterrows()
+                )
+                + ". Сверь с линией букмекера: если кэф не ниже «Брать от», ставка проходит."
+            )
+        else:
+            st.info("При таких кэфах на победу перевеса нет ни на одном рынке: модель согласна с рынком.")
+    num = {c: st.column_config.NumberColumn(format="%.2f") for c in ("Справедливый кэф", "Брать от", "Ожидаемый кэф")}
+    num.update({c: st.column_config.NumberColumn(format="%.0f") for c in ("Модель %", "Рынок %", "Перевес при нём %")})
+    num["Кэф букмекера"] = st.column_config.NumberColumn(min_value=1.01, step=0.01, format="%.2f")
+    edited = st.data_editor(
+        df,
+        column_config=num,
+        disabled=[c for c in df.columns if c != "Кэф букмекера"],
+        hide_index=True,
+        width="stretch",
+        key=f"mk-{key}",
+    )
+    got = edited[edited["Кэф букмекера"].notna()]
+    for _, r in got.iterrows():
+        o = float(r["Кэф букмекера"])
+        a = value.single(r["Модель %"] / 100, o)
+        text = f"{r['Группа']}: {r['Рынок']} по {o:.2f}: перевес {a.edge * 100:+.0f}%"
+        if a.stake:
+            st.success(f"{text}, ставить {a.stake * 100:.1f}% банка.")
+        else:
+            st.info(f"{text}, пропуск (нужно от {r['Брать от']:.2f}).")
+    st.caption(
+        "«Брать от» — кэф, с которого ставка проходит порог перевеса 5% с учётом мнения рынка. "
+        "«Ожидаемый кэф» — сколько, скорее всего, даст букмекер, если его линии согласованы с кэфами на победу. "
+        "Счёт карт взят из истории: карты с похожим шансом пары, тем же победителем и той же длиной серии. "
+        "ИТБ 0.5 карты — то же, что фора +1.5 по картам."
     )
 
 
@@ -141,10 +210,11 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
             help=f"Шанс {(1 - full) * 100:.0f}%",
         )
         st.caption(
-            "Счёт и тоталы учитывают инерцию: победитель карты чаще берёт и следующую. "
-            "На истории до третьей карты доходят около 40% серий bo3."
+            "Счёт и тоталы учитывают, что форма команды в день матча плавает: команда в ударе чаще забирает "
+            "обе карты. На истории до третьей карты доходят 41% серий bo3, модель даёт столько же."
         )
     render_value(fc.p_series, name_a, name_b, key=f"{a}-{b}-{bestof}-{seed}")
+    render_markets(fc, name_a, name_b, bestof, key=f"{a}-{b}-{bestof}-{seed}")
     left, right = st.columns([1, 1])
     with left:
         who = {"A": name_a, "B": name_b, "-": "—"}

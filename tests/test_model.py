@@ -75,12 +75,14 @@ def test_roster_change_detection():
     assert ch["parivision"] == [pd.Timestamp("2026-10-01")] and ch["parivision"].counts == [1]
 
 
-def test_score_distribution_momentum():
-    d0 = model.score_distribution([0.5, 0.5, 0.5], 3, momentum=0.0)
+def test_score_distribution_day_form():
+    d0 = model.score_distribution([0.5, 0.5, 0.5], 3, sigma=0.0)
     assert d0[(2, 0)] == pytest.approx(0.25) and d0[(2, 1)] == pytest.approx(0.25)
     d = model.score_distribution([0.5, 0.5, 0.5], 3)
     assert sum(d.values()) == pytest.approx(1.0)
-    assert d[(2, 0)] > 0.25  # с учётом инерции серий 2:0 больше
+    assert d[(2, 0)] > 0.25  # форма на день общая для серии: 2:0 чаще
+    one = model.score_distribution([0.7], 1)
+    assert one[(1, 0)] == pytest.approx(0.7, abs=1e-6)  # шанс отдельной карты не меняется
     fc = model.MatchForecast({}, [], [], 0.5, 0.5, d)
     assert fc.p_full_distance == pytest.approx(d[(2, 1)] + d[(1, 2)])
 
