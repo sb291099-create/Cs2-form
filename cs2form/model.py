@@ -56,8 +56,8 @@ FEATURES = [
     "exp_all",  # сколько карт сыграно: у новых команд рейтинг ненадёжен
     "rest",  # дней с последней карты
     "players",  # средний рейтинг пяти игроков состава
-    "players_known",  # известны ли составы обеих команд
     "players_vs_team",  # состав сильнее или слабее самой команды
+    "lan_exp",  # опыт офлайна, только для матчей на LAN: новички на сцене там играют хуже
 ]
 
 
@@ -82,6 +82,7 @@ class State:
     last_seen: dict = field(default_factory=dict)  # team -> дата последней карты
     player_elo: dict = field(default_factory=lambda: defaultdict(lambda: BASE))  # игрок -> рейтинг
     lineup: dict = field(default_factory=dict)  # team -> [(дата заявки, состав)]
+    lan_games: dict = field(default_factory=lambda: defaultdict(int))  # team -> сыграно карт на LAN
 
     def last_change(self, team, day):
         dates = [d for d in self.roster_change.get(team, []) if d <= day]
@@ -224,7 +225,7 @@ def name_to_id(team_names: pd.DataFrame, mapping: dict[str, str]) -> dict[str, s
     return {n: mapping.get(i, i) for i, n in zip(team_names["id"], team_names["name"])}
 
 
-def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> dict:
+def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0, lan: bool = False) -> dict:
     def form(t):
         since = st.last_change(t, day)
         lo = day - pd.Timedelta(days=FORM_DAYS)
@@ -287,12 +288,13 @@ def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> 
         "exp_all": math.log1p(st.games[a]) - math.log1p(st.games[b]),
         "rest": rest(a) - rest(b),
         "players": (sa - sb) / 100.0 if known else 0.0,
-        "players_known": 1.0 if known else 0.0,
+        "players_known": 1.0 if known else 0.0,  # не признак (модель симметрична, вес вышел 0), только для справки
         "players_vs_team": ((sa - st.elo[a]) - (sb - st.elo[b])) / 100.0 if known else 0.0,
+        "lan_exp": (math.log1p(st.lan_games[a]) - math.log1p(st.lan_games[b])) if lan else 0.0,
     }
 
 
-def update(st: State, a, b, mp: str, day: pd.Timestamp, s1: int, s2: int):
+def update(st: State, a, b, mp: str, day: pd.Timestamp, s1: int, s2: int, lan: bool = False):
     won = 1.0 if s1 > s2 else 0.0
     e = expected(st.elo[a], st.elo[b])
     margin = 1.0 + math.log1p(abs(s1 - s2)) / 4.0
@@ -325,6 +327,9 @@ def update(st: State, a, b, mp: str, day: pd.Timestamp, s1: int, s2: int):
     st.h2h[(b, a)].append((day, 1 - won, mp))
     st.games[a] += 1
     st.games[b] += 1
+    if lan:
+        st.lan_games[a] += 1
+        st.lan_games[b] += 1
     st.last_seen[a] = st.last_seen[b] = day
     st.last_date = day
 
@@ -342,7 +347,8 @@ def build(
     rows = []
     for r in m.sort_values(sort_cols).itertuples(index=False):
         st.apply_roster_changes(r.date)
-        f = features(st, r.team1_id, r.team2_id, r.map, r.date)
+        lan = bool(getattr(r, "lan", False))
+        f = features(st, r.team1_id, r.team2_id, r.map, r.date, lan=lan)
         f.update(
             map_id=r.map_id,
             date=r.date,
@@ -353,7 +359,7 @@ def build(
             elo_p=expected(st.elo[r.team1_id], st.elo[r.team2_id]),
         )
         rows.append(f)
-        update(st, r.team1_id, r.team2_id, r.map, r.date, int(r.score1), int(r.score2))
+        update(st, r.team1_id, r.team2_id, r.map, r.date, int(r.score1), int(r.score2), lan)
     return st, pd.DataFrame(rows)
 
 
@@ -447,10 +453,10 @@ def active_pool(maps: pd.DataFrame, days: int = 60, size: int = 7) -> list[str]:
 
 
 def map_probs(
-    model: MapModel, st: State, a, b, pool: list[str], day: pd.Timestamp, seed: float = 1.0
+    model: MapModel, st: State, a, b, pool: list[str], day: pd.Timestamp, seed: float = 1.0, lan: bool = False
 ) -> dict[str, float]:
     st.apply_roster_changes(day)
-    X = np.array([[features(st, a, b, mp, day, seed)[k] for k in FEATURES] for mp in pool])
+    X = np.array([[features(st, a, b, mp, day, seed, lan)[k] for k in FEATURES] for mp in pool])
     return dict(zip(pool, model.predict(X)))
 
 
@@ -608,11 +614,20 @@ class MatchForecast:
 
 
 def forecast(
-    model: MapModel, st: State, a, b, pool, day, bestof: int = 3, seed: float = 1.0, maps: list[str] | None = None
+    model: MapModel,
+    st: State,
+    a,
+    b,
+    pool,
+    day,
+    bestof: int = 3,
+    seed: float = 1.0,
+    maps: list[str] | None = None,
+    lan: bool = False,
 ) -> MatchForecast:
     """seed=1 — a записана в сетке первой (как в ближайших матчах Liquipedia), 0 — порядок неизвестен.
     maps — карты по факту вето в порядке игры; без них вето прогнозируется."""
-    p = map_probs(model, st, a, b, pool, day, seed)
+    p = map_probs(model, st, a, b, pool, day, seed, lan)
     veto = predict_veto(p, comfort(st, a, pool, day), comfort(st, b, pool, day), bestof)
     played = [mp for _, act, mp in veto if act in ("pick", "decider")][:bestof]
     if maps and len(maps) == bestof and all(mp in p for mp in maps):

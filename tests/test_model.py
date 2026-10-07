@@ -204,3 +204,16 @@ def test_round_rating_and_rest():
     assert far == pytest.approx(st.rounds["a"])
     f2 = model.features(st, "a", "c", "Nuke", day + pd.Timedelta(days=30))
     assert f2["rest"] < 0  # «a» играла недавно, «c» не играла вовсе
+
+
+def test_lan_experience():
+    day = pd.Timestamp("2026-09-01")
+    st = model.State()
+    for i in range(10):  # «a» играет офлайн, «c» только онлайн
+        model.update(st, "a", "b", "Nuke", day + pd.Timedelta(days=i), 13, 9, lan=True)
+        model.update(st, "c", "d", "Nuke", day + pd.Timedelta(days=i), 13, 9)
+    later = day + pd.Timedelta(days=11)
+    assert st.lan_games["a"] == 10 and st.lan_games["c"] == 0
+    assert model.features(st, "a", "c", "Nuke", later, lan=True)["lan_exp"] > 0
+    assert model.features(st, "c", "a", "Nuke", later, lan=True)["lan_exp"] < 0
+    assert model.features(st, "a", "c", "Nuke", later)["lan_exp"] == 0.0  # онлайн: признак не работает

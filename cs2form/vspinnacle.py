@@ -18,6 +18,7 @@ import pandas as pd
 from . import markets, model, scan, value
 from .history import FETCH_AT, HIST
 from .odds import DATA
+from . import vsmarket
 from .vsmarket import logloss, save_section
 
 SOFT = ("fonbet", "marathonbet", "1xbet", "stake", "bet365", "melbet")
@@ -119,9 +120,40 @@ def candidates(
                         edge=q[str(outcome)] * price - 1,
                         clv=qc[str(outcome)] * price - 1 if str(outcome) in qc else np.nan,
                         won=settle(market, float(line), str(outcome), a, b),
+                        p1_is_team1=bool(g["p1_is_team1"].iloc[0]),
                     )
                 )
     return pd.DataFrame(rows)
+
+
+def by_model(c: pd.DataFrame, frame: pd.DataFrame) -> pd.DataFrame:
+    """Те же кэфы контор, но перевес считается по шансам модели, а не по линии Pinnacle."""
+    f = frame[frame["bestof"] == 3].set_index("match_key")
+    out = []
+    for r in c.itertuples():
+        if r.match_key not in f.index:
+            continue
+        m = f.loc[r.match_key]
+        p, p20, p02 = m["p_model"], m["p20"], m["p02"]
+        if not np.isfinite(p20) or not np.isfinite(p02):
+            continue
+        if not r.p1_is_team1:  # шансы модели записаны для team1 Liquipedia
+            p, p20, p02 = 1 - p, p02, p20
+        key = (r.market, r.line, r.outcome)
+        p_model = {
+            ("moneyline", 0.0, "1"): p,
+            ("moneyline", 0.0, "2"): 1 - p,
+            ("spreads", -1.5, "1"): p20,
+            ("spreads", -1.5, "2"): 1 - p20,
+            ("spreads", 1.5, "1"): 1 - p02,
+            ("spreads", 1.5, "2"): p02,
+            ("totals", 2.5, "Over"): 1 - p20 - p02,
+            ("totals", 2.5, "Under"): p20 + p02,
+        }.get(key)
+        if p_model is None:
+            continue
+        out.append({**r._asdict(), "model_p": p_model, "edge": p_model * r.price - 1})
+    return pd.DataFrame(out)
 
 
 def summary(c: pd.DataFrame) -> dict:
@@ -147,7 +179,7 @@ def one_per_match(c: pd.DataFrame) -> pd.DataFrame:
     return c.sort_values("edge", ascending=False).drop_duplicates("match_key")
 
 
-def run(hist: pd.DataFrame | None = None, maps: pd.DataFrame | None = None, table=None) -> dict:
+def run(hist=None, maps=None, table=None, frame: pd.DataFrame | None = None) -> dict:
     hist = pd.read_csv(HIST, dtype={"match_key": str, "fixture_id": str}) if hist is None else hist
     maps = pd.read_csv(DATA / "maps.csv", dtype={"match_key": str}) if maps is None else maps
     res = results(maps)
@@ -164,6 +196,11 @@ def run(hist: pd.DataFrame | None = None, maps: pd.DataFrame | None = None, tabl
             "по конторам (от 3%)": {k: summary(x) for k, x in c[c["edge"] >= 0.03].groupby("book")},
             "по уровню (от 3%)": {k: summary(x) for k, x in c[c["edge"] >= 0.03].groupby("tier")},
             "frame": c,
+        }
+    if frame is not None:
+        m = by_model(candidates(hist, res), frame)
+        out["model"] = {
+            f"от {e:.0%}": summary(one_per_match(m[m["edge"] >= e])) for e in EDGES if (m["edge"] >= e).any()
         }
     pin = hist[(hist["book"] == scan.SHARP) & (hist["market"] == "totals") & (hist["period"] == "result")]
     pin = pin[pin["fixture_id"].isin(_main_fixtures(hist)) & pin["match_key"].isin(res.index)]
@@ -241,6 +278,7 @@ def compact(out: dict, edge: float) -> dict:
         by_market={k: summary(x) for k, x in sel.groupby("market")} if len(sel) else {},
         by_book={k: summary(x) for k, x in sel.groupby("book")} if len(sel) else {},
         median=(m.get("одна на матч") or {}).get(key, {}),
+        model=out.get("model", {}),
         derived=out.get("derived", {}),
         note=(
             f"Ставка — когда утренний кэф конторы выше честной цены Pinnacle хотя бы на {edge:.0%}, по одной на "
@@ -254,7 +292,10 @@ def main() -> int:
     if not HIST.exists():
         print("Нет data/odds_history.csv.gz: сначала Actions → «Прошлые кэфы Pinnacle»")
         return 0
-    out = run(table=scan.prepare()["table"] if "--derived" in sys.argv else None)
+    out = run(
+        table=scan.prepare()["table"] if "--derived" in sys.argv else None,
+        frame=vsmarket.run()["frame"] if "--model" in sys.argv else None,
+    )
     if "--save" in sys.argv:
         save_section("value", compact(out, value.MIN_EDGE))
     print(f"Матчей по конторам: {out['books']}")
@@ -267,6 +308,8 @@ def main() -> int:
             for k, s in v.items():
                 print(f"    {k}: {s}")
     print(f"Всегда меньше 2.5 карт по Pinnacle утром: {out['under_pinnacle']}")
+    for k, v in (out.get("model") or {}).items():
+        print(f"Ставки по перевесу модели (одна на матч) {k}: {v}")
     if out.get("derived"):
         print(f"Лесенка из линии на победу против линий Pinnacle: {out['derived']}")
     return 0

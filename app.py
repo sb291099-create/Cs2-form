@@ -346,7 +346,7 @@ def render_bets():
     )
 
 
-def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
+def render_forecast(a, b, name_a, name_b, bestof, seed=0.0, lan=False):
     veto_maps = None
     if bestof > 1:
         veto_maps = st.multiselect(
@@ -356,7 +356,7 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
             key=f"veto-{a}-{b}-{bestof}-{seed}",
             help=f"Выбери {bestof} карты, когда вето объявлено, и прогноз пересчитается под них.",
         )
-    fc = model.forecast(mdl, state, a, b, pool, today, bestof, seed, veto_maps)
+    fc = model.forecast(mdl, state, a, b, pool, today, bestof, seed, veto_maps, lan)
     if veto_maps and len(veto_maps) == bestof:
         st.caption("Прогноз посчитан по фактическому вето: " + ", ".join(veto_maps) + ".")
     c1, c2, c3, c4 = st.columns(4)
@@ -495,7 +495,15 @@ if has_maps:
                     f"{m['event']} · {str(m.get('time', '')).split('{')[0]} · bo{bo} · "
                     f"{'LAN' if str(m.get('lan')) == 'True' else 'онлайн'}"
                 )
-                render_forecast(m["team1_id"], m["team2_id"], m["team1"], m["team2"], bo, seed=1.0)
+                render_forecast(
+                    m["team1_id"],
+                    m["team2_id"],
+                    m["team1"],
+                    m["team2"],
+                    bo,
+                    seed=1.0,
+                    lan=str(m.get("lan")) == "True",
+                )
                 st.caption(
                     f"{m['team1']} записана в сетке первой: на истории такие команды выигрывают чаще, "
                     "и модель это учитывает (около +5 п.п.)."
@@ -758,6 +766,7 @@ if has_maps:
             "rest": "Дней с последнего матча",
             "players": "Рейтинг пятёрки игроков",
             "players_known": "Составы известны",
+            "lan_exp": "Опыт офлайна (на LAN)",
             "players_vs_team": "Состав сильнее самой команды",
         }
         imp = bt.get("importance", {})

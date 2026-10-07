@@ -71,9 +71,10 @@ def prematch(maps: pd.DataFrame, changes: tuple, models: dict, keys: set) -> pd.
             bo = int(r.bestof)
             played = [mp for mp in g["map"] if mp]
             pool = list(dict.fromkeys(pools[r.date] + played))
-            fc = model.forecast(mdl, st, r.team1_id, r.team2_id, pool, r.date, bo, 1.0)
+            lan = bool(getattr(r, "lan", False))
+            fc = model.forecast(mdl, st, r.team1_id, r.team2_id, pool, r.date, bo, 1.0, None, lan)
             act = list(dict.fromkeys(played + fc.played))[:bo]
-            fa = model.forecast(mdl, st, r.team1_id, r.team2_id, pool, r.date, bo, 1.0, act)
+            fa = model.forecast(mdl, st, r.team1_id, r.team2_id, pool, r.date, bo, 1.0, act, lan)
             s1, s2 = g["score1"].astype(int).values, g["score2"].astype(int).values
             w1, w2 = int((s1 > s2).sum()), int((s2 > s1).sum())
             sc = fc.scores
