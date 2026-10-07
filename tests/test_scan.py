@@ -117,6 +117,7 @@ def test_scan_prices_and_orientation(monkeypatch):
     assert win["min_odds"] == pytest.approx((1 + value.MIN_EDGE) / q)  # модель не влияет
     assert (win["price"], win["books"]) == (2.81, 2)  # «mirror» с перепутанными исходами отброшен
     assert win["edge"] == pytest.approx(q * 2.81 - 1) and win["stake"] == 0
+    assert bool(win["sharp"]) is True
 
     two_nil = r.loc["Фора PARIVISION -1.5 по картам (2:0)"]
     assert two_nil["model_p"] == pytest.approx(0.3)
@@ -141,6 +142,10 @@ def test_scan_bets_only_above_pinnacle_fair_price(monkeypatch):
     assert scan.sharp_winner(odds, "PARIVISION", "Natus Vincere") == pytest.approx(q)
     assert scan.sharp_winner(odds, "Natus Vincere", "PARIVISION") == pytest.approx(1 - q)
     assert scan.sharp_winner(odds, "M80", "Spirit") is None
+    # без линии Pinnacle перевес считается по медиане контор, но ставка не предлагается
+    soft = odds[odds["bookmaker"] != "pinnacle"]
+    r2 = scan.scan(soft, UP, None, None, [], None).set_index("market")
+    assert not bool(r2.loc["Победа PARIVISION", "sharp"]) and r2["stake"].max() == 0
 
 
 def test_parse_vetoes_finds_match_and_maps():

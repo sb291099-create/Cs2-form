@@ -112,9 +112,10 @@ def settle(bets: pd.DataFrame, maps: pd.DataFrame) -> pd.DataFrame:
 
 
 def _fraction(r: pd.Series, mode: str) -> float:
+    if not r.get("sharp", True):
+        return 0.0  # без линии Pinnacle перевес не проверить: на истории такие ставки дали −32%
     if mode == "агрессивно":
-        cap = FULL_KELLY_CAP if r.get("sharp", True) else FULL_KELLY_CAP / 4
-        return min(max(0.0, (r["p_used"] * r["price"] - 1) / (r["price"] - 1)), cap)
+        return min(max(0.0, (r["p_used"] * r["price"] - 1) / (r["price"] - 1)), FULL_KELLY_CAP)
     return float(r["stake"])
 
 

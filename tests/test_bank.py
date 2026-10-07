@@ -101,3 +101,10 @@ def test_place_rounds_stakes_within_free_bank():
     assert (bets["status"] == bank.PENDING).all() and bets["book"].iloc[0] == "Fonbet"
     more = bank.place(bets, pd.DataFrame([_found(match_key="F", fraction=0.6)]), {"start": 200_000}, NOW)
     assert more["stake"].iloc[-1] == 76_500  # свободно 200 000 − 123 500
+
+
+def test_choose_skips_bets_without_pinnacle_line():
+    found = pd.DataFrame([_found(sharp=False), _found(match_key="B")])
+    picks = bank.choose(found, pd.DataFrame({"match_key": []}), "агрессивно", NOW)
+    assert picks["match_key"].tolist() == ["B"]  # без линии Pinnacle перевес не проверить
+    assert picks["fraction"].iloc[0] == pytest.approx(min((0.218 * 6.3 - 1) / 5.3, bank.FULL_KELLY_CAP))
