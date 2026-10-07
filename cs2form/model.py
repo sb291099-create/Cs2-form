@@ -410,7 +410,19 @@ def backtest(feat: pd.DataFrame, train_share: float = 0.6, warmup_days: int = 45
         "acc_elo": float(((te["elo_p"].values > 0.5) == y).mean()),
         "calibration": calibration(y, p),
         "weights": dict(zip(FEATURES, model.w.round(3))),
+        "importance": importance(tr, te, _logloss(y, p)),
     }
+
+
+def importance(tr: pd.DataFrame, te: pd.DataFrame, base: float) -> dict:
+    """Вклад каждого признака: насколько хуже logloss, если убрать его одного.
+    Признаки связаны между собой, поэтому вес в формуле сам по себе ни о чём не говорит, а это — говорит."""
+    out = {}
+    for f in FEATURES:
+        cols = [c for c in FEATURES if c != f]
+        m = MapModel().fit(tr[cols].values, tr["y"].values)
+        out[f] = round(_logloss(te["y"].values, m.predict(te[cols].values)) - base, 4)
+    return out
 
 
 def calibration(y, p, bins=(0, 0.3, 0.4, 0.5, 0.6, 0.7, 1.01)) -> list[dict]:

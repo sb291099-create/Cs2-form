@@ -741,7 +741,7 @@ if has_maps:
             hide_index=True,
             width="stretch",
         )
-        st.markdown("**Веса признаков** (чем больше, тем сильнее влияет):")
+        st.markdown("**Что даёт каждый признак**: насколько хуже становится прогноз, если убрать его одного.")
         names_f = {
             "elo": "Общий Elo",
             "map_elo": "Elo на карте",
@@ -749,10 +749,34 @@ if has_maps:
             "map_exp": "Опыт на карте",
             "new_roster": "Свежая смена состава",
             "seed": "Первая в сетке (посев)",
+            "rounds": "Рейтинг по разнице раундов",
+            "rounds_form": "Разница раундов в последних матчах",
+            "h2h": "Личные встречи за год",
+            "h2h_map": "Личные встречи на этой карте",
+            "exp_all": "Сколько карт сыграно всего",
+            "rest": "Дней с последнего матча",
+            "players": "Рейтинг пятёрки игроков",
+            "players_known": "Составы известны",
+            "players_vs_team": "Состав сильнее самой команды",
         }
+        imp = bt.get("importance", {})
         st.dataframe(
-            pd.DataFrame([{"Признак": names_f[k], "Вес": float(v)} for k, v in bt["weights"].items()]),
+            pd.DataFrame(
+                [
+                    {"Признак": names_f.get(k, k), "Без него log loss хуже на": imp.get(k, 0.0), "Вес в формуле": v}
+                    for k, v in bt["weights"].items()
+                ]
+            ).sort_values("Без него log loss хуже на", ascending=False),
+            column_config={
+                "Без него log loss хуже на": st.column_config.NumberColumn(format="%.4f"),
+                "Вес в формуле": st.column_config.NumberColumn(format="%.3f"),
+            },
             hide_index=True,
+        )
+        st.caption(
+            "Признаки связаны между собой, поэтому отдельный вес в формуле сам по себе мало что значит: смотри "
+            "первый столбец. Рейтинг игроков считается по турнирным составам Liquipedia: сила команды — среднее "
+            "пяти рейтингов, поэтому при переходе игрок переносит силу с собой, а новая команда не начинает с нуля."
         )
         st.caption(f"Активный пул карт: {', '.join(pool)}. Смен состава найдено: {len(roster_changes)} команд.")
         side = model.start_side_table(maps)
