@@ -104,3 +104,18 @@ def test_summary_counts_roi_and_clv():
     )
     s = vspinnacle.summary(c)
     assert (s["n"], s["roi"], s["clv"], s["clv_pos"]) == (2, 0.5, 0.04, 0.5)
+
+
+def test_by_model_orients_to_participant1():
+    c = vspinnacle.candidates(_hist(), RES)
+    # модель считает, что team1 Liquipedia (это participant2 OddsPapi) выигрывает с шансом 0.3
+    frame = pd.DataFrame({"match_key": ["EPL#5"], "bestof": [3], "p_model": [0.3], "p20": [0.1], "p02": [0.4]})
+    m = vspinnacle.by_model(c, frame)
+    ml = m[(m["market"] == "moneyline") & (m["outcome"] == "1")]
+    assert not ml.empty and ml["model_p"].iloc[0] == pytest.approx(0.7)
+    assert (ml["edge"] == ml["model_p"] * ml["price"] - 1).all()
+    # «2:0 participant1» = 0:2 по team1 Liquipedia
+    sp = m[(m["market"] == "spreads") & (m["line"] == -1.5) & (m["outcome"] == "1")]
+    assert sp["model_p"].iloc[0] == pytest.approx(0.4)
+    sp2 = m[(m["market"] == "spreads") & (m["line"] == 1.5) & (m["outcome"] == "2")]
+    assert sp2["model_p"].iloc[0] == pytest.approx(0.1)  # 2:0 team1 Liquipedia

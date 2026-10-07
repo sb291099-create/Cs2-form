@@ -205,29 +205,40 @@ def render_backtest():
     v = bt_.get("value")
     if v and v.get("thresholds"):
         st.markdown("#### Ставки по кэфам выше честной цены Pinnacle на тех же матчах")
-        rows = [
-            {
-                "Перевес от": k,
-                "Ставок": s.get("n", 0),
-                "Выиграно %": s.get("won", 0) * 100,
-                "Средний кэф": s.get("price"),
-                "Итог на 1 ₽ %": s.get("roi", 0) * 100,
-                "± ошибка %": (s.get("roi_se") or 0) * 100,
-                "Перевес на закрытии %": (s.get("clv") or 0) * 100,
-            }
-            for k, s in v["thresholds"].items()
-        ]
-        st.dataframe(
-            pd.DataFrame(rows),
-            column_config={
-                c: st.column_config.NumberColumn(format="%.1f")
-                for c in ("Выиграно %", "Итог на 1 ₽ %", "± ошибка %", "Перевес на закрытии %")
-            }
-            | {"Средний кэф": st.column_config.NumberColumn(format="%.2f")},
-            hide_index=True,
-            width="stretch",
-        )
+        _bet_table(v["thresholds"])
         st.caption(v.get("note", ""))
+    if v and v.get("model"):
+        st.markdown("#### Те же кэфы, но перевес по модели вместо Pinnacle")
+        _bet_table(v["model"])
+        st.caption(
+            "Одна ставка на матч, рынки серии: победа, форы ±1.5 и тотал 2.5 карты. Если «Перевес на закрытии» "
+            "отрицательный, рынок к началу матча уходит против ставок модели: значит, перевес был мнимым."
+        )
+
+
+def _bet_table(thresholds: dict):
+    rows = [
+        {
+            "Перевес от": k,
+            "Ставок": s.get("n", 0),
+            "Выиграно %": s.get("won", 0) * 100,
+            "Средний кэф": s.get("price"),
+            "Итог на 1 ₽ %": s.get("roi", 0) * 100,
+            "± ошибка %": (s.get("roi_se") or 0) * 100,
+            "Перевес на закрытии %": (s.get("clv") or 0) * 100,
+        }
+        for k, s in thresholds.items()
+    ]
+    st.dataframe(
+        pd.DataFrame(rows),
+        column_config={
+            c: st.column_config.NumberColumn(format="%.1f")
+            for c in ("Выиграно %", "Итог на 1 ₽ %", "± ошибка %", "Перевес на закрытии %")
+        }
+        | {"Средний кэф": st.column_config.NumberColumn(format="%.2f")},
+        hide_index=True,
+        width="stretch",
+    )
 
 
 def render_bank():
