@@ -1,9 +1,11 @@
-"""Прошлые линии Pinnacle на матчи CS2 из OddsPapi — чтобы проверить модель на истории.
+"""Прошлые линии Pinnacle и других контор на матчи CS2 из OddsPapi — чтобы проверить модель и ставки на истории.
 
 /v4/historical-odds бесплатен (не тратит месячный лимит), /v4/fixtures стоит 1 запрос на окно до 10 дней.
-Для каждого прошлого матча из data/maps.csv берём линию Pinnacle на момент утренней загрузки (06:15 UTC в день
+Для каждого прошлого матча из data/maps.csv берём линию на момент утренней загрузки (06:15 UTC в день
 матча, как у ежедневного сбора) и последнюю перед началом. Результат: data/odds_history.csv.gz.
 Запуск: python -m cs2form.history --days 90 [--raw 2]
+Другие конторы — на матчи, уже скачанные с линией Pinnacle, без платных запросов:
+python -m cs2form.history --books fonbet,marathonbet,1xbet,stake,bet365,melbet
 """
 
 from __future__ import annotations
@@ -24,7 +26,9 @@ SAMPLES = DATA / "history_raw"
 WINDOW_DAYS = 10  # больше /fixtures за раз не отдаёт
 FETCH_AT = timedelta(hours=6, minutes=15)
 BOOKMAKERS = "pinnacle"
+BOOKS_PER_CALL = 3  # больше /historical-odds за раз не отдаёт
 PAUSE = 0.15  # у odds-эндпоинтов лимит 10 запросов в секунду
+RETRIES = 3
 
 
 def wanted(meta: dict) -> bool:
@@ -106,6 +110,7 @@ def parse(hist: dict, cat: dict[int, dict], start: pd.Timestamp) -> list[dict]:
                 price_fetch=at_fetch[-1] if at_fetch else before[0],
                 price_close=before[-1],
                 quotes=len(before),
+                opened=q[0][0].isoformat(),
             )
         )
     return rows
@@ -147,15 +152,51 @@ def _is_quota(name: str) -> bool:
     return any(w in n for w in ("request", "limit", "quota", "used", "remaining"))
 
 
+def _get_hist(cl: Client, fid: str, books: str):
+    """Ответ /historical-odds; None — у этих контор не было линии на матч. На 429 ждём и пробуем снова."""
+    for i in range(RETRIES):
+        try:
+            return cl.get("/historical-odds", free=True, fixtureId=fid, bookmakers=books)
+        except RuntimeError as e:
+            if "HTTP 404" in str(e):
+                return None
+            if "HTTP 429" not in str(e) or i == RETRIES - 1:
+                raise
+            time.sleep(10 * (i + 1))
+    return None
+
+
+def _known(old: pd.DataFrame) -> list[tuple[dict, str, bool]]:
+    """Матчи, уже скачанные с линией Pinnacle, в том же виде, что и match_past: без платного /fixtures."""
+    out = []
+    for r in old.drop_duplicates("fixture_id").itertuples():
+        f = dict(
+            fixtureId=r.fixture_id,
+            startTime=r.start,
+            participant1Name=r.p1,
+            participant2Name=r.p2,
+            tournamentName=r.tournament if isinstance(r.tournament, str) else "",
+        )
+        out.append((f, r.match_key, bool(r.p1_is_team1)))
+    return out
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Прошлые линии Pinnacle на матчи из maps.csv")
+    ap = argparse.ArgumentParser(description="Прошлые линии контор на матчи из maps.csv")
     ap.add_argument("--days", type=int, default=90)
     ap.add_argument("--raw", type=int, default=0, help="сколько сырых ответов сохранить для проверки разбора")
+    ap.add_argument(
+        "--books", default=BOOKMAKERS, help="конторы через запятую; кроме Pinnacle — на уже скачанные матчи"
+    )
+    ap.add_argument("--minutes", type=float, default=0, help="через сколько минут остановиться и сохранить скачанное")
     args = ap.parse_args()
     key = os.environ.get("ODDS_API_KEY", "").strip()
     if not key:
         print("::notice::Нет секрета ODDS_API_KEY", flush=True)
         return 0
+    books = [b.strip().lower() for b in args.books.split(",") if b.strip()] or [BOOKMAKERS]
+    chunks = [",".join(books[i : i + BOOKS_PER_CALL]) for i in range(0, len(books), BOOKS_PER_CALL)]
+    deadline = time.monotonic() + args.minutes * 60 if args.minutes else None
     now = datetime.now(timezone.utc)
     state_path = DATA / "odds_state.json"
     state = json.loads(state_path.read_text()) if state_path.exists() else {}
@@ -164,10 +205,10 @@ def main() -> int:
     cl = Client(key, state)
     maps = pd.read_csv(DATA / "maps.csv", dtype=str)
     cat = catalog(json.loads((RAW / "markets.json").read_text()))
-    old = pd.read_csv(HIST) if HIST.exists() else pd.DataFrame()
-    done = set(old["fixture_id"]) if len(old) else set()
+    old = pd.read_csv(HIST, dtype={"fixture_id": str, "match_key": str}) if HIST.exists() else pd.DataFrame()
+    done = set(zip(old["fixture_id"], old["book"])) if len(old) else set()
     rows, matched, errors, missing, saved, fixtures, per_window, priced = [], 0, 0, 0, 0, [], [], []
-    quota = ""
+    calls, stopped, quota = 0, False, ""
     try:  # только счётчики запросов: в ответе есть почта, а логи Actions публичные
         acc = cl.get("/account", free=True)
         nums = {k: v for k, v in _flat(acc).items() if isinstance(v, (int, float)) and _is_quota(k)}
@@ -175,48 +216,59 @@ def main() -> int:
     except Exception as e:  # noqa: BLE001
         print(f"::warning::/account: {str(e).replace(key, '***')[:200]}", flush=True)
     try:
-        end = now.date()
-        for i in range(0, args.days, WINDOW_DAYS):
-            to = end - timedelta(days=i)
-            frm = max(to - timedelta(days=WINDOW_DAYS - 1), end - timedelta(days=args.days))
-            fx = _fixtures(cl.get("/fixtures", sportId=SPORT_ID, **{"from": frm.isoformat(), "to": to.isoformat()}))
-            fixtures += fx
-            per_window.append(len(fx))
-        priced = [f for f in fixtures if (f.get("externalProviders") or {}).get("pinnacleId")]
-        past = match_past([f for f in priced if (_ts(f.get("startTime")) or now) < now], maps)
+        if books == [BOOKMAKERS]:
+            end = now.date()
+            for i in range(0, args.days, WINDOW_DAYS):
+                to = end - timedelta(days=i)
+                frm = max(to - timedelta(days=WINDOW_DAYS - 1), end - timedelta(days=args.days))
+                window = cl.get("/fixtures", sportId=SPORT_ID, **{"from": frm.isoformat(), "to": to.isoformat()})
+                fx = _fixtures(window)
+                fixtures += fx
+                per_window.append(len(fx))
+            priced = [f for f in fixtures if (f.get("externalProviders") or {}).get("pinnacleId")]
+            past = match_past([f for f in priced if (_ts(f.get("startTime")) or now) < now], maps)
+        else:
+            past = _known(old)
         matched = len(past)
         SAMPLES.mkdir(parents=True, exist_ok=True)
-        for f, match_key, p1_is_team1 in past:
-            fid = f.get("fixtureId")
-            if fid in done:
-                continue
-            try:
-                h = cl.get("/historical-odds", free=True, fixtureId=fid, bookmakers=BOOKMAKERS)
-            except Exception as e:  # noqa: BLE001
-                if "HTTP 404" in str(e):  # у Pinnacle не было линии на этот матч
+        for chunk in chunks:  # сначала первая тройка контор по всем матчам: при остановке по времени она полная
+            for f, match_key, p1_is_team1 in past:
+                fid = f.get("fixtureId")
+                if all((fid, b) in done for b in chunk.split(",")):
+                    continue
+                if deadline and time.monotonic() > deadline:
+                    stopped = True
+                    break
+                try:
+                    calls += 1
+                    h = _get_hist(cl, fid, chunk)
+                except Exception as e:  # noqa: BLE001
+                    errors += 1
+                    print(f"::warning::{fid}: {str(e).replace(key, '***')[:200]}", flush=True)
+                    if errors >= 5:
+                        break
+                    continue
+                if h is None:
                     missing += 1
                     continue
-                errors += 1
-                print(f"::warning::{fid}: {str(e).replace(key, '***')[:200]}", flush=True)
-                if errors >= 5:
-                    break
-                continue
-            if saved < args.raw:
-                saved += 1
-                (SAMPLES / f"hist_{fid}.json").write_text(json.dumps(h, separators=(",", ":"))[:400_000])
-            start = _ts(f.get("startTime"))
-            for r in parse(h, cat, start):
-                r.update(
-                    fixture_id=fid,
-                    match_key=match_key,
-                    start=start.isoformat(),
-                    p1=f.get("participant1Name", ""),
-                    p2=f.get("participant2Name", ""),
-                    p1_is_team1=p1_is_team1,
-                    tournament=f.get("tournamentName", ""),
-                )
-                rows.append(r)
-            time.sleep(PAUSE)
+                if saved < args.raw:
+                    saved += 1
+                    (SAMPLES / f"hist_{fid}.json").write_text(json.dumps(h, separators=(",", ":"))[:400_000])
+                start = _ts(f.get("startTime"))
+                for r in parse(h, cat, start):
+                    r.update(
+                        fixture_id=fid,
+                        match_key=match_key,
+                        start=start.isoformat(),
+                        p1=f.get("participant1Name", ""),
+                        p2=f.get("participant2Name", ""),
+                        p1_is_team1=p1_is_team1,
+                        tournament=f.get("tournamentName", ""),
+                    )
+                    rows.append(r)
+                time.sleep(PAUSE)
+            if stopped or errors >= 5:
+                break
     except Exception as e:  # noqa: BLE001
         print(f"::warning::История кэфов прервалась: {str(e).replace(key, '***')}", flush=True)
     finally:
@@ -228,11 +280,14 @@ def main() -> int:
     out = pd.concat([old, new], ignore_index=True) if len(old) else new
     if len(out):
         out.to_csv(HIST, index=False)
+    by_book = new.groupby("book")["fixture_id"].nunique().to_dict() if len(new) else {}
+    total = out["fixture_id"].nunique() if len(out) else 0
     print(
-        f"::notice::История: матчей OddsPapi {len(fixtures)} (по окнам {per_window}), с линией Pinnacle "
-        f"{len(priced)}, совпало с maps.csv {matched}, без истории {missing}, "
-        f"новых строк {len(new)}, всего матчей с линией {out['fixture_id'].nunique() if len(out) else 0}, "
-        f"ошибок {errors}, запросов за месяц {state['used']}" + (f"; OddsPapi: {quota}" if quota else ""),
+        f"::notice::История ({args.books}): матчей OddsPapi {len(fixtures)} (по окнам {per_window}), "
+        f"с линией Pinnacle {len(priced)}, к скачиванию {matched}, запросов истории {calls}, без линии {missing}, "
+        f"новых строк {len(new)} (матчей по конторам {by_book}), всего матчей {total}, "
+        f"ошибок {errors}{', остановлено по времени' if stopped else ''}, запросов за месяц {state['used']}"
+        + (f"; OddsPapi: {quota}" if quota else ""),
         flush=True,
     )
     return 0

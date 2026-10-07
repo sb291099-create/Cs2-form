@@ -110,7 +110,11 @@ class Client:
             self.state["used"] += 1
         r = self.s.get(f"{API}{path}", params={"apiKey": self.key, **params}, timeout=30)
         if r.status_code == 429:
-            time.sleep(min(60, int(r.headers.get("Retry-After", "5"))))
+            try:  # пауза приходит в заголовке или в теле ответа (retryAfterSec)
+                wait = float(r.headers.get("Retry-After") or r.json().get("retryAfterSec") or 5)
+            except (ValueError, AttributeError):
+                wait = 5
+            time.sleep(min(60, wait))
             r = self.s.get(f"{API}{path}", params={"apiKey": self.key, **params}, timeout=30)
         if r.status_code != 200:  # без URL: в нём ключ
             raise RuntimeError(f"{path}: HTTP {r.status_code} {r.text[:200]}".replace(self.key, "***"))

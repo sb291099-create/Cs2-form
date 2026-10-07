@@ -76,3 +76,52 @@ def test_match_past_finds_orientation():
     ]
     out = history.match_past(fx, maps)
     assert [(f["fixtureId"], k, p1) for f, k, p1 in out] == [("a", "EPL#5", False)]
+
+
+def test_parse_keeps_book_from_multi_book_answer():
+    q = [{"createdAt": "2026-09-20T05:00:00", "price": 1.8}]
+    h = {
+        "bookmakers": {
+            b: {"markets": {"171": {"outcomes": {"171": {"players": {"0": q}}}}}} for b in ("fonbet", "1xbet")
+        }
+    }
+    rows = history.parse(h, CAT, START)
+    assert sorted(r["book"] for r in rows) == ["1xbet", "fonbet"]
+    assert rows[0]["opened"].startswith("2026-09-20T05:00")
+
+
+def test_known_rebuilds_fixtures_from_saved_history():
+    old = pd.DataFrame(
+        {
+            "fixture_id": ["a", "a", "b"],
+            "start": ["2026-09-20T17:00:00+00:00"] * 3,
+            "p1": ["M80"] * 3,
+            "p2": ["Spirit"] * 3,
+            "tournament": ["EPL", "EPL", float("nan")],
+            "match_key": ["EPL#5", "EPL#5", "EPL#6"],
+            "p1_is_team1": [False, False, True],
+        }
+    )
+    out = history._known(old)
+    assert [(f["fixtureId"], k, p1, f["tournamentName"]) for f, k, p1 in out] == [
+        ("a", "EPL#5", False, "EPL"),
+        ("b", "EPL#6", True, ""),
+    ]
+
+
+def test_get_hist_retries_rate_limit_and_maps_404_to_none(monkeypatch):
+    calls = []
+
+    class Cl:
+        def get(self, path, free=False, **params):
+            calls.append(params["bookmakers"])
+            if len(calls) == 1:
+                raise RuntimeError("/historical-odds: HTTP 429 rate_limited")
+            if params["fixtureId"] == "none":
+                raise RuntimeError("/historical-odds: HTTP 404 No historical odds found.")
+            return {"bookmakers": {}}
+
+    monkeypatch.setattr(history.time, "sleep", lambda s: None)
+    assert history._get_hist(Cl(), "a", "fonbet,1xbet") == {"bookmakers": {}}
+    assert history._get_hist(Cl(), "none", "fonbet") is None
+    assert calls == ["fonbet,1xbet", "fonbet,1xbet", "fonbet"]
