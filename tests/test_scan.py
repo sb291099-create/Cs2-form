@@ -69,6 +69,34 @@ def test_unflip_restores_handicap_sign():
     assert pin[(1.5, "2")] == 4.96  # у Pinnacle знак верный, не трогаем
 
 
+def test_unflip_fixes_own_team_handicap_records():
+    # у Melbet фора записана для команды исхода: «−1.5 исход 2» — это 2:0 участника 2, то есть «+1.5» в нашей записи
+    rows = _rows("pinnacle", "moneyline", 0.0, {"1": 1.571, "2": 2.43})
+    rows += _rows("pinnacle", "spreads", -1.5, {"1": 2.66, "2": 1.487})
+    rows += _rows("pinnacle", "spreads", 1.5, {"1": 1.201, "2": 4.55})
+    rows += _rows("melbet", "moneyline", 0.0, {"1": 1.49, "2": 2.625})
+    rows += _rows("melbet", "spreads", -1.5, {"1": 2.46, "2": 5.05})
+    rows += _rows("melbet", "spreads", 1.5, {"1": 1.17, "2": 1.56})
+    g = scan._unflip(pd.DataFrame(rows), ml1=0.611)
+    mel = g[g["bookmaker"] == "melbet"].set_index(["line", "outcome"])["price"]
+    assert (mel[(-1.5, "1")], mel[(-1.5, "2")]) == (2.46, 1.56)  # пара на фору участника 1 −1.5
+    assert (mel[(1.5, "1")], mel[(1.5, "2")]) == (1.17, 5.05)
+    for line in (-1.5, 1.5):  # сумма обратных кэфов пары — маржа конторы, всегда больше 1
+        assert 1 / mel[(line, "1")] + 1 / mel[(line, "2")] > 1
+    assert len(g) == len(rows)  # ничего не потеряли и не задвоили
+
+
+def test_unflip_drops_contradictory_handicaps():
+    rows = _rows("pinnacle", "moneyline", 0.0, {"1": 1.43, "2": 2.81})
+    rows += _rows("odd", "spreads", -1.5, {"1": 2.0, "2": 2.0})
+    rows += _rows("odd", "spreads", 1.5, {"1": 2.0, "2": 2.0})
+    g = scan._unflip(pd.DataFrame(rows), ml1=0.66)
+    assert len(g[g["bookmaker"] == "odd"]) == 4  # симметричные кэфы разворот не ломает
+    rows += _rows("odd", "spreads", -1.5, {"1": 9.0, "2": 1.05})  # вторая, противоречивая запись той же линии
+    g = scan._unflip(pd.DataFrame(rows), ml1=0.66)
+    assert g[(g["bookmaker"] == "odd") & (g["line"] == -1.5)].empty
+
+
 def test_clean_drops_book_far_from_pinnacle():
     o = _odds()
     ref, good = scan._clean(o[o["market"] == "moneyline"])

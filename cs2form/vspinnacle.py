@@ -242,7 +242,11 @@ def compact(out: dict, edge: float) -> dict:
         by_book={k: summary(x) for k, x in sel.groupby("book")} if len(sel) else {},
         median=(m.get("одна на матч") or {}).get(key, {}),
         derived=out.get("derived", {}),
-        note="",
+        note=(
+            f"Ставка — когда утренний кэф конторы выше честной цены Pinnacle хотя бы на {edge:.0%}, по одной на "
+            "матч. «Перевес на закрытии» — тот же кэф против линии Pinnacle перед началом: на дистанции он "
+            "надёжнее итога, потому что на сотне ставок итог решает везение. ± ошибка — разброс итога."
+        ),
     )
 
 

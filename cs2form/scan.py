@@ -22,6 +22,7 @@ from .odds import DATA, ODDS, same_team
 SHARP = "pinnacle"
 PERIODS = {"p1": 0, "p2": 1, "p3": 2}
 MAX_GAP = 0.12  # контора, чья линия без маржи дальше от эталонной, скорее всего перепутала исходы
+TYPICAL_SUM = 1.06  # сумма обратных кэфов пары исходов: маржа конторы, всегда больше 1
 NO_SHARP_CAP = 0.005  # без линии Pinnacle эталон — медиана мягких контор, ей верим меньше: не больше 0.5% банка
 TOP_N = 3  # без крупных контор перевес считаем по третьему по величине кэфу: одна щедрая контора не решает
 SHOW_BOOKS = {  # крупные конторы: перевес считаем по лучшему кэфу среди них, его реально получить
@@ -54,18 +55,61 @@ def _reference(pairs: dict[str, dict[str, float]]) -> dict[str, float]:
     return {k: float(np.median([q[k] for q in pairs.values() if k in q])) for k in keys}
 
 
+def _own_team_lines(b: pd.DataFrame) -> bool:
+    """У 1xBet и Melbet фора иногда записана для команды самого исхода, а не для участника 1. Тогда пару
+    образуют «линия L исход 1» и «линия −L исход 2»: только у неё сумма обратных кэфов больше 1 (это маржа)."""
+    pr = b.drop_duplicates(["line", "outcome"]).set_index(["line", "outcome"])["price"].to_dict()
+    lines = {line for line, _ in pr}
+
+    def cost(cross: bool) -> tuple:
+        s = [
+            1 / pr[(line, "1")] + 1 / pr[(-line if cross else line, "2")]
+            for line in lines
+            if (line, "1") in pr and ((-line if cross else line), "2") in pr
+        ]
+        if not s:
+            return (9, 9.0)
+        return (sum(x < 1 for x in s), sum(abs(x - TYPICAL_SUM) for x in s) / len(s))
+
+    own, same = cost(True), cost(False)
+    return own < same
+
+
+def _flipped(lines: dict[float, float], ml1: float | None) -> bool:
+    """Перевёрнут ли знак форы у конторы: lines — шанс исхода «1» по каждой её линии.
+    Признак — шанс участника 1 должен расти с линией: при «−1.5» он выигрывает 2:0, при «+1.5» берёт карту.
+    Когда линия одна, сравниваем с кэфами на победу: 2:0 менее вероятно, чем победа, а карта — более."""
+    if len(lines) >= 2:
+        a, b = min(lines), max(lines)
+        return lines[a] > lines[b]
+    if ml1 is None or not lines:
+        return False
+    line, q1 = next(iter(lines.items()))
+    return (line < 0) == (q1 > ml1)
+
+
 def _unflip(g: pd.DataFrame, ml1: float | None) -> pd.DataFrame:
-    """У части контор знак форы по картам перевёрнут: их «−1.5» на деле «+1.5». Такие линии разворачиваем:
-    выиграть 2:0 не может быть вероятнее, чем выиграть матч, а взять хотя бы карту — менее вероятно."""
+    """У части контор знак форы по картам перевёрнут: их «−1.5» на деле «+1.5». Такие линии разворачиваем
+    целиком по конторе: знак — её соглашение, а не свойство отдельной линии. Если после разворота у конторы
+    на один исход одной линии остаётся две цены, её форы отбрасываем: какая из них верная, не узнать."""
     sp = (g["market"] == "spreads") & (g["period"] == "result") & (g["line"] != 0)
-    if ml1 is None or not sp.any():
+    if not sp.any():
         return g
     g = g.copy()
-    for (book, line), b in g[sp].groupby(["bookmaker", "line"]):
-        q = _pairs(b).get(book)
-        if q and "1" in q and (line < 0) == (q["1"] > ml1):
-            g.loc[b.index, "line"] = -line
-    return g
+    for book, b in g[sp].groupby("bookmaker"):
+        if _own_team_lines(b):  # сначала приводим запись к линии участника 1
+            second = b.index[b["outcome"].astype(str) == "2"]
+            g.loc[second, "line"] = -g.loc[second, "line"]
+        lines = {}
+        for line, bl in g.loc[b.index].groupby("line"):
+            q = _pairs(bl).get(book, {})
+            if "1" in q:
+                lines[float(line)] = q["1"]
+        if _flipped(lines, ml1):
+            g.loc[b.index, "line"] = -g.loc[b.index, "line"]
+    keys = ["bookmaker", "market", "period", "line", "outcome"]
+    dup = g.loc[sp[sp].index].duplicated(subset=keys, keep=False)
+    return g.drop(index=dup.index[dup.values]) if dup.any() else g
 
 
 def _clean(gm: pd.DataFrame) -> tuple[dict[str, float], pd.DataFrame]:
