@@ -9,6 +9,7 @@ def _rows(market, period, line, prices):
     return [
         dict(
             match_key="EPL#31",
+            fixture_id="f1",
             book="pinnacle",
             market=market,
             period=period,
@@ -16,6 +17,7 @@ def _rows(market, period, line, prices):
             outcome=o,
             price_fetch=pf,
             price_close=pc,
+            quotes=5,
             p1_is_team1=False,  # в OddsPapi первым записан team2 с Liquipedia
         )
         for o, (pf, pc) in prices.items()

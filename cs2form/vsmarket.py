@@ -94,6 +94,13 @@ def prematch(maps: pd.DataFrame, changes: dict, models: dict, keys: set) -> pd.D
 def market_probs(hist: pd.DataFrame) -> pd.DataFrame:
     """Линия Pinnacle без маржи с точки зрения team1 Liquipedia: победа, 2:0, 0:2, тотал карт, первая карта."""
     h = hist[hist["book"] == "pinnacle"].copy()
+    # один матч иногда заведён в OddsPapi дважды: берём запись, где больше котировок
+    main = h.groupby(["match_key", "fixture_id"])["quotes"].sum().reset_index().sort_values("quotes")
+    h = (
+        h[h["fixture_id"].isin(main.drop_duplicates("match_key", keep="last")["fixture_id"])]
+        if "fixture_id" in h
+        else h
+    )
     out = {}
     for (key, market, period, line), g in h.groupby(["match_key", "market", "period", "line"]):
         if g["outcome"].nunique() != 2:
