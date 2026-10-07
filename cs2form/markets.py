@@ -115,10 +115,6 @@ class Market:
     def fair(self) -> float:
         return 1 / self.p if self.p > 0 else float("inf")
 
-    @property
-    def min_odds(self) -> float:
-        return value.min_odds(self.p)
-
 
 def _line(x: float) -> str:
     return f"{x:+.1f}" if x else "0"
@@ -216,14 +212,13 @@ def ladder(
     odds_b: float | None = None,
     **lines,
 ) -> pd.DataFrame:
-    """Таблица рынков: шанс по модели, справедливый кэф и с какого кэфа брать.
-    Если известны кэфы на победу, по ним оценивается, сколько букмекер, скорее всего, даст на остальные рынки."""
+    """Таблица рынков: шанс по модели и справедливый кэф по ней.
+    Если известны кэфы на победу, шансы всех рынков пересчитываются под них (сила команд — как у рынка,
+    разброс счёта — по истории): это честная цена, от неё считается, с какого кэфа брать."""
     mine = menu(simulate(map_p, table, bestof), name_a, name_b, map_names, **lines)
-    rows = [
-        {"Группа": m.group, "Рынок": m.name, "Модель %": m.p * 100, "Справедливый кэф": m.fair, "Брать от": m.min_odds}
-        for m in mine
-    ]
-    df = pd.DataFrame(rows)
+    df = pd.DataFrame(
+        [{"Группа": m.group, "Рынок": m.name, "Модель %": m.p * 100, "Справедливый кэф": m.fair} for m in mine]
+    )
     if odds_a and odds_b and bestof > 1:
         margin = 1 / odds_a + 1 / odds_b - 1
         q = (1 / odds_a) / (1 / odds_a + 1 / odds_b)
@@ -232,6 +227,6 @@ def ladder(
         qs = np.array([m.p for m in theirs])
         exp_odds = 1 / np.maximum(qs * (1 + max(margin, 0.0)), 1e-9)
         df["Рынок %"] = qs * 100
+        df["Брать от"] = [value.min_odds(q) for q in qs]
         df["Ожидаемый кэф"] = exp_odds
-        df["Перевес при нём %"] = [value.single(m.p, o, q_market=qm).edge * 100 for m, o, qm in zip(mine, exp_odds, qs)]
     return df

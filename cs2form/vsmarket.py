@@ -169,7 +169,7 @@ def bets(
             edge = ps * price - 1
             if edge >= min_edge:
                 won = (r.w1 > r.w2) if side == 1 else (r.w2 > r.w1)
-                stake = value._stake(r.p_model if side == 1 else 1 - r.p_model, q if side == 1 else 1 - q, price, edge)
+                stake = value._stake(price, edge)
                 rows.append(
                     dict(match_key=r.match_key, side=side, price=price, close=close, edge=edge, won=won, stake=stake)
                 )

@@ -38,12 +38,14 @@ def test_ladder_with_odds_matches_market():
     row = df[(df["Группа"] == "Матч") & (df["Рынок"] == "Победа A")].iloc[0]
     q = (1 / 3.0) / (1 / 3.0 + 1 / 1.36)
     assert row["Рынок %"] == pytest.approx(q * 100, abs=1.5)
-    assert row["Перевес при нём %"] > 5  # модель 50%, рынок ~31%
+    assert row["Брать от"] == pytest.approx(value.min_odds(row["Рынок %"] / 100))  # от честной цены рынка, не модели
     assert {"Справедливый кэф", "Брать от", "Ожидаемый кэф"} <= set(df.columns)
+    assert "Брать от" not in markets.ladder([0.5, 0.5, 0.5], _table(), 3, "A", "B").columns
 
 
 def test_min_odds_is_threshold():
-    for p in (0.25, 0.5, 0.7):
-        o = value.min_odds(p)
-        assert value.single(p, o).edge == pytest.approx(value.MIN_EDGE)
-        assert value.single(p, o * 0.98).stake == 0
+    for q in (0.25, 0.5, 0.7):
+        o = value.min_odds(q)
+        assert value.single(0.9, o, q_market=q).edge == pytest.approx(value.MIN_EDGE)  # модель не влияет
+        assert value.single(0.9, o * 0.98, q_market=q).stake == 0
+        assert value.single(0.9, o * 1.5).stake == 0  # без линии рынка перевеса нет

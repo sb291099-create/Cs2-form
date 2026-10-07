@@ -1,7 +1,8 @@
-"""Поиск выгодных ставок: прогноз модели против линии Pinnacle по всем матчам, на которые скачаны кэфы.
+"""Поиск выгодных ставок: кэфы контор против честной цены Pinnacle по всем матчам, на которые скачаны кэфы.
 
-Шанс для ставки — среднее модели и рынка (рынок — линия Pinnacle без маржи, если её нет — медиана контор),
-как в value.assess. Рынки серии (победа, фора по картам, тотал карт) считаются по прогнозу вето; рынки
+Шанс для ставки — линия Pinnacle без маржи (если её нет — медиана контор), как в value: на истории модель
+уступила рынку, поэтому её шанс показывается для справки (value.MODEL_WEIGHT). Перевес — насколько лучший
+кэф крупных контор выше честной цены. Модельные шансы рынков серии считаются по прогнозу вето; рынки
 отдельных карт — только когда вето известно (vetoes), потому что «первая карта» до вето — неизвестно какая.
 Запуск: python -m cs2form.scan [--all] [--veto "PARIVISION=Ancient,Cache,Inferno"]
 """
@@ -215,13 +216,27 @@ def scan(
                         quotes=_quotes(go),
                         edge=edge,
                         sharp=has_sharp,
-                        stake=value._stake(p, qo, price, edge)
-                        if has_sharp
-                        else min(value._stake(p, qo, price, edge), NO_SHARP_CAP),
+                        stake=value._stake(price, edge) if has_sharp else min(value._stake(price, edge), NO_SHARP_CAP),
                     )
                 )
     out = pd.DataFrame(rows)
     return out.sort_values("edge", ascending=False).reset_index(drop=True) if len(out) else out
+
+
+def sharp_winner(odds: pd.DataFrame, name_a: str, name_b: str) -> float | None:
+    """Шанс команды name_a на победу в матче по линии Pinnacle без маржи из скачанных кэфов, если она есть."""
+    if odds.empty:
+        return None
+    ml = odds[(odds["bookmaker"] == SHARP) & (odds["market"] == "moneyline") & (odds["period"] == "result")]
+    for (p1, p2), g in ml.groupby(["p1", "p2"]):
+        q = _pairs(g).get(SHARP, {})
+        if not {"1", "2"} <= set(q):
+            continue
+        if same_team(p1, name_a) and same_team(p2, name_b):
+            return float(q["1"])
+        if same_team(p1, name_b) and same_team(p2, name_a):
+            return float(q["2"])
+    return None
 
 
 def prepare(data: Path = DATA) -> dict:
@@ -273,7 +288,7 @@ def report(r: pd.DataFrame, show_all: bool = False) -> str:
             lines.append("  без перевеса")
         for x in sel.itertuples():
             lines.append(
-                f"  {x.market}: модель {x.model_p * 100:.0f}%, рынок {x.market_p * 100:.0f}%, "
+                f"  {x.market}: рынок {x.market_p * 100:.0f}% (модель {x.model_p * 100:.0f}%), "
                 f"брать от {x.min_odds:.2f}; кэф {x.price:.2f}, перевес {x.edge * 100:+.0f}%, "
                 f"ставка {x.stake * 100:.1f}%; от порога {x.books_ok} из {x.books}, лучший {x.best_price:.2f} "
                 f"({x.best_book}); {x.quotes}"

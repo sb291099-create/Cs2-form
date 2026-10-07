@@ -86,9 +86,9 @@ def test_scan_prices_and_orientation(monkeypatch):
     q = (1 / 2.81) / (1 / 2.81 + 1 / 1.43)
     assert win["model_p"] == pytest.approx(0.5)
     assert win["market_p"] == pytest.approx(q)
-    assert win["min_odds"] == pytest.approx((1 + value.MIN_EDGE) / (0.5 * 0.5 + 0.5 * q))
+    assert win["min_odds"] == pytest.approx((1 + value.MIN_EDGE) / q)  # модель не влияет
     assert (win["price"], win["books"]) == (2.81, 2)  # «mirror» с перепутанными исходами отброшен
-    assert win["edge"] == pytest.approx((0.5 * 0.5 + 0.5 * q) * 2.81 - 1)
+    assert win["edge"] == pytest.approx(q * 2.81 - 1) and win["stake"] == 0
 
     two_nil = r.loc["Фора PARIVISION -1.5 по картам (2:0)"]
     assert two_nil["model_p"] == pytest.approx(0.3)
@@ -96,7 +96,23 @@ def test_scan_prices_and_orientation(monkeypatch):
     one_map = r.loc["Фора PARIVISION +1.5 по картам (хотя бы карта)"]
     assert one_map["model_p"] == pytest.approx(0.7)
     assert r.loc["Победа Natus Vincere", "model_p"] == pytest.approx(0.5)
-    assert "брать от" in scan.report(r.reset_index())
+    assert "брать от" in scan.report(r.reset_index(), show_all=True)
+
+
+def test_scan_bets_only_above_pinnacle_fair_price(monkeypatch):
+    fc = SimpleNamespace(map_p={"Ancient": 0.5, "Cache": 0.5, "Inferno": 0.5}, played=["Ancient", "Cache", "Inferno"])
+    monkeypatch.setattr(model, "forecast", lambda *a, **k: fc)
+    monkeypatch.setattr(markets, "simulate", lambda *a, **k: _sim())
+    odds = pd.concat([_odds(), pd.DataFrame(_rows("marathonbet", "moneyline", 0.0, {"1": 1.40, "2": 3.30}))])
+    r = scan.scan(odds, UP, None, None, [], None).set_index("market")
+    q = (1 / 2.81) / (1 / 2.81 + 1 / 1.43)
+    pv = r.loc["Победа PARIVISION"]
+    assert (pv["price"], pv["price_book"]) == (3.30, "marathonbet")
+    assert pv["edge"] == pytest.approx(q * 3.30 - 1) and pv["stake"] > 0
+    assert r.loc["Победа Natus Vincere", "stake"] == 0
+    assert scan.sharp_winner(odds, "PARIVISION", "Natus Vincere") == pytest.approx(q)
+    assert scan.sharp_winner(odds, "Natus Vincere", "PARIVISION") == pytest.approx(1 - q)
+    assert scan.sharp_winner(odds, "M80", "Spirit") is None
 
 
 def test_parse_vetoes_finds_match_and_maps():

@@ -93,19 +93,27 @@ def render_value(p_a, name_a, name_b, key):
     oa = c1.number_input(name_a, min_value=1.0, value=None, step=0.01, format="%.2f", key=f"oa-{key}")
     ob = c2.number_input(name_b, min_value=1.0, value=None, step=0.01, format="%.2f", key=f"ob-{key}")
     if not (oa and ob and oa > 1 and ob > 1):
-        c3.caption("Введи оба кэфа, и модель скажет, есть ли перевес и на чьей стороне.")
+        c3.caption("Введи оба кэфа, и я сравню их с честной ценой Pinnacle из утренних кэфов.")
         return
-    r = value.assess(p_a, oa, ob, name_a, name_b)
+    q_ref = scan.sharp_winner(_read("odds.csv.gz"), name_a, name_b)
+    r = value.assess(p_a, oa, ob, name_a, name_b, q_ref=q_ref)
+    pin = (
+        f"Pinnacle без маржи: {name_a} {q_ref * 100:.0f}% ({1 / q_ref:.2f}) · "
+        f"{name_b} {(1 - q_ref) * 100:.0f}% ({1 / (1 - q_ref):.2f})  \n"
+        f"Перевес: {name_a} {r.edge_a * 100:+.0f}% · {name_b} {r.edge_b * 100:+.0f}%  \n"
+        if q_ref is not None
+        else "Pinnacle: в утренних кэфах этого матча нет  \n"
+    )
     c3.markdown(
-        f"Рынок: {name_a} {r.market_a * 100:.0f}% · {name_b} {r.market_b * 100:.0f}% (маржа {r.margin * 100:.1f}%)  \n"
-        f"Модель: {name_a} {p_a * 100:.0f}% · {name_b} {(1 - p_a) * 100:.0f}%  \n"
-        f"Для ставки (среднее модели и рынка): {name_a} {r.p_used * 100:.0f}% · {name_b} {(1 - r.p_used) * 100:.0f}%  \n"
-        f"Перевес: {name_a} {r.edge_a * 100:+.0f}% · {name_b} {r.edge_b * 100:+.0f}%"
+        f"Твои кэфы без маржи: {name_a} {r.market_a * 100:.0f}% · {name_b} {r.market_b * 100:.0f}% "
+        f"(маржа {r.margin * 100:.1f}%)  \n"
+        + pin
+        + f"Модель, для справки: {name_a} {p_a * 100:.0f}% · {name_b} {(1 - p_a) * 100:.0f}%"
     )
     (st.success if r.pick else st.info)(r.verdict)
     st.caption(
-        "Перевес считается по среднему модели и рынка: рынок знает о заменах и стендинах, которых нет в статистике. "
-        "Ставка только при перевесе от 5%. "
+        f"Ставка — когда кэф выше честной цены Pinnacle хотя бы на {value.MIN_EDGE * 100:.0f}%. "
+        "Модель в расчёт не входит: на 402 прошлых матчах линия Pinnacle угадывала точнее. "
         "Размер — четверть Келли, не больше 2% банка."
     )
 
@@ -139,20 +147,8 @@ def render_markets(fc, name_a, name_b, bestof, key):
         tuple(fc.map_p[m] for m in fc.played), tuple(names or []), bestof, name_a, name_b, *odds, tuple(lines.items())
     )
     df = df.assign(**{"Кэф букмекера": float("nan")})
-    if "Перевес при нём %" in df:
-        best = df[df["Перевес при нём %"] >= value.MIN_EDGE * 100].sort_values("Перевес при нём %", ascending=False)
-        if len(best):
-            st.success(
-                "Где, скорее всего, есть перевес при таких кэфах на победу: "
-                + "; ".join(
-                    f"{r['Группа']}: {r['Рынок']} (брать от {r['Брать от']:.2f})" for _, r in best.head(5).iterrows()
-                )
-                + ". Сверь с линией букмекера: если кэф не ниже «Брать от», ставка проходит."
-            )
-        else:
-            st.info("При таких кэфах на победу перевеса нет ни на одном рынке: модель согласна с рынком.")
     num = {c: st.column_config.NumberColumn(format="%.2f") for c in ("Справедливый кэф", "Брать от", "Ожидаемый кэф")}
-    num.update({c: st.column_config.NumberColumn(format="%.0f") for c in ("Модель %", "Рынок %", "Перевес при нём %")})
+    num.update({c: st.column_config.NumberColumn(format="%.0f") for c in ("Модель %", "Рынок %")})
     num["Кэф букмекера"] = st.column_config.NumberColumn(min_value=1.01, step=0.01, format="%.2f")
     edited = st.data_editor(
         df,
@@ -163,18 +159,23 @@ def render_markets(fc, name_a, name_b, bestof, key):
         key=f"mk-{key}",
     )
     got = edited[edited["Кэф букмекера"].notna()]
+    if len(got) and "Рынок %" not in got:
+        st.info("Сначала введи кэфы на победу (лучше Pinnacle): от них считается честная цена остальных рынков.")
+        got = got.iloc[0:0]
     for _, r in got.iterrows():
         o = float(r["Кэф букмекера"])
-        a = value.single(r["Модель %"] / 100, o)
-        text = f"{r['Группа']}: {r['Рынок']} по {o:.2f}: перевес {a.edge * 100:+.0f}%"
-        if a.stake:
-            st.success(f"{text}, ставить {a.stake * 100:.1f}% банка.")
+        a = value.single(r["Модель %"] / 100, o, q_market=r["Рынок %"] / 100)
+        text = f"{r['Группа']}: {r['Рынок']} по {o:.2f}: перевес к оценке {a.edge * 100:+.0f}%"
+        if a.edge >= value.MIN_EDGE:
+            st.success(f"{text}. Это оценка от кэфов на победу, а не линия Pinnacle: не больше 0.5% банка.")
         else:
             st.info(f"{text}, пропуск (нужно от {r['Брать от']:.2f}).")
     st.caption(
-        "«Брать от» — кэф, с которого ставка проходит порог перевеса 5% с учётом мнения рынка. "
+        "«Модель %» и «Справедливый кэф» — по модели, для справки: на прошлых матчах она уступила рынку. "
+        "Когда введены кэфы на победу, «Рынок %» — шансы всех рынков при такой силе команд, как у букмекера, "
+        f"а «Брать от» — кэф на {value.MIN_EDGE * 100:.0f}% выше этой честной цены. Это оценка: разброс счёта "
+        "взят из истории (карты с похожим шансом пары, тем же победителем и той же длиной серии). "
         "«Ожидаемый кэф» — сколько, скорее всего, даст букмекер, если его линии согласованы с кэфами на победу. "
-        "Счёт карт взят из истории: карты с похожим шансом пары, тем же победителем и той же длиной серии. "
         "ИТБ 0.5 карты — то же, что фора +1.5 по картам."
     )
 
@@ -226,7 +227,8 @@ def render_bank():
         )
     st.caption(
         "Каждое утро Claude рассчитывает сыгранные ставки по счёту с Liquipedia и ставит на новые матчи: "
-        "по одной ставке на матч, рынок из лесенки, который в среднем сильнее растит банк."
+        "по одной ставке на матч, только где кэф выше честной цены Pinnacle, и из таких рынков — тот, "
+        "что в среднем сильнее растит банк. Ставки 07.10 сделаны по старым правилам, со средним модели и рынка."
     )
 
 
@@ -263,7 +265,7 @@ def render_bets():
     show_all = st.toggle("Показать все рынки, а не только выгодные", key="bets-all")
     sel = res if show_all else res[res["edge"] >= value.MIN_EDGE]
     if sel.empty:
-        st.info("Сейчас выгодных ставок нет: модель согласна с рынком.")
+        st.info("Сейчас нет кэфов выше честной цены Pinnacle.")
     else:
         msk = pd.to_datetime(sel["start"], utc=True) + pd.Timedelta(hours=3)
         df = pd.DataFrame(
@@ -271,8 +273,8 @@ def render_bets():
                 "Начало, МСК": msk.dt.strftime("%d.%m %H:%M"),
                 "Матч": sel["match"],
                 "Ставка": sel["market"],
-                "Модель %": sel["model_p"] * 100,
                 "Рынок %": sel["market_p"] * 100,
+                "Модель %": sel["model_p"] * 100,
                 "Брать от": sel["min_odds"],
                 "Кэф": sel["price"],
                 "Перевес %": sel["edge"] * 100,
@@ -290,11 +292,12 @@ def render_bets():
     if no_value and not show_all:
         st.caption("Без перевеса: " + "; ".join(no_value) + ".")
     st.caption(
-        "«Брать от» — кэф, ниже которого ставка уже не выгодна: перевес меньше 5%. "
-        "Шанс для ставки — среднее модели и линии Pinnacle без маржи (если Pinnacle нет, медиана контор). "
-        "«Кэф» — лучший у крупных контор (Pinnacle, Fonbet, Marathon, Stake, 1xBet, bet365), перевес и сумма "
-        "считаются по нему. Сумма — четверть Келли, не больше 2% банка и не больше 1%, если модель и рынок "
-        "расходятся больше чем на 12 п.п. Кэфы меняются: перед ставкой сверь свой с «Брать от»."
+        f"«Рынок %» — честный шанс по линии Pinnacle без маржи (если Pinnacle нет, медиана контор). «Брать от» — "
+        f"кэф на {value.MIN_EDGE * 100:.0f}% выше этой честной цены: ниже него ставка не выгодна. «Кэф» — лучший у "
+        "крупных контор (Fonbet, Marathon, Stake, 1xBet, bet365), перевес и сумма считаются по нему. Сумма — "
+        f"четверть Келли, не больше 2% банка, а без линии Pinnacle не больше {scan.NO_SHARP_CAP * 100:.1f}%. "
+        "«Модель %» — для справки: на 402 прошлых матчах линия Pinnacle угадывала точнее, поэтому в расчёт "
+        "модель не входит. Кэфы меняются: перед ставкой сверь свой с «Брать от»."
     )
 
 
