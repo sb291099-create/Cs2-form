@@ -133,6 +133,20 @@ def match_past(fixtures: list[dict], maps: pd.DataFrame) -> list[tuple[dict, str
     return out
 
 
+def _flat(obj, prefix="") -> dict:
+    if isinstance(obj, dict):
+        out = {}
+        for k, v in obj.items():
+            out.update(_flat(v, f"{prefix}{k}."))
+        return out
+    return {prefix.rstrip("."): obj}
+
+
+def _is_quota(name: str) -> bool:
+    n = name.lower()
+    return any(w in n for w in ("request", "limit", "quota", "used", "remaining"))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Прошлые линии Pinnacle на матчи из maps.csv")
     ap.add_argument("--days", type=int, default=90)
@@ -152,12 +166,14 @@ def main() -> int:
     cat = catalog(json.loads((RAW / "markets.json").read_text()))
     old = pd.read_csv(HIST) if HIST.exists() else pd.DataFrame()
     done = set(old["fixture_id"]) if len(old) else set()
-    rows, matched, errors, fixtures = [], 0, 0, []
-    try:
+    rows, matched, errors, missing, saved, fixtures, per_window, priced = [], 0, 0, 0, 0, [], [], []
+    quota = ""
+    try:  # только счётчики запросов: в ответе есть почта, а логи Actions публичные
         acc = cl.get("/account", free=True)
-        print(f"::notice::Аккаунт OddsPapi: {json.dumps(acc, ensure_ascii=False)[:300]}", flush=True)
+        nums = {k: v for k, v in _flat(acc).items() if isinstance(v, (int, float)) and _is_quota(k)}
+        quota = ", ".join(f"{k}={v}" for k, v in list(nums.items())[:6])
     except Exception as e:  # noqa: BLE001
-        print(f"::warning::/account: {str(e).replace(key, '***')}", flush=True)
+        print(f"::warning::/account: {str(e).replace(key, '***')[:200]}", flush=True)
     try:
         end = now.date()
         for i in range(0, args.days, WINDOW_DAYS):
@@ -165,23 +181,28 @@ def main() -> int:
             frm = max(to - timedelta(days=WINDOW_DAYS - 1), end - timedelta(days=args.days))
             fx = _fixtures(cl.get("/fixtures", sportId=SPORT_ID, **{"from": frm.isoformat(), "to": to.isoformat()}))
             fixtures += fx
-            print(f"окно {frm}..{to}: матчей {len(fx)}", flush=True)
-        past = match_past([f for f in fixtures if (_ts(f.get("startTime")) or now) < now], maps)
+            per_window.append(len(fx))
+        priced = [f for f in fixtures if (f.get("externalProviders") or {}).get("pinnacleId")]
+        past = match_past([f for f in priced if (_ts(f.get("startTime")) or now) < now], maps)
         matched = len(past)
         SAMPLES.mkdir(parents=True, exist_ok=True)
-        for n, (f, match_key, p1_is_team1) in enumerate(past):
+        for f, match_key, p1_is_team1 in past:
             fid = f.get("fixtureId")
             if fid in done:
                 continue
             try:
                 h = cl.get("/historical-odds", free=True, fixtureId=fid, bookmakers=BOOKMAKERS)
             except Exception as e:  # noqa: BLE001
+                if "HTTP 404" in str(e):  # у Pinnacle не было линии на этот матч
+                    missing += 1
+                    continue
                 errors += 1
                 print(f"::warning::{fid}: {str(e).replace(key, '***')[:200]}", flush=True)
                 if errors >= 5:
                     break
                 continue
-            if n < args.raw:
+            if saved < args.raw:
+                saved += 1
                 (SAMPLES / f"hist_{fid}.json").write_text(json.dumps(h, separators=(",", ":"))[:400_000])
             start = _ts(f.get("startTime"))
             for r in parse(h, cat, start):
@@ -208,9 +229,10 @@ def main() -> int:
     if len(out):
         out.to_csv(HIST, index=False)
     print(
-        f"::notice::История: матчей OddsPapi {len(fixtures)}, совпало с maps.csv {matched}, "
+        f"::notice::История: матчей OddsPapi {len(fixtures)} (по окнам {per_window}), с линией Pinnacle "
+        f"{len(priced)}, совпало с maps.csv {matched}, без истории {missing}, "
         f"новых строк {len(new)}, всего матчей с линией {out['fixture_id'].nunique() if len(out) else 0}, "
-        f"ошибок {errors}, запросов за месяц {state['used']}",
+        f"ошибок {errors}, запросов за месяц {state['used']}" + (f"; OddsPapi: {quota}" if quota else ""),
         flush=True,
     )
     return 0
