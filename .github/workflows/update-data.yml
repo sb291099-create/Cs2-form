@@ -52,4 +52,11 @@ jobs:
           git add data/
           git diff --cached --quiet && echo "Новых данных нет" && exit 0
           git commit -m "Данные за $(date -u +%Y-%m-%d)"
+          # за время сбора в main могли попасть другие коммиты: переносим свой наверх и пробуем снова
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((i * 5))
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+          done
           git push
