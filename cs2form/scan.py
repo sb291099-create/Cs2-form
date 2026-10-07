@@ -291,8 +291,8 @@ def prepare(data: Path = DATA) -> dict:
     ids = model.canonical_ids(maps, names)
     maps = model.canonicalize(maps, ids)
     rosters = pd.read_csv(data / "rosters.csv", dtype=str)
-    changes = model.roster_changes(rosters, maps.groupby("page")["date"].min().to_dict(), model.name_to_id(names, ids))
-    st, feat = model.build(maps, changes)
+    changes, squads = model.rosters_state(maps, names, rosters)
+    st, feat = model.build(maps, changes, squads)
     warm = feat[feat["date"] >= feat["date"].min() + pd.Timedelta(days=45)]
     mdl = model.MapModel().fit(warm[model.FEATURES].values, warm["y"].values)
     upcoming = model.canonicalize(pd.read_csv(data / "upcoming.csv", dtype=str), ids)

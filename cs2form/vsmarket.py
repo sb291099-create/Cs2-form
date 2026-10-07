@@ -29,15 +29,14 @@ def save_section(name: str, obj: dict) -> None:
     BACKTEST.write_text(json.dumps(out, ensure_ascii=False, indent=1, default=float))
 
 
-def load_maps() -> tuple[pd.DataFrame, dict]:
+def load_maps() -> tuple[pd.DataFrame, tuple[dict, dict]]:
     maps = pd.read_csv(DATA / "maps.csv", dtype={"team1_id": str, "team2_id": str, "match_key": str})
     maps["map"] = maps["map"].fillna("")
     names = pd.read_csv(DATA / "team_names.csv", dtype=str)
     ids = model.canonical_ids(maps, names)
     maps = model.canonicalize(maps, ids)
     rosters = pd.read_csv(DATA / "rosters.csv", dtype=str)
-    changes = model.roster_changes(rosters, maps.groupby("page")["date"].min().to_dict(), model.name_to_id(names, ids))
-    return maps, changes
+    return maps, model.rosters_state(maps, names, rosters)
 
 
 def monthly_models(feat: pd.DataFrame, months: list[pd.Timestamp], warmup_days: int = 45) -> dict:
@@ -50,7 +49,7 @@ def monthly_models(feat: pd.DataFrame, months: list[pd.Timestamp], warmup_days: 
     return out
 
 
-def prematch(maps: pd.DataFrame, changes: dict, models: dict, keys: set) -> pd.DataFrame:
+def prematch(maps: pd.DataFrame, changes: tuple, models: dict, keys: set) -> pd.DataFrame:
     """Прогноз до матча по каждому матчу из keys: состояние перед первой картой, вето по прогнозу модели."""
     m = maps.copy()
     m["date"] = pd.to_datetime(m["date"])
@@ -58,7 +57,7 @@ def prematch(maps: pd.DataFrame, changes: dict, models: dict, keys: set) -> pd.D
     first = set(m.groupby("match_key").head(1).index)
     games = {k: g for k, g in m.groupby("match_key")}
     st = model.State()
-    st.roster_change = changes
+    st.roster_change, st.lineup = changes
     pools: dict = {}
     rows = []
     for i, r in enumerate(m.itertuples(index=False)):
@@ -202,7 +201,7 @@ def summary_bets(b: pd.DataFrame) -> dict:
 def run() -> dict:
     hist = pd.read_csv(HIST, dtype={"match_key": str})
     maps, changes = load_maps()
-    st, feat = model.build(maps, changes)
+    st, feat = model.build(maps, *changes)
     keys = set(hist["match_key"])
     dates = pd.to_datetime(maps[maps["match_key"].isin(keys)]["date"])
     months = sorted({d.to_period("M").to_timestamp() for d in dates})

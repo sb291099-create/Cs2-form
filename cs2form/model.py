@@ -35,7 +35,30 @@ FORM_HALF_LIFE = 21.0  # K и полураспад подобраны по пр�
 EXP_DAYS = 90
 NEW_ROSTER_DAYS = 30
 ROSTER_ELO_SHRINK = 0.15  # при смене игрока рейтинг сдвигается к среднему на 15% за каждого
-FEATURES = ["elo", "map_elo", "form", "map_exp", "new_roster", "seed"]
+K_PLAYER = 16.0  # шаг рейтинга игрока за карту: он переносит силу между командами при переходах
+R_K = 0.06  # шаг рейтинга по разнице раундов (сам рейтинг — в раундах за карту)
+R_HALF_LIFE = 120.0  # без игр рейтинг по раундам тянется к среднему
+H2H_DAYS = 365
+H2H_HALF_LIFE = 120.0
+MAP_FORM_DAYS = 180
+REST_CAP = 90
+FEATURES = [
+    "elo",
+    "map_elo",
+    "form",
+    "map_exp",
+    "new_roster",
+    "seed",
+    "rounds",  # рейтинг по разнице раундов: счёт карты говорит больше, чем сам факт победы
+    "rounds_form",  # недавняя разница раундов сверх ожидания
+    "h2h",  # личные встречи за год
+    "h2h_map",  # личные встречи на этой карте
+    "exp_all",  # сколько карт сыграно: у новых команд рейтинг ненадёжен
+    "rest",  # дней с последней карты
+    "players",  # средний рейтинг пяти игроков состава
+    "players_known",  # известны ли составы обеих команд
+    "players_vs_team",  # состав сильнее или слабее самой команды
+]
 
 
 def expected(ra: float, rb: float) -> float:
@@ -51,10 +74,39 @@ class State:
     roster_change: dict = field(default_factory=dict)  # team -> [даты смены состава]
     roster_applied: set = field(default_factory=set)
     last_date: pd.Timestamp | None = None
+    rounds: dict = field(default_factory=lambda: defaultdict(float))  # team -> рейтинг в раундах за карту
+    rounds_date: dict = field(default_factory=dict)  # team -> дата последнего затухания
+    rounds_hist: dict = field(default_factory=lambda: defaultdict(list))  # team -> [(дата, раунды сверх ожидания)]
+    games: dict = field(default_factory=lambda: defaultdict(int))  # team -> сыграно карт
+    h2h: dict = field(default_factory=lambda: defaultdict(list))  # (a, b) -> [(дата, выиграл ли a, карта)]
+    last_seen: dict = field(default_factory=dict)  # team -> дата последней карты
+    player_elo: dict = field(default_factory=lambda: defaultdict(lambda: BASE))  # игрок -> рейтинг
+    lineup: dict = field(default_factory=dict)  # team -> [(дата заявки, состав)]
 
     def last_change(self, team, day):
         dates = [d for d in self.roster_change.get(team, []) if d <= day]
         return max(dates) if dates else None
+
+    def players(self, team, day) -> list[str]:
+        """Последний известный состав команды на эту дату (турнирные заявки Liquipedia)."""
+        rows = self.lineup.get(team)
+        if not rows:
+            return []
+        known = [pl for d, pl in rows if d <= day]
+        return known[-1] if known else rows[0][1]
+
+    def squad_elo(self, team, day) -> float | None:
+        pl = self.players(team, day)
+        return float(np.mean([self.player_elo[p] for p in pl])) if pl else None
+
+    def round_rating(self, team, day) -> float:
+        """Рейтинг по раундам с затуханием: без игр сила команды неизвестна и тянется к среднему."""
+        prev = self.rounds_date.get(team)
+        if prev is not None and day > prev:
+            self.rounds[team] *= 0.5 ** ((day - prev).days / R_HALF_LIFE)
+        if prev is None or day > prev:
+            self.rounds_date[team] = day
+        return self.rounds[team]
 
     def apply_roster_changes(self, day):
         """Сдвигает Elo к среднему, когда у команды меняется состав."""
@@ -101,6 +153,30 @@ def roster_changes(rosters: pd.DataFrame, event_dates: dict, name_to_id: dict) -
         if ch:
             out[tid] = ch
     return out
+
+
+def lineups(rosters: pd.DataFrame, event_dates: dict, name_to_id: dict) -> dict:
+    """Составы с турниров: team_id -> [(дата турнира, пятёрка игроков)] по возрастанию даты."""
+    if rosters is None or rosters.empty or "players" not in rosters:
+        return {}
+    r = rosters.dropna(subset=["players"]).copy()
+    r["date"] = pd.to_datetime(r["page"].map(event_dates), errors="coerce")
+    r = r.dropna(subset=["date"]).sort_values("date")
+    out = defaultdict(list)
+    for row in r.itertuples():
+        pl = [p.strip() for p in str(row.players).split(",") if p.strip() and "=" not in p]
+        if len(pl) >= 4:
+            out[name_to_id.get(row.team_name, str(row.team_name).lower())].append((row.date, pl[:5]))
+    return dict(out)
+
+
+def rosters_state(maps: pd.DataFrame, team_names: pd.DataFrame, rosters: pd.DataFrame) -> tuple[dict, dict]:
+    """Смены составов и известные составы команд: вместе, потому что считаются по одним и тем же заявкам."""
+    if rosters is None or rosters.empty or "page" not in maps:
+        return {}, {}
+    dates = maps.groupby("page")["date"].min().to_dict()
+    n2i = name_to_id(team_names, canonical_ids(maps, team_names))
+    return roster_changes(rosters, dates, n2i), lineups(rosters, dates, n2i)
 
 
 def canonical_ids(maps: pd.DataFrame, team_names: pd.DataFrame) -> dict[str, str]:
@@ -169,6 +245,33 @@ def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> 
         c = st.last_change(t, day)
         return 1.0 if c is not None and (day - c).days <= NEW_ROSTER_DAYS else 0.0
 
+    def decayed(rows, half_life, prior=2.0):
+        if not rows:
+            return 0.0
+        w = np.array([0.5 ** ((day - d).days / half_life) for d, _ in rows])
+        return float((w * np.array([v for _, v in rows])).sum() / (w.sum() + prior))
+
+    def rounds_form(t):
+        since = st.last_change(t, day)
+        lo = day - pd.Timedelta(days=FORM_DAYS)
+        if since is not None and since > lo:
+            lo = since
+        return decayed([(d, x) for d, x in st.rounds_hist[t] if d > lo], FORM_HALF_LIFE)
+
+    def h2h(same_map):
+        rows = [
+            (d, w - 0.5)
+            for d, w, m in st.h2h[(a, b)]
+            if (day - d).days <= H2H_DAYS and d < day and (not same_map or m == mp)
+        ]
+        return decayed(rows, H2H_HALF_LIFE)
+
+    def rest(t):
+        seen = st.last_seen.get(t)
+        return math.log1p(min((day - seen).days, REST_CAP) if seen is not None else REST_CAP)
+
+    sa, sb = st.squad_elo(a, day), st.squad_elo(b, day)
+    known = sa is not None and sb is not None
     return {
         "elo": (st.elo[a] - st.elo[b]) / 100.0,
         "map_elo": ((st.map_elo[(a, mp)] - BASE) - (st.map_elo[(b, mp)] - BASE)) / 100.0,
@@ -176,6 +279,15 @@ def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> 
         "map_exp": exp(a) - exp(b),
         "new_roster": fresh(a) - fresh(b),
         "seed": seed,
+        "rounds": (st.round_rating(a, day) - st.round_rating(b, day)) / 4.0,
+        "rounds_form": (rounds_form(a) - rounds_form(b)) / 4.0,
+        "h2h": h2h(False),
+        "h2h_map": h2h(True),
+        "exp_all": math.log1p(st.games[a]) - math.log1p(st.games[b]),
+        "rest": rest(a) - rest(b),
+        "players": (sa - sb) / 100.0 if known else 0.0,
+        "players_known": 1.0 if known else 0.0,
+        "players_vs_team": ((sa - st.elo[a]) - (sb - st.elo[b])) / 100.0 if known else 0.0,
     }
 
 
@@ -194,13 +306,35 @@ def update(st: State, a, b, mp: str, day: pd.Timestamp, s1: int, s2: int):
     st.hist[b].append((day, (1 - won) - (1 - e)))
     st.map_dates[(a, mp)].append(day)
     st.map_dates[(b, mp)].append(day)
+    diff = max(-16, min(16, s1 - s2))
+    over = diff - (st.round_rating(a, day) - st.round_rating(b, day))
+    st.rounds[a] += R_K * over
+    st.rounds[b] -= R_K * over
+    st.rounds_hist[a].append((day, over))
+    st.rounds_hist[b].append((day, -over))
+    pa, pb = st.players(a, day), st.players(b, day)
+    if pa and pb:
+        ep = expected(st.squad_elo(a, day), st.squad_elo(b, day))
+        dp = K_PLAYER * (won - ep)
+        for p in pa:
+            st.player_elo[p] += dp
+        for p in pb:
+            st.player_elo[p] -= dp
+    st.h2h[(a, b)].append((day, won, mp))
+    st.h2h[(b, a)].append((day, 1 - won, mp))
+    st.games[a] += 1
+    st.games[b] += 1
+    st.last_seen[a] = st.last_seen[b] = day
     st.last_date = day
 
 
-def build(maps: pd.DataFrame, roster_change: dict | None = None) -> tuple[State, pd.DataFrame]:
+def build(
+    maps: pd.DataFrame, roster_change: dict | None = None, lineup: dict | None = None
+) -> tuple[State, pd.DataFrame]:
     """Проходит все карты, возвращает итоговое состояние и таблицу признаков по каждой карте."""
     st = State()
     st.roster_change = roster_change or {}
+    st.lineup = lineup or {}
     m = maps.copy()
     m["date"] = pd.to_datetime(m["date"])
     sort_cols = [c for c in ["date", "match_key", "map_number"] if c in m]

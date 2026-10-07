@@ -38,13 +38,8 @@ def load():
 @st.cache_resource(ttl=3600)
 def deep_model(maps: pd.DataFrame, rosters: pd.DataFrame, team_names: pd.DataFrame):
     """Глубокая модель: Elo по картам, форма текущего состава, опыт на карте; обучение и проверка на истории."""
-    if "page" in maps:
-        event_dates = maps.groupby("page")["date"].min().to_dict()
-        name_to_id = model.name_to_id(team_names, model.canonical_ids(maps, team_names))
-        changes = model.roster_changes(rosters, event_dates, name_to_id)
-    else:
-        changes = {}
-    state, feat = model.build(maps, changes)
+    changes, squads = model.rosters_state(maps, team_names, rosters)
+    state, feat = model.build(maps, changes, squads)
     bt = model.backtest(feat)
     warm = feat[feat["date"] >= feat["date"].min() + pd.Timedelta(days=45)]
     mdl = model.MapModel().fit(warm[model.FEATURES].values, warm["y"].values)
