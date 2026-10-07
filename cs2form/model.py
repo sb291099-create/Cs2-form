@@ -230,7 +230,7 @@ def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> 
         lo = day - pd.Timedelta(days=FORM_DAYS)
         if since is not None and since > lo:
             lo = since
-        rows = [(d, x) for d, x in st.hist[t] if d > lo]
+        rows = [(d, x) for d, x in st.hist[t] if lo < d <= day]
         if not rows:
             return 0.0
         w = np.array([0.5 ** ((day - d).days / FORM_HALF_LIFE) for d, _ in rows])
@@ -239,7 +239,7 @@ def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> 
 
     def exp(t):
         lo = day - pd.Timedelta(days=EXP_DAYS)
-        return math.log1p(sum(1 for d in st.map_dates[(t, mp)] if d > lo))
+        return math.log1p(sum(1 for d in st.map_dates[(t, mp)] if lo < d <= day))
 
     def fresh(t):
         c = st.last_change(t, day)
@@ -256,7 +256,7 @@ def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> 
         lo = day - pd.Timedelta(days=FORM_DAYS)
         if since is not None and since > lo:
             lo = since
-        return decayed([(d, x) for d, x in st.rounds_hist[t] if d > lo], FORM_HALF_LIFE)
+        return decayed([(d, x) for d, x in st.rounds_hist[t] if lo < d <= day], FORM_HALF_LIFE)
 
     def h2h(same_map):
         rows = [
@@ -268,7 +268,8 @@ def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> 
 
     def rest(t):
         seen = st.last_seen.get(t)
-        return math.log1p(min((day - seen).days, REST_CAP) if seen is not None else REST_CAP)
+        days = (day - seen).days if seen is not None else REST_CAP
+        return math.log1p(min(max(days, 0), REST_CAP))
 
     sa, sb = st.squad_elo(a, day), st.squad_elo(b, day)
     known = sa is not None and sb is not None

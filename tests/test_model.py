@@ -135,3 +135,72 @@ def test_canonical_ids_merges_templates_but_not_countries():
     assert ids == {"team spirit": "spirit", "magic": "magic.ru"}  # российские и бразильские Players — разные
     assert model.canonicalize(maps, ids)["team1_id"].tolist()[5] == "spirit"
     assert model.name_to_id(names, ids)["Team Spirit"] == "spirit"
+
+
+def test_lineups_and_rosters_state():
+    maps = pd.DataFrame(
+        {
+            "page": ["E1", "E2"],
+            "date": ["2026-08-01", "2026-10-01"],
+            "team1_id": ["spirit", "spirit"],
+            "team2_id": ["x", "x"],
+        }
+    )
+    names = pd.DataFrame({"id": ["spirit"], "name": ["Team Spirit"]})
+    rosters = pd.DataFrame(
+        [
+            dict(page="E1", team_name="Team Spirit", players="a,b,c,d,e"),
+            dict(page="E2", team_name="Team Spirit", players="a,b,c,d,f,team=other"),
+            dict(page="E2", team_name="Noname", players="g,h"),  # меньше четырёх — не состав
+        ]
+    )
+    changes, squads = model.rosters_state(maps, names, rosters)
+    assert changes["spirit"] == [pd.Timestamp("2026-10-01")]
+    assert [d.date().isoformat() for d, _ in squads["spirit"]] == ["2026-08-01", "2026-10-01"]
+    assert squads["spirit"][1][1] == ["a", "b", "c", "d", "f"]  # «team=other» — не игрок
+    assert "noname" not in squads
+    st = model.State()
+    st.lineup = squads
+    assert st.players("spirit", pd.Timestamp("2026-09-01")) == ["a", "b", "c", "d", "e"]
+    assert st.players("spirit", pd.Timestamp("2026-07-01")) == ["a", "b", "c", "d", "e"]  # до первой заявки
+    assert st.players("spirit", pd.Timestamp("2026-10-05"))[-1] == "f"
+    assert st.players("x", pd.Timestamp("2026-10-05")) == []
+
+
+def test_player_rating_follows_the_player_between_teams():
+    day = pd.Timestamp("2026-09-01")
+    st = model.State()
+    st.lineup = {
+        "strong": [(day, ["p1", "p2", "p3", "p4", "p5"])],
+        "weak": [(day, ["w1", "w2", "w3", "w4", "w5"])],
+        "new": [(day + pd.Timedelta(days=10), ["p1", "p2", "p3", "p4", "p5"])],
+    }
+    for i in range(10):
+        model.update(st, "strong", "weak", "Nuke", day + pd.Timedelta(days=i), 13, 5)
+    assert st.player_elo["p1"] > model.BASE > st.player_elo["w1"]
+    # новая команда из тех же игроков: рейтинг состава высокий, хотя сама команда ещё без истории
+    f = model.features(st, "new", "weak", "Nuke", day + pd.Timedelta(days=11))
+    assert f["players"] > 0 and f["players_known"] == 1.0
+    assert f["elo"] > 0  # хотя у самой команды истории нет
+    # та же пятёрка в старой команде: рейтинг состава одинаков, но у новой команды нет наигранного Elo
+    same = model.features(st, "new", "strong", "Nuke", day + pd.Timedelta(days=11))
+    assert same["players"] == pytest.approx(0.0) and same["players_vs_team"] > 0
+    assert model.features(st, "nobody", "weak", "Nuke", day)["players_known"] == 0.0
+
+
+def test_round_rating_and_rest():
+    day = pd.Timestamp("2026-09-01")
+    st = model.State()
+    for i in range(6):
+        model.update(st, "a", "b", "Nuke", day + pd.Timedelta(days=i), 13, 4)
+    assert st.round_rating("a", day + pd.Timedelta(days=6)) > 0
+    f = model.features(st, "a", "b", "Nuke", day + pd.Timedelta(days=6))
+    assert f["rounds"] > 0 and f["rounds_form"] > 0
+    assert f["h2h"] > 0 and f["h2h_map"] > 0  # все личные встречи за «a»
+    assert f["exp_all"] == 0.0 and f["rest"] == 0.0  # сыграли одинаково и в один день
+    # без игр рейтинг по раундам тянется к нулю
+    far = st.round_rating("a", day + pd.Timedelta(days=6 + int(model.R_HALF_LIFE)))
+    assert 0 < far
+    assert far == pytest.approx(st.rounds["a"])
+    f2 = model.features(st, "a", "c", "Nuke", day + pd.Timedelta(days=30))
+    assert f2["rest"] < 0  # «a» играла недавно, «c» не играла вовсе
