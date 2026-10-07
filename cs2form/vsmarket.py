@@ -13,7 +13,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-from . import model, value
+from . import model, scan, value
 from .history import HIST
 from .odds import DATA
 
@@ -102,32 +102,35 @@ def market_probs(hist: pd.DataFrame) -> pd.DataFrame:
         else h
     )
     out = {}
-    for (key, market, period, line), g in h.groupby(["match_key", "market", "period", "line"]):
-        if g["outcome"].nunique() != 2:
-            continue
-        flip = not bool(g["p1_is_team1"].iloc[0])
+    for key, gk in h.groupby("match_key"):
+        flip = not bool(gk["p1_is_team1"].iloc[0])
+        rec = out.setdefault(key, {})
         for col in ("price_fetch", "price_close"):
-            pr = g.drop_duplicates("outcome").set_index("outcome")[col]
-            inv = 1 / pr
-            q = inv / inv.sum()
             when = col.split("_")[1]
-            rec = out.setdefault(key, {})
-            if market == "moneyline" and period == "result" and {"1", "2"} <= set(q.index):
-                rec[f"q_{when}"] = q["2"] if flip else q["1"]
-                rec[f"price1_{when}"] = pr["2"] if flip else pr["1"]
-                rec[f"price2_{when}"] = pr["1"] if flip else pr["2"]
-            elif market == "moneyline" and period == "p1" and {"1", "2"} <= set(q.index):
-                rec[f"qmap1_{when}"] = q["2"] if flip else q["1"]
-            elif market == "spreads" and {"1", "2"} <= set(q.index):
-                # фора участника 1 −1.5: он выигрывает 2:0; +1.5: участник 2 выигрывает 2:0 с вероятностью 1 − q1
-                p1_20 = q["1"] if line < 0 else None
-                p2_20 = 1 - q["1"] if line > 0 else None
-                if p1_20 is not None:
-                    rec[f"q{'02' if flip else '20'}_{when}"] = p1_20
-                if p2_20 is not None:
-                    rec[f"q{'20' if flip else '02'}_{when}"] = p2_20
-            elif market == "totals" and {"Over", "Under"} <= set(q.index):
-                rec[f"q3_{when}"] = q["Over"]
+            g = gk.rename(columns={"book": "bookmaker", col: "price"})
+            # у части матчей OddsPapi знак форы Pinnacle перевёрнут, как и у других контор: разворачиваем
+            ml = scan._pairs(g[(g["market"] == "moneyline") & (g["period"] == "result")]).get("pinnacle", {})
+            g = scan._unflip(g, ml.get("1"))
+            for (market, period, line), gm in g.groupby(["market", "period", "line"]):
+                pr = gm.drop_duplicates("outcome").set_index("outcome")["price"]
+                if len(pr) != 2:
+                    continue
+                inv = 1 / pr
+                q = inv / inv.sum()
+                if market == "moneyline" and period == "result" and {"1", "2"} <= set(q.index):
+                    rec[f"q_{when}"] = q["2"] if flip else q["1"]
+                    rec[f"price1_{when}"] = pr["2"] if flip else pr["1"]
+                    rec[f"price2_{when}"] = pr["1"] if flip else pr["2"]
+                elif market == "moneyline" and period == "p1" and {"1", "2"} <= set(q.index):
+                    rec[f"qmap1_{when}"] = q["2"] if flip else q["1"]
+                elif market == "spreads" and period == "result" and {"1", "2"} <= set(q.index):
+                    # фора участника 1 −1.5: он выигрывает 2:0; +1.5: участник 2 выигрывает 2:0 с вероятностью 1 − q1
+                    if line < 0:
+                        rec[f"q{'02' if flip else '20'}_{when}"] = q["1"]
+                    elif line > 0:
+                        rec[f"q{'20' if flip else '02'}_{when}"] = 1 - q["1"]
+                elif market == "totals" and period == "result" and {"Over", "Under"} <= set(q.index):
+                    rec[f"q3_{when}"] = q["Over"]
     return pd.DataFrame.from_dict(out, orient="index").rename_axis("match_key").reset_index()
 
 
