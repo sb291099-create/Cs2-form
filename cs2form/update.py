@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from . import model
 from .liquipedia import Liquipedia, parse_page
 from .news import build_news
 from .scraper import Fetcher, as_dicts, fetch_ranking
@@ -97,9 +98,11 @@ def main() -> int:
     cutoff = (today - timedelta(days=args.days)).isoformat()
     all_maps = _merge(DATA / "maps.csv", with_names(maps), "map_id", refreshed, keep_old=not full)
     all_maps = all_maps[all_maps["date"] >= cutoff].sort_values(["date", "map_id"])
+    canon = model.canonical_ids(all_maps, pd.DataFrame(sorted(known.items()), columns=["id", "name"]))
+    all_maps = model.canonicalize(all_maps, canon)  # spirit и team spirit — одна команда
     all_maps.to_csv(DATA / "maps.csv", index=False)
 
-    up = with_names(upcoming)
+    up = model.canonicalize(with_names(upcoming), canon)
     if not up.empty:
         up = up[up["date"] >= today.isoformat()].sort_values(["date", "time"])
     up.to_csv(DATA / "upcoming.csv", index=False)

@@ -19,6 +19,7 @@
 from __future__ import annotations
 
 import math
+import re
 from collections import defaultdict
 from dataclasses import dataclass, field
 from itertools import combinations
@@ -100,6 +101,51 @@ def roster_changes(rosters: pd.DataFrame, event_dates: dict, name_to_id: dict) -
         if ch:
             out[tid] = ch
     return out
+
+
+def canonical_ids(maps: pd.DataFrame, team_names: pd.DataFrame) -> dict[str, str]:
+    """Один клуб в Liquipedia бывает записан разными шаблонами (spirit и team spirit):
+    все id с одинаковым названием сводим к тому, у которого больше всего карт."""
+    if team_names is None or team_names.empty:
+        return {}
+    count = pd.concat([maps["team1_id"], maps["team2_id"]]).value_counts()
+    out = {}
+    for _, g in team_names.dropna(subset=["name"]).groupby("name"):
+        ids = list(g["id"])
+        if len(ids) > 1:
+            best = max(ids, key=lambda i: (count.get(i, 0), -len(str(i))))
+            rb = _region(best)
+            out.update({i: best for i in ids if i != best and (_region(i) is None or rb is None or _region(i) == rb)})
+    return out
+
+
+_REGIONS = {"russian": "ru", "american": "us", "mexican": "mx", "turkish": "tr", "brazilian": "br", "chinese": "cn"}
+
+
+def _region(team_id) -> str | None:
+    """Пометка страны в id Liquipedia: «players.br», «magic (russian team)». Разные страны — разные команды."""
+    s = str(team_id)
+    m = re.search(r"\((\w+) team\)", s)
+    if m:
+        return _REGIONS.get(m.group(1), m.group(1))
+    m = re.search(r"\.([a-z]{2})$", s)
+    return m.group(1) if m else None
+
+
+def canonicalize(df: pd.DataFrame, mapping: dict[str, str]) -> pd.DataFrame:
+    if df is None or df.empty or not mapping:
+        return df
+    df = df.copy()
+    for c in ("team1_id", "team2_id"):
+        if c in df:
+            df[c] = df[c].map(lambda x: mapping.get(x, x))
+    return df
+
+
+def name_to_id(team_names: pd.DataFrame, mapping: dict[str, str]) -> dict[str, str]:
+    if team_names is None or team_names.empty:
+        return {}
+    return {n: mapping.get(i, i) for i, n in zip(team_names["id"], team_names["name"])}
 
 
 def features(st: State, a, b, mp: str, day: pd.Timestamp, seed: float = 1.0) -> dict:

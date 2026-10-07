@@ -116,3 +116,22 @@ def test_side_stats():
     assert n == 2
     assert ct == pytest.approx((8 + 6) / (8 + 4 + 6 + 2))  # a за CT: 8 из 12 и 6 из 8
     assert t == pytest.approx((5 + 7) / (5 + 7 + 7 + 6))
+
+
+def test_canonical_ids_merges_templates_but_not_countries():
+    maps = pd.DataFrame(
+        {
+            "team1_id": ["spirit"] * 5 + ["team spirit", "magic.ru", "players.br"],
+            "team2_id": ["x"] * 5 + ["y", "z", "w"],
+        }
+    )
+    names = pd.DataFrame(
+        {
+            "id": ["spirit", "team spirit", "magic", "magic.ru", "players (russian team)", "players.br"],
+            "name": ["Team Spirit", "Team Spirit", "Magic", "Magic", "Players", "Players"],
+        }
+    )
+    ids = model.canonical_ids(maps, names)
+    assert ids == {"team spirit": "spirit", "magic": "magic.ru"}  # российские и бразильские Players — разные
+    assert model.canonicalize(maps, ids)["team1_id"].tolist()[5] == "spirit"
+    assert model.name_to_id(names, ids)["Team Spirit"] == "spirit"

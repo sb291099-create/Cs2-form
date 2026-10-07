@@ -9,7 +9,7 @@ import streamlit as st
 import json
 
 
-from cs2form import markets, metrics, model, value
+from cs2form import bank, markets, metrics, model, scan, value
 
 DATA = Path(__file__).parent / "data"
 
@@ -29,6 +29,9 @@ def load():
     maps["map"] = maps["map"].fillna("")
     ranking = _read("ranking.csv")
     extra = {n: _read(f"{n}.csv", dtype=str) for n in ("upcoming", "news", "rosters", "team_names")}
+    ids = model.canonical_ids(maps, extra["team_names"])
+    maps, extra["upcoming"] = model.canonicalize(maps, ids), model.canonicalize(extra["upcoming"], ids)
+    extra["ids"] = ids
     return maps, (ranking if not ranking.empty else None), extra
 
 
@@ -37,7 +40,7 @@ def deep_model(maps: pd.DataFrame, rosters: pd.DataFrame, team_names: pd.DataFra
     """Глубокая модель: Elo по картам, форма текущего состава, опыт на карте; обучение и проверка на истории."""
     if "page" in maps:
         event_dates = maps.groupby("page")["date"].min().to_dict()
-        name_to_id = dict(zip(team_names["name"], team_names["id"])) if not team_names.empty else {}
+        name_to_id = model.name_to_id(team_names, model.canonical_ids(maps, team_names))
         changes = model.roster_changes(rosters, event_dates, name_to_id)
     else:
         changes = {}
@@ -176,6 +179,125 @@ def render_markets(fc, name_a, name_b, bestof, key):
     )
 
 
+@st.cache_data(ttl=3600, show_spinner="Ищу выгодные ставки…")
+def value_scan(fetched: str, n_maps: int, vetoes: tuple):
+    """Прогноз модели против кэфов всех контор; fetched и n_maps — чтобы пересчитать при новых данных."""
+    return scan.scan(_read("odds.csv.gz"), extra["upcoming"], mdl, state, pool, round_tab, vetoes=dict(vetoes))
+
+
+def render_bank():
+    """Виртуальный банк: ставки, которые Claude делает сам по сканеру, с итогами."""
+    if not bank.BETS.exists():
+        return
+    rules, bets = bank.load_rules(), bank.load()
+    b = bank.balance(bets, rules["start"])
+    goal = rules.get("goal")
+    st.markdown("#### 💰 Виртуальный банк: ставит Claude")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Банк", bank.money(b["bank"]), delta=bank.money(b["profit"], True) if b["settled"] else None)
+    c2.metric("В игре", bank.money(b["in_play"]), help=f"Ставок ждут результата: {b['pending']}")
+    c3.metric("Выиграно", f"{b['won']} из {b['settled']}")
+    c4.metric("ROI", f"{b['roi'] * 100:+.0f}%")
+    if goal:
+        st.progress(
+            min(max(b["bank"] / goal, 0.0), 1.0),
+            text=f"Старт {bank.money(rules['start'])} · цель {bank.money(goal)} к {rules.get('until', '')} · "
+            f"режим «{rules.get('mode', 'спокойно')}»",
+        )
+    if not bets.empty:
+        view = bets.iloc[::-1].rename(
+            columns={
+                "start": "Начало, UTC",
+                "match": "Матч",
+                "bet": "Ставка",
+                "odds": "Кэф",
+                "book": "Контора",
+                "stake": "Сумма",
+                "status": "Итог",
+                "score": "Счёт",
+                "payout": "Выплата",
+            }
+        )
+        st.dataframe(
+            view[["Начало, UTC", "Матч", "Ставка", "Кэф", "Контора", "Сумма", "Итог", "Счёт", "Выплата"]],
+            column_config={"Кэф": st.column_config.NumberColumn(format="%.2f")},
+            hide_index=True,
+            width="stretch",
+        )
+    st.caption(
+        "Каждое утро Claude рассчитывает сыгранные ставки по счёту с Liquipedia и ставит на новые матчи: "
+        "по одной ставке на матч, рынок из лесенки, который в среднем сильнее растит банк."
+    )
+
+
+def render_bets():
+    """Выгодные ставки по скачанным кэфам: на победу, форы и тоталы карт, а при известном вето и на карты."""
+    odds_df = _read("odds.csv.gz")
+    if odds_df.empty:
+        st.info(
+            "Кэфы ещё не скачаны: они скачиваются каждое утро вместе с данными (GitHub Actions → «Обновить данные»)."
+        )
+        return
+    fetched = str(odds_df["fetched"].max()) if "fetched" in odds_df else ""
+    up = extra.get("upcoming", pd.DataFrame())
+    have = up[up["match_key"].isin(set(odds_df["match_key"].dropna()))] if not up.empty else up
+    st.caption(
+        f"Кэфы {odds_df['bookmaker'].nunique()} контор на {len(have)} матчей, скачаны "
+        f"{fetched[:16].replace('T', ' ')} UTC (OddsPapi). Скачиваются раз в сутки, утром."
+    )
+    vetoes = {}
+    with st.expander("Вето, если уже известно: появятся ставки на отдельные карты (по линии Pinnacle)"):
+        for r in have.itertuples():
+            bo = int(float(r.bestof or 3))
+            cols = st.columns([2] + [1] * bo)
+            cols[0].markdown(f"{r.team1} — {r.team2}")
+            veto = [
+                cols[i + 1].selectbox(f"Карта {i + 1}", [""] + pool, key=f"veto-{r.match_key}-{i}") for i in range(bo)
+            ]
+            if all(veto):
+                vetoes[r.match_key] = veto
+    res = value_scan(fetched, len(maps), tuple(sorted((k, tuple(v)) for k, v in vetoes.items())))
+    if res.empty:
+        st.info("Матчей с кэфами в списке ближайших нет.")
+        return
+    show_all = st.toggle("Показать все рынки, а не только выгодные", key="bets-all")
+    sel = res if show_all else res[res["edge"] >= value.MIN_EDGE]
+    if sel.empty:
+        st.info("Сейчас выгодных ставок нет: модель согласна с рынком.")
+    else:
+        msk = pd.to_datetime(sel["start"], utc=True) + pd.Timedelta(hours=3)
+        df = pd.DataFrame(
+            {
+                "Начало, МСК": msk.dt.strftime("%d.%m %H:%M"),
+                "Матч": sel["match"],
+                "Ставка": sel["market"],
+                "Модель %": sel["model_p"] * 100,
+                "Рынок %": sel["market_p"] * 100,
+                "Брать от": sel["min_odds"],
+                "Кэф": sel["price"],
+                "Перевес %": sel["edge"] * 100,
+                "Сумма, % банка": sel["stake"] * 100,
+                "Крупные конторы": sel["quotes"],
+                "Лучший кэф": sel["best_price"].map("{:.2f}".format) + " " + sel["best_book"],
+                "Конторы от порога": sel["books_ok"].astype(str) + " из " + sel["books"].astype(str),
+            }
+        ).sort_values(["Начало, МСК", "Перевес %"], ascending=[True, False])
+        num = {c: st.column_config.NumberColumn(format="%.0f") for c in ("Модель %", "Рынок %", "Перевес %")}
+        num.update({c: st.column_config.NumberColumn(format="%.2f") for c in ("Брать от", "Кэф")})
+        num["Сумма, % банка"] = st.column_config.NumberColumn(format="%.1f")
+        st.dataframe(df, column_config=num, hide_index=True, width="stretch")
+    no_value = sorted(set(res["match"]) - set(res.loc[res["edge"] >= value.MIN_EDGE, "match"]))
+    if no_value and not show_all:
+        st.caption("Без перевеса: " + "; ".join(no_value) + ".")
+    st.caption(
+        "«Брать от» — кэф, ниже которого ставка уже не выгодна: перевес меньше 5%. "
+        "Шанс для ставки — среднее модели и линии Pinnacle без маржи (если Pinnacle нет, медиана контор). "
+        "«Кэф» — лучший у крупных контор (Pinnacle, Fonbet, Marathon, Stake, 1xBet, bet365), перевес и сумма "
+        "считаются по нему. Сумма — четверть Келли, не больше 2% банка и не больше 1%, если модель и рынок "
+        "расходятся больше чем на 12 п.п. Кэфы меняются: перед ставкой сверь свой с «Брать от»."
+    )
+
+
 def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
     veto_maps = None
     if bestof > 1:
@@ -287,15 +409,20 @@ def render_forecast(a, b, name_a, name_b, bestof, seed=0.0):
     return fc
 
 
-tabs = ["📅 Матчи дня"] if has_maps else []
+tabs = ["🔥 Ставки", "📅 Матчи дня"] if has_maps else []
 tabs += ["📊 Рейтинг формы", "🔎 Команда", "⚔️ Сравнение"] + (["🧪 Модель"] if has_maps else []) + ["📒 Журнал"]
 tab_objs = st.tabs(tabs)
 if has_maps:
-    tab_today, tab_rank, tab_team, tab_vs, tab_model, tab_log = tab_objs
+    tab_bets, tab_today, tab_rank, tab_team, tab_vs, tab_model, tab_log = tab_objs
 else:
     tab_rank, tab_team, tab_vs, tab_log = tab_objs
 
 if has_maps:
+    with tab_bets:
+        render_bank()
+        st.markdown("#### 🔥 Выгодные ставки по кэфам")
+        render_bets()
+
     with tab_today:
         upcoming = extra.get("upcoming", pd.DataFrame())
         news = extra.get("news", pd.DataFrame())
