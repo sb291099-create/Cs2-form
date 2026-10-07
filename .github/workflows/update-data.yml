@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 */6 * * *"   # каждые 6 часов: результаты, ближайшие матчи и новости
   workflow_dispatch:      # кнопка «Run workflow» для ручного запуска
+    inputs:
+      odds:
+        description: "Скачать кэфы сейчас (тратит запросы OddsPapi)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,6 +31,12 @@ jobs:
       - run: python -m cs2form.update
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Кэфы букмекеров
+        run: python -m cs2form.odds
+        continue-on-error: true
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_FORCE: ${{ inputs.odds && '1' || '' }}
       - name: Сохранить данные в репозиторий
         run: |
           git config user.name "github-actions[bot]"
