@@ -12,7 +12,7 @@ on:
       days:
         description: "Глубина истории в днях (при полной перекачке)"
         type: number
-        default: 180
+        default: 560
       full:
         description: "Перекачать всю историю заново"
         type: boolean
@@ -36,7 +36,7 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m cs2form.update --days ${{ inputs.days || 180 }} ${{ inputs.full && '--full' || '' }}
+      - run: python -m cs2form.update --days ${{ inputs.days || 560 }} ${{ inputs.full && '--full' || '' }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Кэфы букмекеров

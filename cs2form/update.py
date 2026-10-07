@@ -33,7 +33,7 @@ def _merge(
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--days", type=int, default=180, help="глубина истории")
+    ap.add_argument("--days", type=int, default=560, help="глубина истории: старше карты удаляются из maps.csv")
     ap.add_argument("--full", action="store_true", help="перекачать всю историю")
     args = ap.parse_args()
 
