@@ -8,6 +8,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 
 import numpy as np
@@ -18,6 +19,14 @@ from .history import HIST
 from .odds import DATA
 
 WEIGHTS = np.round(np.arange(0, 1.01, 0.1), 1)
+BACKTEST = DATA / "backtest.json"  # итоги проверок на истории для вкладки «Модель» в приложении
+
+
+def save_section(name: str, obj: dict) -> None:
+    """Записывает раздел итогов в data/backtest.json, не трогая остальные."""
+    out = json.loads(BACKTEST.read_text()) if BACKTEST.exists() else {}
+    out[name] = obj
+    BACKTEST.write_text(json.dumps(out, ensure_ascii=False, indent=1, default=float))
 
 
 def load_maps() -> tuple[pd.DataFrame, dict]:
@@ -211,6 +220,10 @@ def run() -> dict:
         "модель при известном вето": logloss(y, df["p_model_veto"]),
         "среднее 50/50 (утро)": logloss(y, 0.5 * df["p_model"] + 0.5 * df["q_fetch"]),
     }
+    res["accuracy"] = {
+        "Pinnacle утром": float(((df["q_fetch"] > 0.5) == y).mean()),
+        "модель": float(((df["p_model"] > 0.5) == y).mean()),
+    }
     res["curve_fetch"] = blend_curve(y, df["p_model"].values, df["q_fetch"].values)
     res["curve_close"] = blend_curve(y, df["p_model"].values, df["q_close"].values)
     res["bets"] = {
@@ -254,11 +267,31 @@ def run() -> dict:
     return res
 
 
+def compact(res: dict) -> dict:
+    """Главное из run() для приложения: точность модели и рынка и итог ставок по старым правилам."""
+    r4 = lambda d: {k: round(float(v), 4) for k, v in d.items()}  # noqa: E731
+    out = dict(
+        n=res["n"],
+        since=f"{res['period'][0]:%d.%m.%Y}",
+        until=f"{res['period'][1]:%d.%m.%Y}",
+        logloss=r4(res["logloss"]),
+        accuracy=r4(res["accuracy"]),
+        old_rules=r4(res["bets"]["w=0.5, порог 5%"]),
+    )
+    if "two_nil" in res:
+        out["two_nil"] = r4(res["two_nil"])
+    if "totals" in res:
+        out["totals"] = r4(res["totals"])
+    return out
+
+
 def main() -> int:
     if not HIST.exists():
         print("Нет data/odds_history.csv.gz: сначала Actions → «Прошлые кэфы Pinnacle»")
         return 0
     res = run()
+    if "--save" in sys.argv:
+        save_section("model", compact(res))
     pd.set_option("display.width", 200)
     print(f"Матчей с линией Pinnacle и счётом: {res['n']}, {res['period'][0]:%d.%m} – {res['period'][1]:%d.%m}")
     for k, v in res["logloss"].items():

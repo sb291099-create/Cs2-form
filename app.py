@@ -186,6 +186,55 @@ def value_scan(fetched: str, n_maps: int, vetoes: tuple):
     return scan.scan(_read("odds.csv.gz"), extra["upcoming"], mdl, state, pool, round_tab, vetoes=dict(vetoes))
 
 
+def render_backtest():
+    """Итоги проверки на прошлых матчах: модель против линии Pinnacle и ставки по кэфам выше её честной цены."""
+    path = DATA / "backtest.json"
+    if not path.exists():
+        return
+    bt_ = json.loads(path.read_text())
+    m = bt_.get("model")
+    if m:
+        st.markdown(f"#### Модель против линии Pinnacle на прошлых матчах ({m['n']}, {m['since']} – {m['until']})")
+        ll, acc, old = m["logloss"], m["accuracy"], m["old_rules"]
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Pinnacle угадал победителя", f"{acc['Pinnacle утром'] * 100:.0f}%")
+        c2.metric("Модель угадала", f"{acc['модель'] * 100:.0f}%")
+        c3.metric("Log loss Pinnacle / модели", f"{ll['Pinnacle утром']:.3f} / {ll['модель']:.3f}")
+        c4.metric("Старые правила, итог ставок", f"{old['roi'] * 100:+.0f}%", help=f"Ставок: {old['n']:.0f}")
+        st.caption(
+            "Прогноз модели строился так, как утром перед матчем: состояние команд до первой карты, вето по "
+            "прогнозу, обучение только на картах до месяца матча. Линия Pinnacle — без маржи, на утреннюю "
+            "загрузку кэфов. «Старые правила» — ставки по среднему модели и рынка с перевесом от 5% по кэфу "
+            "Pinnacle. Поэтому шанс для ставки теперь — линия Pinnacle, а модель показывается для справки."
+        )
+    v = bt_.get("value")
+    if v and v.get("thresholds"):
+        st.markdown("#### Ставки по кэфам выше честной цены Pinnacle на тех же матчах")
+        rows = [
+            {
+                "Перевес от": k,
+                "Ставок": s.get("n", 0),
+                "Выиграно %": s.get("won", 0) * 100,
+                "Средний кэф": s.get("price"),
+                "Итог на 1 ₽ %": s.get("roi", 0) * 100,
+                "± ошибка %": (s.get("roi_se") or 0) * 100,
+                "Перевес на закрытии %": (s.get("clv") or 0) * 100,
+            }
+            for k, s in v["thresholds"].items()
+        ]
+        st.dataframe(
+            pd.DataFrame(rows),
+            column_config={
+                c: st.column_config.NumberColumn(format="%.1f")
+                for c in ("Выиграно %", "Итог на 1 ₽ %", "± ошибка %", "Перевес на закрытии %")
+            }
+            | {"Средний кэф": st.column_config.NumberColumn(format="%.2f")},
+            hide_index=True,
+            width="stretch",
+        )
+        st.caption(v.get("note", ""))
+
+
 def render_bank():
     """Виртуальный банк: ставки, которые Claude делает сам по сканеру, с итогами."""
     if not bank.BETS.exists():
@@ -667,6 +716,8 @@ with tab_vs:
 
 if has_maps:
     with tab_model:
+        render_backtest()
+        st.markdown("#### Точность модели по картам")
         st.markdown(
             "Модель учится на первых 60% карт по времени и проверяется на остальных, которых она не видела. "
             "**Log loss** — чем меньше, тем точнее вероятности (подбрасывание монеты = 0.693). "

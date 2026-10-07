@@ -15,9 +15,10 @@ import sys
 import numpy as np
 import pandas as pd
 
-from . import scan
+from . import scan, value
 from .history import FETCH_AT, HIST
 from .odds import DATA
+from .vsmarket import save_section
 
 SOFT = ("fonbet", "marathonbet", "1xbet", "stake", "bet365", "melbet")
 EDGES = (0.0, 0.02, 0.03, 0.05, 0.08)
@@ -176,11 +177,29 @@ def run(hist: pd.DataFrame | None = None, maps: pd.DataFrame | None = None) -> d
     return out
 
 
+def compact(out: dict, edge: float) -> dict:
+    """Главное для приложения: одна ставка на матч при разных порогах, рынки и конторы при выбранном пороге."""
+    v, m = out.get(scan.SHARP) or {}, out.get("median") or {}
+    key = f"от {edge:.0%}"
+    c = v.get("frame", pd.DataFrame())
+    sel = one_per_match(c[c["edge"] >= edge]) if len(c) else c
+    return dict(
+        books=out["books"],
+        thresholds=v.get("одна на матч", {}),
+        by_market={k: summary(x) for k, x in sel.groupby("market")} if len(sel) else {},
+        by_book={k: summary(x) for k, x in sel.groupby("book")} if len(sel) else {},
+        median=(m.get("одна на матч") or {}).get(key, {}),
+        note="",
+    )
+
+
 def main() -> int:
     if not HIST.exists():
         print("Нет data/odds_history.csv.gz: сначала Actions → «Прошлые кэфы Pinnacle»")
         return 0
     out = run()
+    if "--save" in sys.argv:
+        save_section("value", compact(out, value.MIN_EDGE))
     print(f"Матчей по конторам: {out['books']}")
     for ref, name in ((scan.SHARP, "эталон Pinnacle"), ("median", "эталон — медиана контор без Pinnacle")):
         print(f"== {name}")
