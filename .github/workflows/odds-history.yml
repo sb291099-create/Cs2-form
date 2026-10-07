@@ -1,0 +1,45 @@
+name: Прошлые кэфы Pinnacle
+
+on:
+  workflow_dispatch:      # только вручную: скачивает линии прошлых матчей для проверки модели
+    inputs:
+      days:
+        description: "За сколько дней назад"
+        type: number
+        default: 90
+      raw:
+        description: "Сколько сырых ответов сохранить для проверки разбора"
+        type: number
+        default: 0
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Линии Pinnacle на прошлые матчи
+        run: python -m cs2form.history --days ${{ inputs.days }} --raw ${{ inputs.raw }}
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+      - name: Сохранить данные в репозиторий
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && echo "Новых данных нет" && exit 0
+          git commit -m "Прошлые кэфы Pinnacle"
+          git pull --rebase origin main
+          git push

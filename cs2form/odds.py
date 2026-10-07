@@ -102,10 +102,12 @@ class Client:
     def __init__(self, key: str, state: dict):
         self.key, self.state, self.s = key, state, requests.Session()
 
-    def get(self, path: str, **params):
-        if self.state["used"] >= MONTHLY_BUDGET:
-            raise RuntimeError(f"исчерпан месячный лимит запросов ({MONTHLY_BUDGET})")
-        self.state["used"] += 1
+    def get(self, path: str, free: bool = False, **params):
+        """free — эндпоинт не тратит месячный лимит (/historical-odds, /account)."""
+        if not free:
+            if self.state["used"] >= MONTHLY_BUDGET:
+                raise RuntimeError(f"исчерпан месячный лимит запросов ({MONTHLY_BUDGET})")
+            self.state["used"] += 1
         r = self.s.get(f"{API}{path}", params={"apiKey": self.key, **params}, timeout=30)
         if r.status_code == 429:
             time.sleep(min(60, int(r.headers.get("Retry-After", "5"))))
