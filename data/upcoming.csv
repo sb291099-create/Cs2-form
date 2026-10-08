@@ -1,11 +1,7 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/13/Play-In#10,2026-10-08,"October 8, 2026 - 10:00 {{Abbr/CEST",lavked,fortress,3,NODWIN Gaming/Clutch Series/13,b,False,2399071,NODWIN Gaming/Clutch Series/13,lavked,Fortress Esport
-CCT/2026/Europe/Series 11/Play-In#2,2026-10-08,"October 8, 2026 - 10:00 {{Abbr/CEST",los kogutos,illyrians,3,CCT/2026/Europe/Series 11,b,False,2399274,CCT/2026/Europe/Series 11,los kogutos,ILLYRIANS
-CCT/2026/Europe/Series 10#33,2026-10-08,"October 8, 2026 - 10:00 {{Abbr/CEST",acend,ex-z10,3,CCT Europe 2026 Series #10,b,False,2398403,CCT/2026/Europe/Series 10,Acend,ex-Zero Tenacity
-1win Private Club/2/Qualifier#7,2026-10-08,"October 8, 2026 - 11:00 {{Abbr/CEST",tpudcatb tpu,gl,3,1win Private Club/2,a,True,2398979,1win Private Club/2,33,GamerLegion
 NODWIN Gaming/Clutch Series/13/Play-In#15,2026-10-08,"October 8, 2026 - 13:00 {{Abbr/CEST",enjoy.ru,6666,3,NODWIN Gaming/Clutch Series/13,b,False,2399073,NODWIN Gaming/Clutch Series/13,Enjoy,6666 Esports
 CCT/2026/Europe/Series 11/Play-In#7,2026-10-08,"October 8, 2026 - 13:00 {{Abbr/CEST",azuolas,noir verse,3,CCT/2026/Europe/Series 11,b,False,2399275,CCT/2026/Europe/Series 11,Azuolas,Noir Verse
-CCT/2026/Europe/Series 10#39,2026-10-08,"October 8, 2026 - 13:00 {{Abbr/CEST",nemiga,lavked,3,CCT Europe 2026 Series #10,b,False,2398404,CCT/2026/Europe/Series 10,Nemiga Gaming,lavked
+CCT/2026/Europe/Series 10#39,2026-10-08,"October 8, 2026 - 13:30 {{Abbr/CEST",nemiga,lavked,3,CCT Europe 2026 Series #10,b,False,2398404,CCT/2026/Europe/Series 10,Nemiga Gaming,lavked
 1win Private Club/2/Qualifier#6,2026-10-08,"October 8, 2026 - 14:00 {{Abbr/CEST",team nemesis,sinners,3,1win Private Club/2,a,True,2398980,1win Private Club/2,Team Nemesis,SINNERS Esports
 NODWIN Gaming/Clutch Series/13/Play-In#16,2026-10-08,"October 8, 2026 - 16:00 {{Abbr/CEST",azuolas,misa,3,NODWIN Gaming/Clutch Series/13,b,False,2399072,NODWIN Gaming/Clutch Series/13,Azuolas,Misa Esports
 CCT/2026/Europe/Series 11/Play-In#8,2026-10-08,"October 8, 2026 - 16:00 {{Abbr/CEST",megoshort,fire flux,3,CCT/2026/Europe/Series 11,b,False,2399276,CCT/2026/Europe/Series 11,megoshort,Fire Flux Esports
@@ -22,7 +18,6 @@ ESL/Challenger League/Season 52/South America/Cup 3#18,2026-10-08,"October 8, 20
 NODWIN Gaming/Clutch Series/13/Play-In#11,2026-10-08,"October 8, 2026 - 19:00 {{Abbr/CEST",lilmix,fire flux,3,NODWIN Gaming/Clutch Series/13,b,False,2399074,NODWIN Gaming/Clutch Series/13,Lilmix,Fire Flux Esports
 CCT/2026/Europe/Series 11/Play-In#3,2026-10-08,"October 8, 2026 - 19:00 {{Abbr/CEST",morrow esports,enjoy.ru,3,CCT/2026/Europe/Series 11,b,False,2399277,CCT/2026/Europe/Series 11,Morrow Esports,Enjoy
 CCT/2026/Europe/Series 10#35,2026-10-08,"October 8, 2026 - 19:00 {{Abbr/CEST",sinners,black phoenix,3,CCT Europe 2026 Series #10,b,False,2398406,CCT/2026/Europe/Series 10,SINNERS Esports,Black Phoenix
-1win Private Club/2/Qualifier#5,2026-10-08,"October 8, 2026 - 20:00 {{Abbr/CEST",color,nuclear tigeres,3,1win Private Club/2,a,True,2398982,1win Private Club/2,Color,Nuclear TigeRES
 ESL/Challenger League/Season 52/North America/Cup 3#7,2026-10-08,"October 8, 2026 - 21:00 {{Abbr/EDT",chicken coop,detonate,3,ESL Challenger League Season 52: North America - Cup #3,b,False,2399213,ESL/Challenger League/Season 52/North America/Cup 3,Chicken Coop Esports,DETONATE
 ESL/Challenger League/Season 52/North America/Cup 3#8,2026-10-08,"October 8, 2026 - 21:00 {{Abbr/EDT",farmville,overtake sector,3,ESL Challenger League Season 52: North America - Cup #3,b,False,2399214,ESL/Challenger League/Season 52/North America/Cup 3,FarmVille,Overtake Sector
 ESL/Challenger League/Season 52/North America/Cup 3#9,2026-10-08,"October 8, 2026 - 21:00 {{Abbr/EDT",regain,iowa stormboar,3,ESL Challenger League Season 52: North America - Cup #3,b,False,2399215,ESL/Challenger League/Season 52/North America/Cup 3,regain,Iowa Stormboar
