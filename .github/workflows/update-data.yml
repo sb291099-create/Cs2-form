@@ -36,7 +36,9 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m cs2form.update --days ${{ inputs.days || 560 }} ${{ inputs.full && '--full' || '' }}
+      - name: Карты, составы и ближайшие матчи с Liquipedia
+        run: python -m cs2form.update --days ${{ inputs.days || 560 }} ${{ inputs.full && '--full' || '' }}
+        continue-on-error: true  # если Liquipedia ограничила запросы, кэфы всё равно скачиваются
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Кэфы букмекеров
