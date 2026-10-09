@@ -1,14 +1,10 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/Europe/Series 10#43,2026-10-09,"October 9, 2026",iberian soul,noir verse,3,CCT Europe 2026 Series #10,b,False,,CCT/2026/Europe/Series 10,Iberian Soul,Noir Verse
 NODWIN Gaming/Clutch Series/13/Play-In#18,2026-10-09,"October 9, 2026 - 10:00 {{Abbr/CEST",enjoy.ru,azuolas,3,NODWIN Gaming/Clutch Series/13,b,False,2399380,NODWIN Gaming/Clutch Series/13,Enjoy,Azuolas
 CCT/2026/Europe/Series 11/Play-In#10,2026-10-09,"October 9, 2026 - 10:00 {{Abbr/CEST",mellren,bebop,3,CCT/2026/Europe/Series 11,b,False,2399278,CCT/2026/Europe/Series 11,mellren,Bebop
-CCT/2026/Europe/Series 10#42,2026-10-09,"October 9, 2026 - 10:00 {{Abbr/CEST",black phoenix,leo team,3,CCT Europe 2026 Series #10,b,False,2398407,CCT/2026/Europe/Series 10,Black Phoenix,Leo Team
-ESL/Pro League/Season 24#34,2026-10-09,"October 9, 2026 - 10:30 {{Abbr/CEST",1win,aurora,3,ESL Pro League Season 24,s,True,2398750,ESL/Pro League/Season 24,1w Team,Aurora Gaming
 1win Private Club/2/Qualifier#8,2026-10-09,"October 9, 2026 - 11:00 {{Abbr/CEST",hotu,acend,3,1win Private Club/2,a,True,2398983,1win Private Club/2,HOTU,Acend
-ESL/Pro League/Season 24#33,2026-10-09,"October 9, 2026 - 13:00 {{Abbr/CEST",vit,parivision,3,ESL Pro League Season 24,s,True,2398751,ESL/Pro League/Season 24,Team Vitality,PARIVISION
 NODWIN Gaming/Clutch Series/13/Play-In#13,2026-10-09,"October 9, 2026 - 13:00 {{Abbr/CEST",fortress,lilmix,3,NODWIN Gaming/Clutch Series/13,b,False,2399381,NODWIN Gaming/Clutch Series/13,Fortress Esport,Lilmix
 CCT/2026/Europe/Series 11/Play-In#11,2026-10-09,"October 9, 2026 - 13:00 {{Abbr/CEST",honved,6666,3,CCT/2026/Europe/Series 11,b,False,2399279,CCT/2026/Europe/Series 11,Honvéd Esport,6666 Esports
-CCT/2026/Europe/Series 10#44,2026-10-09,"October 9, 2026 - 13:00 {{Abbr/CEST",nemiga,gothic,3,CCT Europe 2026 Series #10,b,False,2398408,CCT/2026/Europe/Series 10,Nemiga Gaming,Gothic
+ESL/Pro League/Season 24#33,2026-10-09,"October 9, 2026 - 13:25 {{Abbr/CEST",vit,parivision,3,ESL Pro League Season 24,s,True,2398751,ESL/Pro League/Season 24,Team Vitality,PARIVISION
 1win Private Club/2/Qualifier#11,2026-10-09,"October 9, 2026 - 14:00 {{Abbr/CEST",sinners,gl,3,1win Private Club/2,a,True,2398984,1win Private Club/2,SINNERS Esports,GamerLegion
 ESL/Pro League/Season 24#36,2026-10-09,"October 9, 2026 - 15:30 {{Abbr/CEST",furia,mouz,3,ESL Pro League Season 24,s,True,2398752,ESL/Pro League/Season 24,FURIA,MOUZ
 NODWIN Gaming/Clutch Series/13/Play-In#17,2026-10-09,"October 9, 2026 - 16:00 {{Abbr/CEST",6666,misa,3,NODWIN Gaming/Clutch Series/13,b,False,2399382,NODWIN Gaming/Clutch Series/13,6666 Esports,Misa Esports
@@ -22,6 +18,7 @@ ESL/Challenger League/Season 52/South America/Cup 3#22,2026-10-09,"October 9, 20
 ESL/Pro League/Season 24#35,2026-10-09,"October 9, 2026 - 18:00 {{Abbr/CEST",falcons,spirit,3,ESL Pro League Season 24,s,True,2398753,ESL/Pro League/Season 24,Team Falcons,Team Spirit
 NODWIN Gaming/Clutch Series/13/Play-In#12,2026-10-09,"October 9, 2026 - 19:00 {{Abbr/CEST",lavked,fire flux,3,NODWIN Gaming/Clutch Series/13,b,False,2399383,NODWIN Gaming/Clutch Series/13,lavked,Fire Flux Esports
 CCT/2026/Europe/Series 11/Play-In#16,2026-10-09,"October 9, 2026 - 19:00 {{Abbr/CEST",saint sinners,antidaun,3,CCT/2026/Europe/Series 11,b,False,2399281,CCT/2026/Europe/Series 11,Saint Sinners,antidaun
+CCT/2026/Europe/Series 10#43,2026-10-09,"October 9, 2026 - 19:00 {{Abbr/CEST",iberian soul,noir verse,3,CCT Europe 2026 Series #10,b,False,2398410,CCT/2026/Europe/Series 10,Iberian Soul,Noir Verse
 1win Private Club/2/Qualifier#10,2026-10-09,"October 9, 2026 - 20:00 {{Abbr/CEST",private,nuclear tigeres,3,1win Private Club/2,a,True,2398986,1win Private Club/2,PRIVATE,Nuclear TigeRES
 ESL/Challenger League/Season 52/North America/Cup 3#17,2026-10-09,"October 9, 2026 - 21:00 {{Abbr/EDT",desi boyz,empire (american team),3,ESL Challenger League Season 52: North America - Cup #3,b,False,2399220,ESL/Challenger League/Season 52/North America/Cup 3,Desi Boyz,EMPIRE
 ESL/Challenger League/Season 52/North America/Cup 3#18,2026-10-09,"October 9, 2026 - 21:00 {{Abbr/EDT",regain,villainous,3,ESL Challenger League Season 52: North America - Cup #3,b,False,2399221,ESL/Challenger League/Season 52/North America/Cup 3,regain,Villainous
