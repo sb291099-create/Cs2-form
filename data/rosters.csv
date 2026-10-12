@@ -2338,7 +2338,7 @@ NODWIN Gaming/Clutch Series/13,NODWIN Gaming/Clutch Series/13,MOUZ NXT,"ay0k,Nik
 NODWIN Gaming/Clutch Series/13,NODWIN Gaming/Clutch Series/13,MAYBE.ua,"zogeN,flag=ua,flag=ua,flag=ua,flag=ua",
 CCT/2026/Europe/Series 11,CCT/2026/Europe/Series 11,Azuolas,"maty,yakuza,flag=lt,flag=ua,tooizera,status=sub",
 CCT/2026/Europe/Series 11,CCT/2026/Europe/Series 11,Enjoy,"link=nbl (Russian player),flag=ru,flag=ru,reyoz,flag=ru",
-CCT/2026/Europe/Series 11,CCT/2026/Europe/Series 11,mellren,"flag=ru,flag=ru,mdl,menddel,lollipop21k",
+CCT/2026/Europe/Series 11,CCT/2026/Europe/Series 11,mellren,"flag=ru,flag=ru,mdl,lollipop21k,flag=ru",
 CCT/2026/Europe/Series 11,CCT/2026/Europe/Series 11,WhiteBIT Academy,"flag=ua,flag=ua,flag=ua,marat2k,flag=ua",
 CCT/2026/Europe/Series 11,CCT/2026/Europe/Series 11,Saint Sinners,"flag=by,deb0,Caleyy,flag=ru,flag=ru",
 CCT/2026/Europe/Series 11,CCT/2026/Europe/Series 11,Honvéd Esport,"noleN,flag=hu,flag=hu,flag=hu,flag=hu",
@@ -2435,7 +2435,7 @@ ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Se
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,Turma do Pagode,"naitte,WOOD7,Tuurtle,matios,pesadelo,flag=br",{{Notes |{{Notes|October 5th - {{player|ksloks|flag=br}} steps down from '''[[Turma do Pagode]]'''. }} }}
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,Yawara E-Sports,"j0w,tele,deemO,brn$,flag=br",
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,Low Cortisol,"stormzyn,flag=br,flag=br,flag=br,flag=br",
-ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,BORRACHEIROS,"flag=br,flag=br,flag=br,flag=br,flag=br,flag=br",
+ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,BORRACHEIROS,"flag=br,flag=br,flag=br,flag=br,flag=br,results=false",
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,BESTIA Academy,"flag=br,flag=ar,flag=br,flag=ar,flag=br",
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,MEIA NOITE,"link=abr (Brazilian player),bsd,flag=br,JOTA,team=bounty hunters",
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,QUINTESSÊNCIA,"flag=br,flag=br,flag=br,edv,flag=br",
@@ -2443,9 +2443,9 @@ ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Se
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,Metanoia Wolves,"flag=br,flag=br,flag=br,flag=br,flag=br","{{Notes |{{Notes|October 7th - {{player|Tineu|flag=br}} steps down from '''[[Metanoia Wolves]]'''. However, he will play the tournament with the team. }} }}"
 ESL Challenger League Season 52: South America - Cup #3,ESL/Challenger League/Season 52/South America/Cup 3,Grêmio Esports,"flag=br,flag=br,flag=br,flag=br,souz4h",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Chicken Coop Esports,"Crisp,jared,link=Drop (Canadian player),Wolffe,flag=dk",
-ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Desi Boyz,"Momo,Pluto,mason,flag=pk,flag=pk,team=iowa stormboar",
-ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,regain,"Zucar,sasha,grape,fuzenko,z0mb1e",
-ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Overtake Sector,"intra,LEARSI,jason,flag=us,ayy",
+ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Desi Boyz,"Momo,mason,flag=pk,flag=pk,jsfeltner",
+ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,regain,"Zucar,sasha,grape,fuzenko,z0mb1e,status=sub",
+ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Overtake Sector,"intra,LEARSI,jason,flag=us,Umar,status=sub",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Villainous,"flag=ca,flag=us,flag=ca,flag=us,flag=us",{{Notes |{{Notes|October 7th - {{player|Jolts|flag=us}} rejoins '''[[Villainous]]'''. }} }}
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Iowa Stormboar,"TyRa,Scorchyy,aelor,flag=us,H0NeST",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Zomblers,"CoolComs,CAJUN,Pose1doNN,flag=us,team=sportsbetexpert",
@@ -2453,7 +2453,7 @@ ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Se
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,EMPIRE (American team),"flag=lb,flag=ca,Walco,kmrn,ayaneuu",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Club 333,"Marro,SecretAgent,kobruh,flag=mx,flag=mx",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Wanted Goons,"flag=us,flag=us,flag=us,flag=us,flag=us",{{Notes |{{Notes|October 4th - '''[[Wanted Goons]]''' sign {{player|LUKE4k|flag=us}}. }} }}
-ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,FarmVille,"BeaKie,flag=us,calamity,Umar,flag=us",
+ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,FarmVille,"BeaKie,flag=us,calamity,flag=us,flag=kz,status=former,status=sub",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,ex-Reign Above,"Nifty,flag=us,flag=us,flag=us,flag=us",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,Day Traders,"flag=us,flag=us,flag=us,flag=ua,flag=ua",
 ESL Challenger League Season 52: North America - Cup #3,ESL/Challenger League/Season 52/North America/Cup 3,OverKnight,"flag=mx,4TAYLOR,cruzN,flag=ve,flag=gt",
