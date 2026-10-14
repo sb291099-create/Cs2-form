@@ -1,23 +1,4 @@
 map_id,match_key,date,team1_id,team2_id,score1,score2,map,map_number,bestof,event,tier,lan,hltv,first1,ct1,t1,ct2,t2,page,team1,team2
-LanDaLan/2/Qualifier#5#1,LanDaLan/2/Qualifier#5,2025-04-01,novaq,rushb.ru,13,11,Nuke,1,3,LanDaLan #2,b,True,2381135,ct,5,8,4,7,LanDaLan/2,NOVAQ,RUSH B
-LanDaLan/2/Qualifier#5#2,LanDaLan/2/Qualifier#5,2025-04-01,novaq,rushb.ru,11,13,Inferno,2,3,LanDaLan #2,b,True,2381135,t,2,9,3,10,LanDaLan/2,NOVAQ,RUSH B
-LanDaLan/2/Qualifier#5#3,LanDaLan/2/Qualifier#5,2025-04-01,novaq,rushb.ru,13,5,Ancient,3,3,LanDaLan #2,b,True,2381135,ct,12,1,5,0,LanDaLan/2,NOVAQ,RUSH B
-LanDaLan/2/Qualifier#6#1,LanDaLan/2/Qualifier#6,2025-04-01,parivision,arcred,13,2,Ancient,1,3,LanDaLan #2,b,True,2381136,ct,10,3,0,2,LanDaLan/2,PARIVISION,ARCRED
-LanDaLan/2/Qualifier#6#2,LanDaLan/2/Qualifier#6,2025-04-01,parivision,arcred,13,2,Mirage,2,3,LanDaLan #2,b,True,2381136,ct,10,3,0,2,LanDaLan/2,PARIVISION,ARCRED
-PGL/2025/Astana/Europe#58#1,PGL/2025/Astana/Europe#58,2025-04-01,nip,metizport,13,11,Anubis,1,5,PGL Astana 2025,s,True,2381016,t,4,9,3,8,PGL/2025/Astana,Ninjas in Pyjamas,Metizport
-PGL/2025/Astana/Europe#58#2,PGL/2025/Astana/Europe#58,2025-04-01,nip,metizport,4,13,Nuke,2,5,PGL Astana 2025,s,True,2381016,t,0,4,8,5,PGL/2025/Astana,Ninjas in Pyjamas,Metizport
-PGL/2025/Astana/Europe#58#3,PGL/2025/Astana/Europe#58,2025-04-01,nip,metizport,16,12,Dust2,3,5,PGL Astana 2025,s,True,2381016,ct,4,8,4,8,PGL/2025/Astana,Ninjas in Pyjamas,Metizport
-PGL/2025/Astana/Europe#58#4,PGL/2025/Astana/Europe#58,2025-04-01,nip,metizport,9,13,Ancient,4,5,PGL Astana 2025,s,True,2381016,t,6,3,9,4,PGL/2025/Astana,Ninjas in Pyjamas,Metizport
-PGL/2025/Astana/Europe#58#5,PGL/2025/Astana/Europe#58,2025-04-01,nip,metizport,13,8,Inferno,5,5,PGL Astana 2025,s,True,2381016,t,7,6,6,2,PGL/2025/Astana,Ninjas in Pyjamas,Metizport
-PGL/2025/Astana/North America#58#1,PGL/2025/Astana/North America#58,2025-04-01,m80,bluejays,10,13,Train,1,5,PGL Astana 2025,s,True,2381132,ct,8,2,9,4,PGL/2025/Astana,M80,BLUEJAYS
-PGL/2025/Astana/North America#58#2,PGL/2025/Astana/North America#58,2025-04-01,m80,bluejays,16,13,Dust2,2,5,PGL Astana 2025,s,True,2381132,t,7,5,7,5,PGL/2025/Astana,M80,BLUEJAYS
-PGL/2025/Astana/North America#58#3,PGL/2025/Astana/North America#58,2025-04-01,m80,bluejays,13,8,Ancient,3,5,PGL Astana 2025,s,True,2381132,ct,9,4,5,3,PGL/2025/Astana,M80,BLUEJAYS
-PGL/2025/Astana/North America#58#4,PGL/2025/Astana/North America#58,2025-04-01,m80,bluejays,13,10,Mirage,4,5,PGL Astana 2025,s,True,2381132,t,6,7,5,5,PGL/2025/Astana,M80,BLUEJAYS
-PGL/2025/Astana/South America#58#1,PGL/2025/Astana/South America#58,2025-04-01,imp,oddik,13,10,Anubis,1,5,PGL Astana 2025,s,True,2381129,t,6,7,5,5,PGL/2025/Astana,Imperial Esports,ODDIK
-PGL/2025/Astana/South America#58#2,PGL/2025/Astana/South America#58,2025-04-01,imp,oddik,13,10,Dust2,2,5,PGL Astana 2025,s,True,2381129,t,5,8,4,6,PGL/2025/Astana,Imperial Esports,ODDIK
-PGL/2025/Astana/South America#58#3,PGL/2025/Astana/South America#58,2025-04-01,imp,oddik,10,13,Train,3,5,PGL Astana 2025,s,True,2381129,ct,7,3,8,5,PGL/2025/Astana,Imperial Esports,ODDIK
-PGL/2025/Astana/South America#58#4,PGL/2025/Astana/South America#58,2025-04-01,imp,oddik,12,16,Inferno,4,5,PGL Astana 2025,s,True,2381129,t,9,3,9,3,PGL/2025/Astana,Imperial Esports,ODDIK
-PGL/2025/Astana/South America#58#5,PGL/2025/Astana/South America#58,2025-04-01,imp,oddik,9,13,Nuke,5,5,PGL Astana 2025,s,True,2381129,ct,7,2,8,5,PGL/2025/Astana,Imperial Esports,ODDIK
 ESL/Impact League/Season 7/Europe#10#1,ESL/Impact League/Season 7/Europe#10,2025-04-02,dms,imperial female,6,13,Ancient,1,3,ESL Impact League Season 7,a,True,2381192,t,4,2,10,3,ESL/Impact League/Season 7,DMS,Imperial Female
 ESL/Impact League/Season 7/Europe#10#2,ESL/Impact League/Season 7/Europe#10,2025-04-02,dms,imperial female,10,13,Mirage,2,3,ESL Impact League Season 7,a,True,2381192,ct,6,4,7,6,ESL/Impact League/Season 7,DMS,Imperial Female
 ESL/Impact League/Season 7/Europe#25#1,ESL/Impact League/Season 7/Europe#25,2025-04-02,nomercy (female team),nip impact,4,13,Ancient,1,3,ESL Impact League Season 7,a,True,2381193,t,0,4,8,5,ESL/Impact League/Season 7,nomercy,NIP Impact
@@ -26360,6 +26341,10 @@ CCT/2026/Europe/Series 11#0#1,CCT/2026/Europe/Series 11#0,2026-10-13,baks,spirit
 CCT/2026/Europe/Series 11#0#2,CCT/2026/Europe/Series 11#0,2026-10-13,baks,spirit academy,13,6,Nuke,2,3,CCT Europe 2026 Series #11,b,False,2399294,ct,8,5,2,4,CCT/2026/Europe/Series 11,BAKS Esports,Team Spirit Academy
 CCT/2026/Europe/Series 11#1#1,CCT/2026/Europe/Series 11#1,2026-10-13,bw,illyrians,14,16,Anubis,1,3,CCT Europe 2026 Series #11,b,False,2399295,t,5,7,5,7,CCT/2026/Europe/Series 11,Bushido Wildcats,ILLYRIANS
 CCT/2026/Europe/Series 11#1#2,CCT/2026/Europe/Series 11#1,2026-10-13,bw,illyrians,7,13,Cache,2,3,CCT Europe 2026 Series #11,b,False,2399295,t,3,4,8,5,CCT/2026/Europe/Series 11,Bushido Wildcats,ILLYRIANS
+CCT/2026/Europe/Series 11#3#1,CCT/2026/Europe/Series 11#3,2026-10-13,black phoenix,6666,13,4,Dust2,1,3,CCT Europe 2026 Series #11,b,False,2399297,t,5,8,4,0,CCT/2026/Europe/Series 11,Black Phoenix,6666 Esports
+CCT/2026/Europe/Series 11#3#2,CCT/2026/Europe/Series 11#3,2026-10-13,black phoenix,6666,13,8,Anubis,2,3,CCT Europe 2026 Series #11,b,False,2399297,t,7,6,6,2,CCT/2026/Europe/Series 11,Black Phoenix,6666 Esports
+ESL/Challenger League/Season 52/South America/Cup 3#28#1,ESL/Challenger League/Season 52/South America/Cup 3#28,2026-10-13,ex-keyd,galorys,6,13,Dust2,1,3,ESL Challenger League Season 52: South America - Cup #3,b,False,2399204,t,0,6,6,7,ESL/Challenger League/Season 52/South America/Cup 3,ex-Keyd Stars,Galorys
+ESL/Challenger League/Season 52/South America/Cup 3#28#2,ESL/Challenger League/Season 52/South America/Cup 3#28,2026-10-13,ex-keyd,galorys,14,16,Ancient,2,3,ESL Challenger League Season 52: South America - Cup #3,b,False,2399204,ct,5,7,5,7,ESL/Challenger League/Season 52/South America/Cup 3,ex-Keyd Stars,Galorys
 Stake Pulse/Beat III#5#1,Stake Pulse/Beat III#5,2026-10-13,tl,bbl,9,13,Nuke,1,3,Stake Pulse Beat III,b,True,2399132,ct,6,3,7,6,Stake Pulse/Beat III,Team Liquid,BBL Esports
 Stake Pulse/Beat III#5#2,Stake Pulse/Beat III#5,2026-10-13,tl,bbl,13,8,Mirage,2,3,Stake Pulse Beat III,b,True,2399132,t,2,11,1,7,Stake Pulse/Beat III,Team Liquid,BBL Esports
 Stake Pulse/Beat III#5#3,Stake Pulse/Beat III#5,2026-10-13,tl,bbl,16,14,Cache,3,3,Stake Pulse Beat III,b,True,2399132,t,1,11,1,11,Stake Pulse/Beat III,Team Liquid,BBL Esports
@@ -26371,3 +26356,5 @@ Stake Pulse/Beat III#7#3,Stake Pulse/Beat III#7,2026-10-13,tl,100t,9,13,Mirage,3
 Stake Pulse/Beat III#8#1,Stake Pulse/Beat III#8,2026-10-13,bbl,jjh,13,11,Inferno,1,3,Stake Pulse Beat III,b,True,2399254,t,9,4,8,3,Stake Pulse/Beat III,BBL Esports,JiJieHao
 Stake Pulse/Beat III#8#2,Stake Pulse/Beat III#8,2026-10-13,bbl,jjh,7,13,Mirage,2,3,Stake Pulse Beat III,b,True,2399254,ct,5,2,6,7,Stake Pulse/Beat III,BBL Esports,JiJieHao
 Stake Pulse/Beat III#8#3,Stake Pulse/Beat III#8,2026-10-13,bbl,jjh,11,13,Cache,3,3,Stake Pulse Beat III,b,True,2399254,ct,4,7,5,8,Stake Pulse/Beat III,BBL Esports,JiJieHao
+Stake Pulse/Beat III#9#1,Stake Pulse/Beat III#9,2026-10-13,tl,jjh,13,11,Mirage,1,3,Stake Pulse Beat III,b,True,2399255,ct,7,6,6,5,Stake Pulse/Beat III,Team Liquid,JiJieHao
+Stake Pulse/Beat III#9#2,Stake Pulse/Beat III#9,2026-10-13,tl,jjh,13,2,Cache,2,3,Stake Pulse Beat III,b,True,2399255,t,3,10,2,0,Stake Pulse/Beat III,Team Liquid,JiJieHao
