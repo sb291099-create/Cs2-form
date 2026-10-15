@@ -1,17 +1,8 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-Stake Pulse/Beat III#15,2026-10-15,"October 15, 2026 - 12:00 {{Abbr/CEST",mibr,bc.game,3,Stake Pulse Beat III,b,True,2399136,Stake Pulse/Beat III,MIBR,BC.Game Esports
-Stake Pulse/Beat III#16,2026-10-15,"October 15, 2026 - 12:00 {{Abbr/CEST",heroic,envy,3,Stake Pulse Beat III,b,True,2399137,Stake Pulse/Beat III,HEROIC,ENVY
-CCT/2026/Europe/Series 12/Play-In#7,2026-10-15,"October 15, 2026 - 13:00 {{Abbr/CEST",ryvex,maybe.ua,3,CCT/2026/Europe/Series 12,b,False,2399466,CCT/2026/Europe/Series 12,Ryvex,MAYBE
-Thunderpick/World Championship/2026#3,2026-10-15,"October 15, 2026 - 13:30 {{Abbr/CEST",9z,falcons,3,Thunderpick World Championship 2026,s,True,2399409,Thunderpick/World Championship/2026,9z Team,Team Falcons
-NODWIN Gaming/Clutch Series/13#5,2026-10-15,"October 15, 2026 - 13:40 {{Abbr/CEST",ex-z10,just players,3,NODWIN Clutch Series #13,b,False,2399080,NODWIN Gaming/Clutch Series/13,ex-Zero Tenacity,Just Players
-Thunderpick/World Championship/2026#7,2026-10-15,"October 15, 2026 - 15:30 {{Abbr/CEST",parivision,betboom,3,Thunderpick World Championship 2026,s,True,2399410,Thunderpick/World Championship/2026,PARIVISION,BetBoom Team
-CCT/2026/Europe/Series 12/Play-In#3,2026-10-15,"October 15, 2026 - 16:00 {{Abbr/CEST",enjoy.ru,ex-6666 esports,3,CCT/2026/Europe/Series 12,b,False,2399467,CCT/2026/Europe/Series 12,Enjoy,ex-6666 Esports
-NODWIN Gaming/Clutch Series/13#6,2026-10-15,"October 15, 2026 - 16:00 {{Abbr/CEST",butterfly,fire flux,3,NODWIN Clutch Series #13,b,False,2399081,NODWIN Gaming/Clutch Series/13,Butterfly,Fire Flux Esports
-CCT/2026/Europe/Series 11#14,2026-10-15,"October 15, 2026 - 16:00 {{Abbr/CEST",tlr,spirit academy,3,CCT Europe 2026 Series #11,b,False,2399304,CCT/2026/Europe/Series 11,The Last Resort,Team Spirit Academy
-Thunderpick/World Championship/2026#8,2026-10-15,"October 15, 2026 - 18:00 {{Abbr/CEST",legacy,furia,3,Thunderpick World Championship 2026,s,True,2399411,Thunderpick/World Championship/2026,Legacy,FURIA
-CCT/2026/Europe/Series 12/Play-In#8,2026-10-15,"October 15, 2026 - 19:00 {{Abbr/CEST",wraith pcific,saint sinners,3,CCT/2026/Europe/Series 12,b,False,2399468,CCT/2026/Europe/Series 12,WRAITH PCIFIC,Saint Sinners
-NODWIN Gaming/Clutch Series/13#7,2026-10-15,"October 15, 2026 - 19:00 {{Abbr/CEST",unity.sk,walczaki,3,NODWIN Clutch Series #13,b,False,2399082,NODWIN Gaming/Clutch Series/13,UNiTY esports,Walczaki
-CCT/2026/Europe/Series 11#15,2026-10-15,"October 15, 2026 - 19:00 {{Abbr/CEST",gothic,sokerorg,3,CCT Europe 2026 Series #11,b,False,2399305,CCT/2026/Europe/Series 11,Gothic,Sökerorg
+NODWIN Gaming/Clutch Series/13#5,2026-10-15,"October 15, 2026 - 14:00 {{Abbr/CEST",ex-z10,just players,3,NODWIN Clutch Series #13,b,False,2399080,NODWIN Gaming/Clutch Series/13,ex-Zero Tenacity,Just Players
+Stake Pulse/Beat III#19,2026-10-15,"October 15, 2026 - 18:35 {{Abbr/CEST",bc.game,mibr,3,Stake Pulse Beat III,b,True,2399261,Stake Pulse/Beat III,BC.Game Esports,MIBR
+CCT/2026/Europe/Series 12/Play-In#8,2026-10-15,"October 15, 2026 - 19:20 {{Abbr/CEST",wraith pcific,saint sinners,3,CCT/2026/Europe/Series 12,b,False,2399468,CCT/2026/Europe/Series 12,WRAITH PCIFIC,Saint Sinners
+Thunderpick/World Championship/2026#8,2026-10-15,"October 15, 2026 - 20:30 {{Abbr/CEST",legacy,furia,3,Thunderpick World Championship 2026,s,True,2399411,Thunderpick/World Championship/2026,Legacy,FURIA
 Logitech G Pro Series/2026#5,2026-10-16,"October 16, 2026 - 10:00 {{Abbr/AEST",fq,off chops,3,Logitech G Pro Series 2026,b,True,2399538,Logitech G Pro Series/2026,FlyQuest,Off Chops
 Logitech G Pro Series/2026#6,2026-10-16,"October 16, 2026 - 10:00 {{Abbr/AEST",gz,team abyssal,3,Logitech G Pro Series 2026,b,True,2399539,Logitech G Pro Series/2026,Ground Zero Gaming,Team Abyssal
 CCT/2026/Europe/Series 12/Play-In#10,2026-10-16,"October 16, 2026 - 10:00 {{Abbr/CEST",lilmix,revise,3,CCT/2026/Europe/Series 12,b,False,2399469,CCT/2026/Europe/Series 12,Lilmix,Revise
@@ -19,11 +10,14 @@ CCT/2026/Europe/Series 11#8,2026-10-16,"October 16, 2026 - 10:00 {{Abbr/CEST",bl
 Stake Pulse/Beat III#20,2026-10-16,"October 16, 2026 - 10:00 {{Abbr/CEST",nip,tl,3,Stake Pulse Beat III,b,True,2399262,Stake Pulse/Beat III,Ninjas in Pyjamas,Team Liquid
 CCT/2026/Europe/Series 12/Play-In#11,2026-10-16,"October 16, 2026 - 13:00 {{Abbr/CEST",morrow esports,illyrians,3,CCT/2026/Europe/Series 12,b,False,2399470,CCT/2026/Europe/Series 12,Morrow Esports,ILLYRIANS
 CCT/2026/Europe/Series 11#9,2026-10-16,"October 16, 2026 - 13:00 {{Abbr/CEST",ex-rustec,saint sinners,3,CCT Europe 2026 Series #11,b,False,2399307,CCT/2026/Europe/Series 11,ex-RUSTEC,Saint Sinners
+Stake Pulse/Beat III#21,2026-10-16,"October 16, 2026 - 13:00 {{Abbr/CEST",fnc,heroic,3,Stake Pulse Beat III,b,True,2399263,Stake Pulse/Beat III,Fnatic,HEROIC
+Thunderpick/World Championship/2026#4,2026-10-16,"October 16, 2026 - 16:00 {{Abbr/CEST",9z,aurora,3,Thunderpick World Championship 2026,s,True,2399412,Thunderpick/World Championship/2026,9z Team,Aurora Gaming
 CCT/2026/Europe/Series 12/Play-In#15,2026-10-16,"October 16, 2026 - 16:00 {{Abbr/CEST",mellren,privateer,3,CCT/2026/Europe/Series 12,b,False,2399471,CCT/2026/Europe/Series 12,mellren,Privateer Gaming
 CCT/2026/Europe/Series 11#10,2026-10-16,"October 16, 2026 - 16:00 {{Abbr/CEST",forze reload,lavked,3,CCT Europe 2026 Series #11,b,False,2399308,CCT/2026/Europe/Series 11,FORZE Reload,lavked
 CCT/2026/Europe/Series 12/Play-In#16,2026-10-16,"October 16, 2026 - 19:00 {{Abbr/CEST",noir verse,antidaun,3,CCT/2026/Europe/Series 12,b,False,2399472,CCT/2026/Europe/Series 12,Noir Verse,antidaun
 CCT/2026/Europe/Series 11#11,2026-10-16,"October 16, 2026 - 19:00 {{Abbr/CEST",baks,g2 ares,3,CCT Europe 2026 Series #11,b,False,2399309,CCT/2026/Europe/Series 11,BAKS Esports,G2 Ares
 Stake Pulse/Beat III#23,2026-10-16,"October 16, 2026 - 19:00 {{Abbr/CEST",sangal,100t,3,Stake Pulse Beat III,b,True,2399265,Stake Pulse/Beat III,Sangal Esports,100 Thieves
+CCT/2026/Europe/Series 12/Play-In#4,2026-10-18,"October 18, 2026 - 10:00 {{Abbr/CEST",enjoy.ru,los kogutos,3,CCT/2026/Europe/Series 12,b,False,2399477,CCT/2026/Europe/Series 12,Enjoy,los kogutos
 1win Private Club/2#0,2026-10-19,"October 19, 2026 - 11:00 {{Abbr/CEST",big,private,3,1win Private Club #2,a,True,2398989,1win Private Club/2,BIG,PRIVATE
 DraculaN/Season 7#0,2026-10-19,"October 19, 2026 - 12:00 {{Abbr/EEST",infinite,insiders esport,1,DraculaN Season 7,b,True,2399590,DraculaN/Season 7,INFINITE,Insiders Esport
 DraculaN/Season 7#1,2026-10-19,"October 19, 2026 - 12:00 {{Abbr/EEST",aimclub.ro,basement boys,1,DraculaN Season 7,b,True,2399591,DraculaN/Season 7,Aimclub,BASEMENT BOYS
@@ -36,3 +30,7 @@ DraculaN/Season 7#16,2026-10-19,"October 19, 2026 - 13:45 {{Abbr/EEST",astral,le
 1win Private Club/2#1,2026-10-19,"October 19, 2026 - 14:00 {{Abbr/CEST",alliance,mongolz,3,1win Private Club #2,a,True,2398990,1win Private Club/2,Alliance,The MongolZ
 1win Private Club/2#3,2026-10-19,"October 19, 2026 - 17:00 {{Abbr/CEST",fnc,tl,3,1win Private Club #2,a,True,2398991,1win Private Club/2,Fnatic,Team Liquid
 1win Private Club/2#2,2026-10-19,"October 19, 2026 - 20:00 {{Abbr/CEST",parivision,magic,3,1win Private Club #2,a,True,2398992,1win Private Club/2,PARIVISION,magic
+Stake Ranked/Episode 5#1,2026-10-27,"October 27, 2026 - 12:00 {{Abbr/CET",big,magic,3,Stake Ranked Episode 5,a,True,,Stake Ranked/Episode 5,BIG,magic
+Stake Ranked/Episode 5#2,2026-10-27,"October 27, 2026 - 14:30 {{Abbr/CET",inner circle,team nemesis,3,Stake Ranked Episode 5,a,True,,Stake Ranked/Episode 5,IC Esports,Team Nemesis
+Stake Ranked/Episode 5#0,2026-10-27,"October 27, 2026 - 17:00 {{Abbr/CET",astralis,fnc,3,Stake Ranked Episode 5,a,True,,Stake Ranked/Episode 5,Astralis,Fnatic
+Stake Ranked/Episode 5#3,2026-10-27,"October 27, 2026 - 19:30 {{Abbr/CET",ef,mibr,3,Stake Ranked Episode 5,a,True,,Stake Ranked/Episode 5,Eternal Fire,MIBR
