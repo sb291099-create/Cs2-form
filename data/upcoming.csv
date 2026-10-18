@@ -1,15 +1,13 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/Europe/Series 12/Play-In#4,2026-10-18,"October 18, 2026 - 10:00 {{Abbr/CEST",enjoy.ru,los kogutos,3,CCT/2026/Europe/Series 12,b,False,2399477,CCT/2026/Europe/Series 12,Enjoy,los kogutos
-NODWIN Gaming/Clutch Series/13#22,2026-10-18,"October 18, 2026 - 10:00 {{Abbr/CEST",butterfly,ex-rustec,3,NODWIN Clutch Series #13,b,False,2399091,NODWIN Gaming/Clutch Series/13,Butterfly,ex-RUSTEC
-CCT/2026/Europe/Series 12/Play-In#9,2026-10-18,"October 18, 2026 - 13:00 {{Abbr/CEST",saint sinners,maybe.ua,3,CCT/2026/Europe/Series 12,b,False,2399478,CCT/2026/Europe/Series 12,Saint Sinners,MAYBE
-NODWIN Gaming/Clutch Series/13#23,2026-10-18,"October 18, 2026 - 13:00 {{Abbr/CEST",walczaki,just players,3,NODWIN Clutch Series #13,b,False,2399092,NODWIN Gaming/Clutch Series/13,Walczaki,Just Players
-CCT/2026/Europe/Series 11#16,2026-10-18,"October 18, 2026 - 13:00 {{Abbr/CEST",ex-rustec,illyrians,3,CCT Europe 2026 Series #11,b,False,2399315,CCT/2026/Europe/Series 11,ex-RUSTEC,ILLYRIANS
+CCT/2026/Europe/Series 12/Play-In#19,2026-10-18,"October 18, 2026 - 13:20 {{Abbr/CEST",antidaun,privateer,3,CCT/2026/Europe/Series 12,b,False,2399480,CCT/2026/Europe/Series 12,antidaun,Privateer Gaming
+CCT/2026/Europe/Series 11#16,2026-10-18,"October 18, 2026 - 13:20 {{Abbr/CEST",ex-rustec,illyrians,3,CCT Europe 2026 Series #11,b,False,2399315,CCT/2026/Europe/Series 11,ex-RUSTEC,ILLYRIANS
 Thunderpick/World Championship/2026#13,2026-10-18,"October 18, 2026 - 13:30 {{Abbr/CEST",falcons,aurora,3,Thunderpick World Championship 2026,s,True,2399416,Thunderpick/World Championship/2026,Team Falcons,Aurora Gaming
 CCT/2026/Europe/Series 12/Play-In#14,2026-10-18,"October 18, 2026 - 16:00 {{Abbr/CEST",morrow esports,illyrians,3,CCT/2026/Europe/Series 12,b,False,2399479,CCT/2026/Europe/Series 12,Morrow Esports,ILLYRIANS
 NODWIN Gaming/Clutch Series/13#18,2026-10-18,"October 18, 2026 - 16:00 {{Abbr/CEST",brute,tpudcatb tpu,3,NODWIN Clutch Series #13,b,False,2399093,NODWIN Gaming/Clutch Series/13,BRUTE,33
-Logitech G Pro Series/2026#15,2026-10-18,"October 18, 2026 - 16:30 {{Abbr/AEST",fq,nexvoid,3,Logitech G Pro Series 2026,b,True,2399548,Logitech G Pro Series/2026,FlyQuest,NEXVOID
+CCT/2026/Europe/Series 11#21,2026-10-18,"October 18, 2026 - 16:00 {{Abbr/CEST",spirit academy,mellren,3,CCT Europe 2026 Series #11,b,False,2399316,CCT/2026/Europe/Series 11,Team Spirit Academy,mellren
 Thunderpick/World Championship/2026#12,2026-10-18,"October 18, 2026 - 17:00 {{Abbr/CEST",betboom,furia,5,Thunderpick World Championship 2026,s,True,2399417,Thunderpick/World Championship/2026,BetBoom Team,FURIA
-CCT/2026/Europe/Series 12/Play-In#19,2026-10-18,"October 18, 2026 - 19:00 {{Abbr/CEST",antidaun,privateer,3,CCT/2026/Europe/Series 12,b,False,2399480,CCT/2026/Europe/Series 12,antidaun,Privateer Gaming
+CCT/2026/Europe/Series 12/Play-In#9,2026-10-18,"October 18, 2026 - 19:00 {{Abbr/CEST",saint sinners,maybe.ua,3,CCT/2026/Europe/Series 12,b,False,2399478,CCT/2026/Europe/Series 12,Saint Sinners,MAYBE
+NODWIN Gaming/Clutch Series/13#16,2026-10-18,"October 18, 2026 - 19:00 {{Abbr/CEST",unity.sk,mellren,3,NODWIN Clutch Series #13,b,False,2399094,NODWIN Gaming/Clutch Series/13,UNiTY esports,mellren
 CCT/2026/Europe/Series 11#17,2026-10-18,"October 18, 2026 - 19:00 {{Abbr/CEST",forze reload,baks,3,CCT Europe 2026 Series #11,b,False,2399317,CCT/2026/Europe/Series 11,FORZE Reload,BAKS Esports
 NODWIN Gaming/Clutch Series/13#19,2026-10-19,"October 19, 2026 - 10:00 {{Abbr/CEST",genone,forze reload,3,NODWIN Clutch Series #13,b,False,2399095,NODWIN Gaming/Clutch Series/13,GenOne,FORZE Reload
 1win Private Club/2#0,2026-10-19,"October 19, 2026 - 11:00 {{Abbr/CEST",big,private,3,1win Private Club #2,a,True,2398989,1win Private Club/2,BIG,PRIVATE
@@ -17,6 +15,7 @@ DraculaN/Season 7#0,2026-10-19,"October 19, 2026 - 12:00 {{Abbr/EEST",infinite,i
 DraculaN/Season 7#1,2026-10-19,"October 19, 2026 - 12:00 {{Abbr/EEST",aimclub.ro,basement boys,1,DraculaN Season 7,b,True,2399591,DraculaN/Season 7,Aimclub,BASEMENT BOYS
 DraculaN/Season 7#5,2026-10-19,"October 19, 2026 - 12:00 {{Abbr/EEST",bc.game,drama.rs,1,DraculaN Season 7,b,True,2399592,DraculaN/Season 7,BC.Game Esports,Drama Esports
 DraculaN/Season 7#6,2026-10-19,"October 19, 2026 - 12:00 {{Abbr/EEST",wrotberry,nexus,1,DraculaN Season 7,b,True,2399593,DraculaN/Season 7,WhiteBIT Team,Nexus Gaming
+NODWIN Gaming/Clutch Series/13#17,2026-10-19,"October 19, 2026 - 13:00 {{Abbr/CEST",team aces,baks,3,NODWIN Clutch Series #13,b,False,2399096,NODWIN Gaming/Clutch Series/13,Team ACES,BAKS Esports
 DraculaN/Season 7#10,2026-10-19,"October 19, 2026 - 13:45 {{Abbr/EEST",iberian soul,hyperspirit,1,DraculaN Season 7,b,True,2399594,DraculaN/Season 7,Iberian Soul,HYPERSPIRIT
 DraculaN/Season 7#11,2026-10-19,"October 19, 2026 - 13:45 {{Abbr/EEST",sashi,mnxt,1,DraculaN Season 7,b,True,2399595,DraculaN/Season 7,Sashi Esport,MOUZ NXT
 DraculaN/Season 7#15,2026-10-19,"October 19, 2026 - 13:45 {{Abbr/EEST",saw,bayankhongor,1,DraculaN Season 7,b,True,,DraculaN/Season 7,SAW,Bayankhongor
