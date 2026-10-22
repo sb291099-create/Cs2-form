@@ -1,17 +1,4 @@
 map_id,match_key,date,team1_id,team2_id,score1,score2,map,map_number,bestof,event,tier,lan,hltv,first1,ct1,t1,ct2,t2,page,team1,team2
-PGL/2025/Bucharest#24#1,PGL/2025/Bucharest#24,2025-04-09,gl,vp,13,7,Ancient,1,3,PGL Bucharest 2025,s,True,2381316,ct,6,7,1,6,PGL/2025/Bucharest,GamerLegion,Virtus.pro
-PGL/2025/Bucharest#24#2,PGL/2025/Bucharest#24,2025-04-09,gl,vp,13,8,Mirage,2,3,PGL Bucharest 2025,s,True,2381316,t,7,6,6,2,PGL/2025/Bucharest,GamerLegion,Virtus.pro
-PGL/2025/Bucharest#25#1,PGL/2025/Bucharest#25,2025-04-09,col,faze,13,7,Dust2,1,3,PGL Bucharest 2025,s,True,2381318,t,4,9,3,4,PGL/2025/Bucharest,Complexity,FaZe Clan
-PGL/2025/Bucharest#25#2,PGL/2025/Bucharest#25,2025-04-09,col,faze,13,10,Anubis,2,3,PGL Bucharest 2025,s,True,2381318,ct,5,8,3,7,PGL/2025/Bucharest,Complexity,FaZe Clan
-PGL/2025/Bucharest#26#1,PGL/2025/Bucharest#26,2025-04-09,aurora,apogee,13,6,Mirage,1,3,PGL Bucharest 2025,s,True,2381320,ct,7,6,1,5,PGL/2025/Bucharest,Aurora Gaming,Betclic Apogee Esports
-PGL/2025/Bucharest#26#2,PGL/2025/Bucharest#26,2025-04-09,aurora,apogee,16,12,Anubis,2,3,PGL Bucharest 2025,s,True,2381320,ct,6,6,6,6,PGL/2025/Bucharest,Aurora Gaming,Betclic Apogee Esports
-PGL/2025/Bucharest#27#1,PGL/2025/Bucharest#27,2025-04-09,astralis,legacy,7,13,Dust2,1,3,PGL Bucharest 2025,s,True,2381317,ct,2,5,3,10,PGL/2025/Bucharest,Astralis,Legacy
-PGL/2025/Bucharest#27#2,PGL/2025/Bucharest#27,2025-04-09,astralis,legacy,13,7,Ancient,2,3,PGL Bucharest 2025,s,True,2381317,t,2,11,1,6,PGL/2025/Bucharest,Astralis,Legacy
-PGL/2025/Bucharest#27#3,PGL/2025/Bucharest#27,2025-04-09,astralis,legacy,19,16,Nuke,3,3,PGL Bucharest 2025,s,True,2381317,ct,9,3,9,3,PGL/2025/Bucharest,Astralis,Legacy
-PGL/2025/Bucharest#28#1,PGL/2025/Bucharest#28,2025-04-09,rare atom,falcons,6,13,Inferno,1,3,PGL Bucharest 2025,s,True,2381319,t,0,6,6,7,PGL/2025/Bucharest,Rare Atom,Team Falcons
-PGL/2025/Bucharest#28#2,PGL/2025/Bucharest#28,2025-04-09,rare atom,falcons,2,13,Train,2,3,PGL Bucharest 2025,s,True,2381319,ct,2,0,3,10,PGL/2025/Bucharest,Rare Atom,Team Falcons
-PGL/2025/Bucharest#29#1,PGL/2025/Bucharest#29,2025-04-09,furia,mongolz,9,13,Mirage,1,3,PGL Bucharest 2025,s,True,2381321,ct,7,2,8,5,PGL/2025/Bucharest,FURIA,The MongolZ
-PGL/2025/Bucharest#29#2,PGL/2025/Bucharest#29,2025-04-09,furia,mongolz,11,13,Nuke,2,3,PGL Bucharest 2025,s,True,2381321,t,5,6,6,7,PGL/2025/Bucharest,FURIA,The MongolZ
 Hero Esports/Asian Champions League/2025/Qualifier/China/Closed#0#1,Hero Esports/Asian Champions League/2025/Qualifier/China/Closed#0,2025-04-10,five handsome guys,exusiai,13,9,Anubis,1,1,Asian Champions League 2025,a,True,,ct,5,8,2,7,Hero Esports/Asian Champions League/2025,Five Handsome Guys,Exusiai
 Hero Esports/Asian Champions League/2025/Qualifier/China/Closed#1#1,Hero Esports/Asian Champions League/2025/Qualifier/China/Closed#1,2025-04-10,pa beer,team xdm,2,13,Ancient,1,1,Asian Champions League 2025,a,True,,ct,2,0,3,10,Hero Esports/Asian Champions League/2025,PA Beer,TEAM XDM
 Hero Esports/Asian Champions League/2025/Qualifier/China/Closed#2#1,Hero Esports/Asian Champions League/2025/Qualifier/China/Closed#2,2025-04-10,reverse sweep gaming,gateron,6,13,Anubis,1,1,Asian Champions League 2025,a,True,,ct,4,2,5,8,Hero Esports/Asian Champions League/2025,Reverse Sweep Gaming,Team GATERON
@@ -26914,6 +26901,7 @@ DraculaN/Season 7#35#2,DraculaN/Season 7#35,2026-10-20,hyperspirit,saw,0,13,Infe
 DraculaN/Season 7#36#1,DraculaN/Season 7#36,2026-10-20,iberian soul,astral,13,9,Cache,1,3,DraculaN Season 7,b,True,2399619,ct,8,5,5,4,DraculaN/Season 7,Iberian Soul,ASTRAL Esports
 DraculaN/Season 7#36#2,DraculaN/Season 7#36,2026-10-20,iberian soul,astral,13,10,Nuke,2,3,DraculaN Season 7,b,True,2399619,t,7,6,6,4,DraculaN/Season 7,Iberian Soul,ASTRAL Esports
 DraculaN/Season 7#37#1,DraculaN/Season 7#37,2026-10-20,envy,infinite,13,8,Ancient,1,3,DraculaN Season 7,b,True,2399620,ct,8,5,4,4,DraculaN/Season 7,ENVY,INFINITE
+DraculaN/Season 7#37#2,DraculaN/Season 7#37,2026-10-20,envy,infinite,13,1,Dust2,2,3,DraculaN Season 7,b,True,2399620,t,2,11,1,0,DraculaN/Season 7,ENVY,INFINITE
 DraculaN/Season 7#38#1,DraculaN/Season 7#38,2026-10-20,bbl,lg,13,6,Nuke,1,3,DraculaN Season 7,b,True,2399621,t,7,6,6,0,DraculaN/Season 7,BBL Esports,Luminosity Gaming
 DraculaN/Season 7#38#2,DraculaN/Season 7#38,2026-10-20,bbl,lg,13,3,Mirage,2,3,DraculaN Season 7,b,True,2399621,ct,10,3,1,2,DraculaN/Season 7,BBL Esports,Luminosity Gaming
 NODWIN Gaming/Clutch Series/13#24#1,NODWIN Gaming/Clutch Series/13#24,2026-10-20,ex-z10,forze reload,13,10,Dust2,1,3,NODWIN Clutch Series #13,b,False,2399100,ct,7,6,5,5,NODWIN Gaming/Clutch Series/13,ex-Zero Tenacity,FORZE Reload
@@ -26924,6 +26912,8 @@ NODWIN Gaming/Clutch Series/13#27#2,NODWIN Gaming/Clutch Series/13#27,2026-10-20
 NODWIN Gaming/Clutch Series/13#27#3,NODWIN Gaming/Clutch Series/13#27,2026-10-20,genone,bw,16,19,Dust2,3,3,NODWIN Clutch Series #13,b,False,2399099,ct,6,6,6,6,NODWIN Gaming/Clutch Series/13,GenOne,Bushido Wildcats
 1win Private Club/2#10#1,1win Private Club/2#10,2026-10-21,mongolz,magic,13,9,Inferno,1,3,1win Private Club #2,a,True,2398997,t,9,4,8,1,1win Private Club/2,The MongolZ,magic
 1win Private Club/2#10#2,1win Private Club/2#10,2026-10-21,mongolz,magic,13,10,Ancient,2,3,1win Private Club #2,a,True,2398997,ct,7,6,5,5,1win Private Club/2,The MongolZ,magic
+1win Private Club/2#11#1,1win Private Club/2#11,2026-10-21,private,mongolz,6,13,Mirage,1,3,1win Private Club #2,a,True,2399000,ct,5,1,6,7,1win Private Club/2,PRIVATE,The MongolZ
+1win Private Club/2#11#2,1win Private Club/2#11,2026-10-21,private,mongolz,7,13,Ancient,2,3,1win Private Club #2,a,True,2399000,t,4,3,9,4,1win Private Club/2,PRIVATE,The MongolZ
 1win Private Club/2#6#1,1win Private Club/2#6,2026-10-21,big,parivision,9,13,Cache,1,3,1win Private Club #2,a,True,2398999,t,3,6,6,7,1win Private Club/2,BIG,PARIVISION
 1win Private Club/2#6#2,1win Private Club/2#6,2026-10-21,big,parivision,7,13,Dust2,2,3,1win Private Club #2,a,True,2398999,ct,3,4,4,9,1win Private Club/2,BIG,PARIVISION
 CCT/2026/Europe/Series 11#30#1,CCT/2026/Europe/Series 11#30,2026-10-21,saint sinners,ex-6666,5,13,Dust2,1,3,CCT Europe 2026 Series #11,b,False,2399324,t,1,4,8,5,CCT/2026/Europe/Series 11,Saint Sinners,ex-6666 Esports
@@ -26931,12 +26921,17 @@ CCT/2026/Europe/Series 11#30#2,CCT/2026/Europe/Series 11#30,2026-10-21,saint sin
 CCT/2026/Europe/Series 11#31#1,CCT/2026/Europe/Series 11#31,2026-10-21,g2 ares,illyrians,13,7,Ancient,1,3,CCT Europe 2026 Series #11,b,False,2399325,t,7,6,6,1,CCT/2026/Europe/Series 11,G2 Ares,ILLYRIANS
 CCT/2026/Europe/Series 11#31#2,CCT/2026/Europe/Series 11#31,2026-10-21,g2 ares,illyrians,10,13,Mirage,2,3,CCT Europe 2026 Series #11,b,False,2399325,ct,7,3,8,5,CCT/2026/Europe/Series 11,G2 Ares,ILLYRIANS
 CCT/2026/Europe/Series 11#31#3,CCT/2026/Europe/Series 11#31,2026-10-21,g2 ares,illyrians,3,13,Cache,3,3,CCT Europe 2026 Series #11,b,False,2399325,ct,2,1,3,10,CCT/2026/Europe/Series 11,G2 Ares,ILLYRIANS
+CCT/2026/Europe/Series 11#32#1,CCT/2026/Europe/Series 11#32,2026-10-21,team aces,tlr,13,9,Mirage,1,3,CCT Europe 2026 Series #11,b,False,2399326,t,4,9,3,6,CCT/2026/Europe/Series 11,Team ACES,The Last Resort
+CCT/2026/Europe/Series 11#32#2,CCT/2026/Europe/Series 11#32,2026-10-21,team aces,tlr,13,9,Cache,2,3,CCT Europe 2026 Series #11,b,False,2399326,ct,8,5,5,4,CCT/2026/Europe/Series 11,Team ACES,The Last Resort
 CCT/2026/Europe/Series 12#4#1,CCT/2026/Europe/Series 12#4,2026-10-21,baks,sokerorg,13,7,Mirage,1,3,CCT Europe 2026 Series #12,b,False,2399489,ct,8,5,3,4,CCT/2026/Europe/Series 12,BAKS Esports,Sökerorg
 CCT/2026/Europe/Series 12#4#2,CCT/2026/Europe/Series 12#4,2026-10-21,baks,sokerorg,7,13,Cache,2,3,CCT Europe 2026 Series #12,b,False,2399489,t,1,6,6,7,CCT/2026/Europe/Series 12,BAKS Esports,Sökerorg
 CCT/2026/Europe/Series 12#4#3,CCT/2026/Europe/Series 12#4,2026-10-21,baks,sokerorg,4,13,Ancient,3,3,CCT Europe 2026 Series #12,b,False,2399489,ct,2,2,3,10,CCT/2026/Europe/Series 12,BAKS Esports,Sökerorg
 CCT/2026/Europe/Series 12#5#1,CCT/2026/Europe/Series 12#5,2026-10-21,ic academy,havu,6,13,Nuke,1,3,CCT Europe 2026 Series #12,b,False,2399490,ct,3,3,4,9,CCT/2026/Europe/Series 12,IC Academy,HAVU
 CCT/2026/Europe/Series 12#5#2,CCT/2026/Europe/Series 12#5,2026-10-21,ic academy,havu,13,3,Ancient,2,3,CCT Europe 2026 Series #12,b,False,2399490,t,4,9,3,0,CCT/2026/Europe/Series 12,IC Academy,HAVU
 CCT/2026/Europe/Series 12#5#3,CCT/2026/Europe/Series 12#5,2026-10-21,ic academy,havu,13,8,Cache,3,3,CCT Europe 2026 Series #12,b,False,2399490,ct,11,2,7,1,CCT/2026/Europe/Series 12,IC Academy,HAVU
+CCT/2026/Europe/Series 12#6#1,CCT/2026/Europe/Series 12#6,2026-10-21,lavked,spirit academy,22,18,Ancient,1,3,CCT Europe 2026 Series #12,b,False,2399491,ct,5,7,5,7,CCT/2026/Europe/Series 12,lavked,Team Spirit Academy
+CCT/2026/Europe/Series 12#6#2,CCT/2026/Europe/Series 12#6,2026-10-21,lavked,spirit academy,14,16,Mirage,2,3,CCT Europe 2026 Series #12,b,False,2399491,t,7,5,7,5,CCT/2026/Europe/Series 12,lavked,Team Spirit Academy
+CCT/2026/Europe/Series 12#6#3,CCT/2026/Europe/Series 12#6,2026-10-21,lavked,spirit academy,5,13,Dust2,3,3,CCT Europe 2026 Series #12,b,False,2399491,ct,4,1,5,8,CCT/2026/Europe/Series 12,lavked,Team Spirit Academy
 DraculaN/Season 7#28#1,DraculaN/Season 7#28,2026-10-21,heroic,sinners,8,13,Mirage,1,3,DraculaN Season 7,b,True,2399622,ct,6,2,7,6,DraculaN/Season 7,HEROIC,SINNERS Esports
 DraculaN/Season 7#28#2,DraculaN/Season 7#28,2026-10-21,heroic,sinners,13,8,Nuke,2,3,DraculaN Season 7,b,True,2399622,t,7,6,6,2,DraculaN/Season 7,HEROIC,SINNERS Esports
 DraculaN/Season 7#28#3,DraculaN/Season 7#28,2026-10-21,heroic,sinners,5,13,Dust2,3,3,DraculaN Season 7,b,True,2399622,ct,2,3,3,10,DraculaN/Season 7,HEROIC,SINNERS Esports
@@ -26949,11 +26944,28 @@ DraculaN/Season 7#30#3,DraculaN/Season 7#30,2026-10-21,basement boys,ef,6,13,Anc
 DraculaN/Season 7#31#1,DraculaN/Season 7#31,2026-10-21,bc.game,nexus,13,1,Ancient,1,3,DraculaN Season 7,b,True,2399625,ct,11,2,0,1,DraculaN/Season 7,BC.Game Esports,Nexus Gaming
 DraculaN/Season 7#31#2,DraculaN/Season 7#31,2026-10-21,bc.game,nexus,13,16,Cache,2,3,DraculaN Season 7,b,True,2399625,t,5,7,5,7,DraculaN/Season 7,BC.Game Esports,Nexus Gaming
 DraculaN/Season 7#31#3,DraculaN/Season 7#31,2026-10-21,bc.game,nexus,13,9,Dust2,3,3,DraculaN Season 7,b,True,2399625,ct,8,5,5,4,DraculaN/Season 7,BC.Game Esports,Nexus Gaming
+DraculaN/Season 7#32#1,DraculaN/Season 7#32,2026-10-21,sinners,jjh,22,19,Dust2,1,3,DraculaN Season 7,b,True,2399630,t,5,7,5,7,DraculaN/Season 7,SINNERS Esports,JiJieHao
+DraculaN/Season 7#32#2,DraculaN/Season 7#32,2026-10-21,sinners,jjh,13,10,Inferno,2,3,DraculaN Season 7,b,True,2399630,ct,5,8,3,7,DraculaN/Season 7,SINNERS Esports,JiJieHao
+DraculaN/Season 7#33#1,DraculaN/Season 7#33,2026-10-21,ef,bc.game,6,13,Mirage,1,3,DraculaN Season 7,b,True,2399631,ct,5,1,6,7,DraculaN/Season 7,Eternal Fire,BC.Game Esports
+DraculaN/Season 7#33#2,DraculaN/Season 7#33,2026-10-21,ef,bc.game,13,9,Ancient,2,3,DraculaN Season 7,b,True,2399631,t,8,5,7,2,DraculaN/Season 7,Eternal Fire,BC.Game Esports
+DraculaN/Season 7#33#3,DraculaN/Season 7#33,2026-10-21,ef,bc.game,19,17,Cache,3,3,DraculaN Season 7,b,True,2399631,ct,7,5,7,5,DraculaN/Season 7,Eternal Fire,BC.Game Esports
+DraculaN/Season 7#39#1,DraculaN/Season 7#39,2026-10-21,nexus,saw,3,13,Inferno,1,3,DraculaN Season 7,b,True,2399626,ct,3,0,4,9,DraculaN/Season 7,Nexus Gaming,SAW
+DraculaN/Season 7#39#2,DraculaN/Season 7#39,2026-10-21,nexus,saw,13,10,Anubis,2,3,DraculaN Season 7,b,True,2399626,ct,5,8,3,7,DraculaN/Season 7,Nexus Gaming,SAW
+DraculaN/Season 7#39#3,DraculaN/Season 7#39,2026-10-21,nexus,saw,13,7,Ancient,3,3,DraculaN Season 7,b,True,2399626,ct,6,7,1,6,DraculaN/Season 7,Nexus Gaming,SAW
 DraculaN/Season 7#40#1,DraculaN/Season 7#40,2026-10-21,basement boys,iberian soul,16,13,Mirage,1,3,DraculaN Season 7,b,True,2399627,t,6,6,6,6,DraculaN/Season 7,BASEMENT BOYS,Iberian Soul
 DraculaN/Season 7#40#2,DraculaN/Season 7#40,2026-10-21,basement boys,iberian soul,10,13,Nuke,2,3,DraculaN Season 7,b,True,2399627,ct,3,7,4,9,DraculaN/Season 7,BASEMENT BOYS,Iberian Soul
 DraculaN/Season 7#40#3,DraculaN/Season 7#40,2026-10-21,basement boys,iberian soul,13,2,Ancient,3,3,DraculaN Season 7,b,True,2399627,t,3,10,2,0,DraculaN/Season 7,BASEMENT BOYS,Iberian Soul
+DraculaN/Season 7#41#1,DraculaN/Season 7#41,2026-10-21,faze,envy,13,5,Ancient,1,3,DraculaN Season 7,b,True,2399628,t,6,7,5,0,DraculaN/Season 7,FaZe Clan,ENVY
+DraculaN/Season 7#41#2,DraculaN/Season 7#41,2026-10-21,faze,envy,9,13,Dust2,2,3,DraculaN Season 7,b,True,2399628,ct,5,4,6,7,DraculaN/Season 7,FaZe Clan,ENVY
+DraculaN/Season 7#41#3,DraculaN/Season 7#41,2026-10-21,faze,envy,16,14,Anubis,3,3,DraculaN Season 7,b,True,2399628,ct,7,5,7,5,DraculaN/Season 7,FaZe Clan,ENVY
 DraculaN/Season 7#42#1,DraculaN/Season 7#42,2026-10-21,heroic,bbl,13,9,Nuke,1,3,DraculaN Season 7,b,True,2399629,ct,6,7,3,6,DraculaN/Season 7,HEROIC,BBL Esports
 DraculaN/Season 7#42#2,DraculaN/Season 7#42,2026-10-21,heroic,bbl,16,12,Inferno,2,3,DraculaN Season 7,b,True,2399629,t,5,7,5,7,DraculaN/Season 7,HEROIC,BBL Esports
+DraculaN/Season 7#43#1,DraculaN/Season 7#43,2026-10-21,nexus,basement boys,2,13,Anubis,1,3,DraculaN Season 7,b,True,2399632,ct,2,0,3,10,DraculaN/Season 7,Nexus Gaming,BASEMENT BOYS
+DraculaN/Season 7#43#2,DraculaN/Season 7#43,2026-10-21,nexus,basement boys,13,5,Mirage,2,3,DraculaN Season 7,b,True,2399632,ct,10,3,3,2,DraculaN/Season 7,Nexus Gaming,BASEMENT BOYS
+DraculaN/Season 7#43#3,DraculaN/Season 7#43,2026-10-21,nexus,basement boys,13,8,Cache,3,3,DraculaN Season 7,b,True,2399632,t,8,5,7,1,DraculaN/Season 7,Nexus Gaming,BASEMENT BOYS
+DraculaN/Season 7#44#1,DraculaN/Season 7#44,2026-10-21,faze,heroic,13,8,Mirage,1,3,DraculaN Season 7,b,True,2399633,t,6,7,5,3,DraculaN/Season 7,FaZe Clan,HEROIC
+DraculaN/Season 7#44#2,DraculaN/Season 7#44,2026-10-21,faze,heroic,9,13,Ancient,2,3,DraculaN Season 7,b,True,2399633,ct,5,4,6,7,DraculaN/Season 7,FaZe Clan,HEROIC
+DraculaN/Season 7#44#3,DraculaN/Season 7#44,2026-10-21,faze,heroic,13,8,Nuke,3,3,DraculaN Season 7,b,True,2399633,t,6,7,5,3,DraculaN/Season 7,FaZe Clan,HEROIC
 NODWIN Gaming/Clutch Series/13#26#1,NODWIN Gaming/Clutch Series/13#26,2026-10-21,brute,ex-6666,13,8,Anubis,1,3,NODWIN Clutch Series #13,b,False,2399102,t,6,7,5,3,NODWIN Gaming/Clutch Series/13,BRUTE,ex-6666 Esports
 NODWIN Gaming/Clutch Series/13#26#2,NODWIN Gaming/Clutch Series/13#26,2026-10-21,brute,ex-6666,13,11,Mirage,2,3,NODWIN Clutch Series #13,b,False,2399102,t,7,6,6,5,NODWIN Gaming/Clutch Series/13,BRUTE,ex-6666 Esports
 NODWIN Gaming/Clutch Series/13#28#1,NODWIN Gaming/Clutch Series/13#28,2026-10-21,just players,fire flux,3,13,Cache,1,3,NODWIN Clutch Series #13,b,False,2399103,ct,1,2,2,11,NODWIN Gaming/Clutch Series/13,Just Players,Fire Flux Esports

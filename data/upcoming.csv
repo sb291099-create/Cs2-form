@@ -1,12 +1,8 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-1win Private Club/2#9,2026-10-21,"October 21, 2026 - 13:40 {{Abbr/CEST",fnc,private,3,1win Private Club #2,a,True,2398998,1win Private Club/2,Fnatic,PRIVATE
-CCT/2026/Europe/Series 12#6,2026-10-21,"October 21, 2026 - 16:00 {{Abbr/CEST",lavked,spirit academy,3,CCT Europe 2026 Series #12,b,False,2399491,CCT/2026/Europe/Series 12,lavked,Team Spirit Academy
-DraculaN/Season 7#39,2026-10-21,"October 21, 2026 - 18:25 {{Abbr/EEST",nexus,saw,3,DraculaN Season 7,b,True,2399626,DraculaN/Season 7,Nexus Gaming,SAW
-DraculaN/Season 7#41,2026-10-21,"October 21, 2026 - 18:45 {{Abbr/EEST",faze,envy,3,DraculaN Season 7,b,True,2399628,DraculaN/Season 7,FaZe Clan,ENVY
-CCT/2026/Europe/Series 11#32,2026-10-21,"October 21, 2026 - 19:00 {{Abbr/CEST",team aces,tlr,3,CCT Europe 2026 Series #11,b,False,2399326,CCT/2026/Europe/Series 11,Team ACES,The Last Resort
-1win Private Club/2#11,2026-10-21,"October 21, 2026 - 20:00 {{Abbr/CEST",private,mongolz,3,1win Private Club #2,a,True,2399000,1win Private Club/2,PRIVATE,The MongolZ
-DraculaN/Season 7#32,2026-10-21,"October 21, 2026 - 21:50 {{Abbr/EEST",sinners,jjh,3,DraculaN Season 7,b,True,2399630,DraculaN/Season 7,SINNERS Esports,JiJieHao
-DraculaN/Season 7#33,2026-10-21,"October 21, 2026 - 22:00 {{Abbr/EEST",ef,bc.game,3,DraculaN Season 7,b,True,2399631,DraculaN/Season 7,Eternal Fire,BC.Game Esports
+1win Private Club/2#12,2026-10-22,"October 22, 2026 - 13:00 {{Abbr/CEST",big,mongolz,3,1win Private Club #2,a,True,2399001,1win Private Club/2,BIG,The MongolZ
+DraculaN/Season 7#45,2026-10-22,"October 22, 2026 - 16:00 {{Abbr/EEST",jjh,nexus,3,DraculaN Season 7,b,True,2399634,DraculaN/Season 7,JiJieHao,Nexus Gaming
+DraculaN/Season 7#46,2026-10-22,"October 22, 2026 - 16:00 {{Abbr/EEST",bc.game,faze,3,DraculaN Season 7,b,True,2399635,DraculaN/Season 7,BC.Game Esports,FaZe Clan
+DraculaN/Season 7#34,2026-10-22,"October 22, 2026 - 19:00 {{Abbr/EEST",sinners,ef,3,DraculaN Season 7,b,True,2399636,DraculaN/Season 7,SINNERS Esports,Eternal Fire
 PGL/2026/Masters#0,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",fut,tyloo,3,PGL Masters Bucharest 2026,s,True,2399720,PGL/2026/Masters,FUT Esports,TYLOO
 PGL/2026/Masters#1,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",aurora,mongolz,3,PGL Masters Bucharest 2026,s,True,2399719,PGL/2026/Masters,Aurora Gaming,The MongolZ
 PGL/2026/Masters#2,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/EEST",spirit,betboom,3,PGL Masters Bucharest 2026,s,True,2399721,PGL/2026/Masters,Team Spirit,BetBoom Team
