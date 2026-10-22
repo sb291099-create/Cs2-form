@@ -1,17 +1,8 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-1win Private Club/2#12,2026-10-22,"October 22, 2026 - 13:00 {{Abbr/CEST",big,mongolz,3,1win Private Club #2,a,True,2399001,1win Private Club/2,BIG,The MongolZ
-CCT/2026/Europe/Series 12#13,2026-10-22,"October 22, 2026 - 13:00 {{Abbr/CEST",walczaki,mellren,3,CCT Europe 2026 Series #12,b,False,2399494,CCT/2026/Europe/Series 12,Walczaki,mellren
-NODWIN Gaming/Clutch Series/13#31,2026-10-22,"October 22, 2026 - 13:00 {{Abbr/CEST",forze reload,just players,3,NODWIN Clutch Series #13,b,False,2399106,NODWIN Gaming/Clutch Series/13,FORZE Reload,Just Players
-CCT/2026/Europe/Series 11#36,2026-10-22,"October 22, 2026 - 13:25 {{Abbr/CEST",butterfly,lavked,3,CCT Europe 2026 Series #11,b,False,2399328,CCT/2026/Europe/Series 11,Butterfly,lavked
-CCT/2026/Europe/Series 12#14,2026-10-22,"October 22, 2026 - 16:00 {{Abbr/CEST",lavked,havu,3,CCT Europe 2026 Series #12,b,False,2399495,CCT/2026/Europe/Series 12,lavked,HAVU
-NODWIN Gaming/Clutch Series/13#32,2026-10-22,"October 22, 2026 - 16:00 {{Abbr/CEST",tpudcatb tpu,mellren,3,NODWIN Clutch Series #13,b,False,2399107,NODWIN Gaming/Clutch Series/13,33,mellren
-CCT/2026/Europe/Series 11#37,2026-10-22,"October 22, 2026 - 16:00 {{Abbr/CEST",acend,ex-6666,3,CCT Europe 2026 Series #11,b,False,2399329,CCT/2026/Europe/Series 11,Acend,ex-6666 Esports
-DraculaN/Season 7#45,2026-10-22,"October 22, 2026 - 16:00 {{Abbr/EEST",jjh,nexus,3,DraculaN Season 7,b,True,2399634,DraculaN/Season 7,JiJieHao,Nexus Gaming
-DraculaN/Season 7#46,2026-10-22,"October 22, 2026 - 16:00 {{Abbr/EEST",bc.game,faze,3,DraculaN Season 7,b,True,2399635,DraculaN/Season 7,BC.Game Esports,FaZe Clan
-CCT/2026/Europe/Series 12#15,2026-10-22,"October 22, 2026 - 19:00 {{Abbr/CEST",6yubojlbl,ex-6666,3,CCT Europe 2026 Series #12,b,False,2399496,CCT/2026/Europe/Series 12,6yuBoJlbl,ex-6666 Esports
 CCT/2026/Europe/Series 11#38,2026-10-22,"October 22, 2026 - 19:00 {{Abbr/CEST",rune eaters,forze reload,3,CCT Europe 2026 Series #11,b,False,2399330,CCT/2026/Europe/Series 11,Rune Eaters Esports,FORZE Reload
-DraculaN/Season 7#34,2026-10-22,"October 22, 2026 - 19:00 {{Abbr/EEST",sinners,ef,3,DraculaN Season 7,b,True,2399636,DraculaN/Season 7,SINNERS Esports,Eternal Fire
-CCT/2026/Europe/Series 12#8,2026-10-23,"October 23, 2026 - 10:00 {{Abbr/CEST",team aces,illyrians,3,CCT Europe 2026 Series #12,b,False,2399497,CCT/2026/Europe/Series 12,Team ACES,ILLYRIANS
+CCT/2026/Europe/Series 12#14,2026-10-22,"October 22, 2026 - 19:30 {{Abbr/CEST",6yubojlbl,ex-6666,3,CCT Europe 2026 Series #12,b,False,2399496,CCT/2026/Europe/Series 12,6yuBoJlbl,ex-6666 Esports
+DraculaN/Season 7#34,2026-10-22,"October 22, 2026 - 19:50 {{Abbr/EEST",sinners,ef,3,DraculaN Season 7,b,True,2399636,DraculaN/Season 7,SINNERS Esports,Eternal Fire
+DraculaN/Season 7#47,2026-10-22,"October 22, 2026 - 19:55 {{Abbr/EEST",jjh,bc.game,3,DraculaN Season 7,b,True,2399637,DraculaN/Season 7,JiJieHao,BC.Game Esports
 CCT/2026/Europe/Series 11#34,2026-10-23,"October 23, 2026 - 10:00 {{Abbr/CEST",ex-z10,ex-rustec,3,CCT Europe 2026 Series #11,b,False,2399331,CCT/2026/Europe/Series 11,ex-Zero Tenacity,ex-RUSTEC
 CCT/2026/Europe/Series 12#9,2026-10-23,"October 23, 2026 - 13:00 {{Abbr/CEST",ic academy,spirit academy,3,CCT Europe 2026 Series #12,b,False,2399498,CCT/2026/Europe/Series 12,IC Academy,Team Spirit Academy
 CCT/2026/Europe/Series 11#33,2026-10-23,"October 23, 2026 - 13:00 {{Abbr/CEST",nuclear tigeres,illyrians,3,CCT Europe 2026 Series #11,b,False,2399332,CCT/2026/Europe/Series 11,Nuclear TigeRES,ILLYRIANS
@@ -19,6 +10,7 @@ CCT/2026/Europe/Series 12#10,2026-10-23,"October 23, 2026 - 16:00 {{Abbr/CEST",f
 CCT/2026/Europe/Series 11#39,2026-10-23,"October 23, 2026 - 16:00 {{Abbr/CEST",inox,team aces,3,CCT Europe 2026 Series #11,b,False,2399333,CCT/2026/Europe/Series 11,INOX Division,Team ACES
 CCT/2026/Europe/Series 12#11,2026-10-23,"October 23, 2026 - 19:00 {{Abbr/CEST",ex-rustec,saint sinners,3,CCT Europe 2026 Series #12,b,False,2399500,CCT/2026/Europe/Series 12,ex-RUSTEC,Saint Sinners
 CCT/2026/Europe/Series 11#40,2026-10-23,"October 23, 2026 - 19:00 {{Abbr/CEST",brute,baks,3,CCT Europe 2026 Series #11,b,False,2399334,CCT/2026/Europe/Series 11,BRUTE,BAKS Esports
+CCT/2026/Europe/Series 11#42,2026-10-24,"October 24, 2026",spirit academy,lavked,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,Team Spirit Academy,lavked
 PGL/2026/Masters#0,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",fut,tyloo,3,PGL Masters Bucharest 2026,s,True,2399720,PGL/2026/Masters,FUT Esports,TYLOO
 PGL/2026/Masters#1,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",aurora,mongolz,3,PGL Masters Bucharest 2026,s,True,2399719,PGL/2026/Masters,Aurora Gaming,The MongolZ
 PGL/2026/Masters#2,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/EEST",spirit,betboom,3,PGL Masters Bucharest 2026,s,True,2399721,PGL/2026/Masters,Team Spirit,BetBoom Team
@@ -27,8 +19,12 @@ PGL/2026/Masters#4,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/EEST",legacy,nemi
 PGL/2026/Masters#5,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/EEST",vit,9z,3,PGL Masters Bucharest 2026,s,True,2399723,PGL/2026/Masters,Team Vitality,9z Team
 PGL/2026/Masters#6,2026-10-24,"October 24, 2026 - 19:00 {{Abbr/EEST",g2,navi,3,PGL Masters Bucharest 2026,s,True,2399725,PGL/2026/Masters,G2 Esports,Natus Vincere
 PGL/2026/Masters#7,2026-10-24,"October 24, 2026 - 19:00 {{Abbr/EEST",furia,sharks esports,3,PGL Masters Bucharest 2026,s,True,2399726,PGL/2026/Masters,FURIA,DENDELE CS
+DFRAG/Invitational/2026#0,2026-10-26,"October 26, 2026 - 13:00 {{Abbr/AEST",gz,off chops,3,DFRAG Invitational 2026,b,True,,DFRAG/Invitational/2026,Ground Zero Gaming,Off Chops
+DFRAG/Invitational/2026#1,2026-10-26,"October 26, 2026 - 13:00 {{Abbr/AEST",nexvoid,alter ego,3,DFRAG Invitational 2026,b,True,,DFRAG/Invitational/2026,NEXVOID,Alter Ego
 Stake Ranked/Episode 5#1,2026-10-27,"October 27, 2026 - 12:00 {{Abbr/CET",big,magic,3,Stake Ranked Episode 5,a,True,2399705,Stake Ranked/Episode 5,BIG,magic
 Tesla Cup/2026#1,2026-10-27,"October 27, 2026 - 12:00 {{Abbr/CET",alliance,faze,3,Tesla Cup 2026,b,True,,Tesla Cup/2026,Alliance,FaZe Clan
+DFRAG/Invitational/2026#5,2026-10-27,"October 27, 2026 - 13:00 {{Abbr/AEST",fq,staqued,3,DFRAG Invitational 2026,b,True,,DFRAG/Invitational/2026,FlyQuest,StaQued
+DFRAG/Invitational/2026#6,2026-10-27,"October 27, 2026 - 13:00 {{Abbr/AEST",rooster,team abyssal,3,DFRAG Invitational 2026,b,True,,DFRAG/Invitational/2026,Rooster,Team Abyssal
 Stake Ranked/Episode 5#2,2026-10-27,"October 27, 2026 - 14:30 {{Abbr/CET",inner circle,team nemesis,3,Stake Ranked Episode 5,a,True,2399706,Stake Ranked/Episode 5,IC Esports,Team Nemesis
 Stake Ranked/Episode 5#0,2026-10-27,"October 27, 2026 - 17:00 {{Abbr/CET",astralis,fnc,3,Stake Ranked Episode 5,a,True,2399707,Stake Ranked/Episode 5,Astralis,Fnatic
 Tesla Cup/2026#5,2026-10-27,"October 27, 2026 - 18:00 {{Abbr/CET",lg,hotu,3,Tesla Cup 2026,b,True,,Tesla Cup/2026,Luminosity Gaming,HOTU
