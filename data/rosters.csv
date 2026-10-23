@@ -2540,14 +2540,14 @@ DFRAG/Invitational/2026,DFRAG/Invitational/2026,Russian Men,"flag=au,link=bandit
 DFRAG/Invitational/2026,DFRAG/Invitational/2026,Team Retirement,"flag=au,flag=au,flag=au,flag=au,flag=au",
 DFRAG/Invitational/2026,DFRAG/Invitational/2026,Retirement Too,"flag=au,flag=au,link=Evil (Australian player),flag=au,flag=au",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Betclic Apogee Esports,"Prism,Demho,Qlocuu,Ex1st,ultimate",
-CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Acend,"SPELLAN,Skrimo,REDSTAR,,",
+CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Acend,"SPELLAN,Skrimo,REDSTAR,SHiPZ,AwaykeN",{{Notes |{{Notes|October 22nd - '''[[Acend]]''' sign {{player|SHiPZ|flag=bg}} and acquire {{player|AwaykeN|flag=bg}} from '''[[INFURITY Gaming]]'''. }} }}
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,FOKUS,"Matheos,Banjo,ztr,podi,jocab",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,INOX Division,"k1slll,k0s,finW,gooddeph,El1an",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Phantom Esports,"Kylar,KEi,TMB,nicoodoz,Kunai",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,GenOne,"Brooxsy,Djoko,Keoz,bL4SEZ,SIXER",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Butterfly (Russian team),"k1ssly,ayano,Kurama,nitzie,Forester",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,9INE,"raalz,kraghen,Flayy,rim3,b1elany",
-CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,6yuBoJlbl,"Pump,tasman,neaLaN,ICY,flag=kz",
+CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,6yuBoJlbl,"Pump,tasman,neaLaN,ICY,flag=kz,team=33",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Team ACES,"4X1s,link=Salazar (Russian player),karnez,topo-,MRcreed",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Walczaki,",,,,",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,ex-RUSTEC,"Brilliance,jakekeS,youka,bl1x1,yiksrezo",
@@ -2558,7 +2558,7 @@ CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,lavked,"1NVISIBLEE,xm1nd,az
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Team Spirit Academy,"Kiryasoo,VILBy,flag=ru,flag=ru,flag=ru",{{Notes |{{Notes|October 21st - '''[[Team Spirit Academy]]''' demote {{player|Flash_1|flag=ru}} to '''[[Team Spirit Academy White]]''' and sign {{player|Qikert|flag=kz}} as their new coach. }} }}
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,HAVU,"uli,ottob,p3kko,Alxc,8Juho8",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Sökerorg,"dottie,flaw,Sapec,L00m1,Mann3n,results=false",
-CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Azuolas,"maty,yakuza,MAGILA,flag=lt,flag=ua,status=sub",
+CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Azuolas,"maty,yakuza,MAGILA,flag=lt,flag=ua,status=sub,status=sub",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Enjoy,"link=nbl (Russian player),flag=ru,flag=ru,reyoz,flag=ru",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,mellren,"flag=ru,flag=ru,mdl,menddel,lollipop21k",
 CCT Europe 2026 Series #12,CCT/2026/Europe/Series 12,Lilmix,"Wonder,p1ke,flag=se,flag=se,flag=se",
@@ -2586,7 +2586,7 @@ Tesla Cup 2026,Tesla Cup/2026,Luminosity,"afro,AZUWU,Rainwaker,lux,yxngstxr",
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,walczaki,,
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,"senka,flouzer,ayuki,tronic,Djon8",
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Team Nemesis,"SELLTER,Sdaim,tex1y,mag1k3Y,r3salt",
-NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Acend,"SPELLAN,Skrimo,REDSTAR,,",
+NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Acend,"SPELLAN,Skrimo,REDSTAR,SHiPZ,AwaykeN",{{Notes |{{Notes|October 22nd - '''[[Acend]]''' sign {{player|SHiPZ|flag=bg}} and acquire {{player|AwaykeN|flag=bg}} from '''[[INFURITY Gaming]]'''. }} }}
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,INFINITE,"sl3nd,Blytz,volt,kyuubii,ScrunK",{{Notes |{{Notes|October 18th - '''[[INFINITE]]''' sign {{player|kyuubii|flag=de}} and {{player|ScrunK|flag=de}}. }} }}
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,FOKUS,"Matheos,Banjo,ztr,podi,jocab",
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,INOX Division,"k1slll,k0s,finW,gooddeph,El1an",{{Notes |{{Notes|October 12th - '''[[INOX Division]]''' sign {{player|El1an|flag=ru}}. }} }}
@@ -2597,7 +2597,7 @@ NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Butterfly,"k1ssly,ayano,
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,BRUTE,"nbqq,aidKiT,ZEDKO,tAk,team=INFURITY Gaming",
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,ex-Zero Tenacity,"brutmonster,Cjoffo,Kind0,Dragon,VLDN,results=false",
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Bushido Wildcats,"darendeli,Vej,cadnyx,cacan,team=misa,results=true,results=false",{{Notes |{{Notes|October 20th - '''[[Bushido Wildcats]]''' part ways with {{player|Muk0s|flag=ru}}. }} }}
-NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,33,"executor,z1Nny,bluewh1te,Raijin,Patsi,results=false",{{Notes |{{Notes|October 12th - '''[[33]]''' part ways with {{player|synyx|flag=ua}} as he joins '''[[UPGRADE Team]]'''. }} }}
+NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,33,"executor,z1Nny,bluewh1te,Raijin,Patsi,status=sub",{{Notes |{{Notes|October 12th - '''[[33]]''' part ways with {{player|synyx|flag=ua}} as he joins '''[[UPGRADE Team]]'''. }} }}
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Team ACES,"4X1s,link=Salazar (Russian player),karnez,topo-,MRcreed",{{Notes |{{Notes|October 16th - '''[[Black Phoenix]]''' are signed by '''[[Team ACES]]'''. }} }}
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,UNiTY esports,"M1key,KWERTZZ,2high,Sn0w,Dytor",
 NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,Walczaki,",,,,",
@@ -2624,12 +2624,12 @@ NODWIN Clutch Series #13,NODWIN Gaming/Clutch Series/13,MAYBE.ua,"zogeN,flag=ua,
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,walczaki,,
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,gothic,,
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Nuclear TigeRES,"senka,flouzer,ayuki,tronic,Djon8",
-CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Acend,"SPELLAN,Skrimo,REDSTAR,,",
+CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Acend,"SPELLAN,Skrimo,REDSTAR,SHiPZ,AwaykeN",{{Notes |{{Notes|October 22nd - '''[[Acend]]''' sign {{player|SHiPZ|flag=bg}} and acquire {{player|AwaykeN|flag=bg}} from '''[[INFURITY Gaming]]'''. }} }}
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,INOX Division,"k1slll,k0s,finW,gooddeph,El1an",{{Notes |{{Notes|October 12th - '''[[INOX Division]]''' sign {{player|El1an|flag=ru}}. }} }}
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,GenOne,"Brooxsy,Djoko,Keoz,bL4SEZ,SIXER",
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Butterfly (Russian team),"k1ssly,ayano,Kurama,nitzie,Forester",
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,BRUTE,"hfah,nbqq,aidKiT,ZEDKO,tAk",
-CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Rune Eaters Esports,"forkyz,her1tage,noni,demente,dukefissura",
+CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Rune Eaters Esports,"forkyz,her1tage,noni,team=depo,flag=kz",
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,ex-Zero Tenacity,"brutmonster,Cjoffo,Kind0,Dragon,VLDN",
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Bushido Wildcats,"darendeli,Vej,cadnyx,cacan,Muk0s",
 CCT Europe 2026 Series #11,CCT/2026/Europe/Series 11,Team ACES,"4X1s,link=Salazar (Russian player),karnez,topo-,MRcreed",{{Notes |{{Notes|October 16th - '''[[Black Phoenix]]''' are signed by '''[[Team ACES]]'''. }} }}
