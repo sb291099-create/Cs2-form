@@ -1,14 +1,9 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/Europe/Series 12#22,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/CEST",walczaki,ex-6666,3,CCT Europe 2026 Series #12,b,False,2399501,CCT/2026/Europe/Series 12,Walczaki,ex-6666 Esports
-NODWIN Gaming/Clutch Series/13#39,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/CEST",fokus,ex-6666,3,NODWIN Clutch Series #13,b,False,2399108,NODWIN Gaming/Clutch Series/13,FOKUS,ex-6666 Esports
-CCT/2026/Europe/Series 11#43,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/CEST",acend,forze reload,3,CCT Europe 2026 Series #11,b,False,2399335,CCT/2026/Europe/Series 11,Acend,FORZE Reload
-PGL/2026/Masters#0,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",fut,tyloo,3,PGL Masters Bucharest 2026,s,True,2399720,PGL/2026/Masters,FUT Esports,TYLOO
-PGL/2026/Masters#1,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",aurora,mongolz,3,PGL Masters Bucharest 2026,s,True,2399719,PGL/2026/Masters,Aurora Gaming,The MongolZ
+PGL/2026/Masters#3,2026-10-24,"October 24, 2026 - 12:15 {{Abbr/EEST",mouz,tl,3,PGL Masters Bucharest 2026,s,True,2399722,PGL/2026/Masters,MOUZ,Team Liquid
 CCT/2026/Europe/Series 12#23,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/CEST",havu,azuolas,3,CCT Europe 2026 Series #12,b,False,2399502,CCT/2026/Europe/Series 12,HAVU,Azuolas
 NODWIN Gaming/Clutch Series/13#33,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/CEST",team nemesis,mellren,3,NODWIN Clutch Series #13,b,False,2399109,NODWIN Gaming/Clutch Series/13,Team Nemesis,mellren
 CCT/2026/Europe/Series 11#42,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/CEST",spirit academy,lavked,3,CCT Europe 2026 Series #11,b,False,2399336,CCT/2026/Europe/Series 11,Team Spirit Academy,lavked
-PGL/2026/Masters#2,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/EEST",spirit,betboom,3,PGL Masters Bucharest 2026,s,True,2399721,PGL/2026/Masters,Team Spirit,BetBoom Team
-PGL/2026/Masters#3,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/EEST",mouz,tl,3,PGL Masters Bucharest 2026,s,True,2399722,PGL/2026/Masters,MOUZ,Team Liquid
+PGL/2026/Masters#2,2026-10-24,"October 24, 2026 - 13:35 {{Abbr/EEST",spirit,betboom,3,PGL Masters Bucharest 2026,s,True,2399721,PGL/2026/Masters,Team Spirit,BetBoom Team
 CCT/2026/Europe/Series 12#18,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/CEST",6yubojlbl,saint sinners,3,CCT Europe 2026 Series #12,b,False,2399503,CCT/2026/Europe/Series 12,6yuBoJlbl,Saint Sinners
 NODWIN Gaming/Clutch Series/13#37,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/CEST",nuclear tigeres,forze reload,3,NODWIN Clutch Series #13,b,False,2399110,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,FORZE Reload
 CCT/2026/Europe/Series 11#44,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/CEST",inox,brute,3,CCT Europe 2026 Series #11,b,False,2399337,CCT/2026/Europe/Series 11,INOX Division,BRUTE
