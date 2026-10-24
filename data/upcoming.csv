@@ -1,21 +1,18 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/Europe/Series 11#39,2026-10-23,"October 23, 2026 - 16:00 {{Abbr/CEST",inox,team aces,3,CCT Europe 2026 Series #11,b,False,2399333,CCT/2026/Europe/Series 11,INOX Division,Team ACES
-CCT/2026/Europe/Series 12#11,2026-10-23,"October 23, 2026 - 19:00 {{Abbr/CEST",ex-rustec,saint sinners,3,CCT Europe 2026 Series #12,b,False,2399500,CCT/2026/Europe/Series 12,ex-RUSTEC,Saint Sinners
-CCT/2026/Europe/Series 11#40,2026-10-23,"October 23, 2026 - 19:15 {{Abbr/CEST",brute,baks,3,CCT Europe 2026 Series #11,b,False,2399334,CCT/2026/Europe/Series 11,BRUTE,BAKS Esports
-DraculaN/Season 7#49,2026-10-23,"October 23, 2026 - 21:30 {{Abbr/EEST",sinners,ef,3,DraculaN Season 7,b,True,2399639,DraculaN/Season 7,SINNERS Esports,Eternal Fire
-CCT/2026/Europe/Series 11#41,2026-10-24,"October 24, 2026",nuclear tigeres,ex-z10,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,Nuclear TigeRES,ex-Zero Tenacity
-CCT/2026/Europe/Series 11#42,2026-10-24,"October 24, 2026",spirit academy,lavked,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,Team Spirit Academy,lavked
-CCT/2026/Europe/Series 11#43,2026-10-24,"October 24, 2026",acend,forze reload,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,Acend,FORZE Reload
 NODWIN Gaming/Clutch Series/13#39,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/CEST",fokus,ex-6666,3,NODWIN Clutch Series #13,b,False,2399108,NODWIN Gaming/Clutch Series/13,FOKUS,ex-6666 Esports
+CCT/2026/Europe/Series 11#43,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/CEST",acend,forze reload,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,Acend,FORZE Reload
 PGL/2026/Masters#0,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",fut,tyloo,3,PGL Masters Bucharest 2026,s,True,2399720,PGL/2026/Masters,FUT Esports,TYLOO
 PGL/2026/Masters#1,2026-10-24,"October 24, 2026 - 10:00 {{Abbr/EEST",aurora,mongolz,3,PGL Masters Bucharest 2026,s,True,2399719,PGL/2026/Masters,Aurora Gaming,The MongolZ
 NODWIN Gaming/Clutch Series/13#33,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/CEST",team nemesis,mellren,3,NODWIN Clutch Series #13,b,False,2399109,NODWIN Gaming/Clutch Series/13,Team Nemesis,mellren
+CCT/2026/Europe/Series 11#42,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/CEST",spirit academy,lavked,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,Team Spirit Academy,lavked
 PGL/2026/Masters#2,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/EEST",spirit,betboom,3,PGL Masters Bucharest 2026,s,True,2399721,PGL/2026/Masters,Team Spirit,BetBoom Team
 PGL/2026/Masters#3,2026-10-24,"October 24, 2026 - 13:00 {{Abbr/EEST",mouz,tl,3,PGL Masters Bucharest 2026,s,True,2399722,PGL/2026/Masters,MOUZ,Team Liquid
 NODWIN Gaming/Clutch Series/13#37,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/CEST",nuclear tigeres,forze reload,3,NODWIN Clutch Series #13,b,False,2399110,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,FORZE Reload
+CCT/2026/Europe/Series 11#44,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/CEST",inox,brute,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,INOX Division,BRUTE
 PGL/2026/Masters#4,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/EEST",legacy,nemiga,3,PGL Masters Bucharest 2026,s,True,2399724,PGL/2026/Masters,Legacy,Nemiga Gaming
 PGL/2026/Masters#5,2026-10-24,"October 24, 2026 - 16:00 {{Abbr/EEST",vit,9z,3,PGL Masters Bucharest 2026,s,True,2399723,PGL/2026/Masters,Team Vitality,9z Team
 NODWIN Gaming/Clutch Series/13#34,2026-10-24,"October 24, 2026 - 19:00 {{Abbr/CEST",inox,team aces,3,NODWIN Clutch Series #13,b,False,2399111,NODWIN Gaming/Clutch Series/13,INOX Division,Team ACES
+CCT/2026/Europe/Series 11#41,2026-10-24,"October 24, 2026 - 19:00 {{Abbr/CEST",nuclear tigeres,ex-z10,3,CCT Europe 2026 Series #11,b,False,,CCT/2026/Europe/Series 11,Nuclear TigeRES,ex-Zero Tenacity
 PGL/2026/Masters#6,2026-10-24,"October 24, 2026 - 19:00 {{Abbr/EEST",g2,navi,3,PGL Masters Bucharest 2026,s,True,2399725,PGL/2026/Masters,G2 Esports,Natus Vincere
 PGL/2026/Masters#7,2026-10-24,"October 24, 2026 - 19:00 {{Abbr/EEST",furia,sharks esports,3,PGL Masters Bucharest 2026,s,True,2399726,PGL/2026/Masters,FURIA,DENDELE CS
 NODWIN Gaming/Clutch Series/13#38,2026-10-25,"October 25, 2026 - 10:00 {{Abbr/CET",acend,unity.sk,3,NODWIN Clutch Series #13,b,False,2399112,NODWIN Gaming/Clutch Series/13,Acend,UNiTY esports
