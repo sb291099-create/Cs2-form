@@ -1,9 +1,6 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/Europe/Series 12#16,2026-10-25,"October 25, 2026 - 16:00 {{Abbr/CET",team aces,ic academy,3,CCT Europe 2026 Series #12,b,False,2399507,CCT/2026/Europe/Series 12,Team ACES,IC Academy
-NODWIN Gaming/Clutch Series/13#36,2026-10-25,"October 25, 2026 - 16:00 {{Abbr/CET",infinite,brute,3,NODWIN Clutch Series #13,b,False,2399114,NODWIN Gaming/Clutch Series/13,INFINITE,BRUTE
-CCT/2026/Europe/Series 11#47,2026-10-25,"October 25, 2026 - 18:00 {{Abbr/CET",ex-z10,acend,3,CCT Europe 2026 Series #11,b,False,2399341,CCT/2026/Europe/Series 11,ex-Zero Tenacity,Acend
-CCT/2026/Europe/Series 12#17,2026-10-25,"October 25, 2026 - 19:00 {{Abbr/CET",forze reload,ex-rustec,3,CCT Europe 2026 Series #12,b,False,2399508,CCT/2026/Europe/Series 12,FORZE Reload,ex-RUSTEC
 NODWIN Gaming/Clutch Series/13#41,2026-10-26,"October 26, 2026",team nemesis,inox,3,NODWIN Clutch Series #13,b,False,,NODWIN Gaming/Clutch Series/13,Team Nemesis,INOX Division
+NODWIN Gaming/Clutch Series/13#42,2026-10-26,"October 26, 2026",metizport,brute,3,NODWIN Clutch Series #13,b,False,,NODWIN Gaming/Clutch Series/13,Metizport,BRUTE
 NODWIN Gaming/Clutch Series/13#43,2026-10-26,"October 26, 2026",nuclear tigeres,unity.sk,3,NODWIN Clutch Series #13,b,False,,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,UNiTY esports
 NODWIN Gaming/Clutch Series/13#44,2026-10-26,"October 26, 2026",fokus,ex-z10,3,NODWIN Clutch Series #13,b,False,,NODWIN Gaming/Clutch Series/13,FOKUS,ex-Zero Tenacity
 PGL/2026/Masters#18,2026-10-26,"October 26, 2026 - 10:00 {{Abbr/EET",mouz,mongolz,3,PGL Masters Bucharest 2026,s,True,2399735,PGL/2026/Masters,MOUZ,The MongolZ
