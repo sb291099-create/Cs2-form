@@ -1,17 +1,10 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/13#41,2026-10-26,"October 26, 2026 - 10:00 {{Abbr/CET",team nemesis,inox,3,NODWIN Clutch Series #13,b,False,2399116,NODWIN Gaming/Clutch Series/13,Team Nemesis,INOX Division
-PGL/2026/Masters#18,2026-10-26,"October 26, 2026 - 10:00 {{Abbr/EET",mouz,mongolz,3,PGL Masters Bucharest 2026,s,True,2399735,PGL/2026/Masters,MOUZ,The MongolZ
-PGL/2026/Masters#19,2026-10-26,"October 26, 2026 - 10:00 {{Abbr/EET",aurora,nemiga,3,PGL Masters Bucharest 2026,s,True,2399736,PGL/2026/Masters,Aurora Gaming,Nemiga Gaming
 CCT/2026/Europe/Series 12#27,2026-10-26,"October 26, 2026 - 13:00 {{Abbr/CET",sokerorg,ex-6666,3,CCT Europe 2026 Series #12,b,False,2399509,CCT/2026/Europe/Series 12,Sökerorg,ex-6666 Esports
 NODWIN Gaming/Clutch Series/13#44,2026-10-26,"October 26, 2026 - 13:00 {{Abbr/CET",fokus,ex-z10,3,NODWIN Clutch Series #13,b,False,2399117,NODWIN Gaming/Clutch Series/13,FOKUS,ex-Zero Tenacity
-PGL/2026/Masters#16,2026-10-26,"October 26, 2026 - 13:00 {{Abbr/EET",vit,fut,3,PGL Masters Bucharest 2026,s,True,2399737,PGL/2026/Masters,Team Vitality,FUT Esports
-PGL/2026/Masters#22,2026-10-26,"October 26, 2026 - 13:00 {{Abbr/EET",9z,tyloo,3,PGL Masters Bucharest 2026,s,True,2399738,PGL/2026/Masters,9z Team,TYLOO
-DFRAG/Invitational/2026#2,2026-10-26,"October 26, 2026 - 16:00 {{Abbr/AEST",off chops,alter ego,3,DFRAG Invitational 2026,b,True,2399892,DFRAG/Invitational/2026,Off Chops,Alter Ego
+PGL/2026/Masters#20,2026-10-26,"October 26, 2026 - 15:40 {{Abbr/EET",spirit,furia,3,PGL Masters Bucharest 2026,s,True,2399739,PGL/2026/Masters,Team Spirit,FURIA
+PGL/2026/Masters#21,2026-10-26,"October 26, 2026 - 15:55 {{Abbr/EET",tl,legacy,3,PGL Masters Bucharest 2026,s,True,2399740,PGL/2026/Masters,Team Liquid,Legacy
 CCT/2026/Europe/Series 12#28,2026-10-26,"October 26, 2026 - 16:00 {{Abbr/CET",havu,illyrians,3,CCT Europe 2026 Series #12,b,False,2399510,CCT/2026/Europe/Series 12,HAVU,ILLYRIANS
 NODWIN Gaming/Clutch Series/13#42,2026-10-26,"October 26, 2026 - 16:00 {{Abbr/CET",metizport,brute,3,NODWIN Clutch Series #13,b,False,2399118,NODWIN Gaming/Clutch Series/13,Metizport,BRUTE
-PGL/2026/Masters#20,2026-10-26,"October 26, 2026 - 16:00 {{Abbr/EET",spirit,furia,3,PGL Masters Bucharest 2026,s,True,2399739,PGL/2026/Masters,Team Spirit,FURIA
-PGL/2026/Masters#21,2026-10-26,"October 26, 2026 - 16:00 {{Abbr/EET",tl,legacy,3,PGL Masters Bucharest 2026,s,True,2399740,PGL/2026/Masters,Team Liquid,Legacy
-DFRAG/Invitational/2026#3,2026-10-26,"October 26, 2026 - 17:00 {{Abbr/AEST",gz,nexvoid,3,DFRAG Invitational 2026,b,True,2399894,DFRAG/Invitational/2026,Ground Zero Gaming,NEXVOID
 CCT/2026/Europe/Series 12#29,2026-10-26,"October 26, 2026 - 19:00 {{Abbr/CET",6yubojlbl,mellren,3,CCT Europe 2026 Series #12,b,False,2399511,CCT/2026/Europe/Series 12,6yuBoJlbl,mellren
 NODWIN Gaming/Clutch Series/13#43,2026-10-26,"October 26, 2026 - 19:00 {{Abbr/CET",nuclear tigeres,unity.sk,3,NODWIN Clutch Series #13,b,False,2399119,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,UNiTY esports
 PGL/2026/Masters#17,2026-10-26,"October 26, 2026 - 19:00 {{Abbr/EET",betboom,navi,3,PGL Masters Bucharest 2026,s,True,2399741,PGL/2026/Masters,BetBoom Team,Natus Vincere
@@ -29,5 +22,6 @@ CCT/2026/Europe/Series 12#26,2026-10-27,"October 27, 2026 - 19:00 {{Abbr/CET",ic
 Stake Ranked/Episode 5#3,2026-10-27,"October 27, 2026 - 19:30 {{Abbr/CET",ef,mibr,3,Stake Ranked Episode 5,a,True,2399708,Stake Ranked/Episode 5,Eternal Fire,MIBR
 Tesla Cup/2026#6,2026-10-27,"October 27, 2026 - 21:00 {{Abbr/CET",envy,gl,3,Tesla Cup 2026,b,True,2399870,Tesla Cup/2026,ENVY,GamerLegion
 Tesla Cup/2026#0,2026-10-27,"October 27, 2026 - 9:00 {{Abbr/CET",b8,k27,3,Tesla Cup 2026,b,True,2399866,Tesla Cup/2026,B8,K27
+DFRAG/Invitational/2026#4,2026-10-28,"October 28, 2026 - 13:00 {{Abbr/AEST",off chops,nexvoid,3,DFRAG Invitational 2026,b,True,2399896,DFRAG/Invitational/2026,Off Chops,NEXVOID
 Moscow Cyber Games/2026#0,2026-10-31,"October 31, 2026 - 12:00 {{Abbr/MSK",hotu,huns,3,Moscow Cyber Games 2026,b,True,2399437,Moscow Cyber Games/2026,HOTU,The Huns Esports
 Moscow Cyber Games/2026#1,2026-10-31,"October 31, 2026 - 16:00 {{Abbr/MSK",1win,nomads.mn,3,Moscow Cyber Games 2026,b,True,2399438,Moscow Cyber Games/2026,1w Team,5star eSports
