@@ -1,14 +1,31 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/13#47,2026-10-27,"October 27, 2026 - 16:50 {{Abbr/CET",brute,fokus,3,NODWIN Clutch Series #13,b,False,2399122,NODWIN Gaming/Clutch Series/13,BRUTE,FOKUS
-DFRAG/Invitational/2026#7,2026-10-27,"October 27, 2026 - 17:35 {{Abbr/AEST",fq,rooster,3,DFRAG Invitational 2026,b,True,2399893,DFRAG/Invitational/2026,FlyQuest,Rooster
-Tesla Cup/2026#6,2026-10-27,"October 27, 2026 - 18:30 {{Abbr/CET",envy,gl,3,Tesla Cup 2026,b,True,2399870,Tesla Cup/2026,ENVY,GamerLegion
-CCT/2026/Europe/Series 12#26,2026-10-27,"October 27, 2026 - 19:00 {{Abbr/CET",ic academy,lavked,3,CCT Europe 2026 Series #12,b,False,2399514,CCT/2026/Europe/Series 12,IC Academy,lavked
-Stake Ranked/Episode 5#3,2026-10-27,"October 27, 2026 - 19:10 {{Abbr/CET",ef,mibr,3,Stake Ranked Episode 5,a,True,2399708,Stake Ranked/Episode 5,Eternal Fire,MIBR
-PGL/2026/Masters#26,2026-10-27,"October 27, 2026 - 19:50 {{Abbr/EET",vit,navi,3,PGL Masters Bucharest 2026,s,True,2399747,PGL/2026/Masters,Team Vitality,Natus Vincere
 Stake Ranked/Episode 5#7,2026-10-28,"October 28, 2026 - 12:00 {{Abbr/CET",astralis,magic,3,Stake Ranked Episode 5,a,True,2399709,Stake Ranked/Episode 5,Astralis,magic
-DFRAG/Invitational/2026#4,2026-10-28,"October 28, 2026 - 13:00 {{Abbr/AEST",off chops,nexvoid,3,DFRAG Invitational 2026,b,True,2399896,DFRAG/Invitational/2026,Off Chops,NEXVOID
+PGL/2026/Masters#30,2026-10-28,"October 28, 2026 - 13:00 {{Abbr/EET",mongolz,nemiga,3,PGL Masters Bucharest 2026,s,True,2399749,PGL/2026/Masters,The MongolZ,Nemiga Gaming
+Stake Ranked/Episode 5#8,2026-10-28,"October 28, 2026 - 14:30 {{Abbr/CET",team nemesis,ef,3,Stake Ranked Episode 5,a,True,2399710,Stake Ranked/Episode 5,Team Nemesis,Eternal Fire
+Tesla Cup/2026#7,2026-10-28,"October 28, 2026 - 15:00 {{Abbr/CET",hotu,gl,3,Tesla Cup 2026,b,True,2399873,Tesla Cup/2026,HOTU,GamerLegion
 DFRAG/Invitational/2026#9,2026-10-28,"October 28, 2026 - 16:00 {{Abbr/AEST",rooster,team abyssal,3,DFRAG Invitational 2026,b,True,2399897,DFRAG/Invitational/2026,Rooster,Team Abyssal
+PGL/2026/Masters#31,2026-10-28,"October 28, 2026 - 16:00 {{Abbr/EET",tl,furia,3,PGL Masters Bucharest 2026,s,True,2399750,PGL/2026/Masters,Team Liquid,FURIA
 Stake Ranked/Episode 5#4,2026-10-28,"October 28, 2026 - 17:00 {{Abbr/CET",fnc,big,3,Stake Ranked Episode 5,a,True,2399711,Stake Ranked/Episode 5,Fnatic,BIG
+Tesla Cup/2026#8,2026-10-28,"October 28, 2026 - 18:00 {{Abbr/CET",lg,envy,3,Tesla Cup 2026,b,True,2399874,Tesla Cup/2026,Luminosity Gaming,ENVY
+PGL/2026/Masters#32,2026-10-28,"October 28, 2026 - 19:00 {{Abbr/EET",spirit,navi,3,PGL Masters Bucharest 2026,s,True,2399751,PGL/2026/Masters,Team Spirit,Natus Vincere
+Stake Ranked/Episode 5#5,2026-10-28,"October 28, 2026 - 19:30 {{Abbr/CET",inner circle,mibr,3,Stake Ranked Episode 5,a,True,2399712,Stake Ranked/Episode 5,IC Esports,MIBR
 Tesla Cup/2026#3,2026-10-28,"October 28, 2026 - 9:00 {{Abbr/CET",b8,alliance,3,Tesla Cup 2026,b,True,2399871,Tesla Cup/2026,B8,Alliance
+FiReSPORTS/Last Chance/2026#0,2026-10-29,"October 29, 2026 - 10:00 {{Abbr/ART",100t,arena pro team,3,FiReSPORTS Last Chance 2026,b,True,2399962,FiReSPORTS/Last Chance/2026,100 Thieves,Arena Pro Team
+FiReSPORTS/Last Chance/2026#1,2026-10-29,"October 29, 2026 - 10:00 {{Abbr/ART",barca esports,bounty,3,FiReSPORTS Last Chance 2026,b,True,2399963,FiReSPORTS/Last Chance/2026,BARCA esports,Bounty
+Gamers Club/Masters/VII#5,2026-10-29,"October 29, 2026 - 10:00 {{Abbr/BRT",imp,quintessência,3,Gamers Club Masters VII,b,True,2399948,Gamers Club/Masters/VII,Imperial Esports,QUINTESSÊNCIA
+Gamers Club/Masters/VII#6,2026-10-29,"October 29, 2026 - 13:30 {{Abbr/BRT",pain,naocopulas,3,Gamers Club Masters VII,b,True,2399949,Gamers Club/Masters/VII,paiN Gaming,naocopulas
+FiReSPORTS/Last Chance/2026#5,2026-10-29,"October 29, 2026 - 16:30 {{Abbr/ART",nrg,tactical chaos,3,FiReSPORTS Last Chance 2026,b,True,2399966,FiReSPORTS/Last Chance/2026,NRG,Tactical Chaos
+FiReSPORTS/Last Chance/2026#6,2026-10-29,"October 29, 2026 - 16:30 {{Abbr/ART",galorys,procyon,3,FiReSPORTS Last Chance 2026,b,True,2399967,FiReSPORTS/Last Chance/2026,Galorys,Procyon Team
+Gamers Club/Masters/VII#0,2026-10-29,"October 29, 2026 - 17:00 {{Abbr/BRT",sharks esports,low cortisol,3,Gamers Club Masters VII,b,True,2399950,Gamers Club/Masters/VII,DENDELE CS,Low Cortisol
+Gamers Club/Masters/VII#1,2026-10-29,"October 29, 2026 - 20:30 {{Abbr/BRT",turma do pagode,alka gaming,3,Gamers Club Masters VII,b,True,2399951,Gamers Club/Masters/VII,Turma do Pagode,Alka Esports
+FiReSPORTS/Last Chance/2026#10,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/ART",fluxo,signatus,3,FiReSPORTS Last Chance 2026,b,True,2399970,FiReSPORTS/Last Chance/2026,Fluxo,Signatus
+FiReSPORTS/Last Chance/2026#11,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/ART",shinden,isurus,3,FiReSPORTS Last Chance 2026,b,True,2399971,FiReSPORTS/Last Chance/2026,ShindeN,Isurus
+DFRAG/Invitational/2026#11,2026-10-30,"October 30, 2026 - 13:00 {{Abbr/AEST",nexvoid,fq,3,DFRAG Invitational 2026,b,True,2399899,DFRAG/Invitational/2026,NEXVOID,FlyQuest
+FiReSPORTS/Last Chance/2026#15,2026-10-30,"October 30, 2026 - 16:30 {{Abbr/ART",wildcard,hacha esports,3,FiReSPORTS Last Chance 2026,b,True,2399974,FiReSPORTS/Last Chance/2026,Wildcard,Hacha Esports
+FiReSPORTS/Last Chance/2026#16,2026-10-30,"October 30, 2026 - 16:30 {{Abbr/ART",bestia,bth e-sports,3,FiReSPORTS Last Chance 2026,b,True,2399975,FiReSPORTS/Last Chance/2026,BESTIA,BTH E-Sports
 Moscow Cyber Games/2026#0,2026-10-31,"October 31, 2026 - 12:00 {{Abbr/MSK",hotu,huns,3,Moscow Cyber Games 2026,b,True,2399437,Moscow Cyber Games/2026,HOTU,The Huns Esports
 Moscow Cyber Games/2026#1,2026-10-31,"October 31, 2026 - 16:00 {{Abbr/MSK",1win,nomads.mn,3,Moscow Cyber Games 2026,b,True,2399438,Moscow Cyber Games/2026,1w Team,5star eSports
+BLAST/Rivals/2026/Fall#0,2026-11-11,"November 11, 2026 - 11:00 {{Abbr/HKT",legacy,furia,3,BLAST Rivals Fall 2026,s,True,2399851,BLAST/Rivals/2026/Fall,Legacy,FURIA
+BLAST/Rivals/2026/Fall#1,2026-11-11,"November 11, 2026 - 13:30 {{Abbr/HKT",vit,falcons,3,BLAST Rivals Fall 2026,s,True,2399852,BLAST/Rivals/2026/Fall,Team Vitality,Team Falcons
+BLAST/Rivals/2026/Fall#4,2026-11-11,"November 11, 2026 - 16:00 {{Abbr/HKT",spirit,fut,3,BLAST Rivals Fall 2026,s,True,2399853,BLAST/Rivals/2026/Fall,Team Spirit,FUT Esports
+BLAST/Rivals/2026/Fall#5,2026-11-11,"November 11, 2026 - 18:30 {{Abbr/HKT",mouz,g2,3,BLAST Rivals Fall 2026,s,True,2399854,BLAST/Rivals/2026/Fall,MOUZ,G2 Esports

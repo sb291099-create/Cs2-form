@@ -1,50 +1,4 @@
 map_id,match_key,date,team1_id,team2_id,score1,score2,map,map_number,bestof,event,tier,lan,hltv,first1,ct1,t1,ct2,t2,page,team1,team2
-BLAST/Major/2025/Austin/China#0#1,BLAST/Major/2025/Austin/China#0,2025-04-15,rare atom,lvg,7,13,Inferno,1,3,BLAST.tv Austin Major 2025,s,True,2381551,t,2,5,7,6,BLAST/Major/2025/Austin,Rare Atom,Lynn Vision Gaming
-BLAST/Major/2025/Austin/China#0#2,BLAST/Major/2025/Austin/China#0,2025-04-15,rare atom,lvg,10,13,Dust2,2,3,BLAST.tv Austin Major 2025,s,True,2381551,ct,6,4,7,6,BLAST/Major/2025/Austin,Rare Atom,Lynn Vision Gaming
-BLAST/Major/2025/Austin/Europe#16#1,BLAST/Major/2025/Austin/Europe#16,2025-04-15,og,metizport,13,7,Mirage,1,3,BLAST.tv Austin Major 2025,s,True,2381590,ct,9,4,4,3,BLAST/Major/2025/Austin,OG,Metizport
-BLAST/Major/2025/Austin/Europe#16#2,BLAST/Major/2025/Austin/Europe#16,2025-04-15,og,metizport,9,13,Ancient,2,3,BLAST.tv Austin Major 2025,s,True,2381590,t,3,6,6,7,BLAST/Major/2025/Austin,OG,Metizport
-BLAST/Major/2025/Austin/Europe#16#3,BLAST/Major/2025/Austin/Europe#16,2025-04-15,og,metizport,13,10,Inferno,3,3,BLAST.tv Austin Major 2025,s,True,2381590,ct,6,7,4,6,BLAST/Major/2025/Austin,OG,Metizport
-BLAST/Major/2025/Austin/Europe#17#1,BLAST/Major/2025/Austin/Europe#17,2025-04-15,heroic,nemiga,13,8,Dust2,1,3,BLAST.tv Austin Major 2025,s,True,2381591,ct,6,7,2,6,BLAST/Major/2025/Austin,HEROIC,Nemiga Gaming
-BLAST/Major/2025/Austin/Europe#17#2,BLAST/Major/2025/Austin/Europe#17,2025-04-15,heroic,nemiga,16,13,Mirage,2,3,BLAST.tv Austin Major 2025,s,True,2381591,t,5,7,5,7,BLAST/Major/2025/Austin,HEROIC,Nemiga Gaming
-BLAST/Major/2025/Austin/Europe#18#1,BLAST/Major/2025/Austin/Europe#18,2025-04-15,bc.game,big,14,16,Ancient,1,1,BLAST.tv Austin Major 2025,s,True,2381586,t,2,10,2,10,BLAST/Major/2025/Austin,BC.Game Esports,BIG
-BLAST/Major/2025/Austin/Europe#19#1,BLAST/Major/2025/Austin/Europe#19,2025-04-15,betboom,fnc,16,13,Mirage,1,1,BLAST.tv Austin Major 2025,s,True,2381587,ct,7,5,7,5,BLAST/Major/2025/Austin,BetBoom Team,Fnatic
-BLAST/Major/2025/Austin/Europe#20#1,BLAST/Major/2025/Austin/Europe#20,2025-04-15,9pandas,saw,13,11,Ancient,1,1,BLAST.tv Austin Major 2025,s,True,2381588,ct,6,7,5,6,BLAST/Major/2025/Austin,9Pandas,SAW
-BLAST/Major/2025/Austin/Europe#21#1,BLAST/Major/2025/Austin/Europe#21,2025-04-15,astralis,ence,13,3,Train,1,1,BLAST.tv Austin Major 2025,s,True,2381589,ct,9,4,0,3,BLAST/Major/2025/Austin,Astralis,ENCE
-BLAST/Major/2025/Austin/Europe#22#1,BLAST/Major/2025/Austin/Europe#22,2025-04-15,gl,500,13,2,Anubis,1,3,BLAST.tv Austin Major 2025,s,True,2381584,t,3,10,2,0,BLAST/Major/2025/Austin,GamerLegion,500
-BLAST/Major/2025/Austin/Europe#22#2,BLAST/Major/2025/Austin/Europe#22,2025-04-15,gl,500,13,2,Ancient,2,3,BLAST.tv Austin Major 2025,s,True,2381584,t,3,10,2,0,BLAST/Major/2025/Austin,GamerLegion,500
-BLAST/Major/2025/Austin/Europe#23#1,BLAST/Major/2025/Austin/Europe#23,2025-04-15,b8,parivision,11,13,Dust2,1,3,BLAST.tv Austin Major 2025,s,True,2381585,ct,4,7,5,8,BLAST/Major/2025/Austin,B8,PARIVISION
-BLAST/Major/2025/Austin/Europe#23#2,BLAST/Major/2025/Austin/Europe#23,2025-04-15,b8,parivision,13,7,Mirage,2,3,BLAST.tv Austin Major 2025,s,True,2381585,t,5,8,4,3,BLAST/Major/2025/Austin,B8,PARIVISION
-BLAST/Major/2025/Austin/Europe#23#3,BLAST/Major/2025/Austin/Europe#23,2025-04-15,b8,parivision,16,13,Ancient,3,3,BLAST.tv Austin Major 2025,s,True,2381585,ct,8,4,8,4,BLAST/Major/2025/Austin,B8,PARIVISION
-BLAST/Major/2025/Austin/Mongolia and West Asia#0#1,BLAST/Major/2025/Austin/Mongolia and West Asia#0,2025-04-15,huns,chinggis warriors,7,13,Inferno,1,3,BLAST.tv Austin Major 2025,s,True,2381631,t,1,6,6,7,BLAST/Major/2025/Austin,The Huns Esports,Chinggis Warriors
-BLAST/Major/2025/Austin/Mongolia and West Asia#0#2,BLAST/Major/2025/Austin/Mongolia and West Asia#0,2025-04-15,huns,chinggis warriors,11,13,Ancient,2,3,BLAST.tv Austin Major 2025,s,True,2381631,ct,7,4,8,5,BLAST/Major/2025/Austin,The Huns Esports,Chinggis Warriors
-BLAST/Major/2025/Austin/Mongolia and West Asia#1#1,BLAST/Major/2025/Austin/Mongolia and West Asia#1,2025-04-15,gods reign,eruption,2,13,Ancient,1,3,BLAST.tv Austin Major 2025,s,True,2381632,t,0,2,10,3,BLAST/Major/2025/Austin,Gods Reign,Eruption
-BLAST/Major/2025/Austin/Mongolia and West Asia#1#2,BLAST/Major/2025/Austin/Mongolia and West Asia#1,2025-04-15,gods reign,eruption,6,13,Anubis,2,3,BLAST.tv Austin Major 2025,s,True,2381632,t,2,4,8,5,BLAST/Major/2025/Austin,Gods Reign,Eruption
-BLAST/Major/2025/Austin/North America#0#1,BLAST/Major/2025/Austin/North America#0,2025-04-15,col,getting info,13,11,Ancient,1,3,BLAST.tv Austin Major 2025,s,True,2381607,t,6,7,5,6,BLAST/Major/2025/Austin,Complexity,Getting Info
-BLAST/Major/2025/Austin/North America#0#2,BLAST/Major/2025/Austin/North America#0,2025-04-15,col,getting info,19,17,Anubis,2,3,BLAST.tv Austin Major 2025,s,True,2381607,ct,7,5,7,5,BLAST/Major/2025/Austin,Complexity,Getting Info
-BLAST/Major/2025/Austin/North America#1#1,BLAST/Major/2025/Austin/North America#1,2025-04-15,bluejays,might,11,13,Nuke,1,3,BLAST.tv Austin Major 2025,s,True,2381608,ct,4,7,5,8,BLAST/Major/2025/Austin,BLUEJAYS,MIGHT
-BLAST/Major/2025/Austin/North America#1#2,BLAST/Major/2025/Austin/North America#1,2025-04-15,bluejays,might,13,10,Mirage,2,3,BLAST.tv Austin Major 2025,s,True,2381608,t,7,6,6,4,BLAST/Major/2025/Austin,BLUEJAYS,MIGHT
-BLAST/Major/2025/Austin/North America#1#3,BLAST/Major/2025/Austin/North America#1,2025-04-15,bluejays,might,13,2,Train,3,3,BLAST.tv Austin Major 2025,s,True,2381608,ct,10,3,0,2,BLAST/Major/2025/Austin,BLUEJAYS,MIGHT
-BLAST/Major/2025/Austin/North America#4#1,BLAST/Major/2025/Austin/North America#4,2025-04-15,wildcard,marsborne,13,10,Nuke,1,3,BLAST.tv Austin Major 2025,s,True,2381609,ct,6,7,4,6,BLAST/Major/2025/Austin,Wildcard,Marsborne
-BLAST/Major/2025/Austin/North America#4#2,BLAST/Major/2025/Austin/North America#4,2025-04-15,wildcard,marsborne,13,2,Inferno,2,3,BLAST.tv Austin Major 2025,s,True,2381609,t,3,10,2,0,BLAST/Major/2025/Austin,Wildcard,Marsborne
-BLAST/Major/2025/Austin/North America#5#1,BLAST/Major/2025/Austin/North America#5,2025-04-15,nrg,nouns,13,11,Train,1,3,BLAST.tv Austin Major 2025,s,True,2381610,t,5,8,4,7,BLAST/Major/2025/Austin,NRG,Nouns Esports
-BLAST/Major/2025/Austin/North America#5#2,BLAST/Major/2025/Austin/North America#5,2025-04-15,nrg,nouns,13,10,Dust2,2,3,BLAST.tv Austin Major 2025,s,True,2381610,ct,5,8,3,7,BLAST/Major/2025/Austin,NRG,Nouns Esports
-BLAST/Major/2025/Austin/Oceania and Southeast Asia#0#1,BLAST/Major/2025/Austin/Oceania and Southeast Asia#0,2025-04-15,semperfi,ex-talon,13,9,Dust2,1,3,BLAST.tv Austin Major 2025,s,True,2381625,ct,3,10,0,9,BLAST/Major/2025/Austin,SemperFi Esports,ex-TALON
-BLAST/Major/2025/Austin/Oceania and Southeast Asia#0#2,BLAST/Major/2025/Austin/Oceania and Southeast Asia#0,2025-04-15,semperfi,ex-talon,13,5,Nuke,2,3,BLAST.tv Austin Major 2025,s,True,2381625,t,4,9,3,2,BLAST/Major/2025/Austin,SemperFi Esports,ex-TALON
-BLAST/Major/2025/Austin/Oceania and Southeast Asia#1#1,BLAST/Major/2025/Austin/Oceania and Southeast Asia#1,2025-04-15,rooster,fq,6,13,Mirage,1,3,BLAST.tv Austin Major 2025,s,True,2381626,t,1,5,7,6,BLAST/Major/2025/Austin,Rooster,FlyQuest
-BLAST/Major/2025/Austin/Oceania and Southeast Asia#1#2,BLAST/Major/2025/Austin/Oceania and Southeast Asia#1,2025-04-15,rooster,fq,7,13,Inferno,2,3,BLAST.tv Austin Major 2025,s,True,2381626,t,2,5,7,6,BLAST/Major/2025/Austin,Rooster,FlyQuest
-BLAST/Major/2025/Austin/South America#0#1,BLAST/Major/2025/Austin/South America#0,2025-04-15,imp,oddik,13,8,Anubis,1,3,BLAST.tv Austin Major 2025,s,True,2381603,t,7,6,6,2,BLAST/Major/2025/Austin,Imperial Esports,ODDIK
-BLAST/Major/2025/Austin/South America#0#2,BLAST/Major/2025/Austin/South America#0,2025-04-15,imp,oddik,13,9,Dust2,2,3,BLAST.tv Austin Major 2025,s,True,2381603,t,8,5,7,2,BLAST/Major/2025/Austin,Imperial Esports,ODDIK
-BLAST/Major/2025/Austin/South America#1#1,BLAST/Major/2025/Austin/South America#1,2025-04-15,sharks esports,team solid,3,13,Mirage,1,3,BLAST.tv Austin Major 2025,s,True,2381604,ct,3,0,4,9,BLAST/Major/2025/Austin,DENDELE CS,Team Solid
-BLAST/Major/2025/Austin/South America#1#2,BLAST/Major/2025/Austin/South America#1,2025-04-15,sharks esports,team solid,13,9,Nuke,2,3,BLAST.tv Austin Major 2025,s,True,2381604,t,6,7,5,4,BLAST/Major/2025/Austin,DENDELE CS,Team Solid
-BLAST/Major/2025/Austin/South America#1#3,BLAST/Major/2025/Austin/South America#1,2025-04-15,sharks esports,team solid,13,5,Anubis,3,3,BLAST.tv Austin Major 2025,s,True,2381604,ct,9,4,2,3,BLAST/Major/2025/Austin,DENDELE CS,Team Solid
-BLAST/Major/2025/Austin/South America#4#1,BLAST/Major/2025/Austin/South America#4,2025-04-15,fluxo,bestia,13,10,Dust2,1,3,BLAST.tv Austin Major 2025,s,True,2381605,t,4,9,3,7,BLAST/Major/2025/Austin,Fluxo,BESTIA
-BLAST/Major/2025/Austin/South America#4#2,BLAST/Major/2025/Austin/South America#4,2025-04-15,fluxo,bestia,13,3,Ancient,2,3,BLAST.tv Austin Major 2025,s,True,2381605,t,4,9,3,0,BLAST/Major/2025/Austin,Fluxo,BESTIA
-BLAST/Major/2025/Austin/South America#5#1,BLAST/Major/2025/Austin/South America#5,2025-04-15,legacy,red canids,13,4,Nuke,1,3,BLAST.tv Austin Major 2025,s,True,2381606,ct,10,3,2,2,BLAST/Major/2025/Austin,Legacy,RED Canids
-BLAST/Major/2025/Austin/South America#5#2,BLAST/Major/2025/Austin/South America#5,2025-04-15,legacy,red canids,13,8,Mirage,2,3,BLAST.tv Austin Major 2025,s,True,2381606,t,5,8,4,4,BLAST/Major/2025/Austin,Legacy,RED Canids
-Galaxy Battle/2025/Phase 1#11#1,Galaxy Battle/2025/Phase 1#11,2025-04-15,tnl,sangal,13,7,Train,1,3,Galaxy Battle 2025 // Phase 1,b,False,2381541,t,5,8,4,3,Galaxy Battle/2025/Phase 1,TEAM NEXT LEVEL,Sangal Esports
-Galaxy Battle/2025/Phase 1#11#2,Galaxy Battle/2025/Phase 1#11,2025-04-15,tnl,sangal,13,10,Mirage,2,3,Galaxy Battle 2025 // Phase 1,b,False,2381541,ct,9,4,7,3,Galaxy Battle/2025/Phase 1,TEAM NEXT LEVEL,Sangal Esports
-Galaxy Battle/2025/Phase 1#13#1,Galaxy Battle/2025/Phase 1#13,2025-04-15,jano,navi jr,8,13,Ancient,1,3,Galaxy Battle 2025 // Phase 1,b,False,2381540,ct,4,4,5,8,Galaxy Battle/2025/Phase 1,JANO Esports,Natus Vincere Junior
-Galaxy Battle/2025/Phase 1#13#2,Galaxy Battle/2025/Phase 1#13,2025-04-15,jano,navi jr,8,13,Nuke,2,3,Galaxy Battle 2025 // Phase 1,b,False,2381540,t,3,5,7,6,Galaxy Battle/2025/Phase 1,JANO Esports,Natus Vincere Junior
 BLAST/Major/2025/Austin/China#2#1,BLAST/Major/2025/Austin/China#2,2025-04-16,lvg,tyloo,13,10,Nuke,1,3,BLAST.tv Austin Major 2025,s,True,2381553,t,8,5,7,3,BLAST/Major/2025/Austin,Lynn Vision Gaming,TYLOO
 BLAST/Major/2025/Austin/China#2#2,BLAST/Major/2025/Austin/China#2,2025-04-16,lvg,tyloo,15,19,Inferno,2,3,BLAST.tv Austin Major 2025,s,True,2381553,ct,5,7,5,7,BLAST/Major/2025/Austin,Lynn Vision Gaming,TYLOO
 BLAST/Major/2025/Austin/China#2#3,BLAST/Major/2025/Austin/China#2,2025-04-16,lvg,tyloo,13,8,Train,3,3,BLAST.tv Austin Major 2025,s,True,2381553,t,7,6,6,2,BLAST/Major/2025/Austin,Lynn Vision Gaming,TYLOO
@@ -27337,6 +27291,8 @@ CCT/2026/Europe/Series 12#24#2,CCT/2026/Europe/Series 12#24,2026-10-27,ex-rustec
 CCT/2026/Europe/Series 12#25#1,CCT/2026/Europe/Series 12#25,2026-10-27,baks,saint sinners,5,13,Dust2,1,3,CCT Europe 2026 Series #12,b,False,2399513,ct,3,2,4,9,CCT/2026/Europe/Series 12,BAKS Esports,Saint Sinners
 CCT/2026/Europe/Series 12#25#2,CCT/2026/Europe/Series 12#25,2026-10-27,baks,saint sinners,13,7,Mirage,2,3,CCT Europe 2026 Series #12,b,False,2399513,t,5,8,4,3,CCT/2026/Europe/Series 12,BAKS Esports,Saint Sinners
 CCT/2026/Europe/Series 12#25#3,CCT/2026/Europe/Series 12#25,2026-10-27,baks,saint sinners,13,9,Ancient,3,3,CCT Europe 2026 Series #12,b,False,2399513,t,8,5,7,2,CCT/2026/Europe/Series 12,BAKS Esports,Saint Sinners
+CCT/2026/Europe/Series 12#26#1,CCT/2026/Europe/Series 12#26,2026-10-27,ic academy,lavked,17,19,Mirage,1,3,CCT Europe 2026 Series #12,b,False,2399514,ct,2,10,2,10,CCT/2026/Europe/Series 12,IC Academy,lavked
+CCT/2026/Europe/Series 12#26#2,CCT/2026/Europe/Series 12#26,2026-10-27,ic academy,lavked,8,13,Anubis,2,3,CCT Europe 2026 Series #12,b,False,2399514,ct,4,4,5,8,CCT/2026/Europe/Series 12,IC Academy,lavked
 DFRAG/Invitational/2026#5#1,DFRAG/Invitational/2026#5,2026-10-27,fq,staqued,13,5,Ancient,1,3,DFRAG Invitational 2026,b,True,2399890,ct,11,2,4,1,DFRAG/Invitational/2026,FlyQuest,StaQued
 DFRAG/Invitational/2026#5#2,DFRAG/Invitational/2026#5,2026-10-27,fq,staqued,13,7,Inferno,2,3,DFRAG Invitational 2026,b,True,2399890,t,8,5,7,0,DFRAG/Invitational/2026,FlyQuest,StaQued
 DFRAG/Invitational/2026#6#1,DFRAG/Invitational/2026#6,2026-10-27,rooster,team abyssal,15,19,Inferno,1,3,DFRAG Invitational 2026,b,True,2399891,t,8,4,8,4,DFRAG/Invitational/2026,Rooster,Team Abyssal
@@ -27349,12 +27305,17 @@ NODWIN Gaming/Clutch Series/13#45#2,NODWIN Gaming/Clutch Series/13#45,2026-10-27
 NODWIN Gaming/Clutch Series/13#46#1,NODWIN Gaming/Clutch Series/13#46,2026-10-27,nuclear tigeres,fokus,11,13,Nuke,1,3,NODWIN Clutch Series #13,b,False,2399121,ct,8,3,9,4,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,FOKUS
 NODWIN Gaming/Clutch Series/13#46#2,NODWIN Gaming/Clutch Series/13#46,2026-10-27,nuclear tigeres,fokus,13,8,Anubis,2,3,NODWIN Clutch Series #13,b,False,2399121,ct,7,6,3,5,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,FOKUS
 NODWIN Gaming/Clutch Series/13#46#3,NODWIN Gaming/Clutch Series/13#46,2026-10-27,nuclear tigeres,fokus,8,13,Ancient,3,3,NODWIN Clutch Series #13,b,False,2399121,t,6,2,10,3,NODWIN Gaming/Clutch Series/13,Nuclear TigeRES,FOKUS
+NODWIN Gaming/Clutch Series/13#47#1,NODWIN Gaming/Clutch Series/13#47,2026-10-27,brute,fokus,13,11,Cache,1,3,NODWIN Clutch Series #13,b,False,2399122,ct,6,7,5,6,NODWIN Gaming/Clutch Series/13,BRUTE,FOKUS
+NODWIN Gaming/Clutch Series/13#47#2,NODWIN Gaming/Clutch Series/13#47,2026-10-27,brute,fokus,23,25,Mirage,2,3,NODWIN Clutch Series #13,b,False,2399122,t,6,6,6,6,NODWIN Gaming/Clutch Series/13,BRUTE,FOKUS
+NODWIN Gaming/Clutch Series/13#47#3,NODWIN Gaming/Clutch Series/13#47,2026-10-27,brute,fokus,10,13,Nuke,3,3,NODWIN Clutch Series #13,b,False,2399122,t,6,4,8,5,NODWIN Gaming/Clutch Series/13,BRUTE,FOKUS
 PGL/2026/Masters#24#1,PGL/2026/Masters#24,2026-10-27,tl,aurora,11,13,Anubis,1,3,PGL Masters Bucharest 2026,s,True,2399743,t,5,6,6,7,PGL/2026/Masters,Team Liquid,Aurora Gaming
 PGL/2026/Masters#24#2,PGL/2026/Masters#24,2026-10-27,tl,aurora,13,11,Inferno,2,3,PGL Masters Bucharest 2026,s,True,2399743,t,9,4,8,3,PGL/2026/Masters,Team Liquid,Aurora Gaming
 PGL/2026/Masters#24#3,PGL/2026/Masters#24,2026-10-27,tl,aurora,10,13,Cache,3,3,PGL Masters Bucharest 2026,s,True,2399743,ct,6,4,7,6,PGL/2026/Masters,Team Liquid,Aurora Gaming
 PGL/2026/Masters#25#1,PGL/2026/Masters#25,2026-10-27,spirit,mouz,13,2,Nuke,1,3,PGL Masters Bucharest 2026,s,True,2399745,ct,10,3,0,2,PGL/2026/Masters,Team Spirit,MOUZ
 PGL/2026/Masters#25#2,PGL/2026/Masters#25,2026-10-27,spirit,mouz,8,13,Dust2,2,3,PGL Masters Bucharest 2026,s,True,2399745,t,3,5,7,6,PGL/2026/Masters,Team Spirit,MOUZ
 PGL/2026/Masters#25#3,PGL/2026/Masters#25,2026-10-27,spirit,mouz,14,16,Mirage,3,3,PGL Masters Bucharest 2026,s,True,2399745,ct,5,7,5,7,PGL/2026/Masters,Team Spirit,MOUZ
+PGL/2026/Masters#26#1,PGL/2026/Masters#26,2026-10-27,vit,navi,13,2,Inferno,1,3,PGL Masters Bucharest 2026,s,True,2399747,ct,10,3,0,2,PGL/2026/Masters,Team Vitality,Natus Vincere
+PGL/2026/Masters#26#2,PGL/2026/Masters#26,2026-10-27,vit,navi,13,9,Dust2,2,3,PGL Masters Bucharest 2026,s,True,2399747,t,10,3,9,0,PGL/2026/Masters,Team Vitality,Natus Vincere
 PGL/2026/Masters#27#1,PGL/2026/Masters#27,2026-10-27,nemiga,sharks esports,13,3,Nuke,1,3,PGL Masters Bucharest 2026,s,True,2399744,ct,10,3,1,2,PGL/2026/Masters,Nemiga Gaming,DENDELE CS
 PGL/2026/Masters#27#2,PGL/2026/Masters#27,2026-10-27,nemiga,sharks esports,13,6,Ancient,2,3,PGL Masters Bucharest 2026,s,True,2399744,t,4,9,3,3,PGL/2026/Masters,Nemiga Gaming,DENDELE CS
 PGL/2026/Masters#28#1,PGL/2026/Masters#28,2026-10-27,mongolz,legacy,13,8,Mirage,1,3,PGL Masters Bucharest 2026,s,True,2399746,ct,7,6,3,5,PGL/2026/Masters,The MongolZ,Legacy
@@ -27368,6 +27329,9 @@ Stake Ranked/Episode 5#1#2,Stake Ranked/Episode 5#1,2026-10-27,big,magic,13,9,Ca
 Stake Ranked/Episode 5#1#3,Stake Ranked/Episode 5#1,2026-10-27,big,magic,13,11,Mirage,3,3,Stake Ranked Episode 5,a,True,2399705,ct,6,7,5,6,Stake Ranked/Episode 5,BIG,magic
 Stake Ranked/Episode 5#2#1,Stake Ranked/Episode 5#2,2026-10-27,inner circle,team nemesis,13,5,Nuke,1,3,Stake Ranked Episode 5,a,True,2399706,ct,8,5,1,4,Stake Ranked/Episode 5,IC Esports,Team Nemesis
 Stake Ranked/Episode 5#2#2,Stake Ranked/Episode 5#2,2026-10-27,inner circle,team nemesis,13,4,Mirage,2,3,Stake Ranked Episode 5,a,True,2399706,t,5,8,4,0,Stake Ranked/Episode 5,IC Esports,Team Nemesis
+Stake Ranked/Episode 5#3#1,Stake Ranked/Episode 5#3,2026-10-27,ef,mibr,13,10,Ancient,1,3,Stake Ranked Episode 5,a,True,2399708,t,7,6,6,4,Stake Ranked/Episode 5,Eternal Fire,MIBR
+Stake Ranked/Episode 5#3#2,Stake Ranked/Episode 5#3,2026-10-27,ef,mibr,10,13,Mirage,2,3,Stake Ranked Episode 5,a,True,2399708,ct,7,3,8,5,Stake Ranked/Episode 5,Eternal Fire,MIBR
+Stake Ranked/Episode 5#3#3,Stake Ranked/Episode 5#3,2026-10-27,ef,mibr,10,13,Anubis,3,3,Stake Ranked Episode 5,a,True,2399708,ct,5,5,6,7,Stake Ranked/Episode 5,Eternal Fire,MIBR
 Tesla Cup/2026#0#1,Tesla Cup/2026#0,2026-10-27,b8,k27,13,5,Mirage,1,3,Tesla Cup 2026,b,True,2399866,ct,9,4,2,3,Tesla Cup/2026,B8,K27
 Tesla Cup/2026#0#2,Tesla Cup/2026#0,2026-10-27,b8,k27,6,13,Dust2,2,3,Tesla Cup 2026,b,True,2399866,t,1,5,7,6,Tesla Cup/2026,B8,K27
 Tesla Cup/2026#0#3,Tesla Cup/2026#0,2026-10-27,b8,k27,6,13,Nuke,3,3,Tesla Cup 2026,b,True,2399866,ct,6,0,7,6,Tesla Cup/2026,B8,K27
@@ -27377,3 +27341,9 @@ Tesla Cup/2026#2#1,Tesla Cup/2026#2,2026-10-27,k27,faze,10,13,Dust2,1,3,Tesla Cu
 Tesla Cup/2026#2#2,Tesla Cup/2026#2,2026-10-27,k27,faze,7,13,Nuke,2,3,Tesla Cup 2026,b,True,2399868,t,4,3,9,4,Tesla Cup/2026,K27,FaZe Clan
 Tesla Cup/2026#5#1,Tesla Cup/2026#5,2026-10-27,lg,hotu,11,13,Mirage,1,3,Tesla Cup 2026,b,True,2399869,ct,6,5,7,6,Tesla Cup/2026,Luminosity Gaming,HOTU
 Tesla Cup/2026#5#2,Tesla Cup/2026#5,2026-10-27,lg,hotu,11,13,Ancient,2,3,Tesla Cup 2026,b,True,2399869,ct,6,5,7,6,Tesla Cup/2026,Luminosity Gaming,HOTU
+Tesla Cup/2026#6#1,Tesla Cup/2026#6,2026-10-27,envy,gl,6,13,Dust2,1,3,Tesla Cup 2026,b,True,2399870,t,3,3,9,4,Tesla Cup/2026,ENVY,GamerLegion
+Tesla Cup/2026#6#2,Tesla Cup/2026#6,2026-10-27,envy,gl,13,3,Ancient,2,3,Tesla Cup 2026,b,True,2399870,ct,10,3,1,2,Tesla Cup/2026,ENVY,GamerLegion
+Tesla Cup/2026#6#3,Tesla Cup/2026#6,2026-10-27,envy,gl,10,13,Nuke,3,3,Tesla Cup 2026,b,True,2399870,ct,8,2,9,4,Tesla Cup/2026,ENVY,GamerLegion
+DFRAG/Invitational/2026#4#1,DFRAG/Invitational/2026#4,2026-10-28,off chops,nexvoid,13,7,Cache,1,3,DFRAG Invitational 2026,b,True,2399896,t,4,9,3,4,DFRAG/Invitational/2026,Off Chops,NEXVOID
+DFRAG/Invitational/2026#4#2,DFRAG/Invitational/2026#4,2026-10-28,off chops,nexvoid,8,13,Inferno,2,3,DFRAG Invitational 2026,b,True,2399896,ct,7,1,8,5,DFRAG/Invitational/2026,Off Chops,NEXVOID
+DFRAG/Invitational/2026#4#3,DFRAG/Invitational/2026#4,2026-10-28,off chops,nexvoid,6,13,Nuke,3,3,DFRAG Invitational 2026,b,True,2399896,ct,5,1,6,7,DFRAG/Invitational/2026,Off Chops,NEXVOID
