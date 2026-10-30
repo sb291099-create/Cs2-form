@@ -1,27 +1,24 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-FiReSPORTS/Last Chance/2026#10,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/ART",fluxo,signatus,3,FiReSPORTS Last Chance 2026,b,True,2399970,FiReSPORTS/Last Chance/2026,Fluxo,Signatus
-FiReSPORTS/Last Chance/2026#11,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/ART",shinden,isurus,3,FiReSPORTS Last Chance 2026,b,True,2399971,FiReSPORTS/Last Chance/2026,ShindeN,Isurus
-Gamers Club/Masters/VII#7,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/BRT",quintessência,naocopulas,3,Gamers Club Masters VII,b,True,2399952,Gamers Club/Masters/VII,QUINTESSÊNCIA,naocopulas
-CCT/2026/Europe/Series 12#39,2026-10-30,"October 30, 2026 - 13:00 {{Abbr/CET",fokus,sokerorg,3,CCT Europe 2026 Series #12,b,False,2399523,CCT/2026/Europe/Series 12,FOKUS,Sökerorg
-Gamers Club/Masters/VII#2,2026-10-30,"October 30, 2026 - 13:30 {{Abbr/BRT",low cortisol,alka gaming,3,Gamers Club Masters VII,b,True,2399953,Gamers Club/Masters/VII,Low Cortisol,Alka Esports
-Stake Ranked/Episode 5#12,2026-10-30,"October 30, 2026 - 14:00 {{Abbr/CET",mibr,ef,3,Stake Ranked Episode 5,a,True,2399717,Stake Ranked/Episode 5,MIBR,Eternal Fire
-PGL/2026/Masters#38,2026-10-30,"October 30, 2026 - 14:00 {{Abbr/EET",vit,nemiga,3,PGL Masters Bucharest 2026,s,True,2399756,PGL/2026/Masters,Team Vitality,Nemiga Gaming
+FiReSPORTS/Last Chance/2026#15,2026-10-30,"October 30, 2026 - 15:15 {{Abbr/ART",wildcard,hacha,3,FiReSPORTS Last Chance 2026,b,True,2399974,FiReSPORTS/Last Chance/2026,Wildcard,Hacha Esports
+Gamers Club/Masters/VII#8,2026-10-30,"October 30, 2026 - 16:00 {{Abbr/BRT",imp,pain,3,Gamers Club Masters VII,b,True,2399954,Gamers Club/Masters/VII,Imperial Esports,paiN Gaming
 CCT/2026/Europe/Series 13/Play-In#3,2026-10-30,"October 30, 2026 - 16:00 {{Abbr/CET",leo team,honved,3,CCT/2026/Europe/Series 13,b,False,2400030,CCT/2026/Europe/Series 13,Leo Team,Honvéd Esport
-CCT/2026/Europe/Series 12#33,2026-10-30,"October 30, 2026 - 16:00 {{Abbr/CET",apogee,illyrians,3,CCT Europe 2026 Series #12,b,False,2399524,CCT/2026/Europe/Series 12,Betclic Apogee Esports,ILLYRIANS
-FiReSPORTS/Last Chance/2026#15,2026-10-30,"October 30, 2026 - 16:30 {{Abbr/ART",wildcard,hacha,3,FiReSPORTS Last Chance 2026,b,True,2399974,FiReSPORTS/Last Chance/2026,Wildcard,Hacha Esports
 FiReSPORTS/Last Chance/2026#16,2026-10-30,"October 30, 2026 - 16:30 {{Abbr/ART",bestia,bth e-sports,3,FiReSPORTS Last Chance 2026,b,True,2399975,FiReSPORTS/Last Chance/2026,BESTIA,BTH E-Sports
-Gamers Club/Masters/VII#8,2026-10-30,"October 30, 2026 - 17:00 {{Abbr/BRT",imp,pain,3,Gamers Club Masters VII,b,True,2399954,Gamers Club/Masters/VII,Imperial Esports,paiN Gaming
-PGL/2026/Masters#37,2026-10-30,"October 30, 2026 - 17:00 {{Abbr/EET",furia,mouz,3,PGL Masters Bucharest 2026,s,True,2399757,PGL/2026/Masters,FURIA,MOUZ
+Stake Ranked/Episode 5#13,2026-10-30,"October 30, 2026 - 17:00 {{Abbr/CET",fnc,ef,5,Stake Ranked Episode 5,a,True,2399718,Stake Ranked/Episode 5,Fnatic,Eternal Fire
 CCT/2026/Europe/Series 13/Play-In#8,2026-10-30,"October 30, 2026 - 19:00 {{Abbr/CET",spirit academy,falcons force,3,CCT/2026/Europe/Series 13,b,False,2400031,CCT/2026/Europe/Series 13,Team Spirit Academy,Falcons Force
 CCT/2026/Europe/Series 12#36,2026-10-30,"October 30, 2026 - 19:00 {{Abbr/CET",phantom esports,lavked,3,CCT Europe 2026 Series #12,b,False,2399525,CCT/2026/Europe/Series 12,Phantom Esports,lavked
 Gamers Club/Masters/VII#3,2026-10-30,"October 30, 2026 - 20:30 {{Abbr/BRT",sharks esports,turma do pagode,3,Gamers Club Masters VII,b,True,2399955,Gamers Club/Masters/VII,DENDELE CS,Turma do Pagode
+CCT/2026/Europe/Series 12#41,2026-10-31,"October 31, 2026",apogee,9ine,3,CCT Europe 2026 Series #12,b,False,,CCT/2026/Europe/Series 12,Betclic Apogee Esports,9INE
 CCT/2026/Europe/Series 12#43,2026-10-31,"October 31, 2026",acend,butterfly,3,CCT Europe 2026 Series #12,b,False,,CCT/2026/Europe/Series 12,Acend,Butterfly
+CCT/2026/Europe/Series 12#44,2026-10-31,"October 31, 2026",fokus,baks,3,CCT Europe 2026 Series #12,b,False,,CCT/2026/Europe/Series 12,FOKUS,BAKS Esports
 FiReSPORTS/Last Chance/2026#4,2026-10-31,"October 31, 2026 - 10:00 {{Abbr/ART",bounty.br,barca,3,FiReSPORTS Last Chance 2026,b,True,2399978,FiReSPORTS/Last Chance/2026,Bounty Hunters Esports,BARCA esports
 FiReSPORTS/Last Chance/2026#9,2026-10-31,"October 31, 2026 - 10:00 {{Abbr/ART",procyon,galorys,3,FiReSPORTS Last Chance 2026,b,True,2399979,FiReSPORTS/Last Chance/2026,Procyon Team,Galorys
 CCT/2026/Europe/Series 13/Play-In#10,2026-10-31,"October 31, 2026 - 10:00 {{Abbr/CET",psychoface,donstu,3,CCT/2026/Europe/Series 13,b,False,2400016,CCT/2026/Europe/Series 13,PsychoFace,DONSTU Esports
+PGL/2026/Masters#40,2026-10-31,"October 31, 2026 - 10:00 {{Abbr/EET",mouz,vit,3,PGL Masters Bucharest 2026,s,True,2399758,PGL/2026/Masters,MOUZ,Team Vitality
 Moscow Cyber Games/2026#0,2026-10-31,"October 31, 2026 - 12:00 {{Abbr/MSK",hotu,huns,3,Moscow Cyber Games 2026,b,True,2399437,Moscow Cyber Games/2026,HOTU,The Huns Esports
 DFRAG/Invitational/2026#13,2026-10-31,"October 31, 2026 - 13:00 {{Abbr/AEST",team abyssal,nexvoid,3,DFRAG Invitational 2026,b,True,2399902,DFRAG/Invitational/2026,Team Abyssal,NEXVOID
 CCT/2026/Europe/Series 13/Play-In#11,2026-10-31,"October 31, 2026 - 13:00 {{Abbr/CET",saint sinners,misa,3,CCT/2026/Europe/Series 13,b,False,2400017,CCT/2026/Europe/Series 13,Saint Sinners,Misa Esports
+PGL/2026/Masters#39,2026-10-31,"October 31, 2026 - 13:00 {{Abbr/EET",furia,nemiga,5,PGL Masters Bucharest 2026,s,True,2399759,PGL/2026/Masters,FURIA,Nemiga Gaming
+FiReSPORTS/Last Chance/2026#14,2026-10-31,"October 31, 2026 - 13:15 {{Abbr/ART",shinden,isurus,3,FiReSPORTS Last Chance 2026,b,True,2399980,FiReSPORTS/Last Chance/2026,ShindeN,Isurus
 CCT/2026/Europe/Series 13/Play-In#15,2026-10-31,"October 31, 2026 - 16:00 {{Abbr/CET",sokerorg,fortress,3,CCT/2026/Europe/Series 13,b,False,2400018,CCT/2026/Europe/Series 13,Sökerorg,Fortress Esport
 Moscow Cyber Games/2026#1,2026-10-31,"October 31, 2026 - 16:00 {{Abbr/MSK",1win,nomads.mn,3,Moscow Cyber Games 2026,b,True,2399438,Moscow Cyber Games/2026,1w Team,5star eSports
 CCT/2026/Europe/Series 13/Play-In#16,2026-10-31,"October 31, 2026 - 19:00 {{Abbr/CET",azuolas,illyrians,3,CCT/2026/Europe/Series 13,b,False,2400019,CCT/2026/Europe/Series 13,Azuolas,ILLYRIANS

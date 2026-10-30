@@ -27338,6 +27338,10 @@ Tesla Cup/2026#12#1,Tesla Cup/2026#12,2026-10-29,gl,hotu,6,13,Dust2,1,3,Tesla Cu
 Tesla Cup/2026#12#2,Tesla Cup/2026#12,2026-10-29,gl,hotu,9,13,Nuke,2,3,Tesla Cup 2026,b,True,2399879,t,6,3,9,4,Tesla Cup/2026,GamerLegion,HOTU
 Tesla Cup/2026#13#1,Tesla Cup/2026#13,2026-10-29,faze,b8,13,5,Dust2,1,3,Tesla Cup 2026,b,True,2399878,ct,8,5,1,4,Tesla Cup/2026,FaZe Clan,B8
 Tesla Cup/2026#13#2,Tesla Cup/2026#13,2026-10-29,faze,b8,13,5,Nuke,2,3,Tesla Cup 2026,b,True,2399878,t,4,9,3,2,Tesla Cup/2026,FaZe Clan,B8
+CCT/2026/Europe/Series 12#33#1,CCT/2026/Europe/Series 12#33,2026-10-30,apogee,illyrians,13,7,Ancient,1,3,CCT Europe 2026 Series #12,b,False,2399524,t,6,7,5,2,CCT/2026/Europe/Series 12,Betclic Apogee Esports,ILLYRIANS
+CCT/2026/Europe/Series 12#33#2,CCT/2026/Europe/Series 12#33,2026-10-30,apogee,illyrians,13,11,Mirage,2,3,CCT Europe 2026 Series #12,b,False,2399524,ct,7,6,6,5,CCT/2026/Europe/Series 12,Betclic Apogee Esports,ILLYRIANS
+CCT/2026/Europe/Series 12#39#1,CCT/2026/Europe/Series 12#39,2026-10-30,fokus,sokerorg,13,7,Cache,1,3,CCT Europe 2026 Series #12,b,False,2399523,t,7,6,6,1,CCT/2026/Europe/Series 12,FOKUS,Sökerorg
+CCT/2026/Europe/Series 12#39#2,CCT/2026/Europe/Series 12#39,2026-10-30,fokus,sokerorg,16,13,Mirage,2,3,CCT Europe 2026 Series #12,b,False,2399523,t,2,10,2,10,CCT/2026/Europe/Series 12,FOKUS,Sökerorg
 CCT/2026/Europe/Series 12#40#1,CCT/2026/Europe/Series 12#40,2026-10-30,genone,baks,13,7,Inferno,1,3,CCT Europe 2026 Series #12,b,False,2399522,t,5,8,4,3,CCT/2026/Europe/Series 12,GenOne,BAKS Esports
 CCT/2026/Europe/Series 12#40#2,CCT/2026/Europe/Series 12#40,2026-10-30,genone,baks,4,13,Cache,2,3,CCT Europe 2026 Series #12,b,False,2399522,ct,1,3,2,11,CCT/2026/Europe/Series 12,GenOne,BAKS Esports
 CCT/2026/Europe/Series 12#40#3,CCT/2026/Europe/Series 12#40,2026-10-30,genone,baks,1,13,Nuke,3,3,CCT Europe 2026 Series #12,b,False,2399522,ct,1,0,2,11,CCT/2026/Europe/Series 12,GenOne,BAKS Esports
@@ -27347,3 +27351,23 @@ DFRAG/Invitational/2026#11#1,DFRAG/Invitational/2026#11,2026-10-30,nexvoid,fq,8,
 DFRAG/Invitational/2026#11#2,DFRAG/Invitational/2026#11,2026-10-30,nexvoid,fq,11,13,Nuke,2,3,DFRAG Invitational 2026,b,True,2399899,t,7,4,8,5,DFRAG/Invitational/2026,NEXVOID,FlyQuest
 DFRAG/Invitational/2026#12#1,DFRAG/Invitational/2026#12,2026-10-30,alter ego,fq,10,13,Ancient,1,3,DFRAG Invitational 2026,b,True,2399900,t,4,6,6,7,DFRAG/Invitational/2026,Alter Ego,FlyQuest
 DFRAG/Invitational/2026#12#2,DFRAG/Invitational/2026#12,2026-10-30,alter ego,fq,7,13,Inferno,2,3,DFRAG Invitational 2026,b,True,2399900,ct,5,2,6,7,DFRAG/Invitational/2026,Alter Ego,FlyQuest
+FiReSPORTS/Last Chance/2026#10#1,FiReSPORTS/Last Chance/2026#10,2026-10-30,fluxo,signatus,13,0,Dust2,1,3,FiReSPORTS Last Chance 2026,b,True,2399970,ct,12,1,0,0,FiReSPORTS/Last Chance/2026,Fluxo,Signatus
+FiReSPORTS/Last Chance/2026#10#2,FiReSPORTS/Last Chance/2026#10,2026-10-30,fluxo,signatus,13,9,Cache,2,3,FiReSPORTS Last Chance 2026,b,True,2399970,t,5,8,4,5,FiReSPORTS/Last Chance/2026,Fluxo,Signatus
+FiReSPORTS/Last Chance/2026#11#1,FiReSPORTS/Last Chance/2026#11,2026-10-30,shinden,isurus,13,3,Cache,1,3,FiReSPORTS Last Chance 2026,b,True,2399971,ct,9,4,0,3,FiReSPORTS/Last Chance/2026,ShindeN,Isurus
+FiReSPORTS/Last Chance/2026#11#2,FiReSPORTS/Last Chance/2026#11,2026-10-30,shinden,isurus,13,7,Inferno,2,3,FiReSPORTS Last Chance 2026,b,True,2399971,t,4,9,3,4,FiReSPORTS/Last Chance/2026,ShindeN,Isurus
+FiReSPORTS/Last Chance/2026#12#1,FiReSPORTS/Last Chance/2026#12,2026-10-30,fluxo,shinden,10,13,Inferno,1,3,FiReSPORTS Last Chance 2026,b,True,2399972,ct,8,2,9,4,FiReSPORTS/Last Chance/2026,Fluxo,ShindeN
+FiReSPORTS/Last Chance/2026#12#2,FiReSPORTS/Last Chance/2026#12,2026-10-30,fluxo,shinden,13,7,Mirage,2,3,FiReSPORTS Last Chance 2026,b,True,2399972,t,7,6,6,1,FiReSPORTS/Last Chance/2026,Fluxo,ShindeN
+FiReSPORTS/Last Chance/2026#12#3,FiReSPORTS/Last Chance/2026#12,2026-10-30,fluxo,shinden,13,6,Dust2,3,3,FiReSPORTS Last Chance 2026,b,True,2399972,t,6,7,5,1,FiReSPORTS/Last Chance/2026,Fluxo,ShindeN
+FiReSPORTS/Last Chance/2026#13#1,FiReSPORTS/Last Chance/2026#13,2026-10-30,signatus,isurus,8,13,Ancient,1,3,FiReSPORTS Last Chance 2026,b,True,2399973,t,1,7,5,8,FiReSPORTS/Last Chance/2026,Signatus,Isurus
+FiReSPORTS/Last Chance/2026#13#2,FiReSPORTS/Last Chance/2026#13,2026-10-30,signatus,isurus,3,13,Nuke,2,3,FiReSPORTS Last Chance 2026,b,True,2399973,ct,2,1,3,10,FiReSPORTS/Last Chance/2026,Signatus,Isurus
+Gamers Club/Masters/VII#2#1,Gamers Club/Masters/VII#2,2026-10-30,low cortisol,alka gaming,13,7,Anubis,1,3,Gamers Club Masters VII,b,True,2399953,ct,9,4,4,3,Gamers Club/Masters/VII,Low Cortisol,Alka Esports
+Gamers Club/Masters/VII#2#2,Gamers Club/Masters/VII#2,2026-10-30,low cortisol,alka gaming,13,5,Dust2,2,3,Gamers Club Masters VII,b,True,2399953,ct,10,3,3,2,Gamers Club/Masters/VII,Low Cortisol,Alka Esports
+Gamers Club/Masters/VII#7#1,Gamers Club/Masters/VII#7,2026-10-30,quintessência,naocopulas,10,13,Dust2,1,3,Gamers Club Masters VII,b,True,2399952,t,6,4,8,5,Gamers Club/Masters/VII,QUINTESSÊNCIA,naocopulas
+Gamers Club/Masters/VII#7#2,Gamers Club/Masters/VII#7,2026-10-30,quintessência,naocopulas,14,16,Ancient,2,3,Gamers Club Masters VII,b,True,2399952,ct,9,3,9,3,Gamers Club/Masters/VII,QUINTESSÊNCIA,naocopulas
+PGL/2026/Masters#37#1,PGL/2026/Masters#37,2026-10-30,furia,mouz,13,6,Dust2,1,3,PGL Masters Bucharest 2026,s,True,2399757,t,7,6,6,0,PGL/2026/Masters,FURIA,MOUZ
+PGL/2026/Masters#37#2,PGL/2026/Masters#37,2026-10-30,furia,mouz,9,13,Mirage,2,3,PGL Masters Bucharest 2026,s,True,2399757,ct,8,1,9,4,PGL/2026/Masters,FURIA,MOUZ
+PGL/2026/Masters#37#3,PGL/2026/Masters#37,2026-10-30,furia,mouz,13,9,Cache,3,3,PGL Masters Bucharest 2026,s,True,2399757,t,5,8,4,5,PGL/2026/Masters,FURIA,MOUZ
+PGL/2026/Masters#38#1,PGL/2026/Masters#38,2026-10-30,vit,nemiga,8,13,Cache,1,3,PGL Masters Bucharest 2026,s,True,2399756,ct,5,3,6,7,PGL/2026/Masters,Team Vitality,Nemiga Gaming
+PGL/2026/Masters#38#2,PGL/2026/Masters#38,2026-10-30,vit,nemiga,11,13,Dust2,2,3,PGL Masters Bucharest 2026,s,True,2399756,t,3,8,4,9,PGL/2026/Masters,Team Vitality,Nemiga Gaming
+Stake Ranked/Episode 5#12#1,Stake Ranked/Episode 5#12,2026-10-30,mibr,ef,7,13,Ancient,1,3,Stake Ranked Episode 5,a,True,2399717,ct,3,4,4,9,Stake Ranked/Episode 5,MIBR,Eternal Fire
+Stake Ranked/Episode 5#12#2,Stake Ranked/Episode 5#12,2026-10-30,mibr,ef,8,13,Inferno,2,3,Stake Ranked Episode 5,a,True,2399717,t,4,4,8,5,Stake Ranked/Episode 5,MIBR,Eternal Fire
