@@ -2,12 +2,10 @@ match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team
 FiReSPORTS/Last Chance/2026#10,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/ART",fluxo,signatus,3,FiReSPORTS Last Chance 2026,b,True,2399970,FiReSPORTS/Last Chance/2026,Fluxo,Signatus
 FiReSPORTS/Last Chance/2026#11,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/ART",shinden,isurus,3,FiReSPORTS Last Chance 2026,b,True,2399971,FiReSPORTS/Last Chance/2026,ShindeN,Isurus
 Gamers Club/Masters/VII#7,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/BRT",quintessência,naocopulas,3,Gamers Club Masters VII,b,True,2399952,Gamers Club/Masters/VII,QUINTESSÊNCIA,naocopulas
-CCT/2026/Europe/Series 12#40,2026-10-30,"October 30, 2026 - 10:00 {{Abbr/CET",genone,baks,3,CCT Europe 2026 Series #12,b,False,2399522,CCT/2026/Europe/Series 12,GenOne,BAKS Esports
 CCT/2026/Europe/Series 12#39,2026-10-30,"October 30, 2026 - 13:00 {{Abbr/CET",fokus,sokerorg,3,CCT Europe 2026 Series #12,b,False,2399523,CCT/2026/Europe/Series 12,FOKUS,Sökerorg
 Gamers Club/Masters/VII#2,2026-10-30,"October 30, 2026 - 13:30 {{Abbr/BRT",low cortisol,alka gaming,3,Gamers Club Masters VII,b,True,2399953,Gamers Club/Masters/VII,Low Cortisol,Alka Esports
 Stake Ranked/Episode 5#12,2026-10-30,"October 30, 2026 - 14:00 {{Abbr/CET",mibr,ef,3,Stake Ranked Episode 5,a,True,2399717,Stake Ranked/Episode 5,MIBR,Eternal Fire
 PGL/2026/Masters#38,2026-10-30,"October 30, 2026 - 14:00 {{Abbr/EET",vit,nemiga,3,PGL Masters Bucharest 2026,s,True,2399756,PGL/2026/Masters,Team Vitality,Nemiga Gaming
-DFRAG/Invitational/2026#12,2026-10-30,"October 30, 2026 - 16:00 {{Abbr/AEST",alter ego,fq,3,DFRAG Invitational 2026,b,True,2399900,DFRAG/Invitational/2026,Alter Ego,FlyQuest
 CCT/2026/Europe/Series 13/Play-In#3,2026-10-30,"October 30, 2026 - 16:00 {{Abbr/CET",leo team,honved,3,CCT/2026/Europe/Series 13,b,False,2400030,CCT/2026/Europe/Series 13,Leo Team,Honvéd Esport
 CCT/2026/Europe/Series 12#33,2026-10-30,"October 30, 2026 - 16:00 {{Abbr/CET",apogee,illyrians,3,CCT Europe 2026 Series #12,b,False,2399524,CCT/2026/Europe/Series 12,Betclic Apogee Esports,ILLYRIANS
 FiReSPORTS/Last Chance/2026#15,2026-10-30,"October 30, 2026 - 16:30 {{Abbr/ART",wildcard,hacha,3,FiReSPORTS Last Chance 2026,b,True,2399974,FiReSPORTS/Last Chance/2026,Wildcard,Hacha Esports
@@ -27,6 +25,14 @@ CCT/2026/Europe/Series 13/Play-In#11,2026-10-31,"October 31, 2026 - 13:00 {{Abbr
 CCT/2026/Europe/Series 13/Play-In#15,2026-10-31,"October 31, 2026 - 16:00 {{Abbr/CET",sokerorg,fortress,3,CCT/2026/Europe/Series 13,b,False,2400018,CCT/2026/Europe/Series 13,Sökerorg,Fortress Esport
 Moscow Cyber Games/2026#1,2026-10-31,"October 31, 2026 - 16:00 {{Abbr/MSK",1win,nomads.mn,3,Moscow Cyber Games 2026,b,True,2399438,Moscow Cyber Games/2026,1w Team,5star eSports
 CCT/2026/Europe/Series 13/Play-In#16,2026-10-31,"October 31, 2026 - 19:00 {{Abbr/CET",azuolas,illyrians,3,CCT/2026/Europe/Series 13,b,False,2400019,CCT/2026/Europe/Series 13,Azuolas,ILLYRIANS
+Intel Extreme Masters/2026/Beijing#0,2026-11-02,"November 2, 2026 - 10:00 {{Abbr/CST",legacy,mongolz,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,Legacy,The MongolZ
+Intel Extreme Masters/2026/Beijing#1,2026-11-02,"November 2, 2026 - 10:00 {{Abbr/CST",heroic,b8,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,HEROIC,B8
+Intel Extreme Masters/2026/Beijing#14,2026-11-02,"November 2, 2026 - 12:30 {{Abbr/CST",aurora,tl,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,Aurora Gaming,Team Liquid
+Intel Extreme Masters/2026/Beijing#15,2026-11-02,"November 2, 2026 - 12:30 {{Abbr/CST",parivision,g2,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,PARIVISION,G2 Esports
+Intel Extreme Masters/2026/Beijing#2,2026-11-02,"November 2, 2026 - 15:00 {{Abbr/CST",furia,faze,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,FURIA,FaZe Clan
+Intel Extreme Masters/2026/Beijing#13,2026-11-02,"November 2, 2026 - 15:00 {{Abbr/CST",9z,betboom,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,9z Team,BetBoom Team
+Intel Extreme Masters/2026/Beijing#3,2026-11-02,"November 2, 2026 - 17:30 {{Abbr/CST",navi,falcons,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,Natus Vincere,Team Falcons
+Intel Extreme Masters/2026/Beijing#12,2026-11-02,"November 2, 2026 - 17:30 {{Abbr/CST",mouz,tyloo,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,MOUZ,TYLOO
 BLAST/Rivals/2026/Fall#0,2026-11-11,"November 11, 2026 - 11:00 {{Abbr/HKT",legacy,furia,3,BLAST Rivals Fall 2026,s,True,2399851,BLAST/Rivals/2026/Fall,Legacy,FURIA
 BLAST/Rivals/2026/Fall#1,2026-11-11,"November 11, 2026 - 13:30 {{Abbr/HKT",vit,falcons,3,BLAST Rivals Fall 2026,s,True,2399852,BLAST/Rivals/2026/Fall,Team Vitality,Team Falcons
 BLAST/Rivals/2026/Fall#4,2026-11-11,"November 11, 2026 - 16:00 {{Abbr/HKT",spirit,fut,3,BLAST Rivals Fall 2026,s,True,2399853,BLAST/Rivals/2026/Fall,Team Spirit,FUT Esports
