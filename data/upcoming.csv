@@ -1,22 +1,26 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/14/Play-In#0,2026-11-02,"November 2, 2026 - 13:00 {{Abbr/CET",leo team,saint sinners,3,NODWIN Gaming/Clutch Series/14,b,False,2400057,NODWIN Gaming/Clutch Series/14,Leo Team,Saint Sinners
-CCT/2026/Europe/Series 13/Play-In#9,2026-11-02,"November 2, 2026 - 13:00 {{Abbr/CET",falcons force,megoshort,3,CCT/2026/Europe/Series 13,b,False,2400065,CCT/2026/Europe/Series 13,Falcons Force,megoshort
 Intel Extreme Masters/2026/Beijing#13,2026-11-02,"November 2, 2026 - 15:00 {{Abbr/CST",9z,betboom,3,Intel Extreme Masters Beijing 2026,s,True,2399860,Intel Extreme Masters/2026/Beijing,9z Team,BetBoom Team
-NODWIN Gaming/Clutch Series/14/Play-In#1,2026-11-02,"November 2, 2026 - 16:00 {{Abbr/CET",spirit academy,noir verse,3,NODWIN Gaming/Clutch Series/14,b,False,2400058,NODWIN Gaming/Clutch Series/14,Team Spirit Academy,Noir Verse
-CCT/2026/Europe/Series 13/Play-In#14,2026-11-02,"November 2, 2026 - 16:00 {{Abbr/CET",misa,psychoface,3,CCT/2026/Europe/Series 13,b,False,2400066,CCT/2026/Europe/Series 13,Misa Esports,PsychoFace
-NODWIN Gaming/Clutch Series/14/Play-In#6,2026-11-02,"November 2, 2026 - 19:00 {{Abbr/CET",ence,sinqu,3,NODWIN Gaming/Clutch Series/14,b,False,2400059,NODWIN Gaming/Clutch Series/14,ENCE,SINQU Esports
-CCT/2026/Europe/Series 13/Play-In#19,2026-11-02,"November 2, 2026 - 19:00 {{Abbr/CET",sokerorg,illyrians,3,CCT/2026/Europe/Series 13,b,False,2400067,CCT/2026/Europe/Series 13,Sökerorg,ILLYRIANS
-Intel Extreme Masters/2026/Beijing#3,2026-11-02,"November 2, 2026 - 19:45 {{Abbr/CST",navi,falcons,3,Intel Extreme Masters Beijing 2026,s,True,2399858,Intel Extreme Masters/2026/Beijing,Natus Vincere,Team Falcons
+NODWIN Gaming/Clutch Series/14/Play-In#6,2026-11-02,"November 2, 2026 - 19:15 {{Abbr/CET",ex-ence,sinqu,3,NODWIN Gaming/Clutch Series/14,b,False,2400059,NODWIN Gaming/Clutch Series/14,ex-ENCE,SINQU Esports
 Intel Extreme Masters/2026/Beijing#17,2026-11-03,"November 3, 2026 - 10:00 {{Abbr/CST",tl,parivision,3,Intel Extreme Masters Beijing 2026,s,True,2399990,Intel Extreme Masters/2026/Beijing,Team Liquid,PARIVISION
 Intel Extreme Masters/2026/Beijing#20,2026-11-03,"November 3, 2026 - 10:00 {{Abbr/CST",aurora,g2,3,Intel Extreme Masters Beijing 2026,s,True,2399991,Intel Extreme Masters/2026/Beijing,Aurora Gaming,G2 Esports
 Intel Extreme Masters/2026/Beijing#16,2026-11-03,"November 3, 2026 - 12:30 {{Abbr/CST",mouz,betboom,3,Intel Extreme Masters Beijing 2026,s,True,2399993,Intel Extreme Masters/2026/Beijing,MOUZ,BetBoom Team
 Intel Extreme Masters/2026/Beijing#19,2026-11-03,"November 3, 2026 - 12:30 {{Abbr/CST",tyloo,9z,3,Intel Extreme Masters Beijing 2026,s,True,2399992,Intel Extreme Masters/2026/Beijing,TYLOO,9z Team
 Intel Extreme Masters/2026/Beijing#4,2026-11-03,"November 3, 2026 - 15:00 {{Abbr/CST",mongolz,heroic,3,Intel Extreme Masters Beijing 2026,s,True,2399995,Intel Extreme Masters/2026/Beijing,The MongolZ,HEROIC
+Intel Extreme Masters/2026/Beijing#8,2026-11-03,"November 3, 2026 - 15:00 {{Abbr/CST",faze,falcons,3,Intel Extreme Masters Beijing 2026,s,True,2399994,Intel Extreme Masters/2026/Beijing,FaZe Clan,Team Falcons
+Intel Extreme Masters/2026/Beijing#5,2026-11-03,"November 3, 2026 - 17:30 {{Abbr/CST",furia,navi,3,Intel Extreme Masters Beijing 2026,s,True,2399996,Intel Extreme Masters/2026/Beijing,FURIA,Natus Vincere
 Intel Extreme Masters/2026/Beijing#7,2026-11-03,"November 3, 2026 - 17:30 {{Abbr/CST",legacy,b8,3,Intel Extreme Masters Beijing 2026,s,True,2399997,Intel Extreme Masters/2026/Beijing,Legacy,B8
+CCT/2026/Europe/Series 14/Play-In#0,2026-11-04,"November 4, 2026 - 10:00 {{Abbr/CET",illyrians,bebop,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,ILLYRIANS,Bebop
+CCT/2026/Europe/Series 14/Play-In#1,2026-11-04,"November 4, 2026 - 13:00 {{Abbr/CET",megoshort,honved,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,megoshort,Honvéd Esport
+CCT/2026/Europe/Series 14/Play-In#5,2026-11-04,"November 4, 2026 - 16:00 {{Abbr/CET",noir verse,kuusamo,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Noir Verse,KUUSAMO.gg
+CCT/2026/Europe/Series 14/Play-In#6,2026-11-04,"November 4, 2026 - 19:00 {{Abbr/CET",prestige.dk,maybe.ua,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Prestige Esport,MAYBE
 NODWIN Gaming/Clutch Series/14/Play-In#10,2026-11-05,"November 5, 2026 - 10:00 {{Abbr/CET",baks,honved,3,NODWIN Gaming/Clutch Series/14,b,False,2400060,NODWIN Gaming/Clutch Series/14,BAKS Esports,Honvéd Esport
 NODWIN Gaming/Clutch Series/14/Play-In#11,2026-11-05,"November 5, 2026 - 13:00 {{Abbr/CET",fire flux,illyrians,3,NODWIN Gaming/Clutch Series/14,b,False,2400061,NODWIN Gaming/Clutch Series/14,Fire Flux Esports,ILLYRIANS
 NODWIN Gaming/Clutch Series/14/Play-In#15,2026-11-05,"November 5, 2026 - 16:00 {{Abbr/CET",basement boys,misa,3,NODWIN Gaming/Clutch Series/14,b,False,2400062,NODWIN Gaming/Clutch Series/14,BASEMENT BOYS,Misa Esports
 NODWIN Gaming/Clutch Series/14/Play-In#16,2026-11-05,"November 5, 2026 - 19:00 {{Abbr/CET",johnny speeds,drama.rs,3,NODWIN Gaming/Clutch Series/14,b,False,2400063,NODWIN Gaming/Clutch Series/14,Johnny Speeds,Drama Esports
+CCT/2026/Europe/Series 14/Play-In#10,2026-11-06,"November 6, 2026 - 10:00 {{Abbr/CET",saw youngsters,four magic,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,SAW Youngsters,Four Magic
+CCT/2026/Europe/Series 14/Play-In#11,2026-11-06,"November 6, 2026 - 13:00 {{Abbr/CET",sokerorg,masonic,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Sökerorg,MASONIC
+CCT/2026/Europe/Series 14/Play-In#15,2026-11-06,"November 6, 2026 - 16:00 {{Abbr/CET",drama.rs,ryvex,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Drama Esports,Ryvex
+CCT/2026/Europe/Series 14/Play-In#16,2026-11-06,"November 6, 2026 - 19:00 {{Abbr/CET",saint sinners,phantom academy,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Saint Sinners,Phantom Esports Academy
 BLAST/Rivals/2026/Fall#0,2026-11-11,"November 11, 2026 - 11:00 {{Abbr/HKT",legacy,furia,3,BLAST Rivals Fall 2026,s,True,2399851,BLAST/Rivals/2026/Fall,Legacy,FURIA
 BLAST/Rivals/2026/Fall#1,2026-11-11,"November 11, 2026 - 13:30 {{Abbr/HKT",vit,falcons,3,BLAST Rivals Fall 2026,s,True,2399852,BLAST/Rivals/2026/Fall,Team Vitality,Team Falcons
 BLAST/Rivals/2026/Fall#4,2026-11-11,"November 11, 2026 - 16:00 {{Abbr/HKT",spirit,fut,3,BLAST Rivals Fall 2026,s,True,2399853,BLAST/Rivals/2026/Fall,Team Spirit,FUT Esports
