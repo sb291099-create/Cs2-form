@@ -1,12 +1,14 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-Intel Extreme Masters/2026/Beijing#17,2026-11-03,"November 3, 2026 - 10:00 {{Abbr/CST",tl,parivision,3,Intel Extreme Masters Beijing 2026,s,True,2399990,Intel Extreme Masters/2026/Beijing,Team Liquid,PARIVISION
-Intel Extreme Masters/2026/Beijing#20,2026-11-03,"November 3, 2026 - 10:00 {{Abbr/CST",aurora,g2,3,Intel Extreme Masters Beijing 2026,s,True,2399991,Intel Extreme Masters/2026/Beijing,Aurora Gaming,G2 Esports
-Intel Extreme Masters/2026/Beijing#16,2026-11-03,"November 3, 2026 - 12:30 {{Abbr/CST",mouz,betboom,3,Intel Extreme Masters Beijing 2026,s,True,2399993,Intel Extreme Masters/2026/Beijing,MOUZ,BetBoom Team
-Intel Extreme Masters/2026/Beijing#19,2026-11-03,"November 3, 2026 - 12:30 {{Abbr/CST",tyloo,9z,3,Intel Extreme Masters Beijing 2026,s,True,2399992,Intel Extreme Masters/2026/Beijing,TYLOO,9z Team
-Intel Extreme Masters/2026/Beijing#4,2026-11-03,"November 3, 2026 - 15:00 {{Abbr/CST",mongolz,heroic,3,Intel Extreme Masters Beijing 2026,s,True,2399995,Intel Extreme Masters/2026/Beijing,The MongolZ,HEROIC
+CCT/2026/Europe/Series 13/Play-In#23,2026-11-03,"November 3, 2026 - 10:00 {{Abbr/CET",azuolas,maybe.ua,3,CCT/2026/Europe/Series 13,b,False,2400068,CCT/2026/Europe/Series 13,Azuolas,MAYBE
+CCT/2026/Europe/Series 13/Play-In#21,2026-11-03,"November 3, 2026 - 13:00 {{Abbr/CET",spirit academy,psychoface,3,CCT/2026/Europe/Series 13,b,False,2400069,CCT/2026/Europe/Series 13,Team Spirit Academy,PsychoFace
+Intel Extreme Masters/2026/Beijing#16,2026-11-03,"November 3, 2026 - 14:00 {{Abbr/CST",mouz,betboom,3,Intel Extreme Masters Beijing 2026,s,True,2399993,Intel Extreme Masters/2026/Beijing,MOUZ,BetBoom Team
 Intel Extreme Masters/2026/Beijing#8,2026-11-03,"November 3, 2026 - 15:00 {{Abbr/CST",faze,falcons,3,Intel Extreme Masters Beijing 2026,s,True,2399994,Intel Extreme Masters/2026/Beijing,FaZe Clan,Team Falcons
+CCT/2026/Europe/Series 13/Play-In#20,2026-11-03,"November 3, 2026 - 16:00 {{Abbr/CET",leo team,illyrians,3,CCT/2026/Europe/Series 13,b,False,2400070,CCT/2026/Europe/Series 13,Leo Team,ILLYRIANS
+Intel Extreme Masters/2026/Beijing#4,2026-11-03,"November 3, 2026 - 16:00 {{Abbr/CST",mongolz,heroic,3,Intel Extreme Masters Beijing 2026,s,True,2399995,Intel Extreme Masters/2026/Beijing,The MongolZ,HEROIC
 Intel Extreme Masters/2026/Beijing#5,2026-11-03,"November 3, 2026 - 17:30 {{Abbr/CST",furia,navi,3,Intel Extreme Masters Beijing 2026,s,True,2399996,Intel Extreme Masters/2026/Beijing,FURIA,Natus Vincere
 Intel Extreme Masters/2026/Beijing#7,2026-11-03,"November 3, 2026 - 17:30 {{Abbr/CST",legacy,b8,3,Intel Extreme Masters Beijing 2026,s,True,2399997,Intel Extreme Masters/2026/Beijing,Legacy,B8
+CCT/2026/Europe/Series 13/Play-In#22,2026-11-03,"November 3, 2026 - 19:00 {{Abbr/CET",donstu,megoshort,3,CCT/2026/Europe/Series 13,b,False,2400071,CCT/2026/Europe/Series 13,DONSTU Esports,megoshort
+Intel Extreme Masters/2026/Beijing#21,2026-11-04,"November 4, 2026",tl,tyloo,3,Intel Extreme Masters Beijing 2026,s,True,,Intel Extreme Masters/2026/Beijing,Team Liquid,TYLOO
 CCT/2026/Europe/Series 14/Play-In#0,2026-11-04,"November 4, 2026 - 10:00 {{Abbr/CET",illyrians,bebop,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,ILLYRIANS,Bebop
 CCT/2026/Europe/Series 14/Play-In#1,2026-11-04,"November 4, 2026 - 13:00 {{Abbr/CET",megoshort,honved,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,megoshort,Honvéd Esport
 CCT/2026/Europe/Series 14/Play-In#5,2026-11-04,"November 4, 2026 - 16:00 {{Abbr/CET",noir verse,kuusamo,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Noir Verse,KUUSAMO.gg
