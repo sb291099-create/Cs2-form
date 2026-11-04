@@ -1,25 +1,17 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/14/Play-In#2,2026-11-03,"November 3, 2026 - 13:00 {{Abbr/CET",leo team,noir verse,3,NODWIN Gaming/Clutch Series/14,b,False,2400197,NODWIN Gaming/Clutch Series/14,Leo Team,Noir Verse
-CCT/2026/Europe/Series 13/Play-In#21,2026-11-03,"November 3, 2026 - 13:00 {{Abbr/CET",spirit academy,psychoface,3,CCT/2026/Europe/Series 13,b,False,2400069,CCT/2026/Europe/Series 13,Team Spirit Academy,PsychoFace
-CCT/2026/South America/Series 8#2,2026-11-03,"November 3, 2026 - 16:00 {{Abbr/BRT",quintessência,red canids academy,3,CCT South America 2026 Series #8,b,False,,CCT/2026/South America/Series 8,QUINTESSÊNCIA,RED Canids Academy
-NODWIN Gaming/Clutch Series/14/Play-In#8,2026-11-03,"November 3, 2026 - 16:00 {{Abbr/CET",walczaki,sinqu,3,NODWIN Gaming/Clutch Series/14,b,False,2400198,NODWIN Gaming/Clutch Series/14,Walczaki,SINQU Esports
-CCT/2026/Europe/Series 13/Play-In#20,2026-11-03,"November 3, 2026 - 16:00 {{Abbr/CET",leo team,illyrians,3,CCT/2026/Europe/Series 13,b,False,2400070,CCT/2026/Europe/Series 13,Leo Team,ILLYRIANS
-Intel Extreme Masters/2026/Beijing#5,2026-11-03,"November 3, 2026 - 18:15 {{Abbr/CST",furia,navi,3,Intel Extreme Masters Beijing 2026,s,True,2399996,Intel Extreme Masters/2026/Beijing,FURIA,Natus Vincere
-CCT/2026/South America/Series 8#3,2026-11-03,"November 3, 2026 - 19:00 {{Abbr/BRT",bestia academy,alianza lima,3,CCT South America 2026 Series #8,b,False,,CCT/2026/South America/Series 8,BESTIA Academy,Alianza Lima Esports
-NODWIN Gaming/Clutch Series/14/Play-In#7,2026-11-03,"November 3, 2026 - 19:00 {{Abbr/CET",azuolas,ex-ence,3,NODWIN Gaming/Clutch Series/14,b,False,2400199,NODWIN Gaming/Clutch Series/14,Azuolas,ex-ENCE
-CCT/2026/Europe/Series 13/Play-In#22,2026-11-03,"November 3, 2026 - 19:00 {{Abbr/CET",donstu,megoshort,3,CCT/2026/Europe/Series 13,b,False,2400071,CCT/2026/Europe/Series 13,DONSTU Esports,megoshort
-Intel Extreme Masters/2026/Beijing#7,2026-11-03,"November 3, 2026 - 19:00 {{Abbr/CST",legacy,b8,3,Intel Extreme Masters Beijing 2026,s,True,2399997,Intel Extreme Masters/2026/Beijing,Legacy,B8
-CCT/2026/South America/Series 8#4,2026-11-04,"November 4, 2026 - 10:00 {{Abbr/BRT",meia noite,damajuana,3,CCT South America 2026 Series #8,b,False,,CCT/2026/South America/Series 8,MEIA NOITE,DAMAJUANA
+CCT/2026/South America/Series 8#4,2026-11-04,"November 4, 2026 - 10:00 {{Abbr/BRT",meia noite,damajuana,3,CCT South America 2026 Series #8,b,False,2400076,CCT/2026/South America/Series 8,MEIA NOITE,DAMAJUANA
 CCT/2026/Europe/Series 14/Play-In#0,2026-11-04,"November 4, 2026 - 10:00 {{Abbr/CET",illyrians,bebop,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,ILLYRIANS,Bebop
 Intel Extreme Masters/2026/Beijing#21,2026-11-04,"November 4, 2026 - 10:00 {{Abbr/CST",tl,tyloo,3,Intel Extreme Masters Beijing 2026,s,True,2399998,Intel Extreme Masters/2026/Beijing,Team Liquid,TYLOO
 Intel Extreme Masters/2026/Beijing#22,2026-11-04,"November 4, 2026 - 10:00 {{Abbr/CST",betboom,aurora,3,Intel Extreme Masters Beijing 2026,s,True,2399999,Intel Extreme Masters/2026/Beijing,BetBoom Team,Aurora Gaming
+Intel Extreme Masters/2026/Beijing#9,2026-11-04,"November 4, 2026 - 12:30 {{Abbr/CST",navi,b8,3,Intel Extreme Masters Beijing 2026,s,True,2400001,Intel Extreme Masters/2026/Beijing,Natus Vincere,B8
 Intel Extreme Masters/2026/Beijing#10,2026-11-04,"November 4, 2026 - 12:30 {{Abbr/CST",heroic,falcons,3,Intel Extreme Masters Beijing 2026,s,True,2400000,Intel Extreme Masters/2026/Beijing,HEROIC,Team Falcons
-CCT/2026/South America/Series 8#5,2026-11-04,"November 4, 2026 - 13:00 {{Abbr/BRT",gremio,your end,3,CCT South America 2026 Series #8,b,False,,CCT/2026/South America/Series 8,Grêmio Esports,your end
+CCT/2026/South America/Series 8#5,2026-11-04,"November 4, 2026 - 13:00 {{Abbr/BRT",gremio,your end,3,CCT South America 2026 Series #8,b,False,2400077,CCT/2026/South America/Series 8,Grêmio Esports,your end
 CCT/2026/Europe/Series 14/Play-In#1,2026-11-04,"November 4, 2026 - 13:00 {{Abbr/CET",megoshort,honved,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,megoshort,Honvéd Esport
 Intel Extreme Masters/2026/Beijing#18,2026-11-04,"November 4, 2026 - 15:00 {{Abbr/CST",mouz,parivision,3,Intel Extreme Masters Beijing 2026,s,True,2400003,Intel Extreme Masters/2026/Beijing,MOUZ,PARIVISION
-CCT/2026/South America/Series 8#6,2026-11-04,"November 4, 2026 - 16:00 {{Abbr/BRT",borracheiros,low cortisol,3,CCT South America 2026 Series #8,b,False,,CCT/2026/South America/Series 8,BORRACHEIROS,Low Cortisol
+CCT/2026/South America/Series 8#6,2026-11-04,"November 4, 2026 - 16:00 {{Abbr/BRT",borracheiros,low cortisol,3,CCT South America 2026 Series #8,b,False,2400078,CCT/2026/South America/Series 8,BORRACHEIROS,Low Cortisol
 CCT/2026/Europe/Series 14/Play-In#5,2026-11-04,"November 4, 2026 - 16:00 {{Abbr/CET",noir verse,kuusamo,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Noir Verse,KUUSAMO.gg
-CCT/2026/South America/Series 8#7,2026-11-04,"November 4, 2026 - 19:00 {{Abbr/BRT",isurus,underworld,3,CCT South America 2026 Series #8,b,False,,CCT/2026/South America/Series 8,Isurus,Underworld
+Intel Extreme Masters/2026/Beijing#6,2026-11-04,"November 4, 2026 - 17:30 {{Abbr/CST",mongolz,furia,3,Intel Extreme Masters Beijing 2026,s,True,2400005,Intel Extreme Masters/2026/Beijing,The MongolZ,FURIA
+CCT/2026/South America/Series 8#7,2026-11-04,"November 4, 2026 - 19:00 {{Abbr/BRT",isurus,underworld,3,CCT South America 2026 Series #8,b,False,2400079,CCT/2026/South America/Series 8,Isurus,Underworld
 CCT/2026/Europe/Series 14/Play-In#6,2026-11-04,"November 4, 2026 - 19:00 {{Abbr/CET",prestige.dk,maybe.ua,3,CCT/2026/Europe/Series 14,b,False,,CCT/2026/Europe/Series 14,Prestige Esport,MAYBE
 NODWIN Gaming/Clutch Series/14/Play-In#10,2026-11-05,"November 5, 2026 - 10:00 {{Abbr/CET",baks,honved,3,NODWIN Gaming/Clutch Series/14,b,False,2400060,NODWIN Gaming/Clutch Series/14,BAKS Esports,Honvéd Esport
 NODWIN Gaming/Clutch Series/14/Play-In#11,2026-11-05,"November 5, 2026 - 13:00 {{Abbr/CET",fire flux,illyrians,3,NODWIN Gaming/Clutch Series/14,b,False,2400061,NODWIN Gaming/Clutch Series/14,Fire Flux Esports,ILLYRIANS
