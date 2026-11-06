@@ -1,20 +1,14 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/South America/Series 8#8,2026-11-06,"November 6, 2026 - 10:00 {{Abbr/BRT",isurus,alianza lima,3,CCT South America 2026 Series #8,b,False,2400084,CCT/2026/South America/Series 8,Isurus,Alianza Lima Esports
-CCT/2026/South America/Series 8#9,2026-11-06,"November 6, 2026 - 13:00 {{Abbr/BRT",quintessência,tao toma,3,CCT South America 2026 Series #8,b,False,2400085,CCT/2026/South America/Series 8,QUINTESSÊNCIA,tao toma
-CCT/2026/Europe/Series 14/Play-In#11,2026-11-06,"November 6, 2026 - 13:00 {{Abbr/CET",sokerorg,masonic,3,CCT/2026/Europe/Series 14,b,False,2400214,CCT/2026/Europe/Series 14,Sökerorg,MASONIC
-NODWIN Gaming/Clutch Series/14/Play-In#13,2026-11-06,"November 6, 2026 - 13:10 {{Abbr/CET",honved,illyrians,3,NODWIN Gaming/Clutch Series/14,b,False,2400296,NODWIN Gaming/Clutch Series/14,Honvéd Esport,ILLYRIANS
-CCT/2026/South America/Series 8#10,2026-11-06,"November 6, 2026 - 16:00 {{Abbr/BRT",your end,low cortisol,3,CCT South America 2026 Series #8,b,False,2400086,CCT/2026/South America/Series 8,your end,Low Cortisol
-NODWIN Gaming/Clutch Series/14/Play-In#17,2026-11-06,"November 6, 2026 - 16:00 {{Abbr/CET",basement boys,johnny speeds,3,NODWIN Gaming/Clutch Series/14,b,False,2400297,NODWIN Gaming/Clutch Series/14,BASEMENT BOYS,Johnny Speeds
-CCT/2026/Europe/Series 14/Play-In#15,2026-11-06,"November 6, 2026 - 16:00 {{Abbr/CET",drama.rs,ryvex,3,CCT/2026/Europe/Series 14,b,False,2400215,CCT/2026/Europe/Series 14,Drama Esports,Ryvex
-CCT/2026/Europe/Series 13#14,2026-11-06,"November 6, 2026 - 16:00 {{Abbr/CET",gothic,ic academy,3,CCT Europe 2026 Series #13,b,False,2400130,CCT/2026/Europe/Series 13,Gothic,IC Academy
 CCT/2026/South America/Series 8#11,2026-11-06,"November 6, 2026 - 19:00 {{Abbr/BRT",meia noite,rush gaming,3,CCT South America 2026 Series #8,b,False,2400087,CCT/2026/South America/Series 8,MEIA NOITE,RUSH Gaming
-NODWIN Gaming/Clutch Series/14/Play-In#18,2026-11-06,"November 6, 2026 - 19:00 {{Abbr/CET",misa,drama.rs,3,NODWIN Gaming/Clutch Series/14,b,False,2400298,NODWIN Gaming/Clutch Series/14,Misa Esports,Drama Esports
-CCT/2026/Europe/Series 14/Play-In#16,2026-11-06,"November 6, 2026 - 19:00 {{Abbr/CET",saint sinners,phantom academy,3,CCT/2026/Europe/Series 14,b,False,2400216,CCT/2026/Europe/Series 14,Saint Sinners,Phantom Esports Academy
-Intel Extreme Masters/2026/Beijing#25,2026-11-06,"November 6, 2026 - 19:00 {{Abbr/CST",furia,betboom,3,Intel Extreme Masters Beijing 2026,s,True,2400007,Intel Extreme Masters/2026/Beijing,FURIA,BetBoom Team
+CCT/2026/Europe/Series 14/Play-In#12,2026-11-07,"November 7, 2026 - 10:00 {{Abbr/CET",four magic,masonic,3,CCT/2026/Europe/Series 14,b,False,2400223,CCT/2026/Europe/Series 14,Four Magic,MASONIC
 CCT/2026/Europe/Series 13#8,2026-11-07,"November 7, 2026 - 10:00 {{Abbr/CET",butterfly,maybe.ua,3,CCT Europe 2026 Series #13,b,False,2400132,CCT/2026/Europe/Series 13,Butterfly,MAYBE
+CCT/2026/Europe/Series 14/Play-In#17,2026-11-07,"November 7, 2026 - 13:00 {{Abbr/CET",ryvex,saint sinners,3,CCT/2026/Europe/Series 14,b,False,2400224,CCT/2026/Europe/Series 14,Ryvex,Saint Sinners
 CCT/2026/Europe/Series 13#9,2026-11-07,"November 7, 2026 - 13:00 {{Abbr/CET",team aces,baks,3,CCT Europe 2026 Series #13,b,False,2400133,CCT/2026/Europe/Series 13,Team ACES,BAKS Esports
 Intel Extreme Masters/2026/Beijing#26,2026-11-07,"November 7, 2026 - 14:30 {{Abbr/CST",mongolz,navi,3,Intel Extreme Masters Beijing 2026,s,True,2400008,Intel Extreme Masters/2026/Beijing,The MongolZ,Natus Vincere
+CCT/2026/Europe/Series 14/Play-In#13,2026-11-07,"November 7, 2026 - 16:00 {{Abbr/CET",saw youngsters,sokerorg,3,CCT/2026/Europe/Series 14,b,False,2400219,CCT/2026/Europe/Series 14,SAW Youngsters,Sökerorg
 CCT/2026/Europe/Series 13#10,2026-11-07,"November 7, 2026 - 16:00 {{Abbr/CET",ex-z10,leo team,3,CCT Europe 2026 Series #13,b,False,2400134,CCT/2026/Europe/Series 13,ex-Zero Tenacity,Leo Team
+Intel Extreme Masters/2026/Beijing#27,2026-11-07,"November 7, 2026 - 17:45 {{Abbr/CST",mouz,betboom,3,Intel Extreme Masters Beijing 2026,s,True,2400009,Intel Extreme Masters/2026/Beijing,MOUZ,BetBoom Team
+CCT/2026/Europe/Series 14/Play-In#18,2026-11-07,"November 7, 2026 - 19:00 {{Abbr/CET",drama.rs,phantom academy,3,CCT/2026/Europe/Series 14,b,False,2400220,CCT/2026/Europe/Series 14,Drama Esports,Phantom Esports Academy
 CCT/2026/Europe/Series 13#11,2026-11-07,"November 7, 2026 - 19:00 {{Abbr/CET",nexus,forze reload,3,CCT Europe 2026 Series #13,b,False,2400135,CCT/2026/Europe/Series 13,Nexus Gaming,FORZE Reload
 CCT/2026/Europe/Series 14/Play-In#4,2026-11-08,"November 8, 2026 - 10:00 {{Abbr/CET",illyrians,bebop,3,CCT/2026/Europe/Series 14,b,False,2400225,CCT/2026/Europe/Series 14,ILLYRIANS,Bebop
 CCT/2026/Europe/Series 14/Play-In#9,2026-11-08,"November 8, 2026 - 13:00 {{Abbr/CET",kuusamo,prestige.dk,3,CCT/2026/Europe/Series 14,b,False,2400226,CCT/2026/Europe/Series 14,KUUSAMO.gg,Prestige Esport
