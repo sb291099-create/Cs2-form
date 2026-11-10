@@ -1,251 +1,253 @@
 rank,team,points
-1,FURIA,944
-2,Vitality,897
-3,Spirit,818
-4,MOUZ,777
-5,Aurora,588
+1,MOUZ,912
+2,FURIA,910
+3,Vitality,836
+4,Spirit,777
+5,Aurora,552
 6,Falcons,477
-7,BETBOOM,392
-8,FUT,380
-9,Nemiga,351
-10,Natus Vincere,314
-11,G2,288
-12,Legacy,262
-13,PARIVISION,195
-14,MIBR,182
-15,The MongolZ,172
-16,1win,158
-17,9z,147
-18,Liquid,128
-19,Astralis,123
-20,FaZe,120
-21,M80,104
-22,Eternal Fire,104
-23,Ninjas in Pyjamas,103
-24,GamerLegion,92
-25,B8,91
-26,HEROIC,89
-27,fnatic,84
-28,Envy,78
-29,magic,77
-30,HOTU,71
-31,DENDELE,67
-32,Luminosity,66
-33,100 Thieves,64
-34,TYLOO,62
-35,Alliance,61
-36,NRG,61
-37,BIG,61
-38,Inner Circle,53
-39,JiJieHao,53
-40,SINNERS,51
-41,Sangal,45
-42,5star,44
-43,paiN,42
-44,Wildcard,41
-45,K27,39
-46,Lynn Vision,37
-47,BBL,37
-48,PRIVATE,36
-49,BC.Game,36
-50,Imperial,35
-51,Nemesis,32
-52,Virtus.pro,27
-53,Iberian Soul,26
-54,FOKUS,25
-55,Nexus,24
-56,Betclic,23
-57,ShindeN,22
-58,Black Phoenix,21
-59,BESTIA,21
-60,FlyQuest,20
-61,EYEBALLERS,20
-62,Nuclear TigeRES,20
-63,Fluxo,20
-64,BASEMENT BOYS,19
-65,Chinggis Warriors,19
-66,SAW,18
-67,Metizport,18
-68,Phantom,15
-69,Galorys,14
-70,Voca,14
-71,NEXVOID,14
-72,PURE,14
-73,BARCA,13
-74,UPGRADE,12
-75,UNiTY,12
-76,Without a Roof,12
-77,Bounty Hunters,12
-78,Johnny Speeds,11
-79,Leo,11
-80,RBLS,11
-81,NAVI Junior,11
-82,ex-6666,10
-83,Spirit Academy,10
-84,INFINITE,10
-85,Procyon,10
-86,WBT,10
-87,ex-Zero Tenacity,10
-88,QUAZAR,10
-89,FORZE Reload,9
-90,The Huns,9
-91,Lazer Cats,9
-92,Inner Circle Academy,9
-93,LAG,9
-94,BET-M,9
-95,BRUTE,9
-96,BAKS,9
-97,WBT Academy,9
-98,G2 Ares,9
-99,mellren,9
-100,Glitch,9
-101,aimclub,9
-102,STATE,9
-103,Turma do Pagode,9
-104,OG,9
-105,Marsborne,9
-106,Prestige,9
-107,NT,8
-108,ASTRAL,8
-109,Alter Ego,8
-110,Fire Flux,8
-111,Illyrians,8
-112,SAW Youngsters,8
-113,ex-ENCE,8
-114,Acend,8
-115,Nordic Partners,8
-116,HAVU,7
-117,Abyssal,7
-118,Just Players,7
-119,HYPERSPIRIT,7
-120,Saint Sinners,7
-121,ex-RUSTEC,7
-122,ex-INOX,7
-123,9INE,7
-124,Four Magic,7
-125,GenOne,7
-126,Omega,7
-127,Galaxy,7
-128,INFURITY,7
-129,WW,7
-130,Butterfly,6
-131,The Last Resort,6
-132,Rare Atom,6
-133,Off Chops,6
-134,Hacha,6
-135,The Golden Horde,6
-136,MTX,6
-137,Misa,6
-138,DEPO,6
-139,ARCRED,6
+7,BETBOOM,439
+8,Natus Vincere,412
+9,FUT,361
+10,The MongolZ,324
+11,Nemiga,316
+12,G2,247
+13,PARIVISION,234
+14,Legacy,221
+15,1win,161
+16,MIBR,153
+17,Liquid,150
+18,FaZe,118
+19,9z,113
+20,Astralis,112
+21,B8,101
+22,Ninjas in Pyjamas,100
+23,Eternal Fire,94
+24,M80,89
+25,HEROIC,88
+26,GamerLegion,86
+27,fnatic,76
+28,Envy,72
+29,magic,65
+30,TYLOO,63
+31,HOTU,61
+32,BIG,57
+33,100 Thieves,57
+34,Luminosity,56
+35,DENDELE,56
+36,NRG,53
+37,Inner Circle,51
+38,JiJieHao,47
+39,Alliance,45
+40,SINNERS,44
+41,paiN,40
+42,Sangal,39
+43,Wildcard,36
+44,Lynn Vision,35
+45,K27,33
+46,PRIVATE,32
+47,BC.Game,32
+48,Imperial,29
+49,5star,28
+50,BBL,28
+51,Nemesis,25
+52,Nexus,22
+53,FOKUS,21
+54,Iberian Soul,20
+55,Betclic,20
+56,Black Phoenix,19
+57,BESTIA,19
+58,ShindeN,19
+59,EYEBALLERS,18
+60,FlyQuest,17
+61,Nuclear TigeRES,17
+62,Chinggis Warriors,16
+63,BASEMENT BOYS,16
+64,SAW,16
+65,Metizport,15
+66,Fluxo,14
+67,Galorys,13
+68,Phantom,13
+69,NEXVOID,12
+70,Voca,11
+71,BARCA,11
+72,PURE,11
+73,Low Cortisol,11
+74,UNiTY,11
+75,RBLS,11
+76,Bounty Hunters,10
+77,Virtus.pro,10
+78,INFINITE,9
+79,WBT,9
+80,Leo,9
+81,aimclub,9
+82,NAVI Junior,9
+83,Without a Roof,9
+84,UPGRADE,9
+85,Procyon,9
+86,The Huns,9
+87,Johnny Speeds,9
+88,QUAZAR,8
+89,Spirit Academy,8
+90,mellren,8
+91,WBT Academy,8
+92,Marsborne,8
+93,Inner Circle Academy,8
+94,Lazer Cats,8
+95,ex-Zero Tenacity,8
+96,BAKS,8
+97,OG,8
+98,BRUTE,8
+99,Illyrians,8
+100,Glitch,8
+101,STATE,8
+102,Turma do Pagode,7
+103,NT,7
+104,G2 Ares,7
+105,ASTRAL,7
+106,Acend,7
+107,MINT,7
+108,Alter Ego,7
+109,HAVU,7
+110,9INE,7
+111,LAG,7
+112,ex-ENCE,7
+113,FORZE Reload,7
+114,Nordic Partners,7
+115,Saint Sinners,7
+116,The Golden Horde,6
+117,Just Players,6
+118,Fire Flux,6
+119,SAW Youngsters,6
+120,GenOne,6
+121,Balkan Outlaws,6
+122,Younglings,6
+123,Galaxy,6
+124,INFURITY,6
+125,Butterfly,6
+126,Off Chops,6
+127,33,6
+128,Abyssal,5
+129,Rare Atom,5
+130,WW,5
+131,Omega,5
+132,ex-RUSTEC,5
+133,Hacha,5
+134,The Last Resort,5
+135,Chicken Coop,5
+136,MTX,5
+137,PCIFIC,5
+138,ARCRED,5
+139,Prestige,5
 140,EAC,5
 141,Young TigeRES,5
-142,Overtake Sector,5
-143,Chicken Coop,5
-144,Toobisie,5
-145,Monte,5
-146,Falcons Force,5
-147,Noir Verse,5
-148,Bushido Wildcats,5
-149,Phantom Academy,5
-150,PCIFIC,5
-151,BORRACHEIROS,5
-152,MOUZ NXT,5
-153,FaZe Up Next,5
-154,Younglings,5
-155,Optibet,5
-156,ABT,5
-157,Rooster,4
-158,LPH,4
-159,KUUSAMO,4
-160,Famalicão,4
+142,Noir Verse,5
+143,Toobisie,5
+144,Phantom Academy,5
+145,Monte,4
+146,Overtake Sector,4
+147,MAYBE,4
+148,Lunacy,4
+149,FaZe Up Next,4
+150,XI,4
+151,Optibet,4
+152,BORRACHEIROS,4
+153,ABT,4
+154,ex-INOX,4
+155,Four Magic,4
+156,Rooster,4
+157,MASONIC,4
+158,Rune Eaters,4
+159,LFO 10,4
+160,REVENIX,4
 161,Ground Zero,4
-162,INFINITE Talent,4
-163,megoshort,4
-164,REVENIX,4
-165,DONSTU,4
-166,6yuBoJlbl,4
-167,GENESIS,4
-168,ZOTIX,4
-169,Xcity,4
-170,Drama,4
-171,Vitalem Aerem,4
-172,Kaleido,4
-173,CTRL,4
-174,DETONATE,4
-175,The KnockoutX,4
-176,MAYBE,4
-177,Isurus,4
-178,Ryvex,4
-179,Just Swing,4
-180,Iowa Stormboar,3
-181,Spirit Academy Green,3
-182,ALKA,3
-183,Enjoy,3
+162,6yuBoJlbl,4
+163,INFINITE Talent,4
+164,JUMBO,4
+165,Isurus,4
+166,megoshort,4
+167,Ryvex,4
+168,MOUZ NXT,4
+169,KUUSAMO,4
+170,Drama,3
+171,Famalicão,3
+172,Bushido Wildcats,3
+173,DONSTU,3
+174,Xcity,3
+175,Vitalem Aerem,3
+176,MEIA NOITE,3
+177,Kaleido,3
+178,CTRL,3
+179,Misa,3
+180,The KnockoutX,3
+181,Just Swing,3
+182,LPH,3
+183,Lilmix,3
 184,Vexar,3
-185,JUMBO,3
-186,Villainous,3
-187,BERG,3
-188,Privateer,3
-189,RED Canids Academy,3
-190,Olympus,3
-191,Lilmix,3
-192,LFO 10,3
-193,LFO 8,3
-194,Nas,3
+185,ALKA,3
+186,BERG,3
+187,Olympus,3
+188,RED Canids Academy,3
+189,Spirit Academy Green,3
+190,Enjoy,3
+191,Grêmio,3
+192,Privateer,3
+193,regain,3
+194,PsychoFace,3
 195,Next Up,3
-196,Finishers,3
-197,regain,3
-198,MASONIC,3
-199,Grêmio,3
-200,SINQU,3
-201,QUINTESSÊNCIA,3
-202,TrafficPills,3
-203,Lavked,3
-204,DNK,3
-205,BESTIA Academy,3
-206,benched gods,3
-207,Azuolas,3
-208,NuTorious,3
-209,XI,3
-210,Diamant,3
-211,Bebop,3
+196,QUINTESSÊNCIA,3
+197,DETONATE,3
+198,Iowa Stormboar,3
+199,Lavked,3
+200,NuTorious,2
+201,Walczaki,2
+202,SINQU,2
+203,Villainous,2
+204,ZOTIX,2
+205,TrafficPills,2
+206,KZG,2
+207,5dads,2
+208,Diamant,2
+209,benched gods,2
+210,Azuolas,2
+211,DNK,2
 212,MIBR fe,2
 213,EMPIRE,2
-214,Desi Boyz,2
+214,Nas,2
 215,LOS NINOS,2
 216,eternal premium,2
 217,BORING PLAYERS,2
-218,Honvéd,2
-219,5dads,2
-220,KZG,2
-221,FarmVille,2
-222,Martians,2
-223,BOJONG,2
-224,your end,2
-225,Omen,2
-226,Legion,2
-227,Club 333,2
-228,95 Vikings,2
+218,BESTIA Academy,2
+219,FarmVille,2
+220,your end,2
+221,Martians,2
+222,LFO 8,2
+223,Desi Boyz,2
+224,Omen,2
+225,Club 333,2
+226,BTH,2
+227,95 Vikings,2
+228,XDM,2
 229,Wanted Goons,2
-230,BIG Academy,2
-231,XDM,2
-232,RUSH,2
-233,PsychoFace,2
-234,B8 Academy,2
-235,DAMAJUANA,1
-236,OxinGame,1
-237,Zetta,1
-238,THE UNIT,1
+230,BIG Academy,1
+231,Honvéd,1
+232,RUSH,1
+233,B8 Academy,1
+234,Legion,1
+235,Bebop,1
+236,Zetta,1
+237,THE UNIT,1
+238,Fortress,1
 239,BGNS Orange,1
-240,Fortress,1
-241,ROUNDS,1
-242,Revise,1
+240,DAMAJUANA,1
+241,Revise,1
+242,ROUNDS,1
 243,FlameHard,1
 244,Sementes do Mal,1
-245,Beyond Limits,1
-246,The QUBE,1
-247,Aurora Young Blud,1
-248,eSuba,1
-249,KODEX,1
-250,FlyQuest RED,0
+245,DEPO,1
+246,Beyond Limits,1
+247,The QUBE,1
+248,Aurora Young Blud,1
+249,BOJONG,1
+250,KODEX,1
+251,eSuba,1
+252,FlyQuest RED,0
