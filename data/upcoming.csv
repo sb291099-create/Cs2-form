@@ -1,32 +1,19 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/South America/Series 8#36,2026-11-13,"November 13, 2026 - 10:00 {{Abbr/BRT",turma do pagode,rush gaming,3,CCT South America 2026 Series #8,b,False,2400109,CCT/2026/South America/Series 8,Turma do Pagode,RUSH Gaming
-CCT/2026/Europe/Series 13#40,2026-11-13,"November 13, 2026 - 10:00 {{Abbr/CET",metizport,nexus,3,CCT Europe 2026 Series #13,b,False,2400153,CCT/2026/Europe/Series 13,Metizport,Nexus Gaming
-CCT/2026/South America/Series 8#33,2026-11-13,"November 13, 2026 - 13:00 {{Abbr/BRT",galorys,red canids academy,3,CCT South America 2026 Series #8,b,False,2400110,CCT/2026/South America/Series 8,Galorys,RED Canids Academy
-NODWIN Gaming/Clutch Series/14#14,2026-11-13,"November 13, 2026 - 13:00 {{Abbr/CET",team aces,genone,3,NODWIN Clutch Series #14,b,False,2400340,NODWIN Gaming/Clutch Series/14,Team ACES,GenOne
-CCT/2026/Europe/Series 14#9,2026-11-13,"November 13, 2026 - 13:00 {{Abbr/CET",ex-z10,baks,3,CCT Europe 2026 Series #14,b,False,2400246,CCT/2026/Europe/Series 14,ex-Zero Tenacity,BAKS Esports
-CCT/2026/Europe/Series 13#34,2026-11-13,"November 13, 2026 - 13:00 {{Abbr/CET",private,butterfly,3,CCT Europe 2026 Series #13,b,False,2400154,CCT/2026/Europe/Series 13,PRIVATE,Butterfly
-CCT/2026/South America/Series 8#34,2026-11-13,"November 13, 2026 - 16:00 {{Abbr/BRT",alka gaming,low cortisol,3,CCT South America 2026 Series #8,b,False,2400111,CCT/2026/South America/Series 8,Alka Esports,Low Cortisol
-NODWIN Gaming/Clutch Series/14#15,2026-11-13,"November 13, 2026 - 16:00 {{Abbr/CET",luntiki,drama.rs,3,NODWIN Clutch Series #14,b,False,2400341,NODWIN Gaming/Clutch Series/14,LUNTIKI,Drama Esports
-CCT/2026/Europe/Series 14#10,2026-11-13,"November 13, 2026 - 16:00 {{Abbr/CET",forze reload,walczaki,3,CCT Europe 2026 Series #14,b,False,2400247,CCT/2026/Europe/Series 14,FORZE Reload,Walczaki
-CCT/2026/Europe/Series 13#33,2026-11-13,"November 13, 2026 - 16:00 {{Abbr/CET",apogee,leo team,3,CCT Europe 2026 Series #13,b,False,2400155,CCT/2026/Europe/Series 13,Betclic Apogee Esports,Leo Team
-BLAST/Rivals/2026/Fall#8,2026-11-13,"November 13, 2026 - 18:55 {{Abbr/HKT",g2,falcons,3,BLAST Rivals Fall 2026,s,True,2400205,BLAST/Rivals/2026/Fall,G2 Esports,Team Falcons
 CCT/2026/South America/Series 8#40,2026-11-13,"November 13, 2026 - 19:00 {{Abbr/BRT",barca,borracheiros,3,CCT South America 2026 Series #8,b,False,2400112,CCT/2026/South America/Series 8,BARCA esports,BORRACHEIROS
-NODWIN Gaming/Clutch Series/14#11,2026-11-13,"November 13, 2026 - 19:00 {{Abbr/CET",ex-inox,baks,3,NODWIN Clutch Series #14,b,False,2400342,NODWIN Gaming/Clutch Series/14,ex-INOX Division,BAKS Esports
-CCT/2026/Europe/Series 14#11,2026-11-13,"November 13, 2026 - 19:00 {{Abbr/CET",ex-rustec,nexus,3,CCT Europe 2026 Series #14,b,False,2400248,CCT/2026/Europe/Series 14,ex-RUSTEC,Nexus Gaming
-CCT/2026/Europe/Series 13#35,2026-11-13,"November 13, 2026 - 19:00 {{Abbr/CET",omega,ic academy,3,CCT Europe 2026 Series #13,b,False,2400156,CCT/2026/Europe/Series 13,OMEGA,IC Academy
 CCT/2026/Europe/Series 13#39,2026-11-14,"November 14, 2026 - 10:00 {{Abbr/CET",infinite,team aces,3,CCT Europe 2026 Series #13,b,False,2400157,CCT/2026/Europe/Series 13,INFINITE,Team ACES
 CCT/2026/Europe/Series 13#37,2026-11-14,"November 14, 2026 - 13:00 {{Abbr/CET",vp,baks,3,CCT Europe 2026 Series #13,b,False,2400158,CCT/2026/Europe/Series 13,Virtus.pro,BAKS Esports
 CCT/2026/Europe/Series 13#36,2026-11-14,"November 14, 2026 - 16:00 {{Abbr/CET",iberian soul,forze reload,3,CCT Europe 2026 Series #13,b,False,2400159,CCT/2026/Europe/Series 13,Iberian Soul,FORZE Reload
 BLAST/Rivals/2026/Fall#11,2026-11-14,"November 14, 2026 - 16:00 {{Abbr/HKT",spirit,mouz,3,BLAST Rivals Fall 2026,s,True,2400206,BLAST/Rivals/2026/Fall,Team Spirit,MOUZ
+BLAST/Rivals/2026/Fall#10,2026-11-14,"November 14, 2026 - 18:30 {{Abbr/HKT",furia,falcons,3,BLAST Rivals Fall 2026,s,True,2400207,BLAST/Rivals/2026/Fall,FURIA,Team Falcons
 CCT/2026/Europe/Series 13#38,2026-11-14,"November 14, 2026 - 19:00 {{Abbr/CET",ww team,ex-z10,3,CCT Europe 2026 Series #13,b,False,2400160,CCT/2026/Europe/Series 13,WW TEAM,ex-Zero Tenacity
-PLAYzone/RUSH Brno/2026#0,2026-11-17,"November 17, 2026 - 11:00 {{Abbr/CET",sinners,nexus,3,RUSH:Brno 2026,b,True,,PLAYzone/RUSH Brno/2026,SINNERS Esports,Nexus Gaming
+PLAYzone/RUSH Brno/2026#0,2026-11-17,"November 17, 2026 - 11:00 {{Abbr/CET",sinners,nexus,3,RUSH:Brno 2026,b,True,2400518,PLAYzone/RUSH Brno/2026,SINNERS Esports,Nexus Gaming
 Stake Ranked/Episode 6#3,2026-11-17,"November 17, 2026 - 12:00 {{Abbr/CET",apogee,inner circle,3,Stake Ranked Episode 6,a,True,2400283,Stake Ranked/Episode 6,Betclic Apogee Esports,IC Esports
-PLAYzone/RUSH Brno/2026#1,2026-11-17,"November 17, 2026 - 14:00 {{Abbr/CET",alliance,iberian soul,3,RUSH:Brno 2026,b,True,,PLAYzone/RUSH Brno/2026,Alliance,Iberian Soul
+PLAYzone/RUSH Brno/2026#1,2026-11-17,"November 17, 2026 - 14:00 {{Abbr/CET",alliance,iberian soul,3,RUSH:Brno 2026,b,True,2400519,PLAYzone/RUSH Brno/2026,Alliance,Iberian Soul
 Stake Ranked/Episode 6#2,2026-11-17,"November 17, 2026 - 14:30 {{Abbr/CET",big,sangal,3,Stake Ranked Episode 6,a,True,2400284,Stake Ranked/Episode 6,BIG,Sangal Esports
 Stake Ranked/Episode 6#0,2026-11-17,"November 17, 2026 - 17:00 {{Abbr/CET",nip,unity.sk,3,Stake Ranked Episode 6,a,True,2400285,Stake Ranked/Episode 6,Ninjas in Pyjamas,UNiTY esports
-PLAYzone/RUSH Brno/2026#4,2026-11-17,"November 17, 2026 - 17:00 {{Abbr/CET",bbl,phantom esports,3,RUSH:Brno 2026,b,True,,PLAYzone/RUSH Brno/2026,BBL Esports,Phantom Esports
+PLAYzone/RUSH Brno/2026#4,2026-11-17,"November 17, 2026 - 17:00 {{Abbr/CET",bbl,phantom esports,3,RUSH:Brno 2026,b,True,2400520,PLAYzone/RUSH Brno/2026,BBL Esports,Phantom Esports
 Stake Ranked/Episode 6#1,2026-11-17,"November 17, 2026 - 19:30 {{Abbr/CET",lg,gl,3,Stake Ranked Episode 6,a,True,2400286,Stake Ranked/Episode 6,Luminosity Gaming,GamerLegion
-PLAYzone/RUSH Brno/2026#5,2026-11-17,"November 17, 2026 - 20:00 {{Abbr/CET",envy,metizport,3,RUSH:Brno 2026,b,True,,PLAYzone/RUSH Brno/2026,ENVY,Metizport
+PLAYzone/RUSH Brno/2026#5,2026-11-17,"November 17, 2026 - 20:00 {{Abbr/CET",envy,metizport,3,RUSH:Brno 2026,b,True,2400521,PLAYzone/RUSH Brno/2026,ENVY,Metizport
 PGL/2026/Singapore/Stage 1#0,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",heroic,imp,1,PGL/2026/Singapore,s,True,2400494,PGL/2026/Singapore,HEROIC,Imperial Esports
 PGL/2026/Singapore/Stage 1#1,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",9z,lvg,1,PGL/2026/Singapore,s,True,2400495,PGL/2026/Singapore,9z Team,Lynn Vision Gaming
 PGL/2026/Singapore/Stage 1#2,2026-11-24,"November 24, 2026 - 13:00 {{Abbr/SGT",nip,m80,1,PGL/2026/Singapore,s,True,2400496,PGL/2026/Singapore,Ninjas in Pyjamas,M80
