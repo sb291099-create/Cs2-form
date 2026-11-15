@@ -1,18 +1,12 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/14#19,2026-11-15,"November 15, 2026 - 10:00 {{Abbr/CET",ex-rustec,drama.rs,3,NODWIN Clutch Series #14,b,False,2400347,NODWIN Gaming/Clutch Series/14,ex-RUSTEC,Drama Esports
-CCT/2026/Europe/Series 14#20,2026-11-15,"November 15, 2026 - 10:00 {{Abbr/CET",walczaki,mnxt,3,CCT Europe 2026 Series #14,b,False,2400253,CCT/2026/Europe/Series 14,Walczaki,MOUZ NXT
-CCT/2026/Europe/Series 13#43,2026-11-15,"November 15, 2026 - 10:00 {{Abbr/CET",vp,hype tech,3,CCT Europe 2026 Series #13,b,False,2400161,CCT/2026/Europe/Series 13,Virtus.pro,Hype Tech
-Austin LAN/2026#4,2026-11-15,"November 15, 2026 - 10:15 {{Abbr/CT",voca,iowa stormboar,3,Austin LAN 2026,b,True,2400535,Austin LAN/2026,Team Voca,Iowa Stormboar
-Austin LAN/2026#5,2026-11-15,"November 15, 2026 - 10:15 {{Abbr/CT",lag,detonate,3,Austin LAN 2026,b,True,2400536,Austin LAN/2026,Life's A Game,DETONATE
-Austin LAN/2026#7,2026-11-15,"November 15, 2026 - 10:15 {{Abbr/CT",nutorious,it's a secret,3,Austin LAN 2026,b,True,2400537,Austin LAN/2026,NuTorious,It's a Secret
-Austin LAN/2026#8,2026-11-15,"November 15, 2026 - 10:15 {{Abbr/CT",arnie's acolytes,celestial esports,3,Austin LAN 2026,b,True,2400538,Austin LAN/2026,Arnie's Acolytes,Celestial Esports
+CCT/2026/South America/Series 8#45,2026-11-15,"November 15, 2026 - 12:00 {{Abbr/BRT",galorys,axorfy,3,CCT South America 2026 Series #8,b,False,2400117,CCT/2026/South America/Series 8,Galorys,Axorfy Gaming
 NODWIN Gaming/Clutch Series/14#20,2026-11-15,"November 15, 2026 - 13:00 {{Abbr/CET",brute,ex-inox,3,NODWIN Clutch Series #14,b,False,2400348,NODWIN Gaming/Clutch Series/14,BRUTE,ex-INOX Division
 CCT/2026/Europe/Series 14#21,2026-11-15,"November 15, 2026 - 13:00 {{Abbr/CET",leo team,tlr,3,CCT Europe 2026 Series #14,b,False,2400254,CCT/2026/Europe/Series 14,Leo Team,The Last Resort
 CCT/2026/Europe/Series 13#42,2026-11-15,"November 15, 2026 - 13:00 {{Abbr/CET",omega,iberian soul,3,CCT Europe 2026 Series #13,b,False,2400162,CCT/2026/Europe/Series 13,OMEGA,Iberian Soul
+CCT/2026/South America/Series 8#46,2026-11-15,"November 15, 2026 - 15:00 {{Abbr/BRT",ex-yawara e-sports,barca,3,CCT South America 2026 Series #8,b,False,2400118,CCT/2026/South America/Series 8,ex-Yawara E-Sports,BARCA esports
 NODWIN Gaming/Clutch Series/14#17,2026-11-15,"November 15, 2026 - 16:00 {{Abbr/CET",butterfly,baks,3,NODWIN Clutch Series #14,b,False,2400349,NODWIN Gaming/Clutch Series/14,Butterfly,BAKS Esports
 CCT/2026/Europe/Series 14#16,2026-11-15,"November 15, 2026 - 16:00 {{Abbr/CET",forze reload,nexus,3,CCT Europe 2026 Series #14,b,False,2400255,CCT/2026/Europe/Series 14,FORZE Reload,Nexus Gaming
 CCT/2026/Europe/Series 13#44,2026-11-15,"November 15, 2026 - 16:00 {{Abbr/CET",team aces,metizport,3,CCT Europe 2026 Series #13,b,False,2400163,CCT/2026/Europe/Series 13,Team ACES,Metizport
-BLAST/Rivals/2026/Fall#12,2026-11-15,"November 15, 2026 - 16:00 {{Abbr/HKT",furia,spirit,5,BLAST Rivals Fall 2026,s,True,2400208,BLAST/Rivals/2026/Fall,FURIA,Team Spirit
 NODWIN Gaming/Clutch Series/14#21,2026-11-15,"November 15, 2026 - 19:00 {{Abbr/CET",team aces,illyrians,3,NODWIN Clutch Series #14,b,False,2400344,NODWIN Gaming/Clutch Series/14,Team ACES,ILLYRIANS
 CCT/2026/Europe/Series 14#17,2026-11-15,"November 15, 2026 - 19:00 {{Abbr/CET",butterfly,hype tech,3,CCT Europe 2026 Series #14,b,False,2400256,CCT/2026/Europe/Series 14,Butterfly,Hype Tech
 CCT/2026/Europe/Series 13#41,2026-11-15,"November 15, 2026 - 19:00 {{Abbr/CET",apogee,private,3,CCT Europe 2026 Series #13,b,False,2400164,CCT/2026/Europe/Series 13,Betclic Apogee Esports,PRIVATE
