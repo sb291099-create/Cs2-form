@@ -1,7 +1,4 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/14#24,2026-11-16,"November 16, 2026 - 10:00 {{Abbr/CET",ex-rustec,butterfly,3,NODWIN Clutch Series #14,b,False,2400351,NODWIN Gaming/Clutch Series/14,ex-RUSTEC,Butterfly
-CCT/2026/Europe/Series 14#27,2026-11-16,"November 16, 2026 - 10:00 {{Abbr/CET",mnxt,azuolas,3,CCT Europe 2026 Series #14,b,False,2400257,CCT/2026/Europe/Series 14,MOUZ NXT,Azuolas
-CCT/2026/Europe/Series 13#46,2026-11-16,"November 16, 2026 - 12:00 {{Abbr/CET",vp,team aces,3,CCT Europe 2026 Series #13,b,False,2400165,CCT/2026/Europe/Series 13,Virtus.pro,Team ACES
 NODWIN Gaming/Clutch Series/14#27,2026-11-16,"November 16, 2026 - 13:00 {{Abbr/CET",brute,nice try,3,NODWIN Clutch Series #14,b,False,2400352,NODWIN Gaming/Clutch Series/14,BRUTE,Nice Try
 CCT/2026/Europe/Series 13#45,2026-11-16,"November 16, 2026 - 15:00 {{Abbr/CET",private,omega,3,CCT Europe 2026 Series #13,b,False,2400166,CCT/2026/Europe/Series 13,PRIVATE,OMEGA
 NODWIN Gaming/Clutch Series/14#28,2026-11-16,"November 16, 2026 - 16:00 {{Abbr/CET",spirit academy,illyrians,3,NODWIN Clutch Series #14,b,False,2400353,NODWIN Gaming/Clutch Series/14,Team Spirit Academy,ILLYRIANS
@@ -14,7 +11,7 @@ NODWIN Gaming/Clutch Series/14#25,2026-11-17,"November 17, 2026 - 13:00 {{Abbr/C
 CCT/2026/Europe/Series 14#24,2026-11-17,"November 17, 2026 - 13:00 {{Abbr/CET",ex-rustec,illyrians,3,CCT Europe 2026 Series #14,b,False,2400260,CCT/2026/Europe/Series 14,ex-RUSTEC,ILLYRIANS
 PLAYzone/RUSH Brno/2026#1,2026-11-17,"November 17, 2026 - 14:00 {{Abbr/CET",alliance,iberian soul,3,RUSH:Brno 2026,b,True,2400519,PLAYzone/RUSH Brno/2026,Alliance,Iberian Soul
 Stake Ranked/Episode 6#2,2026-11-17,"November 17, 2026 - 14:30 {{Abbr/CET",big,sangal,3,Stake Ranked Episode 6,a,True,2400284,Stake Ranked/Episode 6,BIG,Sangal Esports
-NODWIN Gaming/Clutch Series/14#26,2026-11-17,"November 17, 2026 - 16:00 {{Abbr/CET",forze reload,team aces,3,NODWIN Clutch Series #14,b,False,2400356,NODWIN Gaming/Clutch Series/14,FORZE Reload,Team ACES
+NODWIN Gaming/Clutch Series/14#26,2026-11-17,"November 17, 2026 - 16:00 {{Abbr/CET",team aces,forze reload,3,NODWIN Clutch Series #14,b,False,2400356,NODWIN Gaming/Clutch Series/14,Team ACES,FORZE Reload
 CCT/2026/Europe/Series 14#25,2026-11-17,"November 17, 2026 - 16:00 {{Abbr/CET",hype tech,tlr,3,CCT Europe 2026 Series #14,b,False,2400261,CCT/2026/Europe/Series 14,Hype Tech,The Last Resort
 Stake Ranked/Episode 6#0,2026-11-17,"November 17, 2026 - 17:00 {{Abbr/CET",nip,unity.sk,3,Stake Ranked Episode 6,a,True,2400285,Stake Ranked/Episode 6,Ninjas in Pyjamas,UNiTY esports
 PLAYzone/RUSH Brno/2026#4,2026-11-17,"November 17, 2026 - 17:00 {{Abbr/CET",bbl,phantom esports,3,RUSH:Brno 2026,b,True,2400520,PLAYzone/RUSH Brno/2026,BBL Esports,Phantom Esports
