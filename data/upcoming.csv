@@ -1,18 +1,16 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-NODWIN Gaming/Clutch Series/14#29,2026-11-17,"November 17, 2026 - 10:00 {{Abbr/CET",drama.rs,tpudcatb tpu,3,NODWIN Clutch Series #14,b,False,2400354,NODWIN Gaming/Clutch Series/14,Drama Esports,33
-PLAYzone/RUSH Brno/2026#0,2026-11-17,"November 17, 2026 - 11:00 {{Abbr/CET",sinners,nexus,3,RUSH:Brno 2026,b,True,2400518,PLAYzone/RUSH Brno/2026,SINNERS Esports,Nexus Gaming
-Stake Ranked/Episode 6#3,2026-11-17,"November 17, 2026 - 12:00 {{Abbr/CET",apogee,inner circle,3,Stake Ranked Episode 6,a,True,2400283,Stake Ranked/Episode 6,Betclic Apogee Esports,IC Esports
-NODWIN Gaming/Clutch Series/14#25,2026-11-17,"November 17, 2026 - 13:00 {{Abbr/CET",hype tech,ex-inox,3,NODWIN Clutch Series #14,b,False,2400355,NODWIN Gaming/Clutch Series/14,Hype Tech,ex-INOX Division
 CCT/2026/Europe/Series 14#24,2026-11-17,"November 17, 2026 - 13:00 {{Abbr/CET",ex-rustec,illyrians,3,CCT Europe 2026 Series #14,b,False,2400260,CCT/2026/Europe/Series 14,ex-RUSTEC,ILLYRIANS
-PLAYzone/RUSH Brno/2026#1,2026-11-17,"November 17, 2026 - 14:00 {{Abbr/CET",alliance,iberian soul,3,RUSH:Brno 2026,b,True,2400519,PLAYzone/RUSH Brno/2026,Alliance,Iberian Soul
-Stake Ranked/Episode 6#2,2026-11-17,"November 17, 2026 - 14:30 {{Abbr/CET",big,sangal,3,Stake Ranked Episode 6,a,True,2400284,Stake Ranked/Episode 6,BIG,Sangal Esports
 NODWIN Gaming/Clutch Series/14#26,2026-11-17,"November 17, 2026 - 16:00 {{Abbr/CET",team aces,forze reload,3,NODWIN Clutch Series #14,b,False,2400356,NODWIN Gaming/Clutch Series/14,Team ACES,FORZE Reload
 CCT/2026/Europe/Series 14#25,2026-11-17,"November 17, 2026 - 16:00 {{Abbr/CET",hype tech,tlr,3,CCT Europe 2026 Series #14,b,False,2400261,CCT/2026/Europe/Series 14,Hype Tech,The Last Resort
-Stake Ranked/Episode 6#0,2026-11-17,"November 17, 2026 - 17:00 {{Abbr/CET",nip,unity.sk,3,Stake Ranked Episode 6,a,True,2400285,Stake Ranked/Episode 6,Ninjas in Pyjamas,UNiTY esports
+Stake Ranked/Episode 6#0,2026-11-17,"November 17, 2026 - 16:20 {{Abbr/CET",nip,unity.sk,3,Stake Ranked Episode 6,a,True,2400285,Stake Ranked/Episode 6,Ninjas in Pyjamas,UNiTY esports
 PLAYzone/RUSH Brno/2026#4,2026-11-17,"November 17, 2026 - 17:00 {{Abbr/CET",bbl,phantom esports,3,RUSH:Brno 2026,b,True,2400520,PLAYzone/RUSH Brno/2026,BBL Esports,Phantom Esports
 CCT/2026/Europe/Series 14#26,2026-11-17,"November 17, 2026 - 19:00 {{Abbr/CET",nexus,walczaki,3,CCT Europe 2026 Series #14,b,False,2400262,CCT/2026/Europe/Series 14,Nexus Gaming,Walczaki
 Stake Ranked/Episode 6#1,2026-11-17,"November 17, 2026 - 19:30 {{Abbr/CET",lg,gl,3,Stake Ranked Episode 6,a,True,2400286,Stake Ranked/Episode 6,Luminosity Gaming,GamerLegion
 PLAYzone/RUSH Brno/2026#5,2026-11-17,"November 17, 2026 - 20:00 {{Abbr/CET",envy,metizport,3,RUSH:Brno 2026,b,True,2400521,PLAYzone/RUSH Brno/2026,ENVY,Metizport
+PLAYzone/RUSH Brno/2026#2,2026-11-18,"November 18, 2026 - 11:00 {{Abbr/CET",nexus,iberian soul,3,RUSH:Brno 2026,b,True,2400522,PLAYzone/RUSH Brno/2026,Nexus Gaming,Iberian Soul
+Stake Ranked/Episode 6#8,2026-11-18,"November 18, 2026 - 12:00 {{Abbr/CET",big,apogee,3,Stake Ranked Episode 6,a,True,2400440,Stake Ranked/Episode 6,BIG,Betclic Apogee Esports
+Stake Ranked/Episode 6#5,2026-11-18,"November 18, 2026 - 17:00 {{Abbr/CET",sangal,inner circle,3,Stake Ranked Episode 6,a,True,2400442,Stake Ranked/Episode 6,Sangal Esports,IC Esports
+PLAYzone/RUSH Brno/2026#3,2026-11-18,"November 18, 2026 - 17:00 {{Abbr/CET",sinners,alliance,3,RUSH:Brno 2026,b,True,2400524,PLAYzone/RUSH Brno/2026,SINNERS Esports,Alliance
 PGL/2026/Singapore/Stage 1#0,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",heroic,imp,1,PGL/2026/Singapore,s,True,2400494,PGL/2026/Singapore,HEROIC,Imperial Esports
 PGL/2026/Singapore/Stage 1#1,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",9z,lvg,1,PGL/2026/Singapore,s,True,2400495,PGL/2026/Singapore,9z Team,Lynn Vision Gaming
 PGL/2026/Singapore/Stage 1#2,2026-11-24,"November 24, 2026 - 13:00 {{Abbr/SGT",nip,m80,1,PGL/2026/Singapore,s,True,2400496,PGL/2026/Singapore,Ninjas in Pyjamas,M80
