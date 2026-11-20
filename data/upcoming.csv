@@ -1,21 +1,16 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-Stake Ranked/Episode 6#12,2026-11-20,"November 20, 2026 - 14:00 {{Abbr/CET",lg,big,3,Stake Ranked Episode 6,a,True,2400448,Stake Ranked/Episode 6,Luminosity Gaming,BIG
-CCT/2026/Europe/Series 15/Play-In#3,2026-11-20,"November 20, 2026 - 16:00 {{Abbr/CET",kuusamo,sokerorg,3,CCT/2026/Europe/Series 15,b,False,2400635,CCT/2026/Europe/Series 15,KUUSAMO.gg,Sökerorg
-NODWIN Gaming/Clutch Series/14#35,2026-11-20,"November 20, 2026 - 16:00 {{Abbr/CET",fokus,team aces,3,NODWIN Clutch Series #14,b,False,2400362,NODWIN Gaming/Clutch Series/14,FOKUS,Team ACES
-PLAYzone/RUSH Brno/2026#8,2026-11-20,"November 20, 2026 - 16:00 {{Abbr/CET",envy,nexus,3,RUSH:Brno 2026,b,True,2400526,PLAYzone/RUSH Brno/2026,ENVY,Nexus Gaming
-CCT/2026/Europe/Series 14#38,2026-11-20,"November 20, 2026 - 16:00 {{Abbr/CET",rune eaters,butterfly,3,CCT Europe 2026 Series #14,b,False,2400272,CCT/2026/Europe/Series 14,Rune Eaters Esports,Butterfly
-CCT/2026/Europe/Series 15/Play-In#8,2026-11-20,"November 20, 2026 - 19:00 {{Abbr/CET",maybe.ua,drama.rs,3,CCT/2026/Europe/Series 15,b,False,2400636,CCT/2026/Europe/Series 15,MAYBE,Drama Esports
-NODWIN Gaming/Clutch Series/14#38,2026-11-20,"November 20, 2026 - 19:00 {{Abbr/CET",wrotberry,phantom esports,3,NODWIN Clutch Series #14,b,False,2400363,NODWIN Gaming/Clutch Series/14,WhiteBIT Team,Phantom Esports
-PLAYzone/RUSH Brno/2026#9,2026-11-20,"November 20, 2026 - 19:00 {{Abbr/CET",sinners,metizport,3,RUSH:Brno 2026,b,True,2400527,PLAYzone/RUSH Brno/2026,SINNERS Esports,Metizport
-CCT/2026/Europe/Series 14#33,2026-11-20,"November 20, 2026 - 19:00 {{Abbr/CET",genone,leo team,3,CCT Europe 2026 Series #14,b,False,2400273,CCT/2026/Europe/Series 14,GenOne,Leo Team
 CCT/2026/Europe/Series 15/Play-In#10,2026-11-21,"November 21, 2026 - 10:00 {{Abbr/CET",azuolas,phantom academy,3,CCT/2026/Europe/Series 15,b,False,2400637,CCT/2026/Europe/Series 15,Azuolas,Phantom Esports Academy
 NODWIN Gaming/Clutch Series/14#40,2026-11-21,"November 21, 2026 - 10:00 {{Abbr/CET",nuclear tigeres,hype tech,3,NODWIN Clutch Series #14,b,False,2400364,NODWIN Gaming/Clutch Series/14,Nuclear TigeRES,Hype Tech
 CCT/2026/Europe/Series 15/Play-In#15,2026-11-21,"November 21, 2026 - 13:00 {{Abbr/CET",mnxt,infurity,3,CCT/2026/Europe/Series 15,b,False,2400638,CCT/2026/Europe/Series 15,MOUZ NXT,INFURITY Gaming
 NODWIN Gaming/Clutch Series/14#33,2026-11-21,"November 21, 2026 - 13:00 {{Abbr/CET",vp,nice try,3,NODWIN Clutch Series #14,b,False,2400365,NODWIN Gaming/Clutch Series/14,Virtus.pro,Nice Try
+PLAYzone/RUSH Brno/2026#10,2026-11-21,"November 21, 2026 - 14:00 {{Abbr/CET",alliance,envy,3,RUSH:Brno 2026,b,True,2400528,PLAYzone/RUSH Brno/2026,Alliance,ENVY
 CCT/2026/Europe/Series 15/Play-In#16,2026-11-21,"November 21, 2026 - 16:00 {{Abbr/CET",lunacy team,los kogutos,3,CCT/2026/Europe/Series 15,b,False,2400639,CCT/2026/Europe/Series 15,Lunacy Team,los kogutos
 NODWIN Gaming/Clutch Series/14#34,2026-11-21,"November 21, 2026 - 16:00 {{Abbr/CET",infinite,baks,3,NODWIN Clutch Series #14,b,False,2400366,NODWIN Gaming/Clutch Series/14,INFINITE,BAKS Esports
+PLAYzone/RUSH Brno/2026#11,2026-11-21,"November 21, 2026 - 17:00 {{Abbr/CET",bbl,sinners,3,RUSH:Brno 2026,b,True,2400529,PLAYzone/RUSH Brno/2026,BBL Esports,SINNERS Esports
 CCT/2026/Europe/Series 15/Play-In#11,2026-11-21,"November 21, 2026 - 19:00 {{Abbr/CET",illyrians,lilmix,3,CCT/2026/Europe/Series 15,b,False,2400640,CCT/2026/Europe/Series 15,ILLYRIANS,Lilmix
 NODWIN Gaming/Clutch Series/14#39,2026-11-21,"November 21, 2026 - 19:00 {{Abbr/CET",apogee,forze reload,3,NODWIN Clutch Series #14,b,False,2400367,NODWIN Gaming/Clutch Series/14,Betclic Apogee Esports,FORZE Reload
+CCT/2026/Europe/Series 15/Play-In#4,2026-11-23,"November 23, 2026 - 10:00 {{Abbr/CET",kuusamo,noir verse,3,CCT/2026/Europe/Series 15,b,False,2400645,CCT/2026/Europe/Series 15,KUUSAMO.gg,Noir Verse
+CCT/2026/Europe/Series 15/Play-In#9,2026-11-23,"November 23, 2026 - 13:00 {{Abbr/CET",maybe.ua,g2 ares,3,CCT/2026/Europe/Series 15,b,False,2400646,CCT/2026/Europe/Series 15,MAYBE,G2 Ares
 PGL/2026/Singapore/Stage 1#0,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",heroic,imp,1,PGL/2026/Singapore,s,True,2400494,PGL/2026/Singapore,HEROIC,Imperial Esports
 PGL/2026/Singapore/Stage 1#1,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",9z,lvg,1,PGL/2026/Singapore,s,True,2400495,PGL/2026/Singapore,9z Team,Lynn Vision Gaming
 PGL/2026/Singapore/Stage 1#2,2026-11-24,"November 24, 2026 - 13:00 {{Abbr/SGT",nip,m80,1,PGL/2026/Singapore,s,True,2400496,PGL/2026/Singapore,Ninjas in Pyjamas,M80
