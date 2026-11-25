@@ -1,9 +1,22 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-PGL/2026/Singapore/Stage 1#0,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",heroic,imp,1,PGL/2026/Singapore,s,True,2400494,PGL/2026/Singapore,HEROIC,Imperial Esports
-PGL/2026/Singapore/Stage 1#1,2026-11-24,"November 24, 2026 - 12:00 {{Abbr/SGT",9z,lvg,1,PGL/2026/Singapore,s,True,2400495,PGL/2026/Singapore,9z Team,Lynn Vision Gaming
-PGL/2026/Singapore/Stage 1#2,2026-11-24,"November 24, 2026 - 13:00 {{Abbr/SGT",nip,m80,1,PGL/2026/Singapore,s,True,2400496,PGL/2026/Singapore,Ninjas in Pyjamas,M80
-PGL/2026/Singapore/Stage 1#3,2026-11-24,"November 24, 2026 - 13:00 {{Abbr/SGT",100t,chinggis warriors,1,PGL/2026/Singapore,s,True,2400497,PGL/2026/Singapore,100 Thieves,Chinggis Warriors
-PGL/2026/Singapore/Stage 1#4,2026-11-24,"November 24, 2026 - 14:00 {{Abbr/SGT",parivision,sharks esports,1,PGL/2026/Singapore,s,True,2400499,PGL/2026/Singapore,PARIVISION,DENDELE CS
-PGL/2026/Singapore/Stage 1#5,2026-11-24,"November 24, 2026 - 14:00 {{Abbr/SGT",tl,bc.game,1,PGL/2026/Singapore,s,True,2400498,PGL/2026/Singapore,Team Liquid,BC.Game Esports
-PGL/2026/Singapore/Stage 1#6,2026-11-24,"November 24, 2026 - 15:00 {{Abbr/SGT",faze,wildcard,1,PGL/2026/Singapore,s,True,2400500,PGL/2026/Singapore,FaZe Clan,Wildcard
-PGL/2026/Singapore/Stage 1#7,2026-11-24,"November 24, 2026 - 15:00 {{Abbr/SGT",ef,fq,1,PGL/2026/Singapore,s,True,2400501,PGL/2026/Singapore,Eternal Fire,FlyQuest
+CCT/2026/Europe/Series 16/Play-In#0,2026-11-25,"November 25, 2026 - 10:00 {{Abbr/CET",spirit academy,quintessence,3,CCT/2026/Europe/Series 16,b,False,,CCT/2026/Europe/Series 16,Team Spirit Academy,Quintessence
+CCT/2026/Europe/Series 16/Play-In#1,2026-11-25,"November 25, 2026 - 13:00 {{Abbr/CET",saw youngsters,noir verse,3,CCT/2026/Europe/Series 16,b,False,,CCT/2026/Europe/Series 16,SAW Youngsters,Noir Verse
+PGL/2026/Singapore/Stage 1#18,2026-11-25,"November 25, 2026 - 14:00 {{Abbr/SGT",heroic,m80,1,PGL/2026/Singapore,s,True,2400565,PGL/2026/Singapore,HEROIC,M80
+PGL/2026/Singapore/Stage 1#19,2026-11-25,"November 25, 2026 - 14:00 {{Abbr/SGT",ef,100t,1,PGL/2026/Singapore,s,True,2400566,PGL/2026/Singapore,Eternal Fire,100 Thieves
+PGL/2026/Singapore/Stage 1#20,2026-11-25,"November 25, 2026 - 15:00 {{Abbr/SGT",wildcard,lvg,1,PGL/2026/Singapore,s,True,2400568,PGL/2026/Singapore,Wildcard,Lynn Vision Gaming
+PGL/2026/Singapore/Stage 1#21,2026-11-25,"November 25, 2026 - 15:00 {{Abbr/SGT",parivision,faze,1,PGL/2026/Singapore,s,True,2400567,PGL/2026/Singapore,PARIVISION,FaZe Clan
+CCT/2026/Europe/Series 16/Play-In#5,2026-11-25,"November 25, 2026 - 16:00 {{Abbr/CET",npg,donstu,3,CCT/2026/Europe/Series 16,b,False,,CCT/2026/Europe/Series 16,Nordic Partners Gaming,DONSTU Esports
+PGL/2026/Singapore/Stage 1#16,2026-11-25,"November 25, 2026 - 16:00 {{Abbr/SGT",imp,fq,3,PGL/2026/Singapore,s,True,2400569,PGL/2026/Singapore,Imperial Esports,FlyQuest
+PGL/2026/Singapore/Stage 1#22,2026-11-25,"November 25, 2026 - 16:00 {{Abbr/SGT",9z,sharks esports,3,PGL/2026/Singapore,s,True,2400570,PGL/2026/Singapore,9z Team,DENDELE CS
+PGL/2026/Singapore/Stage 1#17,2026-11-25,"November 25, 2026 - 18:30 {{Abbr/SGT",nip,tl,3,PGL/2026/Singapore,s,True,2400571,PGL/2026/Singapore,Ninjas in Pyjamas,Team Liquid
+PGL/2026/Singapore/Stage 1#23,2026-11-25,"November 25, 2026 - 18:30 {{Abbr/SGT",bc.game,chinggis warriors,3,PGL/2026/Singapore,s,True,2400572,PGL/2026/Singapore,BC.Game Esports,Chinggis Warriors
+CCT/2026/Europe/Series 16/Play-In#6,2026-11-25,"November 25, 2026 - 19:00 {{Abbr/CET",drama.rs,sokerorg,3,CCT/2026/Europe/Series 16,b,False,,CCT/2026/Europe/Series 16,Drama Esports,Sökerorg
+CCT/2026/Europe/Series 16/Play-In#10,2026-11-27,"November 27, 2026 - 10:00 {{Abbr/CET",mnxt,masonic,3,CCT/2026/Europe/Series 16,b,False,,CCT/2026/Europe/Series 16,MOUZ NXT,MASONIC
+CCT/2026/Europe/Series 16/Play-In#11,2026-11-27,"November 27, 2026 - 13:00 {{Abbr/CET",azuolas,honved,3,CCT/2026/Europe/Series 16,b,False,,CCT/2026/Europe/Series 16,Azuolas,Honvéd Esport
+Journey/2026/Winter#1,2026-11-30,"November 30, 2026 - 12:00 {{Abbr/CET",apogee,alliance,3,Journey Winter 2026,b,True,2400702,Journey/2026/Winter,Betclic Apogee Esports,Alliance
+Journey/2026/Winter#5,2026-12-01,"December 1, 2026 - 12:00 {{Abbr/CET",b8,pure,3,Journey Winter 2026,b,True,2400706,Journey/2026/Winter,B8,PURE
+Journey/2026/Winter#6,2026-12-01,"December 1, 2026 - 12:00 {{Abbr/CET",sangal,iberian soul,3,Journey Winter 2026,b,True,2400707,Journey/2026/Winter,Sangal Esports,Iberian Soul
+Journey/2026/Winter#10,2026-12-02,"December 2, 2026 - 12:00 {{Abbr/CET",inner circle,nexus,3,Journey Winter 2026,b,True,2400711,Journey/2026/Winter,IC Esports,Nexus Gaming
+Journey/2026/Winter#11,2026-12-02,"December 2, 2026 - 12:00 {{Abbr/CET",envy,metizport,3,Journey Winter 2026,b,True,2400712,Journey/2026/Winter,ENVY,Metizport
+Journey/2026/Winter#15,2026-12-03,"December 3, 2026 - 12:00 {{Abbr/CET",big,eyeballers,3,Journey Winter 2026,b,True,2400716,Journey/2026/Winter,BIG,EYEBALLERS
+Journey/2026/Winter#16,2026-12-03,"December 3, 2026 - 12:00 {{Abbr/CET",gl,saw,3,Journey Winter 2026,b,True,2400717,Journey/2026/Winter,GamerLegion,SAW
