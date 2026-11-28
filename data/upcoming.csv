@@ -1,20 +1,19 @@
 match_key,date,time,team1_id,team2_id,bestof,event,tier,lan,hltv,page,team1,team2
-CCT/2026/Europe/Series 15#14,2026-11-27,"November 27, 2026 - 16:00 {{Abbr/CET",npg,xmeta,3,CCT Europe 2026 Series #15,b,False,2400663,CCT/2026/Europe/Series 15,Nordic Partners Gaming,XMETA
-CCT/2026/Europe/Series 16/Play-In#16,2026-11-27,"November 27, 2026 - 19:00 {{Abbr/CET",lunacy team,megoshort,3,CCT/2026/Europe/Series 16,b,False,2400809,CCT/2026/Europe/Series 16,Lunacy Team,megoshort
-CCT/2026/Europe/Series 15#15,2026-11-27,"November 27, 2026 - 19:00 {{Abbr/CET",ex-butterfly,maybe.ua,3,CCT Europe 2026 Series #15,b,False,2400664,CCT/2026/Europe/Series 15,ex-Butterfly,MAYBE
 CCT/2026/Europe/Series 16/Play-In#12,2026-11-28,"November 28, 2026 - 10:00 {{Abbr/CET",masonic,azuolas,3,CCT/2026/Europe/Series 16,b,False,2400810,CCT/2026/Europe/Series 16,MASONIC,Azuolas
 CCT/2026/Europe/Series 15#8,2026-11-28,"November 28, 2026 - 10:00 {{Abbr/CET",forze reload,leo team,3,CCT Europe 2026 Series #15,b,False,2400665,CCT/2026/Europe/Series 15,FORZE Reload,Leo Team
 PGL/2026/Singapore/Stage 2#0,2026-11-28,"November 28, 2026 - 12:00 {{Abbr/SGT",fut,fq,1,PGL/2026/Singapore,s,True,2400582,PGL/2026/Singapore,FUT Esports,FlyQuest
 PGL/2026/Singapore/Stage 2#1,2026-11-28,"November 28, 2026 - 12:00 {{Abbr/SGT",mongolz,lvg,1,PGL/2026/Singapore,s,True,2400583,PGL/2026/Singapore,The MongolZ,Lynn Vision Gaming
+CCT/2026/Europe/Series 16/Play-In#17,2026-11-28,"November 28, 2026 - 13:00 {{Abbr/CET",walczaki,megoshort,3,CCT/2026/Europe/Series 16,b,False,2400811,CCT/2026/Europe/Series 16,Walczaki,megoshort
 CCT/2026/Europe/Series 15#9,2026-11-28,"November 28, 2026 - 13:00 {{Abbr/CET",team aces,lunacy team,3,CCT Europe 2026 Series #15,b,False,2400666,CCT/2026/Europe/Series 15,Team ACES,Lunacy Team
 PGL/2026/Singapore/Stage 2#2,2026-11-28,"November 28, 2026 - 13:00 {{Abbr/SGT",nemiga,nip,1,PGL/2026/Singapore,s,True,2400585,PGL/2026/Singapore,Nemiga Gaming,Ninjas in Pyjamas
 PGL/2026/Singapore/Stage 2#3,2026-11-28,"November 28, 2026 - 13:00 {{Abbr/SGT",astralis,imp,1,PGL/2026/Singapore,s,True,2400584,PGL/2026/Singapore,Astralis,Imperial Esports
 PGL/2026/Singapore/Stage 2#4,2026-11-28,"November 28, 2026 - 14:00 {{Abbr/SGT",g2,tl,1,PGL/2026/Singapore,s,True,2400586,PGL/2026/Singapore,G2 Esports,Team Liquid
 PGL/2026/Singapore/Stage 2#5,2026-11-28,"November 28, 2026 - 14:00 {{Abbr/SGT",1win,ef,1,PGL/2026/Singapore,s,True,2400587,PGL/2026/Singapore,1w Team,Eternal Fire
-PGL/2026/Singapore/Stage 2#6,2026-11-28,"November 28, 2026 - 15:00 {{Abbr/SGT",navi,parivision,1,PGL/2026/Singapore,s,True,24005888,PGL/2026/Singapore,Natus Vincere,PARIVISION
+PGL/2026/Singapore/Stage 2#6,2026-11-28,"November 28, 2026 - 15:00 {{Abbr/SGT",navi,parivision,1,PGL/2026/Singapore,s,True,2400588,PGL/2026/Singapore,Natus Vincere,PARIVISION
 PGL/2026/Singapore/Stage 2#7,2026-11-28,"November 28, 2026 - 15:00 {{Abbr/SGT",mibr,100t,1,PGL/2026/Singapore,s,True,2400589,PGL/2026/Singapore,MIBR,100 Thieves
 CCT/2026/Europe/Series 16/Play-In#13,2026-11-28,"November 28, 2026 - 16:00 {{Abbr/CET",mnxt,honved,3,CCT/2026/Europe/Series 16,b,False,2400812,CCT/2026/Europe/Series 16,MOUZ NXT,Honvéd Esport
 CCT/2026/Europe/Series 15#10,2026-11-28,"November 28, 2026 - 16:00 {{Abbr/CET",hype tech,baks,3,CCT Europe 2026 Series #15,b,False,2400667,CCT/2026/Europe/Series 15,Hype Tech,BAKS Esports
+CCT/2026/Europe/Series 16/Play-In#18,2026-11-28,"November 28, 2026 - 19:00 {{Abbr/CET",maybe.ua,lunacy team,3,CCT/2026/Europe/Series 16,b,False,2400813,CCT/2026/Europe/Series 16,MAYBE,Lunacy Team
 CCT/2026/Europe/Series 15#11,2026-11-28,"November 28, 2026 - 19:00 {{Abbr/CET",aimclub.ro,spirit academy,3,CCT Europe 2026 Series #15,b,False,2400668,CCT/2026/Europe/Series 15,Aimclub,Team Spirit Academy
 CCT/2026/Europe/Series 16/Play-In#4,2026-11-29,"November 29, 2026 - 10:00 {{Abbr/CET",noir verse,saw youngsters,3,CCT/2026/Europe/Series 16,b,False,2400814,CCT/2026/Europe/Series 16,Noir Verse,SAW Youngsters
 CCT/2026/Europe/Series 16/Play-In#9,2026-11-29,"November 29, 2026 - 13:00 {{Abbr/CET",sokerorg,drama.rs,3,CCT/2026/Europe/Series 16,b,False,2400815,CCT/2026/Europe/Series 16,Sökerorg,Drama Esports
